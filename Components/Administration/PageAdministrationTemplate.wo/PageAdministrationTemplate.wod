@@ -1,0 +1,75 @@
+ContainerTemplate: AjaxUpdateContainer {
+	id = "ContainerTemplate";
+}
+
+ObserverPopupPeriodeList: AjaxObserveField {
+	updateContainerID = "ContainerTemplate";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+PopupPeriodeList: WOPopUpButton {
+	list = periodeArray;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strAnneeDebutAnneeFin;
+	id = "PopupPeriodeList";
+}
+
+RepTplOngletEvaluation: WORepetition {
+	list = eoTplOngletArray;
+	item = tplOngletItem;
+}
+
+StrTplOngletItem: WOString {
+	value = tplOngletItem.tonLibelle;
+}
+
+RepTplBloc: WORepetition {
+	list = eoTplBlocArrayForOngletItem;
+	item = tplBlocItem;
+}
+
+StrTplBlocItem: WOString {
+	value = tplBlocItem.tblLibelle;
+}
+
+CondIslBlocDynamique: WOConditional {
+	condition = tplBlocItem.isBlocNatureDynamique;
+}
+
+RepTplItem: WORepetition {
+	list = tplBlocItem.tosTplItemSorted;
+	item = tplItemItem;
+}
+
+StrTplItemItem: WOString {
+	value = tplItemItem.titLibelle;
+}
+
+CondIsListe: WOConditional {
+	condition = tplItemItem.isListe;
+}
+
+PopUpTplItemValeur: WOPopUpButton {
+	list = tplItemValeurList;
+	item = tplItemValeurItem;
+	displayString = tplItemValeurItem.tivLibelle;
+}
+
+CondIsChampLibre: WOConditional {
+	condition = tplItemItem.isChampLibre;
+}
+
+CondIslBlocFormation: WOConditional {
+	condition = tplBlocItem.isBlocNatureFormation;
+}
+
+CondIslBlocFormationSouhaitee: WOConditional {
+	condition = tplBlocItem.isBlocNatureFormationSouhaitee;
+}
+
+CktlNote1: CktlNote {
+	
+}

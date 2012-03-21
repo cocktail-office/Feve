@@ -1,0 +1,117 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "ETY_CODE"; 
+            externalType = VARCHAR2; 
+            name = etyCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETY_CODE_MEN"; 
+            externalType = VARCHAR2; 
+            name = etyCodeMen; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETY_DEFINITION"; 
+            externalType = CLOB; 
+            name = etyDefinition; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2048; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETY_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = etyLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETY_SIGLE_CORPS"; 
+            externalType = VARCHAR2; 
+            name = etySigleCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FPR_KEY"; 
+            externalType = NUMBER; 
+            name = fprKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 120; 
+        }
+    ); 
+    attributesUsedForLocking = (etyCode, etyCodeMen, etyDefinition, etyLibelle, etySigleCorps, fprKey); 
+    className = "org.cocktail.feve.eos.modele.grhum.old.EOEmploiType"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        etyCode, 
+        etyCodeMen, 
+        etyDefinition, 
+        etyLibelle, 
+        etySigleCorps, 
+        fprKey, 
+        toFamilleProfessionnelle, 
+        tosRepartEmploiActivite, 
+        tosRepartEmploiCompetence
+    ); 
+    externalName = "GRHUM.EMPLOI_TYPE_OLD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (etyDefinition, etyLibelle, fprKey, toFamilleProfessionnelle); 
+    }; 
+    name = EmploiType; 
+    primaryKeyAttributes = (etyCode); 
+    relationships = (
+        {
+            destination = FamilleProfessionnelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fprKey; sourceAttribute = fprKey; }); 
+            name = toFamilleProfessionnelle; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEmploiActivite; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = etyCode; sourceAttribute = etyCode; }); 
+            name = tosRepartEmploiActivite; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEmploiCompetence; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = etyCode; sourceAttribute = etyCode; }); 
+            name = tosRepartEmploiCompetence; 
+        }
+    ); 
+}

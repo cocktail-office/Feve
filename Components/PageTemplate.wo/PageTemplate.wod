@@ -1,0 +1,42 @@
+CktlDefaultPage1: CktlDefaultPage {
+	pageTitle = "Fiches de fonction";
+	targetPosition = session.targetPosition;	
+	useToolTip = true;
+	mailLabel = "Pour toute information<br>";
+	hideFooter = false;
+}
+
+CktlAjaxUiMessageContainer : CktlAjaxUiMessageContainer {
+	id = "CktlAjaxUiMessageContainer";
+}
+
+CondIsNotPageLogin: WOConditional {
+	condition = session.isPageLogin;
+	negate = true;
+}
+
+Menu: CktlMenu {
+	itemSet = menuItems;
+	listener = menuListener;
+	useTopMenu = true;
+	keepLastSelection = true;
+}
+
+StrPageEnCoursTitre: WOString {
+	value = session.pageEnCoursTitre;
+	escapeHTML = false;
+}
+
+Indicateur : WOImage {
+  border = 0;
+  filename = "wait30.gif";
+  framework = "Ajax";
+  id="busy1";
+}
+
+Busy: AjaxBusyIndicator {
+  divID = "busy";
+}
+
+ComponentContent1: WOComponentContent {
+}

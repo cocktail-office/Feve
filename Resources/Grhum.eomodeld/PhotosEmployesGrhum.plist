@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DATAS_PHOTO"; 
+            externalType = BLOB; 
+            name = datasPhoto; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOPhotosEmployesGrhum"; 
+    classProperties = (datasPhoto, toIndividu); 
+    externalName = "GRHUM.PHOTOS_EMPLOYES_GRHUM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (datasPhoto); }; 
+    name = PhotosEmployesGrhum; 
+    primaryKeyAttributes = (noIndividu); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }
+    ); 
+}

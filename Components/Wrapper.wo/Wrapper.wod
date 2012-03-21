@@ -1,0 +1,9 @@
+Titre : WOString {
+	value = session.pageEnCoursTitre;
+}
+
+Body : WOBody {
+}
+Contenu : WOComponentContent {
+	
+}

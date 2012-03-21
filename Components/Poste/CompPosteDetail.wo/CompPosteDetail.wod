@@ -1,0 +1,79 @@
+FormCompPosteDetail: WOForm {
+	name = "FormCompPosteDetail";
+	action = neFaitRien;
+}
+
+
+CondShowCompPosteMetaDataCtrl: WOConditional {
+	condition = ctrl.showCompPosteMetaDataCtrl;
+}
+
+StrPostePosCode: WOString {
+	value = ctrl.poste.posCode;
+}
+
+StrPostePosLibelle: WOString {
+	value = ctrl.poste.posLibelle;
+}
+
+StrPostePosDDebut: WOString {
+	value = ctrl.poste.posDDebut;
+	dateformat = "%d/%m/%Y";
+}
+
+StrPostePosDFin: WOString {
+	value = ctrl.poste.posDFin;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "";
+}
+
+CondCanUpdatePoste: WOConditional {
+	condition = ctrl.canUpdatePoste;
+}
+
+CondNotIsPosteEnseignant: WOConditional {
+	condition = ctrl.poste.isEnseignant;
+	negate = true;	
+}
+
+ImgUpd: WOImage {
+	border = "0";
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+CompFicheLolf1: CompFicheLolf {
+	inPoste = ctrl.poste;
+}
+
+LnkUpdPoste: WOHyperlink {
+	action = ctrl.toCompPosteMetaDataUpdate;
+	title = "Modifer les informations g&eacute;n&eacute;rales du poste";
+}
+
+CompPosteMetaDataCtrlUpdate: CompPosteMetaData {
+	ctrl = ctrl.compPosteMetaDataCtrlUpdate;
+}
+
+CompOccupation1: CompOccupation {
+	ctrl = ctrl.compOccupationCtrl;
+}
+
+CompFicheDePosteList1: CompFicheDePosteList {
+	ctrl = ctrl.compFicheDePosteListCtrl;
+}
+
+CondShowFullComponent: WOConditional {
+	condition = ctrl.showFullComponent;
+}
+
+CondNotShowFullComponent: WOConditional {
+	condition = ctrl.showFullComponent;
+	negate = true;
+}
+
+CondIsAFicheDePosteSelected: WOConditional {
+	condition = ctrl.compFicheDePosteListCtrl.isAFicheDePosteSelected;
+}

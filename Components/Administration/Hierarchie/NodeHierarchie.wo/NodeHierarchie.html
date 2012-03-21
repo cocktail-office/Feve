@@ -1,0 +1,147 @@
+<table cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<webobject name="TdHierarchie">
+		<table class="tdDetailTab" border=0 cellspacing=0 cellpadding=0>
+			<tr valign=MIDDLE>
+				<td valign=MIDDLE>
+				<webobject name="CondHasNm1">
+				<table width=1% border=0 cellspacing=0 cellpadding=0>
+					<tr>
+						<td valign=top>
+							<webobject name="CondNotShowNm1">
+								<webobject	name="LnkVoirNm1">
+									<webobject name="ImgPlus"/>
+								</webobject>
+							</webobject>
+							<webobject name="CondShowNm1">
+								<webobject name="LnkCacherNm1">
+									<webobject name="ImgMoins"/>
+								</webobject>
+							</webobject>
+						</td>
+					</tr>
+				</table>
+				</webobject>
+				<webobject name="CondNotHasNm1">
+				<table width=1% border=0 cellspacing=0 cellpadding=0>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;</td>
+					</tr>
+				</table>
+				</webobject>
+				</td>
+				
+				
+				<td>
+					<table border=0 cellspacing=0 cellpadding=0>
+						<tr>
+							<td colspan=2 style="vertical-align: top">
+								<table border=0 cellspacing=0 cellpadding=0>
+									<tr>
+										<td><webobject name="LnkAjouterIndividu"><webobject name="ImgAjouter"/></webobject></td>
+										<td><webobject name="LnkModifier"><webobject name="ImgModifier"/></webobject></td>
+										<td><webobject name="LnkSupprimer"><webobject name="ImgSupprimer"/></webobject></td>
+										<td style="white-space: nowrap; font-size:10px">
+											<webobject name="StrInputLaHierarchieDisplay"/>
+											
+											<webobject name = "CondShowTotalEvaluation">
+												(<webobject name="StrCountEvaluation"/>)
+											</webobject>
+									
+										</td>
+									</tr>
+								</table>
+							</td>
+							
+
+							<webobject name="CondShowEvaluations">
+								<webobject name="RepEvaluations">
+									<td style="background-color:#FFFFFF; font-size:10px; border:1px dotted #000000"><webobject name="StrEvaluationItem"/></td>
+								</webobject>	
+							</webobject>						
+
+
+							<webobject name = "CondIsShowDroit">
+							
+							
+								<webobject name="CondHasListModif">
+									<webobject name="RepListModif">
+										<td style="width:10px"></td>
+										<td>
+											<table style="border: 1px solid #000000" class="write" border=0 cellspacing=0 cellpadding=0>
+												<tr>
+													<td><webobject name="ImgDroitModif"/></td>
+													<td style="font-size:10px" nowrap>
+														<b><webobject name="StrDroitItemTitulaireDisplay"/></b> sur <webobject name="StrDroitItemCibleDisplay"/>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</webobject>
+								</webobject>
+						
+								<webobject name="CondHasListVisu">
+									<webobject name="RepListVisu">
+										<td style="width:10px"></td>
+										<td>
+											<table style="border: 1px solid #000000" class="read" border=0 cellspacing=0 cellpadding=0>
+												<tr>
+													<td><webobject name="ImgDroitVisu"/></td>
+													<td style="font-size:10px" nowrap>
+														<b><webobject name="StrDroitItemTitulaireDisplay"/></b> sur <webobject name="StrDroitItemCibleDisplay"/>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</webobject>
+								</webobject>
+							
+							
+							</webobject>
+							
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		</webobject>
+		<td></td>
+	</tr>
+	
+	<webobject name="CondIsModeModifier">
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td>
+			<webobject name="Form1">
+				Echange de <webobject name="StrInputLaHierarchieDisplay"/> par ...
+				<webobject name = "SelectIndividuHierarchieModifier"/>
+				<webobject name="BtnEnregistrerModif"/>&nbsp;&nbsp;<webobject name="BtnAnnuler"/>
+			</webobject>
+		</td>
+	</tr>
+	</webobject>
+	
+	<webobject name="CondShowNm1">
+		<webobject name="RepNm1">
+		<tr>
+			<td width="1%">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td><webobject name="NodeHierarchie1"/></td>
+		</tr>
+		</webobject>
+	</webobject>
+
+	<webobject name="CondIsModeAjouter">
+		<tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>
+				<webobject name="Form2">
+				Nouveau N-1 de <webobject name="StrInputLaHierarchieDisplay"/>
+				<webobject name = "SelectIndividuHierarchieAjout"/>
+				<webobject name="BtnEnregistrerAjout"/>&nbsp;&nbsp;<webobject name="BtnIntercaler"/>&nbsp;&nbsp;<webobject name="BtnAnnulerAjout"/>
+			
+				</webobject>
+			</td>
+		</tr>
+	</webobject>
+	
+</table>

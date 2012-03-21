@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="WOConditionalGenericContainer" wocomponentcontent="false">    <binding defaults="Boolean" name="condition"/>
+        <binding name="elementName"/>
+        <validation message="'elementName' is a required binding.">
+            <unbound name="elementName"/>
+        </validation>
+    
+    <validation message="'condition' is a required binding.">
+            <unbound name="condition"/>
+        </validation>
+    <binding name="elementStyle"/>
+    </wo>
+</wodefinitions>

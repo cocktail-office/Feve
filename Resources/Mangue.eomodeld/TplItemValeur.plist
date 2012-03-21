@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TIV_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = tivCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TIV_KEY"; 
+            externalType = NUMBER; 
+            name = tivKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TIV_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tivLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 256; 
+        }
+    ); 
+    attributesUsedForLocking = (tivKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplItemValeur"; 
+    classProperties = (dCreation, dModification, tivCommentaire, tivLibelle); 
+    externalName = "MANGUE.TPL_ITEM_VALEUR"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplItemValeur; 
+    primaryKeyAttributes = (tivKey); 
+}

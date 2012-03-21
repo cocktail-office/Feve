@@ -1,0 +1,13 @@
+{
+    FetchEvaluateur = {
+        class = EOFetchSpecification; 
+        entityName = Hierarchie; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = toEvaluationPeriode; 
+            selectorName = isEqualTo; 
+            value = {"_key" = periode; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

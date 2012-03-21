@@ -1,0 +1,108 @@
+CondEvaluationListNotEmpty: WOConditional {
+	condition = evaluationList.count;
+}
+
+CondEvaluationListEmpty: WOConditional {
+	condition = evaluationList.count;
+	negate = true;
+}
+
+RepEvaluationFiltree: WORepetition {
+	list = evaluationArrayFiltree;
+	item = evaluationItem;
+}
+
+StrEvaluateur: WOString {
+	value = evaluationItem.toEvaluateur.nomPrenom;
+}
+
+StrAgent: WOString {
+	value = evaluationItem.toIndividu.nomPrenom;
+}
+
+StrDateEntretien: WOString {
+	value = evaluationItem.dTenueEntretien;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "<font class='textError'>non fait</font>";
+}
+
+StrDateVisaResponsableRh: WOString {
+	value = evaluationItem.dVisaResponsableRh;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "<font class='textError'>non vis&eacute;</font>";
+}
+
+StrEvolutionCarriere: WOString {
+	value = evaluationItem.toEvaluation.evaEvolutionEnvis;
+}
+
+
+StrEvolutionPoste: WOString {
+	value = evaluationItem.toEvaluation.evaEvolutionPropo;
+}
+
+StrMessageEmptyList: WOString {
+	value = messageEmptyList;
+	escapeHTML = false;
+}
+
+
+PopupEvaluateur: WOPopUpButton {
+	noSelectionString = "--- Tous les responsables ---";
+	list = evaluateurArray;
+	item = evaluateurItem;
+	selection = evaluateurSelected;
+	displayString = evaluateurItem.nomPrenom;
+	id = "PopupEvaluateur";
+}
+
+ObserverPopupEvaluateur: AjaxObserveField {
+	updateContainerID = "ContainerEntretiens";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupEvaluateur";
+}
+
+ContainerEntretiens: AjaxUpdateContainer {
+	 id = "ContainerEntretiens";
+}
+
+
+
+LnkSortEvaluateur: AjaxUpdateLink {
+	action = sortEvaluateur;
+	updateContainerID = "ContainerEntretiens";
+}
+
+LnkSortAgent: AjaxUpdateLink {
+	action = sortAgent;
+	updateContainerID = "ContainerEntretiens";
+}
+
+LnkSortDateEntretien: AjaxUpdateLink {
+	action = sortDateEntretien;
+	updateContainerID = "ContainerEntretiens";
+}
+
+LnkSortDateVisaRh: AjaxUpdateLink {
+	action = sortDateVisaRh;
+	updateContainerID = "ContainerEntretiens";
+}
+
+
+CondIsAfficherDateEntretien: WOConditional {
+	condition = isAfficherDateEntretien;
+}
+
+CondIsAfficherDateVisaRh: WOConditional {
+	condition = isAfficherDateVisaRh;
+}
+
+CondIsAfficherEvolutionCarriere: WOConditional {
+	condition = isAfficherEvolutionCarriere;
+}
+
+CondIsAfficherEvolutionPoste: WOConditional {
+	condition = isAfficherEvolutionPoste;
+}

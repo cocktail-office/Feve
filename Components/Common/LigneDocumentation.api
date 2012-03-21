@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="LigneDocumentation" wocomponentcontent="false">    <binding name="eoMangueParametre"/>
+        <validation message="'eoMangueParametre' is a required binding.">
+            <unbound name="eoMangueParametre"/>
+        </validation>
+    <binding name="updateContainerID"/>
+        <validation message="'updateContainerID' is a required binding.">
+            <unbound name="updateContainerID"/>
+        </validation>
+    <binding name="isDisabled"/>
+    </wo>
+</wodefinitions>

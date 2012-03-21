@@ -1,0 +1,112 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FIC_KEY"; 
+            externalType = NUMBER; 
+            name = ficKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RFI_KEY"; 
+            externalType = NUMBER; 
+            name = rfiKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RFI_VALEUR_LIBRE"; 
+            externalType = VARCHAR2; 
+            name = rfiValeurLibre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "TIT_KEY"; 
+            externalType = NUMBER; 
+            name = titKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TIV_KEY"; 
+            externalType = NUMBER; 
+            name = tivKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rfiKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFicheItem"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        ficKey, 
+        rfiValeurLibre, 
+        toEvaluation, 
+        toFicheDePoste, 
+        toFicheLolf, 
+        toTplItem, 
+        toTplItemValeur
+    ); 
+    externalName = "MANGUE.REPART_FICHE_ITEM"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartFicheItem; 
+    primaryKeyAttributes = (rfiKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = ficKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = FicheDePoste; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = ficKey; }); 
+            name = toFicheDePoste; 
+        }, 
+        {
+            destination = FicheLolf; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = floKey; sourceAttribute = ficKey; }); 
+            name = toFicheLolf; 
+        }, 
+        {
+            destination = TplItem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = titKey; sourceAttribute = titKey; }); 
+            name = toTplItem; 
+        }, 
+        {
+            destination = TplItemValeur; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tivKey; sourceAttribute = tivKey; }); 
+            name = toTplItemValeur; 
+        }
+    ); 
+}

@@ -1,0 +1,62 @@
+ErrorAdd: WOConditionalErrorMessage {
+	condition = ctrl.hasError;
+	value = ctrl.errMsg;
+}
+
+CompSelectAffectationNouvelleOccupation: CompSelectAffectation {
+	ctrl = ctrl.compSelectAffectationCtrlNouvelleOccupation;
+	affectationSelected = ctrl.affectationSelected;
+}
+
+CondShowInfosCreateOccupation: WOConditional {
+	condition = ctrl.showInfosCreateOccupation;
+}
+
+ChkSameDateAffectation: WOCheckBox {
+	checked = ctrl.isCreateOccupationSameDateAffectation;
+	onClick = "this.form.submit();";
+}
+CondIsNotSameDateAffectation: WOConditional {
+	condition = ctrl.isCreateOccupationSameDateAffectation;
+	negate = true;
+}
+
+DtePickerNewOccDebut: CktlDatePicker {
+	dateValue = ctrl.newOccupationDebut;
+	fieldName = "dateDebut";
+	formName = "FormFdp";
+}
+
+DtePickerNewOccFin: CktlDatePicker {
+	dateValue = ctrl.newOccupationFin;
+	fieldName = "dateFin";
+	formName = "FormFdp";
+}
+
+ImgCancel: WOImage {
+	border = 0;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkCancel: WOHyperlink {
+	action = ctrl.caller.doCancelOccupationAdd;
+	title = "Annuler l'ajout d'une nouvelle occupation";
+}
+
+BtnDoAddOccupation: WOImageButton {
+	action = ctrl.doAddOccupation;
+	name = "BtnDoAddOccupation";
+	title = "Cliquer pour creer l'occupation";	
+	filename = "images/valider16.gif"; 
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+}
+
+CondNotShowInfosCreateOccupation: WOConditional {
+	condition = ctrl.showInfosCreateOccupation;
+	negate = true;
+}

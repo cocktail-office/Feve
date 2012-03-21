@@ -1,0 +1,166 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_DEB_AFFECTATION"; 
+            externalType = DATE; 
+            name = dDebAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_AFFECTATION"; 
+            externalType = DATE; 
+            name = dFinAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DEN_QUOT_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = denQuotAffectation; 
+            precision = 3; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_OCCUPATION"; 
+            externalType = NUMBER; 
+            name = noOccupation; 
+            precision = 9; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = noSeqAffectation; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_SEQ_CARRIERE"; 
+            externalType = NUMBER; 
+            name = noSeqCarriere; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NUM_QUOT_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = numQuotAffectation; 
+            precision = 3; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noSeqAffectation); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOAffectation"; 
+    classProperties = (
+        noOccupation, 
+        dDebAffectation, 
+        dFinAffectation, 
+        numQuotAffectation, 
+        denQuotAffectation, 
+        dCreation, 
+        dModification, 
+        toIndividu, 
+        toStructure, 
+        tosAffectationDetail, 
+        temValide
+    ); 
+    externalName = "MANGUE.AFFECTATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noSeqAffectation, 
+            noDossierPers, 
+            noOccupation, 
+            noSeqCarriere, 
+            cStructure, 
+            dDebAffectation, 
+            dFinAffectation, 
+            numQuotAffectation, 
+            denQuotAffectation, 
+            dCreation, 
+            dModification
+        ); 
+        "_nameInObjectStore" = AFFECTATION; 
+    }; 
+    name = Affectation; 
+    primaryKeyAttributes = (noSeqAffectation); 
+    relationships = (
+        {
+            destination = Individu; 
+            internalInfo = {"_nameInObjectStore" = individu; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }, 
+        {
+            destination = AffectationDetail; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = noSeqAffectation; sourceAttribute = noSeqAffectation; }
+            ); 
+            name = tosAffectationDetail; 
+        }
+    ); 
+    restrictingQualifier = "temValide = 'O' and (toIndividu.temValide = 'O')"; 
+    userInfo = {"_EntityModeler" = {parentClassName = PROUT; }; }; 
+}

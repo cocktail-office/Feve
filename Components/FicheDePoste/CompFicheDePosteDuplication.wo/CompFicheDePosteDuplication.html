@@ -1,0 +1,49 @@
+<webobject name = "ErrorDuplication"/>
+
+<!-- duplication d'une fiche vers un autre poste -->
+<table border="0" class="boxTitle" cellpadding="2" cellspacing="0">
+
+	<tr>
+		<th><font class="subTitleInverse">Copie d'une fiche de poste</font></th>
+	</tr>
+
+	<tr>
+		<td>
+			<table class="boxContents" border="0" cellpadding="5" cellspacing="0" width="100%">
+
+				<tr>
+					<td>
+						<font class="textEntry">Fiche de poste à dupliquer :</font>
+						<webobject name = "StrFicheDePoste"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<font class="textEntry">Poste de destination :</font>
+						<webobject name = "SelectPoste"/>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+						<font class="textEntry">Date d'ouverture :</font><webobject name="DteDebut"/>
+						<br>
+						<font class="textEntry">Date de fermeture :</font><webobject name="DteFin"/>
+					</td>
+				</tr>
+				
+					
+				<tr>
+					<td align="center">
+						<webobject name = "LnkCancel">
+							<webobject name = "ImgCancel"/>
+						</webobject>
+						<webobject name="BtnDupliquerFiche"/>
+					</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+</table>

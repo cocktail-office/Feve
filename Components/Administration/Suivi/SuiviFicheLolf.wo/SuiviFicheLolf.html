@@ -1,0 +1,86 @@
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+    			<th>Exercice comptable : <webobject name = "PopUpExercice"/></th>
+    			<td><font class="textEntry">Type de poste :</font> <webobject name = "PopupPosteType"/></td>
+    			<th><webobject name = "CRINavBarFicheLolf"/></th>
+    			<webobject name = "CondHasResult">
+    			<th>
+						<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+						<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+	  			</th>
+					</webobject>
+    			<th width = "1%" nowrap>
+    				<font class="title">&raquo;	<webobject name = "StrFicheLolfCount"/></font>
+    			</th>
+    			<th width = "1%"><webobject name = "BtnRefresh"/></th>
+    		</tr>
+    	</table>
+    </td>
+  </tr>
+</table>
+
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+    			<th></th>
+					<th><webobject name = "TipSupport"><webobject name = "ImgInfo"/></webobject>Support</th>
+					<th>Composante<br/><webobject name = "PopupComposante"/></th>
+					<th>Service<br/><webobject name = "PopupService"/></th>
+					<th>Lib&eacute;ll&eacute; poste</th>
+					<th>Code poste</th>
+					<th>D&eacute;but poste</th>
+					<th>Fin poste</th>
+					<th>Occupant actuel du poste</th>
+					<th>R&eacute;partition</th>
+				</tr>
+				
+				<webobject name = "RepFicheLolf">
+				
+					<webobject name = "CondIsFicheLolfItemAffichable">
+					
+						<webobject name = "TrFicheLolf">
+							<td><webobject name = "CondHasWarning"><webobject name = "TipWarning"><webobject name = "ImgWarning"/></webobject></webobject></td>
+							<td>
+								<webobject name = "CondIsEnseignant">E</webobject>
+								<webobject name = "CondIsNonEnseignant">B</webobject>
+							</td>
+							<td><webobject name = "StrFicheLolfItemComposante"></webobject></td>
+							<td><webobject name = "StrFicheLolfItemService"></webobject></td>
+							<td><webobject name = "StrFicheLolfItemPosLibelle"></webobject></td>
+							<td><webobject name = "StrFicheLolfItemPosCode"></webobject></td>
+							<td><webobject name = "StrFicheLolfItemPosDDebut"></webobject></td>
+							<td><webobject name = "StrFicheLolfItemPosDFin"></webobject></td>
+							<td><webobject name = "StrFicheLolfItemOccupantPoste"></webobject></td>
+							<td>
+								<ul>
+									<webobject name = "RepRepartFloSilland">
+									<li>
+										<font class="fonctionSilland">
+											<webobject name = "StrRepartFloSillandLibelle"/> - <webobject name = "StrRepartFloSillandQuotite"/>%
+										</font>
+										<ul>
+											<webobject name = "RepRepartFloLolfNomen">
+											<li><webobject name = "StrRepartFloLolfNomenLibelle"/> - <webobject name = "StrRepartFloLolfNomenQuotite"></webobject>%</li>
+											</webobject>
+										</ul>
+									</li>
+									</webobject>	
+								</ul>
+									
+							</td>
+							
+						</webobject>
+	
+					</webobject>
+
+				</webobject>
+				
+			</table>
+		</td>
+	</tr>
+</table>

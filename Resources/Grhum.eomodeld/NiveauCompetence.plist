@@ -1,0 +1,51 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VAL"; 
+            externalType = DATE; 
+            name = dDebVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VAL"; 
+            externalType = DATE; 
+            name = dFinVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "NCP_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "NCO_KEY"; }; 
+            name = ncpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NCP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "NCO_LIBELLE"; }; 
+            name = ncpLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 64; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NCP_POSITION"; 
+            externalType = NUMBER; 
+            name = ncpPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EONiveauCompetence"; 
+    classProperties = (dDebVal, dFinVal, ncpLibelle, ncpPosition); 
+    externalName = "GRHUM.NIVEAU_COMPETENCE_PRO"; 
+    fetchSpecificationDictionary = {}; 
+    name = NiveauCompetence; 
+    primaryKeyAttributes = (ncpKey); 
+}

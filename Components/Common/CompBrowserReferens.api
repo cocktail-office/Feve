@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CompBrowserReferens" wocomponentcontent="false">    <binding name="inReferensEmploi"/>
+        <validation message="'inReferensEmploi' is a required binding.">
+            <unbound name="inReferensEmploi"/>
+        </validation>
+    <binding defaults="Boolean" name="shouldForceSelectionInReferensEmploi"/>
+        <validation message="'shouldForceSelectionInReferensEmploi' is a required binding.">
+            <unbound name="shouldForceSelectionInReferensEmploi"/>
+        </validation>
+    <binding name="outReferensEmploi"/>
+    <binding name="outReferensActivite"/>
+        <binding name="outReferensCompetence"/>
+    <binding defaults="Boolean" name="showActivites"/>
+    <binding defaults="Boolean" name="showCompetences"/>
+    <binding defaults="Boolean" name="showContentOnlyOnLeaf"/>
+    
+        
+    <binding name="referensActivitesToHideList"/>
+        <binding name="referensCompetencesToHideList"/>
+    
+    
+    </wo>
+</wodefinitions>

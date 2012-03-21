@@ -1,0 +1,402 @@
+<webobject name = "JsFunctionSelectionActivite"/>
+<webobject name = "JsFunctionSelectionActiviteAutre"/>
+<webobject name = "JsFunctionSelectionCompetence"/>
+<webobject name = "JsFunctionSelectionCompetenceAutre"/>
+
+<table border=0 width="100%">
+	<tr>
+		<td align="center">
+			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+				<tr>
+					<td>
+						<table border="0" cellpadding="2" cellspacing="1" width="100%">
+							<tr class="listboxHeader">
+								<th colspan="3">D&eacute;finition	de l'emploi type</th>
+							</tr>
+							<tr class="listboxLine">
+								<td>
+									<table>
+										<tr>
+											<td>
+												<webobject name="CondNotIsModeModifET">
+													<table>
+														<tr class="listboxLine">
+															<th align="right">Corps : </th>
+															<td align="left"><webobject name = "StrInputLaFicheDePosteToReferensEmploisCorps"/></td>
+														</tr>
+														<tr>
+															<th align="right">BAP : </th>
+															<td align="left"><webobject name = "StrInputLaFicheDePosteToReferensEmploisDcp"/></td>
+														</tr>
+														<tr>
+															<th align="right">Famille : </th>
+															<td align="left"><webobject name = "StrInputLaFicheDePosteToReferensEmploisFamille"/></td>
+														</tr>
+														<tr>
+															<th align="right" nowrap>Emploi type : </th>
+															<td align="left">
+																<webobject name = "StrInputLaFicheDePosteToReferensEmplois"/>
+																<webobject name="CondNotIsDisabledBtnModifET">
+																	<webobject	name="BtnActiverModeModifET"/>
+																</webobject>
+															</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<webobject name = "CktlNoteInfoEmploi">
+																	<table><tr><td align="left"><webobject name = "StrDefinitionEmploi"/></td></tr></table>
+																</webobject>
+															</td>
+														</tr>
+													</table>
+												</webobject>
+												<webobject name="CondIsModeModifET">
+													<webobject name = "CompBrowserReferensET">
+														<webobject name = "CondShowBtnAssocierET"><webobject	name="BtnAssocierET"/></webobject>
+													</webobject>
+												</webobject>
+											</td>
+											<td valign="bottom">
+												<webobject name="CondIsModeModifET">
+													<table><tr><td><webobject name="BtnAnnulerModif"/></td></tr></table>
+												</webobject>
+											</td>
+											<td valign="bottom">
+												<webobject name="CondIsModeModifET">
+													<table><tr><td><webobject name="BtnSupprimerET"/></td></tr></table>
+												</webobject>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<webobject name="CondShowAssoAuto">
+	<tr>
+		<th align="center">
+			<webobject name="CktlNoteAssoAuto">
+				<B>
+					<webobject name="LnkAssoAuto">
+					<webobject name="ImgWizard"/>Association automatique des activit&eacute;s &amp; comp&eacute;tences</webobject>
+				</B>
+			</webobject>
+		</th>
+	</tr>
+	</webobject>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td align="center">
+			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+				<tr>
+					<td>
+						<table border="0" cellpadding="2" cellspacing="1" width="100%">
+							<tr class="listboxHeader">
+								<th><a name="titreActivite"></a>Activit&eacute;s essentielles du poste</th>
+								<webobject name = "CondShowSuppressionActivite"><th><webobject name = "ChkSelectAllActivite"/></th></webobject>
+							</tr>
+							<webobject name="RepActFiche">
+							<webobject name="TrRepartActivite">
+								<td align="left">
+									<webobject name="CondNotIsDisabledBtnSupprimer">
+										<webobject name="LnkRemonterActivite"/><webobject name="LnkDescendreActivite"/>
+									</webobject>
+									&raquo;
+									<webobject name = "StrPosActivite"/> - <webobject name="StrActDisplayLong"/>
+								</td>
+								<webobject name = "CondShowSuppressionActivite"><td align="center"><webobject name="ChkSupprimerActivite"/></td></webobject>
+							</webobject>
+							</webobject>
+							<webobject name="CondIsModeAjouterActivite">
+							<tr class="listboxLine">
+								<td colspan = "2">
+									<table border="0" cellpadding="1" cellspacing="0" width="100%">
+										<tr>
+											<td>
+												<webobject name = "CompBrowserReferensActivite">
+													<webobject name = "CondShowBtnAssocierActivite">
+														<webobject name="BtnAssocierActivite"/>
+													</webobject>
+												</webobject>
+											</td>
+											<td valign="bottom">
+												<table><tr><td><webobject name="BtnAnnulerAssocierActivite"/></td></tr></table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							</webobject>
+							<webobject name="CondNotIsDisabledBtnSupprimer">
+							<tr class="feveTRAjoutNouveau">
+								<th>
+									<webobject name = "ImgAdd"/>
+									<webobject	name="LnkActiverModeAjoutActivite">[Associer une nouvelle activit&eacute;]</webobject>
+								</th>
+								<webobject name = "CondShowSuppressionActivite">
+								<td align="center">
+									<webobject name = "BtnSupprimerActivitesSelectionnees"/>
+								</td>
+								</webobject>
+							</tr>
+							</webobject>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	
+	
+	<webobject name = "CondIsFicheDePosteSaisieActiviteAutre">
+		<webobject name = "CondShowPanelActiviteAutre">
+		<tr>
+			<td align="center">
+				<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+						<tr>
+							<td>
+							
+							
+								<table border="0" cellpadding="2" cellspacing="1" width="100%">
+									<tr class="listboxHeader">
+										<th><a name="titreActiviteAutre"></a>Activit&eacute;s &quot;autres&quot;</th>
+										<th>
+											<webobject name = "CondShowSuppressionActiviteAutre">
+												<webobject name = "ChkSelectAllActiviteAutre"/>
+											</webobject>
+										</th>
+									</tr>
+									<webobject name="RepRepartFdpActivitesAutres">
+									<webobject name = "TrRepartActiviteAutre">
+										<td align="left">
+											<webobject name="CondNotIsDisabledBtnSupprimer">
+												<webobject name="BtnRemonterActiviteAutre"/>
+												<webobject name="BtnDescendreActiviteAutre"/>
+											</webobject>
+											&raquo;
+											<webobject name = "StrPosActiviteAutre"/> -
+											<webobject name = "CondNotUneRepartActiviteAutreIsEnCoursDeModification">
+												<webobject	name="StrFauActiviteAutre"/>
+											</webobject>
+											<webobject name = "CondUneRepartActiviteAutreIsEnCoursDeModification">
+												<webobject name = "TFFauActiviteAutre"/>
+											</webobject>
+											<webobject name = "CondIsShowModificationActiviteAutre">
+												<webobject name = "BtnActiverModeModifActiviteAutre"/>
+											</webobject>
+											<webobject name = "CondIsShowBtnValiderModificationActiviteAutre">
+												<webobject name="BtnValiderModifActiviteAutre"/>
+												<webobject name="BtnAnnulerModif"/>
+											</webobject>
+										</td>
+										<td>
+											<webobject name = "CondShowSuppressionActiviteAutre">
+												<webobject name="ChkSupprimerActiviteAutre"/>
+											</webobject>
+										</td>
+									</webobject>
+									</webobject>
+									
+									<webobject name="CondIsModeAjouterActiviteAutre">
+										<tr>
+											<td><webobject name="TFLaNouvelleActiviteAutre"/></td>
+											<td align=RIGHT>
+												<webobject name="BtnAssocierActiviteAutre"/>
+												<webobject name="BtnAnnulerSaisieActiviteAutre"/>
+											</td>
+										</tr>
+									</webobject>
+									
+									<webobject name="CondNotIsDisabledBtnSupprimer">
+									<tr class="feveTRAjoutNouveau">
+										<th>
+											<webobject name = "ImgAdd"/>
+											<webobject	name="LnkActiverModeAjoutActiviteAutre">
+												[Associer une activit&eacute; &quot;autre&quot; (non r&eacute;f&eacute;renc&eacute;e)]
+											</webobject>
+										</th>
+										<webobject name = "CondShowSuppressionActiviteAutre">
+										<th>
+											<webobject name = "BtnSupprimerActivitesAutresSelectionnees"/>
+										</th>
+										</webobject>
+									</tr>
+									</webobject>
+									
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		</webobject>
+	</webobject>
+	
+	
+	<tr>
+		<td align="center">
+			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+				<tr>
+					<td>
+						<table border="0" cellpadding="2" cellspacing="1" width="100%">
+							<tr class="listboxHeader">
+								<th><a name="titreCompetence"></a>Comp&eacute;tences</th>
+								<webobject name = "CondShowSuppressionCompetence"><th><webobject name = "ChkSelectAllCompetence"/></th></webobject>
+							</tr>
+							<webobject name="RepRepartFdpComp">
+							<webobject name="TrRepartCompetence">
+								<td align="left">
+									<webobject name="CondNotIsDisabledBtnSupprimer"><webobject name="BtnRemonterCompetence"></webobject><webobject name="BtnDescendreCompetence"></webobject></webobject>
+									&raquo;
+									<webobject name = "StrPosCompentence"/> - <webobject name="CompCompetenceDisplay1"/>
+								</td>
+								<webobject name = "CondShowSuppressionCompetence"><td><webobject name="ChkSupprimerCompetence"/></td></webobject>
+							</webobject>
+							</webobject>
+							<webobject name="CondIsModeAjouterCompetence">
+							<tr class="listboxLine">
+								<td>
+									<webobject name="CompBrowserReferensCompetence">
+										<webobject name = "CondShowBtnAssocierCompetence"><webobject name="BtnAssocierCompetence"/></webobject>
+									</webobject>
+								</td>
+								<td valign="bottom">
+									<table><tr><td><webobject name="BtnAnnulerAssocierCompetence"/></td></tr></table>
+								</td>
+							</tr>
+							</webobject>
+							<webobject name="CondNotIsDisabledBtnSupprimer">
+							<tr class="feveTRAjoutNouveau">
+								<th>
+									<webobject name = "ImgAdd"/>
+									<webobject	name="LnkActiverModeAjoutCompetence">[Associer une nouvelle	comp&eacute;tence]</webobject>
+								</th>
+								<webobject name = "CondShowSuppressionCompetence">
+								<td align="center">
+									<webobject name = "BtnSupprimerCompetencesSelectionnees"/>
+								</td>
+								</webobject>
+							</tr>
+							</webobject>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	
+	<webobject name = "CondIsFicheDePosteSaisieCompetenceAutre">
+		<webobject name = "CondShowPanelCompetenceAutre">
+		
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	
+		<tr>
+			<td align="center">
+				<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+						<tr>
+							<td>
+							
+							
+								<table border="0" cellpadding="2" cellspacing="1" width="100%">
+									<tr class="listboxHeader">
+										<th><a name="titreCompetenceAutre"></a>Comp&eacute;tences &quot;autres&quot;</th>
+										<th>
+											<webobject name = "CondShowSuppressionCompetenceAutre">
+												<webobject name = "ChkSelectAllCompetenceAutre"/>
+											</webobject>
+										</th>
+									</tr>
+									<webobject name="RepRepartFdpCompetencesAutres">
+									<webobject name = "TrRepartCompetenceAutre">
+										<td align="left">
+											<webobject name="CondNotIsDisabledBtnSupprimer">
+												<webobject name="BtnRemonterCompetenceAutre"/>
+												<webobject name="BtnDescendreCompetenceAutre"/>
+											</webobject>
+											&raquo;
+											<webobject name = "StrPosCompetenceAutre"/> -
+											<webobject name = "CondNotUneRepartCompetenceAutreIsEnCoursDeModification">
+												<webobject	name="StrFauCompetenceAutre"/>
+											</webobject>
+											<webobject name = "CondUneRepartCompetenceAutreIsEnCoursDeModification">
+												<webobject name = "TFFauCompetenceAutre"/>
+											</webobject>
+											<webobject name = "CondIsShowModificationCompetenceAutre">
+												<webobject name = "BtnActiverModeModifCompetenceAutre"/>
+											</webobject>
+											<webobject name = "CondIsShowBtnValiderModificationCompetenceAutre">
+												<webobject name="BtnValiderModifCompetenceAutre"/>
+												<webobject name="BtnAnnulerModif"/>
+											</webobject>
+										</td>
+										<td>
+											<webobject name = "CondShowSuppressionCompetenceAutre">
+												<webobject name="ChkSupprimerCompetenceAutre"/>
+											</webobject>
+										</td>
+									</webobject>
+									</webobject>
+									
+									<webobject name="CondIsModeAjouterCompetenceAutre">
+										<tr>
+											<td><webobject name="TFLaNouvelleCompetenceAutre"/></td>
+											<td align=RIGHT>
+												<webobject name="BtnAssocierCompetenceAutre"/>
+												<webobject name="BtnAnnulerSaisieCompetenceAutre"/>
+											</td>
+										</tr>
+									</webobject>
+									
+									<webobject name="CondNotIsDisabledBtnSupprimer">
+									<tr class="feveTRAjoutNouveau">
+										<th>
+											<webobject name = "ImgAdd"/>
+											<webobject	name="LnkActiverModeAjoutCompetenceAutre">
+												[Associer une comp&eacute;tence &quot;autre&quot; (non r&eacute;f&eacute;renc&eacute;e)]
+											</webobject>
+										</th>
+										<webobject name = "CondShowSuppressionCompetenceAutre">
+										<th>
+											<webobject name = "BtnSupprimerCompetencesAutresSelectionnees"/>
+										</th>
+										</webobject>
+									</tr>
+									</webobject>
+									
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+		</tr>
+		</webobject>
+	</webobject>
+
+<!--
+
+<table align="center">
+	<tr>
+		<td>
+			Test referens
+			<webobject name = "CktlAjaxVReferensSelect1"/>
+		</td>
+	</tr>
+</table>
+
+-->
+
+</table>

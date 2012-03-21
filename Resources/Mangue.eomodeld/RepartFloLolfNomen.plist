@@ -1,0 +1,96 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EXE_ORDRE"; 
+            externalType = NUMBER; 
+            name = exeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FLO_KEY"; 
+            externalType = NUMBER; 
+            name = floKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOLF_ID"; 
+            externalType = NUMBER; 
+            name = lolfId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RRF_QUOTITE"; 
+            externalType = NUMBER; 
+            name = rrfQuotite; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "SIL_KEY"; 
+            externalType = NUMBER; 
+            name = silKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (exeOrdre, floKey, lolfId, silKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFloLolfNomen"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        rrfQuotite, 
+        toExercice, 
+        toLolfNomenclatureDepense, 
+        toRepartFloSilland
+    ); 
+    externalName = "MANGUE.REPART_REP_FLO_SIL_LOLF_NOMEN"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartFloLolfNomen; 
+    primaryKeyAttributes = (exeOrdre, floKey, lolfId, silKey); 
+    relationships = (
+        {
+            destination = "FwkJefyAdmin_Exercice"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = exeOrdre; sourceAttribute = exeOrdre; }); 
+            name = toExercice; 
+        }, 
+        {
+            destination = "FwkJefyAdmin_LolfNomenclatureDepense"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lolfId; sourceAttribute = lolfId; }); 
+            name = toLolfNomenclatureDepense; 
+        }, 
+        {
+            destination = RepartFloSilland; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = floKey; sourceAttribute = floKey; }, 
+                {destinationAttribute = silKey; sourceAttribute = silKey; }
+            ); 
+            name = toRepartFloSilland; 
+        }
+    ); 
+}

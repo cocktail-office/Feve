@@ -1,0 +1,57 @@
+PageTemplate1: PageTemplate {
+}
+
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TdMenu: WOGenericContainer {
+	elementName = "td";
+	id = idTabMenu;
+	class = classTabMenu;
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value = unItemMenu;
+	escapeHTML = false;
+}
+
+InfoToolTipMenu: InfoToolTip {
+	inText = popInfo;
+	inTextIsHtml = true;
+}
+
+CondIsPageEvaluation: WOConditional {
+	condition = isPageEvaluation;
+}
+
+ListeEvaluation1: ListeEvaluation {
+	ctrl = listeEvaluationCtrl;
+}
+
+CondIsPagePoste: WOConditional {
+	condition = isPagePoste;
+}
+
+PagePoste1: PagePoste {
+	ctrl = posteCtrl;
+}
+
+CondIsSuiviFicheLolf: WOConditional {
+	condition = isSuiviFicheLolf;
+}
+
+FormSuiviFicheLolf: WOForm {
+	name = "FormSuiviFicheLolf";
+}
+
+SuiviFicheLolf1: SuiviFicheLolf {
+
+}

@@ -1,0 +1,112 @@
+RepMenu: WORepetition {
+	list= eoTplOngletArray;
+	item= eoTplOngletItem;
+	index= indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+	title = "cliquer pour afficher le contenu de cet onglet";
+}
+
+LibelleTabMenu: WOString {
+	value= eoTplOngletItem.tonLibelle;
+}
+
+CondShowPopInfo: WOConditional {
+	condition = eoTplOngletItem.tonCommentaire.length;
+}
+
+InfoToolTipMenu: InfoToolTip {
+	inText = eoTplOngletItem.tonCommentaire;
+	inTextIsHtml = true;
+}
+
+FormPageEvaluation: ERXWOForm {
+	action = neFaitRien;
+	multipleSubmit = true;
+	name = "FormPageEvaluation";
+	id = "FormPageEvaluation";
+}
+
+CondIsAgent: WOConditional {
+	condition = eoTplOngletSelected.isAgent;
+}
+
+OngletEvaluationAgent: OngletEvaluationAgent {
+	inEvaluation = inputLEvaluation;
+}
+
+CondIsObjectifsPrecedents: WOConditional {
+	condition = eoTplOngletSelected.isObjectifsPrecedents;
+}
+
+CompEvalObjPrec: CompPageEvalObj {
+	inputLEvaluation = inputLEvaluation.toEvaluationPrecedente;
+	isHiddenColonneResultats = false;
+	inputEvaluationPeriode = recEvaluationPeriodePrec;
+	isAllowedAjoutSuppModif = isModificationObjPrecAutorisee;
+	isAllowedModifResultatObservation = isModifiable;
+}
+
+CondIsObjectifsSuivants: WOConditional {
+	condition = eoTplOngletSelected.isObjectifsSuivants;
+}
+
+CompEvalObjSuiv: CompPageEvalObj {
+	inputLEvaluation = inputLEvaluation;
+	isHiddenColonneResultats = true;
+	inputEvaluationPeriode = recEvaluationPeriodeSuiv;
+	isAllowedAjoutSuppModif = isModifiable;
+	isAllowedModifResultatObservation = isModifiable;
+}
+
+CondIsSituation: WOConditional {
+	condition = eoTplOngletSelected.isSituation;
+}
+
+CompSituActi1: CompPageEvalSituActi {
+	inputLEvaluation = inputLEvaluation;
+	disabled = isNotModifiable;
+}
+
+CondIsCompetence: WOConditional {
+	condition = eoTplOngletSelected.isCompetence;
+}
+
+CompPosiComp1: CompPageEvalPosiComp {
+	inputLEvaluation = inputLEvaluation;
+	disabled = isNotModifiable;
+}
+
+CondIsEvolution: WOConditional {
+	condition = eoTplOngletSelected.isEvolution; 
+}
+
+CompPageEvalEvol1: CompPageEvalEvol {
+	inputLEvaluation = inputLEvaluation;
+	disabled = isNotModifiable;
+}
+
+
+CondIsFin: WOConditional {
+	condition = eoTplOngletSelected.isFin;
+}
+
+OngletEvaluationFin: OngletEvaluationFin {
+	inEvaluation = inputLEvaluation;
+}
+
+CompTplOnglet1: CompTplOnglet {
+	inTplOnglet = eoTplOngletSelected;
+	inFiche = inputLEvaluation;
+	inDisabled = isNotModifiable;
+}

@@ -1,0 +1,61 @@
+<webobject name = "BtnNeFaitRien"/>
+Affectations : 
+<label><webobject name="RadioFuture"/>Futures</label>
+<label><webobject name="RadioActuelle"/>Actuelles</label>
+<label><webobject name="RadioAncienne"/>Anciennes</label>
+<br/>
+<b>Nom/Pr&eacute;nom : </b><webobject name="TFNomPrenom"/><BR>
+&nbsp;&nbsp;&nbsp;
+<font class="textNote">
+<label><webobject name = "ChkShowAffectationAvecOccupations"/> Afficher les affectations d&eacute;j&agrave; occup&eacute;es</label>
+</font>
+<br/>
+<webobject name = "CondHasResultat">
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+	<tr>
+		<td>
+			<table border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tr class="listboxHeader">
+					<th>Agent</th>
+					<th>D&eacute;but</th>
+					<th>Fin</th>
+					<th>Quotit&eacute;</th>
+					<th></th>
+				</tr>
+				<webobject name="RepAffectation">
+				<tr class="listboxLine">
+					<td>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedOpen"/></webobject>
+						<webobject name="StrAffectationIndividu"/>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedClose"/></webobject>
+					</td>
+					<td>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedOpen"/></webobject>
+						<webobject name="StrAffectationDDebut"/>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedClose"/></webobject>
+					</td>
+					<td>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedOpen"/></webobject>
+						<webobject name="StrAffectationDFin"/>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedClose"/></webobject>
+					</td>
+					<td align="center">
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedOpen"/></webobject>
+						<webobject name="StrAffectationQuotite"/>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedClose"/></webobject>
+					</td>
+					<td>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedOpen"/></webobject>
+						<webobject name="LnkSelectAffectation"><b>=&gt;</b></webobject>
+						<webobject name = "CondIsTheAffectationSelected"><webobject name = "StrBaliseSelectedClose"/></webobject>
+					</td>
+				</tr>
+				</webobject>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>
+<webobject name = "CondNotHasResultat">
+	<font class="textError">&lt;Aucune affectation ne r&eacute;pond &agrave; ces crit&egrave;res&gt;</font>
+</webobject>

@@ -1,0 +1,143 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EOActivite"; 
+            name = Activite; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.grhum.EOBap"; name = Bap; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOBapCorps"; 
+            name = BapCorps; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EOCompetence"; 
+            name = Competence; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.grhum.EOCorps"; name = Corps; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EODomaineCompetence"; 
+            name = DomaineCompetence; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EOEmploiType"; 
+            name = EmploiType; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EOFamilleProfessionnelle"; 
+            name = FamilleProfessionnelle; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOFctSilland"; 
+            name = FctSilland; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOFormationPersonnel"; 
+            name = FormationPersonnel; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.grhum.EOGrade"; name = Grade; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOGrhumRepartStructure"; 
+            name = GrhumRepartStructure; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOIndividu"; 
+            name = Individu; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EONiveauCompetence"; 
+            name = NiveauCompetence; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOPhotosEmployesGrhum"; 
+            name = PhotosEmployesGrhum; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOReferensActivites"; 
+            name = ReferensActivites; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOReferensCompetences"; 
+            name = ReferensCompetences; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOReferensCorps"; 
+            name = ReferensCorps; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOReferensDcp"; 
+            name = ReferensDcp; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOReferensEmplois"; 
+            name = ReferensEmplois; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOReferensFp"; 
+            name = ReferensFp; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EORepartEmploiActivite"; 
+            name = RepartEmploiActivite; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.old.EORepartEmploiCompetence"; 
+            name = RepartEmploiCompetence; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EORepartSillandLolf"; 
+            name = RepartLolfSilland; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EORepartTypeGroupe"; 
+            name = RepartTypeGroupe; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOStructure"; 
+            name = Structure; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOTypeContratTravail"; 
+            name = TypeContratTravail; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOTypePopulation"; 
+            name = TypePopulation; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOTypeUniteTemps"; 
+            name = TypeUniteTemps; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVPersonnel"; 
+            name = VPersonnel; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVPersonnelActuel"; 
+            name = VPersonnelActuel; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVPersonnelActuelEns"; 
+            name = VPersonnelActuelEns; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVPersonnelActuelNonEns"; 
+            name = VPersonnelActuelNonEns; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVPersonnelNonEns"; 
+            name = VPersonnelNonEns; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVReferens"; 
+            name = VReferens; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.grhum.EOVService"; 
+            name = VService; 
+        }
+    ); 
+    userInfo = {modelId = GRHUM; }; 
+}

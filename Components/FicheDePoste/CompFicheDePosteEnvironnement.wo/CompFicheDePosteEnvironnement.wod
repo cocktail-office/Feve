@@ -1,0 +1,281 @@
+StrComposante: WOString {
+	value = inputLaFicheDePoste.toPoste.toStructure.toComposante.llStructure;
+}
+
+StrStructure: WOString {
+	value = inputLaFicheDePoste.toPoste.toStructure.llStructure;
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+YPanelAvertissement1: YPanelAvertissement {
+}
+
+StrErrorMessage: WOString {
+	escapeHTML = false;
+	value = errorMessage;
+}
+
+GenericContainer1: WOGenericContainer {
+	elementName = "A";
+	name = ANCRE_MISSION_COMPOSANTE;
+}
+
+GenericContainer2: WOGenericContainer {
+	elementName = "A";
+	name = ANCRE_MISSION_SERVICE;
+}
+
+TFNewMissionComposante: WOTextMaxSize {
+	value = newMissionComposante;
+	disabled = isDisabledTexteMissionComposante;
+	maxSize = 2000;
+}
+
+
+
+CondNotIsModeModifMissionComposante: WOConditional {
+	condition = isModeModifMissionComposante;
+	negate = true;
+}
+
+CondNotIsDisabledBtnModifMissionComposante: WOConditional {
+	condition = isDisabledBtnModifMissionComposante;
+	negate = true;
+}
+
+BtnActiverModeModifMissionComposante: WOImageButton {
+	action = activerModeModifMissionComposante;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Modifier la mission de la composante";
+}
+
+CondIsModeModifMissionComposante: WOConditional {
+	condition = isModeModifMissionComposante;
+}
+
+BtnEnregistrerMissionComposante: WOImageButton {
+	action = enregistrerMissionComposante;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Valider la modification de la mission de la composante";
+}
+
+BtnAnnulerModifMissionComposante: WOImageButton {
+	action = annulerModifMissionComposante;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Annuler les modifications de la mission de la composante et repasser en mode consultation";
+}
+
+GenericContainer3: WOGenericContainer {
+	elementName = "A";
+	name = ANCRE_PROJET_SERVICE;
+}
+
+TFNewMissionService: WOTextMaxSize {
+	value = newMissionService;
+	disabled = isDisabledTexte2;
+	maxSize = 2000;	
+}
+
+CondNotIsModeModif2: WOConditional {
+	condition = isModeModif2;
+	negate = true;
+}
+
+CondNotIsDisabledBtnModif2: WOConditional {
+	condition = isDisabledBtnModif2;
+	negate = true;
+}
+
+BtnActiverModeModif2: WOImageButton {
+	action = activerModeModif2;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Modifier la mission du service";
+}
+
+CondIsModeModif2: WOConditional {
+	condition = isModeModif2;
+}
+
+BtnEnregistrerMissionService: WOImageButton {
+	action = enregistrerMissionService;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Valider la modification de la mission du service";
+}
+
+BtnAnnulerModifMissionService: WOImageButton {
+	action = annulerModifMissionService;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Annuler les modifications de la mission du service et repasser en mode consultation";
+}
+
+GenericContainer4: WOGenericContainer {
+	elementName = "A";
+	name = ANCRE_MISSION_POSTE;
+}
+
+TFNewProjetService: WOTextMaxSize {
+	value = newProjetService;
+	disabled = isDisabledTexte3;
+	maxSize = 2000;
+}
+
+CondNotIsDisabledBtnModif3: WOConditional {
+	condition = isDisabledBtnModif3;
+	negate = true;
+}
+
+CondNotIsModeModif3: WOConditional {
+	condition = isModeModif3;
+	negate = true;
+}
+
+BtnActiverModeModif3: WOImageButton {
+	action = activerModeModif3;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Modifier le projet du service";
+}
+
+CondIsModeModif3: WOConditional {
+	condition = isModeModif3;
+}
+
+BtnEnregistrerProjetService: WOImageButton {
+	action = enregistrerProjetService;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Valider la modification du projet de service";
+}
+
+BtnAnnulerModifProjetService: WOImageButton {
+	action = annulerModifProjetService;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Annuler les modifications du projet de service et repasser en mode consultation";
+}
+
+GenericContainer5: WOGenericContainer {
+	elementName = "A";
+	name = ANCRE_CONTEXTE_TRAVAIL;
+}
+
+TFNewMissionPoste: WOTextMaxSize {
+	value = newMissionPoste;
+	disabled = isDisabledTexte4;
+	maxSize = 2000;
+}
+
+CondNotIsDisabledBtnModif4: WOConditional {
+	condition = isDisabledBtnModif4;
+	negate = true;
+}
+
+CondNotIsModeModif4: WOConditional {
+	condition = isModeModif4;
+	negate = true;
+}
+
+BtnActiverModeModif4: WOImageButton {
+	action = activerModeModif4;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Modifier les missions du poste";
+}
+
+CondIsModeModif4: WOConditional {
+	condition = isModeModif4;
+}
+
+BtnEnregistrerMissionPoste: WOImageButton {
+	action = enregistrerMissionPoste;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Valider la modification des missions du poste";
+}
+
+BtnAnnulerModifMissionPoste: WOImageButton {
+	action = annulerModifMissionPoste;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Annuler les modifications du missions du poste et repasser en mode consultation";
+}
+
+TFNewContexteTravail: WOTextMaxSize {
+	value = newContexteTravail;
+	disabled = isDisabledTexte5;
+	maxSize = 2000;
+}
+
+CondNotIsDisabledBtnModif5: WOConditional {
+	condition = isDisabledBtnModif5;
+	negate = true;
+}
+
+CondNotIsModeModif5: WOConditional {
+	condition = isModeModif5;
+	negate = true;
+}
+
+BtnActiverModeModif5: WOImageButton {
+	action = activerModeModif5;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Modifier le contexte et l'environnement de travail";
+}
+
+CondIsModeModif5: WOConditional {
+	condition = isModeModif5;
+}
+
+BtnEnregistrerContexteTravail: WOImageButton {
+	action = enregistrerContexteTravail;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Valider les modifications du contexte et de l'environnement de travail";
+}
+
+BtnAnnulerModifContexteTravail: WOImageButton {
+	action = annulerModifContexteTravail;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";	
+	title = "Annuler les modifications du contexte et de l'environnement de travail";
+}

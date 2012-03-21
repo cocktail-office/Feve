@@ -1,0 +1,100 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ENP_APPRECIATION_GENERALE"; 
+            externalType = VARCHAR2; 
+            name = enpAppreciationGenerale; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "ENP_KEY"; 
+            externalType = NUMBER; 
+            name = enpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ENP_PROMO_CORPS"; 
+            externalType = NUMBER; 
+            name = enpPromotionCorps; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ENP_PROMO_CORPS_REFUS_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = enpPromotionCorpsRefusMotif; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ENP_PROMO_GRADE"; 
+            externalType = NUMBER; 
+            name = enpPromotionGrade; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ENP_PROMO_GRADE_REFUS_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = enpPromotionGradeRefusMotif; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ENP_REDUC_ECHELON"; 
+            externalType = NUMBER; 
+            name = enpReductionEchelon; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ENP_REDUC_REFUS_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = enpReductionEchelonRefusMotif; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (enpKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOEvaluationNoticePromotion"; 
+    classProperties = (
+        enpAppreciationGenerale, 
+        enpPromotionCorps, 
+        enpPromotionCorpsRefusMotif, 
+        enpPromotionGrade, 
+        enpPromotionGradeRefusMotif, 
+        enpReductionEchelon, 
+        enpReductionEchelonRefusMotif, 
+        toEvaluation
+    ); 
+    externalName = "MANGUE.EVALUATION_NOTICE_PROMO"; 
+    fetchSpecificationDictionary = {}; 
+    name = EvaluationNoticePromotion; 
+    primaryKeyAttributes = (enpKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }
+    ); 
+}

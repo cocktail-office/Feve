@@ -1,0 +1,192 @@
+RepBloc: WORepetition {
+	list = eoTplBlocArray;
+	item = tplBlocItem;
+}
+
+AncreBloc: WOGenericContainer {
+	elementName = "a";
+	name = tplBlocItem.anchorName;
+}
+
+CondIsFacultatif: WOConditional {
+	condition = tplBlocItem.isFacultatif;
+}
+
+ChkIsActifBlocFacultatif: WOCheckBox {
+	checked = IsActifBlocFacultatif;
+	onClick = "javascript:this.form.submit();";
+	title = "Cochez pour activer ce bloc";
+}
+
+BaliseLabelStart: WOString {
+	value = "<label>";
+	escapeHTML = false;
+}
+
+BaliseLabelEnd: WOString {
+	value = "</label>";
+	escapeHTML = false;
+}
+
+CondIsGreyBlocItemTitle: WOConditional {
+	condition = isGreyBlocItemTitle;
+}
+
+CondNotIsGreyBlocItemTitle: WOConditional {
+	condition = isGreyBlocItemTitle;
+	negate = true;
+}
+
+StrBlocTitle: WOString {
+	value = tplBlocItem.tblLibelle;
+}
+
+StrTblCommentaire: WOString {
+	value = tplBlocItem.tblCommentaire;
+	escapeHTML = false;
+}
+
+CondIsBlocNatureDynamique: WOConditional {
+	condition = tplBlocItem.isBlocNatureDynamique;
+}
+
+CondIsBlocNatureFormation: WOConditional {
+	condition = tplBlocItem.isBlocNatureFormation;
+}
+
+CondIsBlocNatureFormationSouhaitee: WOConditional {
+	condition = tplBlocItem.isBlocNatureFormationSouhaitee;
+}
+
+CondIsBlocNatureNoticeDePromotions: WOConditional {
+	condition = tplBlocItem.isBlocNatureNoticeDePromotions;
+}
+
+CompTplBlocFormation: CompTplBlocFormation {
+	inDisabled = inDisabled;
+	inFiche = ^inFiche;
+	inTplBloc = tplBlocItem;
+	entityName = "IndividuFormations";
+}
+
+CompTplBlocFormationSouhaitee: CompTplBlocFormation { 
+	inDisabled = inDisabled;
+	inFiche = ^inFiche;
+	inTplBloc = tplBlocItem;
+	entityName = "RepartFormationSouhaitee";
+}
+
+CompNoticePromotion: CompNoticePromotion { 
+	inDisabled = inDisabled;
+	inFiche = ^inFiche;
+	inTplBloc = tplBlocItem;
+}
+
+CondIsShowItemList: WOConditional {
+	condition = isShowItemList;
+}
+
+RepItem: WORepetition {
+	list = tplBlocItem.tosTplItemSorted;
+	item = tplItemItem;
+}
+
+StrItemTitle: WOString {
+	value = tplItemItem.titLibelle;
+}
+
+InfoToolTipTplItemItem: InfoToolTip {
+	inText = tplItemItem.titCommentaire;
+}
+
+CondIsListe: WOConditional {
+	condition = tplItemItem.isListe;
+}
+
+ObserverPopUpTplItemValeur: AjaxObserveField {
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+PopUpTplItemValeur: WOPopUpButton {
+	list = tplItemValeurList;
+	item = tplItemValeurItem;
+	displayString = tplItemValeurItem.tivLibelle;
+	selection = tplItemValeurSelected;
+	noSelectionString = "-- choix --";
+	disabled = disabled;
+	title = "Selectionnez la valeur attendue";
+	
+}
+
+CondIsTexteStatique: WOConditional {
+	condition = tplItemItem.isTexteStatique;
+}
+
+CondNotIsTexteStatique: WOConditional {
+	condition = tplItemItem.isTexteStatique;
+	negate = true;
+}
+
+StrTexteStatique: WOString {
+	value = tplItemItem.titCommentaire;
+	escapeHTML = false;
+}
+
+CondIsChampLibre: WOConditional {
+	condition = tplItemItem.isChampLibre;
+}
+
+TextChampLibre: WOTextMaxSize {
+	value = strChampLibre;
+	disabled = isDisabledChampLibre;
+	maxSize = 2000;	
+}
+
+CondShowBtnSauvegardeChampLibre: WOConditional {
+	condition = showBtnSauvegardeChampLibre;
+}
+
+ImgBtnDoSaveChampLibre: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = doSaveChampLibre;
+	title = "Cliquez ici pour enregistrer vos modifications";
+	name = "BtnDoSaveChampLibre";
+}
+
+
+ImgAnnuler: WOImage {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+	border = 0;
+}
+
+CondShowLnkCancel: WOConditional {
+	condition = showLnkCancel;
+}
+
+LnkCancel: WOHyperlink {
+	action = doCancel;
+	title = "Cliquez ici pour annuler vos modifications";
+}
+
+CondShowLnkEditChampLibre: WOConditional {
+	condition = showLnkEditChampLibre;
+}
+
+LnkEditChampLibre: WOHyperlink {
+	action = editChampLibre;
+	title = "Cliquez ici pour modifier la valeur de ce champ";
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	border = "0";
+	width = "16";
+	height = "16";
+}

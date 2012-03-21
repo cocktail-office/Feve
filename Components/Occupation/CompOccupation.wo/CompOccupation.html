@@ -1,0 +1,70 @@
+<webobject name = "CondCanViewOccupationsPoste">
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0">
+  <tr>
+    <td>
+      <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+				<tr class = "listboxHeader">
+				  <th colspan = "5"><font class="subTitle">Affectations li&eacute;es au poste</font></th>
+				</tr>
+				
+				
+				<webobject name = "CondIsViewing">
+					<tr class = "listboxHeader">
+	          <th>
+	            <webobject name = "TipAffectation">Agent <webobject name = "ImgInfo" /></webobject>
+	          </th>
+	          <th>Quotit&eacute;</th>
+	          <th>D&eacute;but</th>
+	          <th>Fin</th>
+	        <th>&nbsp;</th>
+	        </tr>
+	        <webobject name = "RepAffectationDetail">
+	          <webobject name = "TROccupation">
+	            <td align="left"><webobject name = "StrAffectationOccupant" /></td>
+	            <td align="center"><webobject name = "StrAffectationQuotite" />%</td>
+	            <td align="left">
+	        	<webobject name = "RougeSiChevauchement">
+	      	  	<webobject name = "BarreSiDateDifferentes">
+	            	<webobject name = "StrAffectationDebut" />
+	          	</webobject>
+	         		<webobject name = "CondIsDateDifferentes">
+	        	 		<webobject name = "StrAffectationDetailDebut"/>
+	        		</webobject>
+	        	</webobject>
+	          </td>
+	          <td align="left">
+	        	<webobject name = "RougeSiChevauchement">
+	        		<webobject name = "BarreSiDateDifferentes">
+	            	<webobject name = "StrAffectationFin" />
+	          	</webobject>
+	         		<webobject name = "CondIsDateDifferentes">
+	        	 		<webobject name = "StrAffectationDetailFin"/>
+	        		</webobject>
+	        	</webobject>
+	          </td>
+	          <td align = "center">
+	         	<webobject name = "CondCanUpdatePoste">
+	  	                <webobject name = "LnkToUpdateOccupation"><webobject name = "ImgUpd" /></webobject>
+	              <webobject name = "LnkDelOccupation"><webobject name = "ImgDel" /></webobject>
+	              </webobject>
+	          </td>
+	          </webobject>
+	        </webobject>
+					<webobject name = "CondCanUpdatePoste">
+					<tr class="feveTRAjoutNouveau"><th colspan = "5"><webobject name = "LnkToAddOccupation"> <webobject name = "ImgAdd" /> Affecter un nouvel agent sur ce poste</webobject></th></tr>
+					</webobject>
+				</webobject>
+				
+				<webobject name="CondIsAdding">
+					<tr><td><table class="boxContents"><tr><td><webobject name = "CompOccupationAdd1"/></td></tr></table></td></tr>
+				</webobject>
+				
+				<webobject name="CondIsUpdating">
+					<tr><td><table class="boxContents"><tr><td><webobject name = "CompOccupationUpdate1"/></td></tr></table></td></tr>
+				</webobject>
+     
+      </table>
+    </td>
+  </tr>
+</table>
+</webobject>

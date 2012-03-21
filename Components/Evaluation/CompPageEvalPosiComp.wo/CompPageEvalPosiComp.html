@@ -1,0 +1,174 @@
+<webobject name="btnSauver"/>
+
+
+<webobject name = "JsFunctionSelectionCompetencesAnnexes"/>
+
+<TABLE CLASS="listboxBorder" BORDER=0 CELLPADDING=1 CELLSPACING=0>
+	<TR>
+		<TH>
+			<A NAME="compPrincipales"></a>
+			<font class="titleInverse"><WEBOBJECT NAME="StrFdpCount"/>&nbsp;Fiche(s)	de poste associ&eacute;e(s) </font>
+			<webobject name = "TipInfoDernieresFiche"><webobject name = "ImgInfo"/></webobject>
+		</th>
+	</TR>
+	<tr>
+		<td>
+		<TABLE BORDER=0 CELLPADDING=2 CELLSPACING=1 WIDTH=100%>
+			<TR CLASS="listboxHeader">
+				<th>Comp&eacute;tences issues de la (des) fiche(s) de poste de l'agent</th>
+				<th width = "1%" nowrap>Positionnement Agent</th>
+			</tr>
+			<webobject name="RepFdp">
+			<tr class="listboxLine">
+				<TD COLSPAN=2>
+				<table width="100%">
+				
+					<tr>
+						<th colspan="2">	
+							<I>Fiche : <B><webobject	name="StrFicheDePosteEmploiType"/></B></I>
+							<webobject name = "TipFicheDePosteEmploiType"><webobject name = "ImgInfo"/></webobject>
+						</th>
+					</tr>
+
+					<webobject name = "CondHasRepartFdpComp">
+
+						<tr class="listboxLine">
+							<td align="center" colspan = "2">
+								<font class="subTitle">Comp&eacute;tences &quot;REFERENS&quot;</font>
+							</td>
+						</tr>
+
+						<webobject name="RepRepartFdpComp">
+						<tr class="listboxLine">
+							<td align="left">
+								&raquo;&nbsp;<webobject name="CompCompetenceDisplay1"/>
+							</td>
+							<td align="right" width = "1%" nowrap>
+								<webobject name = "ObserverPopUpTousLesNiveauCompetence">
+									<webobject name="PopUpTousLesNiveauCompetence"/>
+								</webobject>
+							</td>
+						</tr>
+						</webobject>
+
+					</webobject>
+
+					<webobject name = "CondIsFicheDePosteSaisieCompetenceAutre">
+						<webobject name = "CondHasCompetencesAutres">
+	
+							<tr class="listboxLine">
+								<td align="center" colspan = "2"><font class="subTitle">Comp&eacute;tences &quot;autres&quot;</font></td>
+							</tr>
+	
+							<webobject name="RepRepartCompetencesAutres">
+							<tr class="listboxLine">
+								<td align="left">&raquo;&nbsp;<webobject name="StrCompetenceAutre"/></td>
+								<td align="right" width = "1%" nowrap>
+									<webobject name = "ObserverPopUpTousLesNiveauCompetenceAutre">
+										<webobject name="PopUpTousLesNiveauCompetenceAutre"/>
+									</webobject>
+								</td>
+							</tr>
+							</webobject>
+	
+						</webobject>
+					</webobject>
+
+				</table>
+				</TD>
+			</tr>
+			</webobject>
+		</table>
+		</td>
+	</tr>
+</table>
+<webobject name = "CondShowBlocCompetenceAnnexes">
+<br>
+<TABLE CLASS="listboxBorder" BORDER=0 CELLPADDING=1 CELLSPACING=0>
+	<TR>
+		<td>
+		<table BORDER=0 CELLPADDING=2 CELLSPACING=1 WIDTH=100%>
+			<tr class="listboxHeader">
+				<th>
+					<A NAME=compAnnexes>Comp&eacute;tences annexes rep&eacute;r&eacute;es</A>
+				</th>
+				<webobject name = "CondShowSuppressionCompetencesAnnexes">
+				<td>
+					<webobject name = "ChkSelectAllCompetenceAnnexes"/>
+				</td>
+				</webobject>
+			</tr>
+			<webobject name="RepNouvelleComp">
+			<tr class="listboxLine">
+				<td><webobject name="CompCompetenceDisplay2"/></td>
+				<webobject name = "CondShowSuppressionCompetencesAnnexes">
+				<td align=RIGHT width=1%>
+					<webobject name="ChkSupprimerCompetence"/>
+				</td>
+				</webobject>
+			</tr>
+			</webobject>
+			<webobject name="CondShowLigneAjouter">
+			<tr class="listboxLine">
+				<td colspan = "2">
+					<table border="0" cellpadding="1" cellspacing="0" width="100%">
+						<tr>
+							<td>
+								<webobject name = "CompBrowserReferensNouvelleCompetence">
+									<webobject name="ImgBtnAssocierNouvelleCompetence"/>
+								</webobject>
+							</td>
+							<td valign="bottom">
+								<table><tr><td><webobject name="BtnAnnulerAssocierNouvelleCompetence"/></td></tr></table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</webobject>
+			<webobject name="CondShowLienAjouter">
+			<tr class="feveTRAjoutNouveau">
+				<th><webobject name = "ImgAjouter"/><webobject	name="LnkActiverModeAjouter">[Ajouter une nouvelle	comp&eacute;tence]</webobject></th>
+				<webobject name = "CondShowSuppressionCompetencesAnnexes">
+				<th>
+					<webobject name = "BtnSupprimerCompetencesAnnexesSelectionnees"/>
+				</th>
+				</webobject>
+			</tr>
+			</webobject>
+		</table>
+		</td>
+	</TR>
+</table>
+</webobject>
+<webobject name = "CondShowBlocChampLibre">
+<br>
+<TABLE CLASS="listboxBorder" BORDER=0 CELLPADDING=1 CELLSPACING=0 width="1%">
+	<TR>
+		<td width="100%">
+		<table BORDER=0 CELLPADDING=2 CELLSPACING=1 WIDTH=100%>
+			<tr class="listboxHeader">
+				<th colspan="2"><A NAME=champLibre>&nbsp;Champ libre</A></TH>
+			</tr>
+			<tr class="listboxLine">
+				<td align=LEFT><webobject name=Text1></webobject></td>
+				<td valign="bottom">
+					<webobject name=Conditional4>
+						<webobject name = "CondNotIsDisabled">
+							<webobject name = "LnkModifierChampLibre">
+								<webobject name="ImgModifier"/>
+							</webobject>
+						</webobject>
+					</webobject>
+					<webobject name=Conditional3>
+						<webobject name="ImgBtnEnregistrerChampLibre"/><br>
+						<webobject name="ImgBtnAnnulerEnregistrerChampLibre"/>
+					</webobject>
+				</td>
+			</tr>
+		</table>
+	</td>
+	</tr>
+</table>
+<br>
+</webobject>

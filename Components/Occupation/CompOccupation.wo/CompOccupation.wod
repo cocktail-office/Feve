@@ -1,0 +1,142 @@
+CondIsViewing: WOConditional {
+	condition = ctrl.isViewing;
+}
+
+CondCanViewOccupationsPoste: WOConditional {
+	condition = ctrl.canViewOccupationsPoste;
+}
+
+CondCanUpdatePoste: WOConditional {
+	condition = ctrl.canUpdatePoste;
+}
+
+
+TipAffectation: CktlToolTip {
+	htmlText = "Occupants successifs du poste.<br><br>Le meme nom peut apparaitre plusieurs fois si l'agent est affecte a plusieurs reprise au service.<br/>Cette liste provient des affectations de l'application de gestion de personnel (GEPETO/Mangue ou Harp&egrave;ge)<br><br>Le nom est en <b>GRAS</b> si c'est l'occupation actuelle, ou bien si c'est sa derni&egrave;re occupation lors de sa fermeture.<br><br>Il est en <i>ITALIQUE</i> pour une occupation ancienne.";
+}
+
+
+ImgAdd: WOImage {
+	border = 0;
+	filename = "images/plus16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+RepAffectationDetail: WORepetition {
+	item = ctrl.affectationDetailItem;
+	list = ctrl.affectationDetailList;
+}
+
+TROccupation: WOGenericContainer {
+	elementName = "tr";
+	class = classTrOccupation;
+}
+
+
+StrAffectationOccupant: WOString {
+	value = ctrl.affectationDetailItem.toAffectation.toIndividu.nomPrenom;
+	escapeHTML = false;
+}
+
+StrAffectationQuotite: WOString {
+	value = ctrl.affectationDetailItem.toAffectation.numQuotAffectation;
+	valueWhenEmpty = "&lt;vide&gt;";
+}
+
+
+RougeSiChevauchement: WOConditionalGenericContainer {
+	condition = ctrl.affectationDetailItem.isChevauchementAutreAffectationDetailMemeAgent;
+	elementName = "font";
+	elementStyle = "color:red";
+}
+
+BarreSiDateDifferentes: WOConditionalGenericContainer {
+	condition = ctrl.affectationDetailItem.isAdeDateDiffAffectation;
+	elementName = "s";
+}
+StrAffectationDebut: WOString {
+	value = ctrl.affectationDetailItem.toAffectation.dDebAffectation;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "&lt;pas de d&eacute;but&gt";
+}
+
+StrAffectationDetailDebut: WOString {
+	value = ctrl.affectationDetailItem.adeDDebut;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "&lt;pas de d&eacute;but&gt";
+}
+
+StrAffectationFin: WOString {
+	value = ctrl.affectationDetailItem.toAffectation.dFinAffectation;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "&lt;pas de fin&gt";
+}
+
+StrAffectationDetailFin: WOString {
+	value = ctrl.affectationDetailItem.adeDFin;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "&lt;pas de fin&gt";
+}
+
+CondIsDateDifferentes: WOConditional {
+	condition = ctrl.affectationDetailItem.isAdeDateSameAffectation;
+	negate = true;
+}
+
+ImgUpd: WOImage {
+	border = "0";
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+ImgDel: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkDelOccupation: WOHyperlink {
+	action = supprimerOccupation;
+	title = "Supprimer cette occupation";
+}
+
+CondIsAdding: WOConditional {
+	condition = ctrl.isAdding;
+}
+
+CondIsUpdating: WOConditional {
+	condition = ctrl.isUpdating;
+}
+
+LnkToAddOccupation: WOHyperlink {
+	action = ctrl.toAddOccupation;
+	title = "creation d'une nouvelle occupation";
+}
+
+LnkToUpdateOccupation: WOHyperlink {
+	action = ctrl.toUpdateOccupation;
+	title = "Modifier les dates li&eacute;es &agrave; cette occupation / affectation";
+}
+
+CompOccupationAdd1: CompOccupationAdd {
+	ctrl = ctrl.compOccupationAddCtrl;	
+}
+
+CompOccupationUpdate1: CompOccupationUpdate {
+	ctrl = ctrl.compOccupationUpdateCtrl;		
+}

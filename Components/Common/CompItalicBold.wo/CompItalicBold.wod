@@ -1,0 +1,14 @@
+StrPrefixContent: WOString {
+	value = prefixContent;
+	escapeHTML = false;
+}
+
+WOComponentContent1: WOComponentContent {
+	
+}
+
+StrSuffixContent: WOString {
+	value = suffixContent;
+	escapeHTML = false;
+}
+

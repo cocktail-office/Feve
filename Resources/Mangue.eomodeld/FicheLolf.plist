@@ -1,0 +1,97 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EXE_ORDRE"; 
+            externalType = NUMBER; 
+            name = exeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FLO_D_DEBUT"; 
+            externalType = DATE; 
+            name = floDDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLO_D_FIN"; 
+            externalType = DATE; 
+            name = floDFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FLO_KEY"; 
+            externalType = NUMBER; 
+            name = floKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "POS_KEY"; 
+            externalType = NUMBER; 
+            name = posKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (floKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOFicheLolf"; 
+    classProperties = (
+        floDDebut, 
+        floDFin, 
+        toPoste, 
+        dCreation, 
+        dModification, 
+        toExercice, 
+        tosRepartFloSilland
+    ); 
+    externalName = "MANGUE.FICHE_LOLF"; 
+    internalInfo = {"_clientClassPropertyNames" = (floDDebut, floDFin); }; 
+    name = FicheLolf; 
+    primaryKeyAttributes = (floKey); 
+    relationships = (
+        {
+            destination = "FwkJefyAdmin_Exercice"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = exeOrdre; sourceAttribute = exeOrdre; }); 
+            name = toExercice; 
+        }, 
+        {
+            destination = Poste; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = posKey; }); 
+            name = toPoste; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFloSilland; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = floKey; sourceAttribute = floKey; }); 
+            name = tosRepartFloSilland; 
+            ownsDestination = Y; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_Fiche"; }; 
+}

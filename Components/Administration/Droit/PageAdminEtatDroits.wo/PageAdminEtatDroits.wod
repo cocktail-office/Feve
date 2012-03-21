@@ -1,0 +1,123 @@
+StrDroitDgAllObjectsCount: WOString {
+	value = droitDg.allObjects.@count;
+	valueWhenEmpty = 0;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = ctrl.printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+CondIsDroitItemJustDeleted: WOConditional {
+	condition = ctrl.isDroitItemJustDeleted;
+}
+
+CktlNote1: CktlNote {
+	
+}
+
+StrMessageDroitItemDeleted: WOString {
+	value = ctrl.strMessageDroitItemDeleted;
+	escapeHTML = false;
+}
+
+FormEtatDroits: WOForm {
+	name = "FormEtatDroits";
+	multipleSubmit = "true";
+}
+
+CRINavBarDGRecords: YCRINavigationBar {
+	displayGroup = droitDg;
+	longListLimit = 30;
+}
+
+LnkDoSortTitulaire: WOHyperlink {
+	action = ctrl.doSortTitulaire;
+	title = "classer alphabetiquement par le nom du titulaire";
+}
+
+PopUpTitulaire: WOPopUpButton {
+	list = ctrl.titulaireList;
+	item = ctrl.titulaireItem;
+	selection = ctrl.titulaireSelected;
+	displayString = ctrl.titulaireItem.nomPrenom;
+	onchange = "this.form.submit();";
+	noSelectionString = "-- tous --";
+}
+
+LnkDoSortTypeAcces: WOHyperlink {
+	action = ctrl.doSortTypeAcces;
+	title = "classer alphabetiquement par le libelle du type d'acces";
+}
+
+PopUpTypeDroitAcces: WOPopUpButton {
+	list = ctrl.typeDroitAccesList;
+	item = ctrl.typeDroitAccesItem;
+	selection = ctrl.typeDroitAccesSelected;
+	displayString = ctrl.typeDroitAccesItem.dtaLibelle;
+	onchange = "this.form.submit();";
+	noSelectionString = "-- tous --";
+}
+
+LnkDoSortTypeCible: WOHyperlink {
+	action = ctrl.doSortTypeCible;
+	title = "classer alphabetiquement par le libelle du type de cible";
+}
+
+PopUpTypeDroitCible: WOPopUpButton {
+	list = ctrl.typeDroitCibleList;
+	item = ctrl.typeDroitCibleItem;
+	selection = ctrl.typeDroitCibleSelected;
+	displayString = ctrl.typeDroitCibleItem.dtcLibelle;
+	onchange = "this.form.submit();";
+	noSelectionString = "-- tous --";
+}
+
+LnkDoSortCibleDisplay: WOHyperlink {
+	action = ctrl.doSortCibleDisplay;
+	title = "classer alphabetiquement par le libelle de la cible";
+}
+
+BtnDoDeleteDisplayedDroit: WOImageButton {
+	action = ctrl.doDeleteDisplayedDroit;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+	border = "0";
+	title = "Revoquer la liste des droits affich&eacute;s sur cette page";
+}
+
+RepDroitDgDisplayedObjects: WORepetition {
+	list = droitDg.displayedObjects;
+	item = ctrl.droitItem;
+}
+
+StrDroitTitulaire: WOString {
+	value = ctrl.droitItem.toIndividu.nomPrenom;
+}
+
+StrDroitCibleLibelle: WOString {
+	value = ctrl.droitItem.cibleDisplay;
+}
+
+StrDroitTypeAcces: WOString {
+	value = ctrl.droitItem.toTypeDroitAcces.dtaLibelle;
+}
+
+StrDroitTypeCible: WOString {
+	value = ctrl.droitItem.toTypeDroitCible.dtcLibelle;
+}
+
+
+BtnDoDeleteDroit: WOImageButton {
+	action = ctrl.doDeleteDroit;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+	border = "0";
+	title = "Revoquer ce droit";
+}

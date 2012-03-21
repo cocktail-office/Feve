@@ -1,0 +1,82 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EPE_D_DEBUT"; 
+            externalType = DATE; 
+            name = epeDDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "EPE_D_FIN"; 
+            externalType = DATE; 
+            name = epeDFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "EPE_KEY"; 
+            externalType = NUMBER; 
+            name = epeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (epeKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOEvaluationPeriode"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        epeDDebut, 
+        epeDFin, 
+        tosDroit, 
+        tosEvaluation, 
+        tosHierarchie
+    ); 
+    externalName = "MANGUE.EVALUATION_PERIODE"; 
+    fetchSpecificationDictionary = {}; 
+    name = EvaluationPeriode; 
+    primaryKeyAttributes = (epeKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Droit; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = droEpeKey; sourceAttribute = epeKey; }); 
+            name = tosDroit; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Evaluation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = epeKey; }); 
+            name = tosEvaluation; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Hierarchie; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = epeKey; }); 
+            name = tosHierarchie; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

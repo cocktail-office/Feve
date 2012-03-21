@@ -1,0 +1,79 @@
+{
+    attributes = (
+        {
+            columnName = "SIL_ENSEIGNANT"; 
+            externalType = CHAR; 
+            name = silEnseignant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SIL_INDICATEUR"; 
+            externalType = VARCHAR2; 
+            name = silIndicateur; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            columnName = "SIL_KEY"; 
+            externalType = NUMBER; 
+            name = silKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SIL_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = silLibelle; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            columnName = "SIL_NON_ENSEIGNANT"; 
+            externalType = CHAR; 
+            name = silNonEnseignant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (silEnseignant, silIndicateur, silKey, silLibelle, silNonEnseignant); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOFctSilland"; 
+    classProperties = (
+        silEnseignant, 
+        silIndicateur, 
+        silLibelle, 
+        silNonEnseignant, 
+        tosRepartFloSillands, 
+        tosRepartSilLolf
+    ); 
+    externalName = "GRHUM.SILLAND"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = SILLAND; }; 
+    name = FctSilland; 
+    primaryKeyAttributes = (silKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFloSilland; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = silKey; sourceAttribute = silKey; }); 
+            name = tosRepartFloSillands; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartLolfSilland; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = silKey; sourceAttribute = silKey; }); 
+            name = tosRepartSilLolf; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

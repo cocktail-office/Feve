@@ -1,0 +1,37 @@
+FormAdminAdministrateur: WOForm {
+	name = "FormAdminAdministrateur";
+	multipleSubmit = "true";
+}
+
+RepRepartStructureDgDisplayedObjects: WORepetition {
+	list = repartStructureDg.displayedObjects;
+	item = ctrl.repartStructureItem;
+}
+
+StrRepartStructureIndividu: WOString {
+	value = ctrl.repartStructureItem.toIndividu.nomPrenom;
+}
+
+BtnDoDeleteRepartStructureItem: WOImageButton {
+	action = ctrl.doDeleteRepartStructureItem;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16"; 
+	border = "0";
+	title = "Revoquer le droit d'administation de cet individu";
+}
+
+FieldSearchNewAdministrateur: FieldSearchIndividu {
+	individu = ctrl.individu;
+}
+
+BtnDoAddAdministrateur: WOImageButton {
+	action = ctrl.doAddAdministrateur;
+	class = "bouton";
+	filename = "images/plus16.gif";
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+	title = "Affecter le droit d'administration &grave; cet individu"; 
+}

@@ -1,0 +1,180 @@
+<div align="center">
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+					<td>
+						<font class="textEntry">P&eacute;riode :</font>
+						<webobject name = "PopupPeriode"/><br/>
+						<webobject name = "ObserverPopupPeriode"/>
+					</td>
+					<td>
+						<webobject name = "PopupService"/>
+						<webobject name = "ObserverPopupService"/>
+					</td>
+					<td>
+						<font class="textEntry">Entretien tenus :</font> 
+						<webobject name = "PopupEntretienTenu"/>
+						<webobject name = "ObserverPopupEntretienTenu"/>
+					</td>
+					<td>
+						<font class="textEntry">Visa RH :</font> 
+						<webobject name = "PopupVisaRh"/>
+						<webobject name = "ObserverPopupVisaRh"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</div>
+
+<br/>
+
+
+<webobject name = "ContainerResultats">
+
+		<center>
+			<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+			<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+			<font class="title">&raquo; <webobject name = "StrTotalPromotion"/></font>
+		</center>
+		<br/>
+	
+	
+		<webobject name = "ObserverFiltres">
+		
+			<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+			  <tr>
+			    <td>
+			      <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+							
+							<tr class = "listboxHeader">
+							
+								<th>
+									<font class="textEntry">Filière :</font> 
+									<webobject name = "PopupPopulation"/>
+								</th>
+										
+								<th>
+									<font class="textEntry">Corps :</font> 
+									<webobject name = "PopupCorps"/>
+								</th>
+	
+								<th>
+									<font class="textEntry">Grade :</font> 
+									<webobject name = "PopupGrade"/>
+								</th>
+								
+								<th>
+									<font class="textEntry">&Eacute;valuateur :</font> 
+									<webobject name = "PopupEvaluateur"/>
+								</th>
+										
+								<th>
+									<font class="textEntry">Réduction d'échelon :</font> 
+									<webobject name = "PopupReductionEchelon"/>
+									
+									<webobject name = "CondIsReductionEchelonOuiSelected">
+										<br>
+										<webobject name = "PopupReductionEchelonFavorable"/>
+									</webobject>
+									
+								</th>
+	
+								<th>
+									<font class="textEntry">Promotion de grade :</font> 
+									<webobject name = "PopupPromotionGrade"/>
+
+									<webobject name = "CondIsPromotionGradeOuiSelected">
+										<br>
+										<webobject name = "PopupPromotionGradeFavorable"/>
+									</webobject>
+									
+								</th>
+	
+								<th>
+									<font class="textEntry">Promotion de corps :</font> 
+									<webobject name = "PopupPromotionCorps"/>
+
+									<webobject name = "CondIsPromotionCorpsOuiSelected">
+										<br>
+										<webobject name = "PopupPromotionCorpsFavorable"/>
+									</webobject>
+								</th>
+								
+							</tr>
+							
+						</table>
+					</td>
+				</tr>
+			</table>
+		
+		</webobject>
+		
+		<br/>
+		
+		<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+		  <tr>
+		    <td>
+					<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+					
+						<tr class = "listboxHeader">
+							<th>
+								<webobject name = "LnkSortEvaluateur">&Eacute;valuateur</webobject>
+							</th>
+							<th>
+								<webobject name = "LnkSortAgent">Agent</webobject>
+							</th>
+							<th>Réduction d'échelon</th>
+							<th>Motif si refus</th>
+							<th>Promotion de grade</th>
+							<th>Motif si refus</th>
+							<th>Promotion de corps</th>
+							<th>Motif si refus</th>
+
+						</tr>
+					
+				
+						<webobject name = "CondHasResult">
+							<webobject name = "RepPromotion">
+								<tr class = "listboxLine">
+									<td align="left">
+										<webobject name = "StrEvaluateur"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrAgent"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrReductionEchelon"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrReductionEchelonRefusMotif"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrPromotionGrade"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrPromotionGradeRefusMotif"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrPromotionCorps"/>
+									</td>
+									<td align="left">
+										<webobject name = "StrPromotionCorpsRefusMotif"/>
+									</td>
+								</tr>
+							</webobject>
+									
+						</webobject>
+								
+			</table>
+			
+		</td>
+	</tr>
+</table>
+	
+
+
+</webobject>

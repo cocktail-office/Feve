@@ -1,0 +1,147 @@
+siHideControlsNO: WOConditional {
+  condition = isHideControls;
+  negate = true;
+}
+
+siPrevPageYES: WOConditional {
+  condition = hasPreviousPage;
+}
+
+siTextModeYES: WOConditional {
+  condition = isTextMode;
+}
+
+linkFirstPage: WOHyperlink {
+  action = clickFirstPage;
+  class = "linkPage";
+  title = "Afficher la premi&egrave;re page";
+}
+
+linkPrevPage: WOHyperlink {
+  action = clickPrevPage;
+  class = "linkPage";
+  title = "Afficher la page pr&eacute;c&eacute;dente";
+}
+
+siTextModeNO: WOConditional {
+  condition = isTextMode;
+  negate = true;
+}
+
+imgFirst: WOImage {
+  border = 0;
+  filename = "img/nav_first.gif";
+  framework = "FwkCktlWebApp";
+}
+
+imgPrev: WOImage {
+  border = 0;
+  filename = "img/nav_prev.gif";
+  framework = "FwkCktlWebApp";
+}
+
+siPrevPageNO: WOConditional {
+  condition = hasPreviousPage;
+  negate = true;
+}
+
+imgFirstDisabled: WOImage {
+  border = 0;
+  filename = "img/nav_firstDisabled.gif";
+  framework = "FwkCktlWebApp";
+}
+
+imgPrevDisabled: WOImage {
+  border = 0;
+  filename = "img/nav_prevDisabled.gif";
+  framework = "FwkCktlWebApp";
+}
+
+siShortPageListNO: WOConditional {
+  condition = isShortPageList;
+  negate = true;
+}
+
+repetPages: WORepetition {
+  item = numPage;
+  list = pagesList;
+}
+
+siCurrentPageNO: WOConditional {
+  condition = isCurrentPage;
+  negate = true;
+}
+
+linkNumPage: WOHyperlink {
+  action = clickNumPage;
+  class = "linkPage";
+  title = "Afficher cette page";
+}
+
+strNumPage: WOString {
+   value = numPage;
+}
+
+siCurrentPageYES: WOConditional {
+  condition = isCurrentPage;
+}
+
+siShortPageListYES: WOConditional {
+  condition = isShortPageList;
+}
+
+PopUpButton1: WOPopUpButton {
+	item = numPage;
+	list = pagesList;
+	selection = currentPageNum;
+	onChange = "javascript:submit();";
+}
+
+strPagesTotal: WOString {
+  value = pagesTotal;
+}
+
+siNextPageYES: WOConditional {
+  condition = hasNextPage;
+}
+
+linkNextPage: WOHyperlink {
+  action = clickNextPage;
+  class = "linkPage";
+  title = "Afficher la page suivante";
+}
+
+linkLastPage: WOHyperlink {
+  action = clickLastPage;
+  class = "linkPage";
+  title = "Afficher la derni&egrave;re page";
+}
+
+imgNext: WOImage {
+  border = 0;
+  filename = "img/nav_next.gif";
+  framework = "FwkCktlWebApp";
+}
+
+imgLast: WOImage {
+  border = 0;
+  filename = "img/nav_last.gif";
+  framework = "FwkCktlWebApp";
+}
+
+siNextPageNO: WOConditional {
+  condition = hasNextPage;
+  negate = true;
+}
+
+imgNextDisabled: WOImage {
+  border = 0;
+  filename = "img/nav_nextDisabled.gif";
+  framework = "FwkCktlWebApp";
+}
+
+imgLastDisabled: WOImage {
+  border = 0;
+  filename = "img/nav_lastDisabled.gif";
+  framework = "FwkCktlWebApp";
+}

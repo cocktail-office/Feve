@@ -1,0 +1,69 @@
+{
+    attributes = (
+        {
+            columnName = "COM_KEY"; 
+            externalType = NUMBER; 
+            name = comKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "COM_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = comLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }
+    ); 
+    attributesUsedForLocking = (comKey, comLibelle); 
+    className = "org.cocktail.feve.eos.modele.grhum.old.EOCompetence"; 
+    classProperties = (
+        comLibelle, 
+        dCreation, 
+        dModification, 
+        tosRepartEmploiCompetence, 
+        tosRepartEnqComp
+    ); 
+    externalName = "GRHUM.COMPETENCE_PROFESSIONNELLE_OLD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (comLibelle); }; 
+    name = Competence; 
+    primaryKeyAttributes = (comKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEmploiCompetence; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = comKey; sourceAttribute = comKey; }); 
+            name = tosRepartEmploiCompetence; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEnqComp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = comKey; sourceAttribute = comKey; }); 
+            name = tosRepartEnqComp; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

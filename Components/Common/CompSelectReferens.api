@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CompSelectReferens" wocomponentcontent="false">
+    <binding defaults="Boolean" name="showActivites"/>
+    <binding defaults="Boolean" name="showCompetences"/>
+    <binding name="referensEmploisOut"/>
+    <binding name="referensEmploisIn"/>
+    <binding defaults="Boolean" name="disabled"/>
+    <binding name="referensActivitesOut"/>
+    <binding name="referensCompetencesOut"/>
+    <binding defaults="Boolean" name="refreshOnChangeEmploiType"/>
+    </wo>
+</wodefinitions>

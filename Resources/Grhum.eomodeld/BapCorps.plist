@@ -1,0 +1,145 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_BAP"; 
+            externalType = VARCHAR2; 
+            name = cBap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "C_BAP_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cBapCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_BAP_FAMILLE"; 
+            externalType = VARCHAR2; 
+            name = cBapFamille; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_BAP_CORPS"; 
+            externalType = VARCHAR2; 
+            name = lcBapCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_BAP_CORPS"; 
+            externalType = VARCHAR2; 
+            name = llBapCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cBap, 
+        cBapCorps, 
+        cBapFamille, 
+        cCorps, 
+        dCreation, 
+        dModification, 
+        lcBapCorps, 
+        llBapCorps
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOBapCorps"; 
+    classProperties = (
+        cBap, 
+        cBapFamille, 
+        cCorps, 
+        dCreation, 
+        dModification, 
+        lcBapCorps, 
+        llBapCorps, 
+        toBap, 
+        toCorps, 
+        tosEmploiType, 
+        tosReferensEmplois
+    ); 
+    externalName = "GRHUM.BAP_CORPS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cBap, 
+            cBapCorps, 
+            cBapFamille, 
+            cCorps, 
+            dCreation, 
+            dModification, 
+            lcBapCorps, 
+            llBapCorps, 
+            toBap, 
+            toCorps
+        ); 
+    }; 
+    name = BapCorps; 
+    primaryKeyAttributes = (cBapCorps); 
+    relationships = (
+        {
+            destination = Bap; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cBap; sourceAttribute = cBap; }); 
+            name = toBap; 
+        }, 
+        {
+            destination = Corps; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cCorps; sourceAttribute = cCorps; }); 
+            name = toCorps; 
+        }, 
+        {
+            destination = EmploiType; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = etyCodeMen; sourceAttribute = cBapCorps; }); 
+            name = tosEmploiType; 
+        }, 
+        {
+            destination = ReferensEmplois; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codemen; sourceAttribute = cBapCorps; }); 
+            name = tosReferensEmplois; 
+        }
+    ); 
+}

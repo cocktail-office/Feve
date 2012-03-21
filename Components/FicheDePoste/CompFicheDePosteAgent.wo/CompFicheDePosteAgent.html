@@ -1,0 +1,89 @@
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0" width=1%>
+	<tr>
+		<th colspan=4>
+			<font class="subTitleInverse"> Informations agent - 
+			<WEBOBJECT NAME="CondIsLOccupationEnCoursExiste">occupation <WEBOBJECT NAME="StrOccupation"/></WEBOBJECT>
+			<WEBOBJECT NAME="CondNotIsLOccupationEnCoursExiste"><b>Pas d'occupant</b></WEBOBJECT>
+			</font>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<table class="boxContents">
+				<tr>
+
+					<th nowrap align=RIGHT width=1%>N&#176;Individu:</th>
+					<td align="left"><webobject name="StrNoIndividu"/></td>
+
+					
+					<TD VALIGN=TOP WIDTH=1% ROWSPAN=7 NOWRAP ALIGN=CENTER>
+						<WEBOBJECT NAME="CondIsLOccupationEnCoursExiste">
+							<TABLE>
+								<TR>
+									<TD NOWRAP><B>Quotit&eacute; :</B> <WEBOBJECT NAME="StrNumQuotAffectation"/>%</TD>
+								</TR>
+								<TR>
+									<TH NOWRAP><B>Occupation <WEBOBJECT NAME="StrIndexOccupantEnCoursAffichage"/>/<WEBOBJECT	NAME="StrTotalOccupationCount"/></B></TH>
+								</TR>
+								<TR>
+									<TD ALIGN=CENTER>
+										<WEBOBJECT NAME="CondShowLienRecule"><WEBOBJECT NAME="LnkReculeOccupant"><WEBOBJECT NAME="ImgPrevOccupant"/></WEBOBJECT></WEBOBJECT>
+										<WEBOBJECT NAME="CondNotShowLienRecule"><WEBOBJECT NAME="ImgPrevDisabled"/></WEBOBJECT>&nbsp;&nbsp;
+										<WEBOBJECT NAME="CondShowLienAvance"><WEBOBJECT NAME="LnkAvanceOccupant"><WEBOBJECT	NAME="ImgNextOccupant"/></WEBOBJECT></WEBOBJECT>
+										<WEBOBJECT NAME="CondNotShowLienAvance"><WEBOBJECT	NAME="ImgNextOccupantDisabled"/></WEBOBJECT>
+									</TD>
+								</TR>
+							</TABLE>
+							<WEBOBJECT NAME="CondIsOccupationActuelle">
+								<WEBOBJECT NAME=CktlNote1>
+									<TABLE>
+										<TR><Th><FONT COLOR=#009e00><font color=#00FF00></FONT>Occupation<BR>Actuelle</font></th></TR>
+									</TABLE>
+								</WEBOBJECT>
+							</WEBOBJECT>
+							<webobject name="CondIsOccupationAncienne">
+								<webobject name=CktlNote1>
+									<table>
+										<tr><th align=CENTER><font color=#FF0000>Occupation<br>Ancienne</font></th></tr>
+									</table>
+								</webobject>
+							</webobject>
+						</WEBOBJECT>
+					</TD>
+					
+					
+					<td valign="top" rowspan="7" width="1%">
+						<webobject name="CondLIndividuEnCoursExiste">
+							<webobject name = "Photo"/>
+						</webobject>
+					</td>
+					
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT>Nom:</th>
+					<td nowrap align="left"><webobject name="StrNomUsuel"/></td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT>Pr&eacute;nom:</th>
+					<td nowrap align="left"><webobject name="StrPrenom"/></td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT>Date de naissance:</th>
+					<td nowrap align="left"><webobject name="StrDNaissance"/></td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT>Statut:</th>
+					<td nowrap align="left"><webobject name="StrStatut"/></td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT>Corps:</th>
+					<td nowrap align="left"><webobject name="StrCorps"/></td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT>Grade:</th>
+					<td nowrap align="left"><webobject name="StrGrade"/></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,142 @@
+{
+    attributes = (
+        {
+            columnName = "C_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_DEB_STAGE"; 
+            externalType = DATE; 
+            name = dDebStage; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_STAGE"; 
+            externalType = DATE; 
+            name = dFinStage; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DATE_TITULARISATION"; 
+            externalType = DATE; 
+            name = dateTitularisation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_CARRIERE"; 
+            externalType = NUMBER; 
+            name = noSeqCarriere; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "STA_ORDRE"; 
+            externalType = NUMBER; 
+            name = staOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_RENOUVELLEMENT"; 
+            externalType = VARCHAR2; 
+            name = temRenouvellement; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (staOrdre); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOStage"; 
+    classProperties = (
+        temRenouvellement, 
+        dDebStage, 
+        dFinStage, 
+        dCreation, 
+        dModification, 
+        toCorps, 
+        dateTitularisation, 
+        toIndividu, 
+        cCorps, 
+        noDossierPers, 
+        noSeqCarriere, 
+        temValide
+    ); 
+    externalName = "MANGUE.STAGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noDossierPers, 
+            noSeqCarriere, 
+            cCorps, 
+            temRenouvellement, 
+            dDebStage, 
+            dFinStage, 
+            dCreation, 
+            dModification, 
+            toCorps
+        ); 
+        "_nameInObjectStore" = STAGE; 
+    }; 
+    name = Stage; 
+    primaryKeyAttributes = (staOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Corps; 
+            internalInfo = {"_nameInObjectStore" = corps; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cCorps; sourceAttribute = cCorps; }); 
+            name = toCorps; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }
+    ); 
+    restrictingQualifier = "(temValide = 'O')"; 
+}

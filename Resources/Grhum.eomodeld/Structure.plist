@@ -1,0 +1,198 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_TYPE_ETABLISSEMEN"; 
+            externalType = VARCHAR2; 
+            name = cTypeEtablissemen; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "C_TYPE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cTypeStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_RESPONSABLE"; 
+            externalType = NUMBER; 
+            name = grpResponsable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = isStrArchive; 
+            definition = "decode(lcStructure,'ARCH', 1, decode(toStructurePere.lcStructure, 'ARCH', 1, 0))"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = isStrArchive; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = isStrComposante; 
+            definition = "decode(cTypeStructure,'E', 1, 'C', 1, 'ES', 1, 0)"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = isStrComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = isStrService; 
+            definition = "decode(toVService.cStructure,null,0,1)"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = isStrService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOStructure"; 
+    classProperties = (
+        cTypeEtablissemen, 
+        cTypeStructure, 
+        lcStructure, 
+        llStructure, 
+        persId, 
+        toResponsable, 
+        toStructurePere, 
+        tosAffectation, 
+        tosIndividuAffecte, 
+        tosPoste, 
+        tosRepartTypeGroupe, 
+        tosStructuresFilles, 
+        toVService, 
+        toComposante, 
+        isStrArchive, 
+        isStrComposante, 
+        isStrService
+    ); 
+    externalName = "GRHUM.STRUCTURE_ULR"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            cTypeEtablissemen, 
+            cTypeStructure, 
+            grpResponsable, 
+            lcStructure, 
+            llStructure, 
+            persId
+        ); 
+        "_nameInObjectStore" = "STRUCTURE_ULR"; 
+    }; 
+    maxNumberOfInstancesToBatchFetch = 100; 
+    name = Structure; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = grpResponsable; }); 
+            name = toResponsable; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = toStructurePere; 
+        }, 
+        {
+            destination = Affectation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = tosAffectation; 
+        }, 
+        {
+            definition = "tosAffectation.toIndividu"; 
+            internalInfo = {"_nameInObjectStore" = "tosAffectation_toIndividu"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = tosIndividuAffecte; 
+        }, 
+        {
+            destination = Poste; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = tosPoste; 
+        }, 
+        {
+            destination = RepartTypeGroupe; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = tosRepartTypeGroupe; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructurePere; sourceAttribute = cStructure; }); 
+            name = tosStructuresFilles; 
+        }, 
+        {
+            destination = VService; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toVService; 
+        }, 
+        {definition = "toVService.toComposante"; name = toComposante; }
+    ); 
+}

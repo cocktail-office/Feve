@@ -1,0 +1,111 @@
+{
+    attributes = (
+        {
+            columnName = "EPE_KEY"; 
+            externalType = NUMBER; 
+            name = epeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = epeKey; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = epeKeyVisible; 
+            readFormat = "EPE_KEY"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = evaKey; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = evaKeyVisible; 
+            readFormat = "EVA_KEY"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = noIndividu; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = noIndividuVisible; 
+            readFormat = "NO_INDIVIDU"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }
+    ); 
+    attributesUsedForLocking = (epeKey, noIndividu); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOVCandidatEvaluation"; 
+    classProperties = (
+        epeKeyVisible, 
+        evaKeyVisible, 
+        noIndividuVisible, 
+        nomUsuel, 
+        prenom, 
+        toEvaluation, 
+        toEvaluationPeriode, 
+        toIndividu
+    ); 
+    externalName = "MANGUE.V_CANDIDAT_EVALUATION"; 
+    name = VCandidatEvaluation; 
+    primaryKeyAttributes = (epeKey, noIndividu); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = EvaluationPeriode; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = epeKey; }); 
+            name = toEvaluationPeriode; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_EOEvaluationKeyValueCoding"; }; 
+}

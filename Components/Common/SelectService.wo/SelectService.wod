@@ -1,0 +1,18 @@
+ObserverSelectService: AjaxObserveField {
+	action = neFaitRien;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	updateContainerID = updateContainerID;
+}
+
+PopUpStructure: WOPopUpButton {
+	noSelectionString = "----- service -----";
+	list = eoStructureArray;
+	item = eoStructureItem;
+	displayString = eoStructureItem.displayCourt;
+	selection = eoStructureSelected;
+}
+
+ChkIsAfficherArchive: WOCheckBox {
+	checked = isAfficherArchive;
+}

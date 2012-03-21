@@ -1,0 +1,86 @@
+BtnNeFaitRien: WOSubmitButton {
+	action = neFaitRien;
+	style = "visibility: hidden; display: none";
+}
+
+RadioFuture: WORadioButton {
+	name = "periode";
+	selection = ctrl.periode;
+	value = ctrl.PERIODE_FUTURE;
+	onClick = "this.form.submit();";
+}
+
+RadioActuelle: WORadioButton {
+	name = "periode";
+	selection = ctrl.periode;
+	value = ctrl.PERIODE_ACTUELLE;
+	onClick = "this.form.submit();";
+}
+
+RadioAncienne: WORadioButton {
+	name = "periode";
+	selection = ctrl.periode;
+	value = ctrl.PERIODE_ANCIENNE;
+	onClick = "this.form.submit();";
+}
+
+ChkShowAffectationAvecOccupations: WOCheckBox {
+	checked = ctrl.showAffectationAvecOccupations;
+	name = "ChkShowAffectationAvecOccupations";
+	onClick = "this.form.submit();";
+}
+
+CondHasResultat: WOConditional {
+	condition = dgAffectation.displayedObjects.count;
+}
+
+CondNotHasResultat: WOConditional {
+	condition = dgAffectation.displayedObjects.count;
+	negate = true;
+}
+
+TFNomPrenom: WOTextField {
+	value = ctrl.nomPrenom;
+}
+
+RepAffectation: WORepetition {
+	item = ctrl.affectationItem;
+	list = dgAffectation.displayedObjects;
+}
+
+StrAffectationIndividu: WOString {
+	value = ctrl.affectationItem.toIndividu.display;
+}
+
+StrAffectationDDebut: WOString {
+	value = ctrl.affectationItem.dDebAffectation;
+	dateformat = "%d/%m/%Y";
+}
+
+StrAffectationDFin: WOString {
+	value = ctrl.affectationItem.dFinAffectation;
+	dateformat = "%d/%m/%Y";
+}
+
+StrAffectationQuotite: WOString {
+	value = ctrl.affectationItem.numQuotAffectation;
+}
+
+LnkSelectAffectation: WOHyperlink {
+	action = ctrl.doSelectAffectation;
+	title = "Selectionner cette affectation";
+}
+
+CondIsTheAffectationSelected: WOConditional {
+	condition = ctrl.isTheAffectationSelected;
+}
+
+StrBaliseSelectedOpen: WOString {
+	value = "<b>";
+	escapeHTML = "false";
+}
+
+StrBaliseSelectedClose: WOString {
+	value = "</b>";
+	escapeHTML = "false";
+}

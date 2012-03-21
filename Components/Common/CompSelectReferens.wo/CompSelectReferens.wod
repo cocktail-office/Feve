@@ -1,0 +1,113 @@
+CondIsDisabled: WOConditional {
+	condition = disabled;
+}
+
+CondNotIsDisabled: WOConditional {
+	condition = disabled;
+	negate = true;
+}
+
+PopUpCorps: WOPopUpButton {
+	list = referensCorpsDg.displayedObjects;
+	item = referensCorpsItem;
+	selection =  referensCorpsSelected;
+	displayString = referensCorpsItem.display;
+	noSelectionString = "----- tous -----";
+	onChange = "this.form.submit();";
+	disabled = disabled;
+}
+
+StrReferensCorpsSelected: WOString {
+	value = referensCorpsSelected.display;
+}
+
+PopUpDcp: WOPopUpButton {
+	list = referensDcpDg.displayedObjects;
+	item = referensDcpItem;
+	selection = referensDcpSelected;
+	displayString = referensDcpItem.display;
+	noSelectionString = "----- toutes -----";
+	onChange = "this.form.submit();";
+	escapeHTML = false;
+	disabled = disabled;
+}
+
+StrReferensDcpSelected: WOString {
+	value = referensDcpSelected.display;
+}
+
+PopUpFp: WOPopUpButton {
+	list = referensDcpSelected.tosReferensFp;
+	item = referensFpItem;
+	selection = referensFpSelected;
+	displayString = referensFpItem.display;
+	noSelectionString = "----- toutes -----";
+	onChange = "this.form.submit();";
+	disabled = disabled;
+}
+
+
+StrReferensFpSelected: WOString {
+	value = referensFpSelected.display;
+}
+
+
+StrCountEmploi: WOString {
+	value = referensEmploisDg.displayedObjects.@count;
+	numberformat = "0";
+}
+
+PopUpEmploi: WOPopUpButton {
+	list = referensEmploisDg.displayedObjects;
+	item = referensEmploisItem;
+	selection = referensEmploisSelected;
+	displayString = referensEmploisItem.display;
+	noSelectionString = "";
+	onChange = onChangePopUpEmploi;
+	disabled = disabled;
+}
+
+
+strReferensEmploisSelected: WOString {
+	value = referensEmploisSelected.display;
+}
+
+WOComponentContent1: WOComponentContent {
+	
+}
+
+CondShowActivites: WOConditional {
+	condition = showActivites;
+}
+
+StrCountActivites: WOString {
+	value = referensEmploisSelected.tosReferensActivites.@count;
+	numberformat = "0";
+}
+
+PopUpActivite: WOPopUpButton {
+	list = referensEmploisSelected.tosReferensActivites;
+	item = referensActivitesItem;
+	selection = referensActivitesSelected;
+	displayString = referensActivitesItem.display;
+	noSelectionString = "";
+	disabled = disabled;
+}
+
+CondShowCompetences: WOConditional {
+	condition = showCompetences;
+}
+
+StrCountCompetences: WOString {
+	value = referensEmploisSelected.tosReferensCompetences.@count;
+	numberformat = "0";
+}
+
+PopUpCompetence: WOPopUpButton {
+	list = referensEmploisSelected.tosReferensCompetences;
+	item = referensCompetencesItem;
+	selection = referensCompetencesSelected;
+	displayString = referensCompetencesItem.display;
+	noSelectionString = "";
+	disabled = disabled;
+}

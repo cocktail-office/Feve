@@ -1,0 +1,79 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DCO_KEY"; 
+            externalType = NUMBER; 
+            name = dcoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DCO_LETTRE"; 
+            externalType = VARCHAR2; 
+            name = dcoLettre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DCO_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = dcoLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DCO_SIGLE"; 
+            externalType = VARCHAR2; 
+            name = dcoSigle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (dcoKey, dcoLettre, dcoLibelle, dcoSigle); 
+    className = "org.cocktail.feve.eos.modele.grhum.old.EODomaineCompetence"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        dcoLettre, 
+        dcoLibelle, 
+        dcoSigle, 
+        tosFamilleProfessionnelle
+    ); 
+    externalName = "GRHUM.DOMAINE_COMPETENCE_PRO_OLD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dcoLettre, dcoLibelle, dcoSigle, tosFamilleProfessionnelle); 
+        "_nameInObjectStore" = "GRHUM.DOMAINE_COMPETENCE"; 
+    }; 
+    name = DomaineCompetence; 
+    primaryKeyAttributes = (dcoKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = FamilleProfessionnelle; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dcoKey; sourceAttribute = dcoKey; }); 
+            name = tosFamilleProfessionnelle; 
+        }
+    ); 
+}

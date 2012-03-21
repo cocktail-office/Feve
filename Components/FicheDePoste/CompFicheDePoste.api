@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="PageFicheDePoste" wocomponentcontent="false">
+
+		<binding name="inputLaFicheDePoste"/>
+
+		<validation message="'inputLaFicheDePoste' is a required binding">
+			<unbound name="inputLaFicheDePoste"/>
+		</validation>
+	<binding name="ctrl"/>
+        <validation message="'ctrl' is a required binding.">
+            <unbound name="ctrl"/>
+        </validation>
+    </wo>
+</wodefinitions>

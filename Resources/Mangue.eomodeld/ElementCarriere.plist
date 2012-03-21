@@ -1,0 +1,184 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_ECHELON"; 
+            externalType = VARCHAR2; 
+            name = cEchelon; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "C_GRADE"; 
+            externalType = VARCHAR2; 
+            name = cGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_TYPE_ACCES"; 
+            externalType = VARCHAR2; 
+            name = cTypeAcces; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            columnName = "D_EFFET_ELEMENT"; 
+            externalType = DATE; 
+            name = dEffetElement; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_ELEMENT"; 
+            externalType = DATE; 
+            name = dFinElement; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_CARRIERE"; 
+            externalType = NUMBER; 
+            name = noSeqCarriere; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_ELEMENT"; 
+            externalType = NUMBER; 
+            name = noSeqElement; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "QUOTITE_ELEMENT"; 
+            externalType = NUMBER; 
+            name = quotiteElement; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_PROVISOIRE"; 
+            externalType = VARCHAR2; 
+            name = temProvisoire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noDossierPers, noSeqCarriere, noSeqElement); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOElementCarriere"; 
+    classProperties = (
+        cCorps, 
+        cGrade, 
+        cEchelon, 
+        dEffetElement, 
+        dFinElement, 
+        cTypeAcces, 
+        temProvisoire, 
+        toCorps, 
+        toGrade, 
+        quotiteElement, 
+        toIndividu, 
+        temValide, 
+        tosReferensEmploi
+    ); 
+    externalName = "MANGUE.ELEMENT_CARRIERE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noDossierPers, 
+            noSeqCarriere, 
+            noSeqElement, 
+            cCorps, 
+            cGrade, 
+            cEchelon, 
+            dEffetElement, 
+            dFinElement, 
+            cTypeAcces, 
+            temProvisoire, 
+            toCorps, 
+            toGrade, 
+            toIndividu
+        ); 
+        "_nameInObjectStore" = "ELEMENT_CARRIERE"; 
+    }; 
+    name = ElementCarriere; 
+    primaryKeyAttributes = (noDossierPers, noSeqCarriere, noSeqElement); 
+    relationships = (
+        {
+            destination = Corps; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cCorps; sourceAttribute = cCorps; }); 
+            name = toCorps; 
+        }, 
+        {
+            destination = Grade; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cGrade; sourceAttribute = cGrade; }); 
+            name = toGrade; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = ReferensEmplois; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = tosReferensEmploi; 
+        }
+    ); 
+    restrictingQualifier = "(temValide = 'O')"; 
+}

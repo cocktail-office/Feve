@@ -1,0 +1,267 @@
+
+PopupPeriode: WOPopUpButton {
+	list = periodeDg.displayedObjects;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strAnneeDebutAnneeFin;
+	id = "PopupPeriode";
+}
+
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.display;
+	noSelectionString = "--- Tous les services ---";
+	id = "PopupService";
+}
+
+PopupPopulation: WOPopUpButton {
+	list = populationList;
+	item = populationItem;
+	selection = populationSelected;
+	escapeHTML = false;
+	id = "PopupPopulation";
+	noSelectionString = "";
+}
+
+PopupEntretienTenu: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = entretienTenuOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupEntretienTenu";
+	noSelectionString = "";
+}
+
+PopupVisaRh: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = visaRhOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupVisaRh";
+	noSelectionString = "";
+}
+
+StrTotalPromotion: WOString {
+	value = promotionList.count;
+}
+
+CondHasResult: WOConditional {
+	condition = promotionList.count;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br><u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br><u>convertir</u>, suivant, choisir s&eacute;parateur et fin";
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+
+ContainerResultats: AjaxUpdateContainer {
+	 id = "ContainerResultats";
+}
+
+ObserverPopupPeriode: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupPeriode";
+}
+
+ObserverPopupService: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupService";
+}
+
+ObserverPopupEntretienTenu: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupEntretienTenu";
+}
+
+ObserverPopupVisaRh: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupVisaRh";
+}
+
+RepPromotion: WORepetition {
+	list = promotionList;
+	item = promotionItem;
+}
+
+StrEvaluateur: WOString {
+	value = promotionItem.toEvaluation.toEvaluateur.nomPrenom;
+}
+
+StrAgent: WOString {
+	value = promotionItem.toEvaluation.toIndividu.nomPrenom;
+}
+
+StrReductionEchelon: WOString {
+	value = promotionItem.enpReductionEchelonLibelle;
+}
+
+StrReductionEchelonRefusMotif: WOString {
+	value = promotionItem.enpReductionEchelonRefusMotif;
+}
+
+StrPromotionGrade: WOString {
+	value = promotionItem.enpPromotionGradeLibelle;
+}
+
+StrPromotionGradeRefusMotif: WOString {
+	value = promotionItem.enpPromotionGradeRefusMotif;
+}
+
+StrPromotionCorps: WOString {
+	value = promotionItem.enpPromotionCorpsLibelle;
+}
+
+StrPromotionCorpsRefusMotif: WOString {
+	value = promotionItem.enpPromotionCorpsRefusMotif;
+}
+
+
+
+PopupEvaluateur: WOPopUpButton {
+	noSelectionString = "";
+	list = evaluateurArray;
+	item = evaluateurItem;
+	selection = evaluateurSelected;
+	displayString = evaluateurItem.nomPrenom;
+	id = "PopupEvaluateur";
+}
+
+LnkSortEvaluateur: AjaxUpdateLink {
+	action = sortEvaluateur;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortAgent: AjaxUpdateLink {
+	action = sortAgent;
+	updateContainerID = "ContainerResultats";
+}
+
+
+PopupReductionEchelon: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = reductionEchelonOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupReductionEchelon";
+	noSelectionString = "";
+}
+
+
+PopupPromotionGrade: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = promotionGradeOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupPromotionGrade";
+	noSelectionString = "";
+}
+
+
+PopupPromotionCorps: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = promotionCorpsOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupPromotionCorps";
+	noSelectionString = "";
+}
+
+
+
+PopupCorps: WOPopUpButton {
+	list = eoCorpsArray;
+	item = eoCorpsItem;
+	selection = eoCorpsSelected;
+	displayString = eoCorpsItem.lcCorps;
+	escapeHTML = false;
+	id = "PopupCorps";
+	noSelectionString = "";
+}
+
+PopupGrade: WOPopUpButton {
+	list = eoGradeArray;
+	item = eoGradeItem;
+	selection = eoGradeSelected;
+	displayString = eoGradeItem.lcGrade;
+	escapeHTML = false;
+	id = "PopupGrade";
+	noSelectionString = "";
+}
+
+
+CondIsReductionEchelonOuiSelected: WOConditional {
+	condition = isReductionEchelonOuiSelected;
+}
+
+PopupReductionEchelonFavorable: WOPopUpButton {
+	list = reductionEchelonFavorableArray;
+	item = reductionEchelonFavorableItem;
+	selection = reductionEchelonFavorableSelected;
+	displayString = reductionEchelonFavorableItemDisplayString;
+	escapeHTML = false;
+	noSelectionString = "";
+}
+
+
+CondIsPromotionGradeOuiSelected: WOConditional {
+	condition = isPromotionGradeOuiSelected;
+}
+
+PopupPromotionGradeFavorable: WOPopUpButton {
+	list = promotionGradeFavorableArray;
+	item = promotionGradeFavorableItem;
+	selection = promotionGradeFavorableSelected;
+	displayString = promotionGradeFavorableItemDisplayString;
+	escapeHTML = false;
+	noSelectionString = "";
+}
+
+
+CondIsPromotionCorpsOuiSelected: WOConditional {
+	condition = isPromotionCorpsOuiSelected;
+}
+
+PopupPromotionCorpsFavorable: WOPopUpButton {
+	list = promotionCorpsFavorableArray;
+	item = promotionCorpsFavorableItem;
+	selection = promotionCorpsFavorableSelected;
+	displayString = promotionCorpsFavorableItemDisplayString;
+	escapeHTML = false;
+	noSelectionString = "";
+}
+
+
+
+ObserverFiltres: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}

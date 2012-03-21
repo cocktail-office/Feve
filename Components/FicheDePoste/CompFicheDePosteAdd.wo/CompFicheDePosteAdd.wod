@@ -1,0 +1,49 @@
+ErrorAdd: WOConditionalErrorMessage {
+	condition = ctrl.hasError;
+	value = ctrl.errMsg;
+}
+
+DtePickerNewFicheDebut: CktlDatePicker {
+	dateValue = ctrl.newFicheDDebut;
+	fieldName = "dateDebut";
+	formName = "FormFdp";
+}
+
+DtePickerNewFicheFin: CktlDatePicker {
+	dateValue = ctrl.newFicheDFin;
+	fieldName = "dateFin";
+	formName = "FormFdp";
+}
+
+ImgCancel: WOImage {
+	border = 0;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkCancel: WOHyperlink {
+	action = ctrl.caller.doCancelCompFicheDePosteAdd;
+	title = "Annuler l'ajout d'une nouvelle fiche de poste";
+}
+
+BtnCreateFiche: WOImageButton {
+	action = ctrl.doCreateFiche;
+	title = "Ouvrir la fiche";
+	filename = "images/valider16.gif"; 
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+}
+
+NoteNouvelleFiche: CktlNote {
+}
+
+CondShowAvertissementEmploiTypeAncienneNomenclature: WOConditional {
+	condition = ctrl.showAvertissementEmploiTypeAncienneNomenclature;
+}
+
+YPanelAvertissement: YPanelAvertissement {
+	
+}

@@ -1,0 +1,79 @@
+
+CondNotIsInputFicheDePosteExiste: WOConditional {
+	condition = isInputFicheDePosteExiste;
+	negate = true;
+}
+
+YPanelAvertissement1: YPanelAvertissement {
+}
+
+CondIsInputFicheDePosteExiste: WOConditional {
+	condition = isInputFicheDePosteExiste;
+}
+
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+CondIsPageFdp1: WOConditional {
+	condition = isPageFdp1;
+}
+
+CompFicheDePosteAgent1: CompFicheDePosteAgent {
+	inputLaFicheDePoste = inputLaFicheDePoste;
+}
+
+CondIsPageFdp2: WOConditional {
+	condition = isPageFdp2;
+}
+
+CompFicheDePosteEnvironnement1: CompFicheDePosteEnvironnement {
+	inputLaFicheDePoste = inputLaFicheDePoste;
+}
+
+CondIsPageFdp3: WOConditional {
+	condition = isPageFdp3;
+}
+
+CompFicheDePosteDescription1: CompFicheDePosteDescription {
+	inputLaFicheDePoste = inputLaFicheDePoste;
+}
+
+CondShowEditionFicheDePoste: WOConditional {
+	condition = showEditionFicheDePoste;
+}
+
+CondShowEditionProfilDePoste: WOConditional {
+	condition = showEditionProfilDePoste;
+}
+
+PdfBoxFicheDePoste: FevePdfBoxLink {
+	ctrl = ctrlFicheDePoste;
+	printLabel = "Fiche de poste";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de cette fiche de poste.";
+}
+
+PdfBoxProfDePoste: FevePdfBoxLink {
+	ctrl = ctrlFicheDePosteSansOccupants;
+	printLabel = "Profil du poste";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de ce profil de poste.";
+}

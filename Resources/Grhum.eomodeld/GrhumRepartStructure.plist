@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, dCreation, dModification, persId); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOGrhumRepartStructure"; 
+    classProperties = (cStructure, dCreation, dModification, persId); 
+    externalName = "GRHUM.REPART_STRUCTURE"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dCreation, dModification); 
+        "_nameInObjectStore" = "REPART_STRUCTURE"; 
+    }; 
+    name = GrhumRepartStructure; 
+    primaryKeyAttributes = (cStructure, persId); 
+}

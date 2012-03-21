@@ -1,0 +1,90 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "SIN_D_DEBUT"; 
+            externalType = DATE; 
+            name = sinDDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SIN_D_FIN"; 
+            externalType = DATE; 
+            name = sinDFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "SIN_KEY"; 
+            externalType = NUMBER; 
+            name = sinKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SIN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = sinLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2048; 
+        }, 
+        {
+            columnName = "SIN_TYPE"; 
+            externalType = NUMBER; 
+            name = sinType; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (sinKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOStructureInfo"; 
+    classProperties = (
+        sinLibelle, 
+        sinType, 
+        sinDDebut, 
+        sinDFin, 
+        dCreation, 
+        dModification, 
+        toStructure
+    ); 
+    externalName = "MANGUE.FDP_STRUCTURE_INFO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "MANGUE.FEV_STRUCTURE_INFO"; }; 
+    name = StructureInfo; 
+    primaryKeyAttributes = (sinKey); 
+    relationships = (
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }
+    ); 
+}

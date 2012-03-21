@@ -1,0 +1,98 @@
+<webobject name = "CondIsAffichageFullComponent"><!-- pas de poste en cours d'inspection ou de copie -->
+<!-- la barre de filtre de la liste -->
+<webobject name = "ContentFilters"/>
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+  <tr>
+    <td>
+      <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+     
+     
+        <webobject name = "CondPosteListNotEmpty">
+          <tr class = "listboxHeader">
+            <th><webobject name = "TipTitleWarnOccupation">Occ.</webobject></th>
+	          <th><webobject name = "TipTitleWarnFiche">Visa</webobject></th>
+	          <th><webobject name = "TipTitleWarnReferens">Ref.</webobject></th>
+            <th>Code</th>
+            <th>Poste</th>
+            <th>D&eacute;but</th>
+            <th>Fin</th>
+            <th>
+              <webobject name = "TipOccupant">[total] Occupant&nbsp;<webobject name = "ImgInfo" /></webobject>
+            </th>
+            <th>F.Poste</th>
+            <th>F.LOLF</th>
+            <!-- <th></th> -->
+          </tr>
+      
+        	<webobject name = "RepPoste">
+          	<webobject name = "CondCanAccessPoste">
+                <webobject name = "TrPoste">
+                  <td align="center">
+                    <webobject name = "CondHasOccupationWarningItemPoste">
+                      <webobject name = "TipPosteOccupationItemWarn"><webobject name = "ImgWarning" /></webobject>
+                    </webobject>
+                  </td>
+                  <td align="center">
+                    <webobject name = "CondHasFicheWarningItemPoste">
+                      <webobject name = "TipPosteFicheItemWarn"><webobject name = "ImgWarning" /></webobject>
+                    </webobject>
+                  </td>
+                  <td align="center">
+                    <webobject name = "CondHasCurrentFicheDePosteEmploiTypeAncienWarning">
+                      <webobject name = "TipPosteItemCurrentFicheDePosteEmploiTypeAncienWarn"><webobject name = "ImgWarning" /></webobject>
+                    </webobject>
+                  </td>
+                  <td nowrap align="left"><webobject name = "StrCode" /></td>
+                  <td align="left">
+                    <webobject name = "LnkSelectPoste"><webobject name = "StrLibelle" /></webobject>
+                  </td>
+                  <td><webobject name = "StrDDeb" /></td>
+                  <td><webobject name = "StrDFin" /></td>
+                  <td align="left">
+                    <webobject name = "CompItalicBold1">[<webobject name = "StrOccupantTotal" />] 
+                      <webobject name = "StrOccupant" />
+                    </webobject>
+                  </td>
+                  <td align = "center"><webobject name = "StrNbFicheDePoste" /></td>
+                  <td align = "center"><webobject name = "StrNbFicheLolf" /></td>
+                  <td align = "center">
+                    <webobject name = "CondCanDeletePosteItem">
+                      <webobject name = "LnkDelPoste"><webobject name = "ImgDel" /></webobject>
+                    </webobject>
+                  </td>
+                  <!-- <td align = "center">
+                  	<webobject name = "LnkDup"/>
+                  </td> -->
+                </webobject>
+       	  	 	</webobject>
+          	</webobject>
+          </webobject>
+      
+        
+        
+        <webobject name = "CondPosteListEmpty">
+          <tr class = "listboxLine">
+            <td colspan = "8" align = "center">
+              <font class = "textError">
+                <br />
+                <webobject name = "StrMessageEmptyList" />
+                <br />
+                <br />
+              </font>
+            </td>
+          </tr>
+        </webobject>
+      </table>
+    </td>
+  </tr>
+</table>
+</webobject>
+
+<webobject name = "CondShowPosteDetailItem"><!-- poste en cours d'inspection -->
+	<webobject name = "CompPosteDetailItem"/>
+</webobject>
+
+<webobject name = "CondShowPosteDuplicationItem"><!-- poste en cours de duplication -->
+	<webobject name = "CompPosteDuplicationItem"/>
+</webobject>
+

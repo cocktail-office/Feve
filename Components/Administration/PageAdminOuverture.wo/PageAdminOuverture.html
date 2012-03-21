@@ -1,0 +1,353 @@
+<webobject name = "FormAdminOuverture">
+<table>
+
+	<tr>
+		<td align="center">
+	
+			<font class="mainTitle">Périodes de saisie autorisée par les responsables</font><br/>
+	
+			<webobject name = "CktlNote1">
+				Les p&eacute;riodes suivantes d&eacute;finissent les intervalles pendant lesquels les responsables
+				sont autoris&eacute;s &agrave; saisir des donn&eacute;es.<br/>
+				Hors p&eacute;riode, ces &eacute;l&eacute;ments sont en lecture seule (sauf pour les administrateurs).<br/>
+				Les dates de d&eacute;but et de fin sont incluses dans les p&eacute;riodes.
+			</webobject>
+	
+			<table>
+			
+	
+				<tr>
+					<td align="center">
+						<font class="title">Entretiens professionnels</font><br/>
+						<font class="textEntry">D&eacute;but : </font><webobject name = "DPEvaluationDDebut"/>
+						<font class="textEntry">Fin : </font><webobject name = "DPEvaluationDFin"/>
+					</td>
+				
+					<td align="center">
+						<font class="title">Fiches LOLF</font><br/>
+						<font class="textEntry">D&eacute;but : </font><webobject name = "DPFicheLolfDDebut"/>
+						<font class="textEntry">Fin : </font><webobject name = "DPFicheLolfDFin"/>
+					</td>
+				</tr>
+	
+			</table>
+					
+		</td>
+	</tr>
+	
+	<tr>
+		<td><hr/></td>
+	</tr>
+	
+	<tr>
+		<td align="center"> 
+			<font class="mainTitle">Droits par d&eacute;faut</font><br/>
+			<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+			 <tr>
+				<td>
+			    <table cellpadding="2" cellspacing="0">
+						
+							<tr class="listboxHeader">
+								<th rowspan = "2"><font class="mainTitle">Responsable</font></th>
+								<th colspan = "4" class="bordureGaucheHaut fondRouge"><font class="title">Cr&eacute;ation</font></th>
+								<th colspan = "4" class="bordureGaucheHaut fondRouge"><font class="title">Modification</font></th>
+								<th colspan = "4" class="bordureGaucheHaut fondRouge"><font class="title">Suppression</font></th>
+								<th colspan = "4" class="bordureGaucheHaut fondVert"><font class="title">Consultation</font></th>
+							</tr>
+							
+							<tr class="listboxHeader">
+								<td class="bordureGaucheHaut">Poste</td>
+								<td class="bordureGaucheHaut">F. Poste</td>
+								<td class="bordureGaucheHaut">F. LOLF</td>
+								<td class="bordureGaucheHaut">Ent. Prof.</td>
+								
+								<td class="bordureGaucheHaut">Poste</td>
+								<td class="bordureGaucheHaut">F. Poste</td>
+								<td class="bordureGaucheHaut">F. LOLF</td>
+								<td class="bordureGaucheHaut">Ent. Prof.</td>
+								
+								<td class="bordureGaucheHaut">Poste</td>
+								<td class="bordureGaucheHaut">F. Poste</td>
+								<td class="bordureGaucheHaut">F. LOLF</td>
+								<td class="bordureGaucheHaut">Ent. Prof.</td>
+								
+								<td class="bordureGaucheHaut">Poste</td>
+								<td class="bordureGaucheHaut">F. Poste</td>
+								<td class="bordureGaucheHaut">F. LOLF</td>
+								<td class="bordureGaucheHaut">Ent. Prof.</td>
+							</tr>
+						
+							<tr class="listboxLine">
+								<td class="bordureHaut">
+									<font class="title">Fiches personnelles</font>
+								</td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkKEY_FEV_SELF_CONSULTATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkKEY_FEV_SELF_CONSULTATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkKEY_FEV_SELF_CONSULTATION_FICHE_LOLF"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkKEY_FEV_SELF_CONSULTATION_EVALUATION"/></td>
+							</tr>
+							
+							<tr class="listboxLine">
+								<td class="bordureHaut">
+									<font class="title">Annuaire service</font><br/>
+									<font class="textNote">
+										S'applique uniquement au service						
+									</font>
+								</td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_CREATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_CREATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_MODIFICATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_MODIFICATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_MODIFICATION_FICHE_LOLF"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_SUPPRESSION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_SUPPRESSION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_CONSULTATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_CONSULTATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_SERVICE_CONSULTATION_FICHE_LOLF"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+							</tr>
+			
+							<tr class="listboxLine">
+								<td class="bordureHaut">
+									<font class="title">Annuaire composante</font><br/>
+									<font class="textNote">
+										S'applique &agrave; la composante et &agrave; ses sous-services						
+									</font>
+								</td>															
+							
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_CREATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_CREATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_MODIFICATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_MODIFICATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_MODIFICATION_FICHE_LOLF"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_SUPPRESSION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_SUPPRESSION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_CONSULTATION_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_CONSULTATION_FICHE_DE_POSTE"/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_ANNU_COMPOSANTE_CONSULTATION_FICHE_LOLF"/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+							</tr>
+			
+							<tr class="listboxLine">
+								<td class="bordureHaut">
+									<font class="title">hi&eacute;rarchique N+1</font><br/>
+									<font class="textNote">
+										S'applique aux N-1 directs					
+									</font>
+								</td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_FEV_HIE_N_PLUS_1_CREATION_EVALUATION"/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_FEV_HIE_N_PLUS_1_MODIFICATION_EVALUATION"/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_FEV_HIE_N_PLUS_1_CONSULTATION_EVALUATION"/></td>
+							</tr>
+			
+							<tr class="listboxLine">
+								<td class="bordureHaut">
+									<font class="title">hi&eacute;rarchique N+p (p&gt;1)</font><br/>
+									<font class="textNote">
+										S'applique aux N-p (p&gt;1)					
+									</font>
+									
+								</td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_FEV_HIE_N_PLUS_P_CREATION_EVALUATION"/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_FEV_HIE_N_PLUS_P_MODIFICATION_EVALUATION"/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut fondGrise"><input type = "checkbox" disabled/></td>
+								<td class="bordureGaucheHaut"><webobject name = "ChkFEV_FEV_HIE_N_PLUS_P_CONSULTATION_EVALUATION"/></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><hr/></td>
+	</tr>
+	
+	<tr>
+		<td align="center">
+			<font class="mainTitle">Activit&eacute;s &quot;autres&quot; et comp&eacute;tences &quot;autres&quot;</font><br/>
+				<webobject name = "CktlNote1">
+					<font class="textError">
+						Attention, permettre aux utilisateurs de faire de la saisie de valeurs &quot;autres&quot;, c'est &agrave;
+						dire non r&eacute;f&eacute;renc&eacute;es, va alimenter votre base de donn&eacute;es avec de simple libell&eacute;s.<br>
+						L'exploitation &agrave; posteriori des fiches contenant des activit&eacute;s et comp&eacute;tences libres sera
+						plus difficile car les regroupements ne pourront se faire que par comparaison de cha&icirc;nes de caract&egrave;res,
+						et non par code, tel que cela pourrait &ecirc;tre propos&eacute; avec les activit&eacute;s et comp&eacute;tences de la nomenclature !
+					</font>
+				</webobject>
+			</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="center">
+			<table>
+				<tr>
+					<td align="left">
+						<label>
+							<webobject name = "ChkFEV_FEV_FICHE_DE_POSTE_SAISIE_ACTIVITES_AUTRES"/>
+							Autoriser la saisie d'activit&eacute;s non r&eacute;f&eacute;renc&eacute;es dans une nomenclature dans les fiches de poste
+						</label>
+						<br>
+						<label>
+							<webobject name = "ChkFEV_FEV_FICHE_DE_POSTE_SAISIE_COMPETENCES_AUTRES"/>
+							Autoriser la saisie de comp&eacute;tences non r&eacute;f&eacute;renc&eacute;es dans une nomenclature dans les fiches de poste et permettre leur &eacute;valuation dans la fiche d'entretien professionnel
+						</label>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td><br/><hr/></td>
+	</tr>
+	
+	<tr>
+		<td align="center">
+			<font class="mainTitle">&Eacute;ditions PDF</font><br/>
+		</td>
+	</tr>	
+
+	<tr>
+		<td align="center">
+			<table>
+				<tr>
+					<td align="left">
+						<label>
+							<webobject name = "ChkFEV_EDITION_FICHE_DE_POSTE_DISPOSITION_ACT_COMP_REFERENS_VERTICAL"/>
+							Présentation verticale des 2 blocs activités et compétences REFERENS dans l'édition de la fiche de poste
+						</label><br>
+						<font class="textNote">NOTE : coché=l'un en dessous de l'autre, décoché=l'un à côté de l'autre</font>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>	
+	
+	<tr>
+		<td><br/><hr/></td>
+	</tr>
+	
+	<tr>
+		<td align="center">
+			<font class="mainTitle">Création de poste</font><br/>
+		</td>
+	</tr>	
+
+	<tr>
+		<td align="center">
+			<table>
+				<tr>
+					<td align="left">
+						Libellé d'un nom de poste lors de sa création, par défaut<br>
+						<font class="textEntry">Motif du libellé</font> : <webobject name = "TFLibelleCreationPosteValeurParDefaut"/><br>
+						<font class="textNote">Note 1 : ne rien mettre pour forcer le responsable à saisir quelque chose</font><br>
+						<font class="textNote">Note 2 (pour informaticien) : définir entre "${" et "}" les attributs du modèle depuis l'entité Affectation. Pour l'instant, seules les clés "${toIndividu.nomUsuel}" et ${toIndividu.prenom} sont gérées</font>
+					</td> 
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><br/><hr/></td>
+	</tr>
+	
+	<tr>
+		<td align="center">
+			<font class="mainTitle">Conditions à remplir pour être évalué</font><br/>
+		</td>
+	</tr>	
+
+	<tr>
+		<td align="center">
+			<table>
+				<tr>
+					<td align="left">
+						Durée minimum cumulées des affectations d'un agent pour pouvoir être évalué sur une période (en jour) : <webobject name = "TFDureeMinimumAffectationPourEvaluation"/>
+					</td> 
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<webobject name = "BtnDoSave"/>&nbsp;&nbsp;<webobject name = "BtnDoCancel"/>
+		</td>
+	</tr>
+</table>
+
+
+
+
+</webobject>

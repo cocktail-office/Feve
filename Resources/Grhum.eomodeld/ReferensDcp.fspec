@@ -1,0 +1,72 @@
+{
+    FetchReferensDcp = {
+        class = EOFetchSpecification; 
+        entityName = ReferensDcp; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp00; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp01; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp02; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp03; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp04; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp05; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp06; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp07; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp08; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = numdcp; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = myNumdcp09; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

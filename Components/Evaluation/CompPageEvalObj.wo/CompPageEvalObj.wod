@@ -1,0 +1,216 @@
+StrPeriode: WOString {
+	value = inputEvaluationPeriode.strAnneeDebutAnneeFin;
+	valueWhenEmpty = "&lt;inconnue&gt;";
+}
+
+CondIsInputLEvaluationExiste: WOConditional {
+	condition = isInputLEvaluationExiste;
+}
+
+RepObjectif: WORepetition {
+	item = unObjectif;
+	list = inputLEvaluation.tosObjectif;
+}
+
+CondNotIsEnCoursDeModif: WOConditional {
+	condition = unObjectif.isEnCoursDeModification;
+	negate = true;
+}
+
+CondNotIsHiddenColonneResultats: WOConditional {
+	condition = isHiddenColonneResultats;
+	negate = true;
+}	
+
+CondShowBtnRemonterDescendre: WOConditional {
+	condition = showBtnRemonterDescendre;
+}
+
+ImgHaut: WOImage {
+	filename = "images/haut.gif";
+	framework = "app";
+	width = "12";
+	height = "12";
+	border = "0";
+}
+
+LnkRemonterObjectif: WOHyperlink {
+	action = remonterObjectif;
+	title = "placer plus haut dans la liste";
+	fragmentIdentifier = unObjectif.ancre;
+}
+
+ImgBas: WOImage {
+	filename = "images/bas.gif";
+	framework = "app";
+	width = "12";
+	height = "12";
+	border = "0";
+}
+
+LnkDescendreObjectif: WOHyperlink {
+	action = descendreObjectif;
+	title = "placer plus bas dans la liste";
+	fragmentIdentifier = unObjectif.ancre;
+}
+AncreUnObjectif: WOGenericContainer {
+	elementName = "a";
+	name = unObjectif.ancre;
+}
+
+StrObjectif: WOString {	value = unObjectif.objObjectifHtml; escapeHTML = false;}
+StrMoyen: WOString {	value = unObjectif.objMoyenHtml; escapeHTML = false;}
+StrMesure: WOString {	value = unObjectif.objMesureHtml; escapeHTML = false;}
+StrResultat: WOString {	value = unObjectif.objResultatHtml; escapeHTML = false;}
+StrObservation: WOString {	value = unObjectif.objObservationHtml; escapeHTML = false;}
+
+CondShowBtnModifer: WOConditional {
+	condition = showBtnModifer;
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+LnkModifierObjectif: WOHyperlink {
+	action = modifierObjectif;
+	title = "Cliquez ici pour modifier / consulter (selon vos droits)";
+	fragmentIdentifier = unObjectif.ancre;
+}
+
+CondShowBtnSupprimer: WOConditional {
+	condition = showBtnSupprimer;
+}
+
+ImgMoins: WOImage {
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+LnkSuppObjectif: WOHyperlink {
+	action = supprimerObjectif;
+	title = "Cliquez ici pour effacer cette entr&eacute;e";
+}
+
+ImgAnnuler: WOImage {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+CondIsEnCoursDeModif: WOConditional {
+	condition = unObjectif.isEnCoursDeModification;
+}
+
+TRUnObjectif: WOGenericContainer {
+	bgColor = trBgColorUnObjectif;
+	elementName = "TR";
+}
+
+TFUnObjectifObjectif: WOTextMaxSize {
+	value = unObjectif.objObjectif;
+	disabled = disabledTFObjectifMoyenMesure;
+}
+
+ImgBtnEnregistrerObjectif: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrerObjectif;
+	title = "Enregistrer la saisie";
+}
+
+LnkAnnulerEnregistrerObjectif: WOHyperlink {
+	action = annulerEnregistrerObjectif;
+	title = "Annuler les modifications";
+	fragmentIdentifier = unObjectif.ancre;
+}
+
+TFUnObjectifMoyen: WOTextMaxSize {
+	value = unObjectif.objMoyen;
+	disabled = disabledTFObjectifMoyenMesure;
+}
+
+TFUnObjectifMesure: WOTextMaxSize {
+	value = unObjectif.objMesure;
+	disabled = disabledTFObjectifMoyenMesure;
+}
+
+TFUnObjectifResultat: WOTextMaxSize {
+	value = unObjectif.objResultat;
+	disabled = disabledTFResultatObservation;
+}
+
+TFUnObjectifObservation: WOTextMaxSize {
+	value = unObjectif.objObservation;
+	disabled = disabledTFResultatObservation;
+}
+
+CondShowLigneAjouter: WOConditional {
+	condition = showLigneAjouter;
+}
+
+TFObjectif: WOTextMaxSize {
+	value = objectif;
+}
+
+ImgBtnAjouterObjectif: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = ajouterObjectif;
+	title = "Enregistrer la saisie";
+}
+
+LnkAnnulerAjouterObjectif: WOHyperlink {
+	action = annulerAjouterObjectif;
+	title = "Annuler la saisie";
+}
+
+TFMoyen: WOTextMaxSize {
+	value = moyen;
+}
+
+TFMesure: WOTextMaxSize {
+	value = mesure;
+}
+
+TFResultat: WOTextMaxSize {
+	value = resultat;
+}
+
+TFObservation: WOTextMaxSize {
+	value = observation;
+}
+
+CondShowLienAjouter: WOConditional {
+	condition = showLienAjouter;
+}
+
+ThLienAjouter: WOGenericContainer {
+	elementName = "th";
+	colspan = colspanTdLienAjouter;
+}
+
+ImgAjouter: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+}
+
+LnkActiverModeAjouter: WOHyperlink {
+	action = activerModeAjouter;
+	title = "Saisir un objectif supplementaire";
+	fragmentIdentifier = "nouvelObjectif";
+}
+
+CondNotIsInputLEvaluationExiste: WOConditional {
+	condition = isInputLEvaluationExiste;
+	negate = true;
+}

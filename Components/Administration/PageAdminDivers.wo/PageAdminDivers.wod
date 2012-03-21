@@ -1,0 +1,44 @@
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+FormAdminDivers: WOForm {
+	multipleSubmit = true;
+	action = neFaitRien;
+	name = "FormAdminDivers";
+}
+
+CondIsDiversSyncReferens: WOConditional {
+	condition = isDiversSyncReferens;
+}
+
+PageAdminSyncReferens1: PageAdminSyncReferens {
+
+}
+
+CondIsDiversSqueletteFiche: WOConditional {
+	condition = isDiversSqueletteFiche;
+} 
+
+PageAdministrationTemplate1: PageAdministrationTemplate {
+
+}

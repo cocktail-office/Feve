@@ -1,0 +1,59 @@
+{
+    attributes = (
+        {
+            columnName = "COM_KEY"; 
+            externalType = NUMBER; 
+            name = comKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "ETY_CODE"; 
+            externalType = VARCHAR2; 
+            name = etyCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }
+    ); 
+    attributesUsedForLocking = (comKey, dCreation, dModification, etyCode); 
+    className = "org.cocktail.feve.eos.modele.grhum.old.EORepartEmploiCompetence"; 
+    classProperties = (dCreation, dModification, toCompetence, toEmploiType); 
+    externalName = "GRHUM.REPART_EMPLOI_TYPE_COMP_OLD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (toCompetence, toEmploiType); }; 
+    name = RepartEmploiCompetence; 
+    primaryKeyAttributes = (comKey, etyCode); 
+    relationships = (
+        {
+            destination = Competence; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = comKey; sourceAttribute = comKey; }); 
+            name = toCompetence; 
+        }, 
+        {
+            destination = EmploiType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = etyCode; sourceAttribute = etyCode; }); 
+            name = toEmploiType; 
+        }
+    ); 
+}

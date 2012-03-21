@@ -1,0 +1,12 @@
+IsCondition: WOConditional {
+	condition = ^condition;
+}
+
+Content: WOComponentContent {
+	
+}
+
+StrValue: WOString {
+	value = ^value;
+	escapeHTML = false;
+}

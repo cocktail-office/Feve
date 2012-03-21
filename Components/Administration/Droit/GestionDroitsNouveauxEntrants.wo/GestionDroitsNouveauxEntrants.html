@@ -1,0 +1,54 @@
+<webobject name = "Note">
+	Cet écran permet d'affecter les droits de saisie des objectifs précédents par période.<br>
+	Cela permet, entre autres, de fixer des objectifs "en cours" pour les nouveaux arrivants.<br>
+	Attention, fixer des objectifs précédents implique qu'il existe une période précédente !
+</webobject>
+
+<webobject name = "FormPopUpEvaluationPeriode">
+P&eacute;riode : <webobject name = "PopUpEvaluationPeriode" />
+</webobject>
+<table>
+  <tr>
+    <td valign = "top">
+      <table>
+        <legend>Agent dans la hi&eacute;rarchie, évaluables et n'ayant pas d'&eacute;valuation sur la p&eacute;riode pr&eacute;c&eacute;dente</legend>
+        <webobject name = "RepVCandidatEvaluation">
+          <tr>
+            <td> <webobject name = "StrVCandidatEvaluation" /> </td>
+            <td> <webobject name = "LnkToAjouter" /> </td>
+          </tr>
+        </webobject>
+      </table>
+      
+      <webobject name = "LnkToAjouterNonDefini"/>
+
+			<webobject name = "CondIsAfficherAjouter">
+				<webobject name = "AjoutDroitNouvelEntrant"/>
+				<webobject name = "LnkAnnuler"/>
+			</webobject>
+	
+    </td>
+    <td>
+     -
+    </td>
+    <td valign = "top">
+    	<webobject name = "FormDroitsAccordes">
+    	<webobject name = "ContainerDroitsAccordes">
+      <table>
+        <legend>Droits accord&eacute;s</legend>
+        <webobject name = "RepDroitNouvelEntrant">
+          <tr>
+            <td> <webobject name = "StrDroitNouvelEntrantResp" /> </td>
+            <td> sur </td>
+            <td> <webobject name = "StrDroitNouvelEntrant" /> </td>
+            <td> du <webobject name = "DDebut" /> </td>
+            <td> au <webobject name = "DFin" /> </td>
+            <td> <webobject name = "LnkSupprimer" /> </td>
+          </tr>
+        </webobject>
+      </table>
+      </webobject>
+      </webobject>
+    </td>
+  </tr>
+</table>

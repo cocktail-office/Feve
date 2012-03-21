@@ -1,0 +1,141 @@
+<webobject name = "RepBloc">
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					<!-- le titre du bloc -->
+					<tr class="listboxHeader">
+						<td>
+							<webobject name = "AncreBloc"/>
+							<webobject name = "CondIsFacultatif">
+								<webobject name = "BaliseLabelStart"/>
+								<webobject name = "ChkIsActifBlocFacultatif"/>
+							</webobject>
+							<font class="title">
+								<webobject name = "CondIsGreyBlocItemTitle">
+									<font color="#888888"><webobject name = "StrBlocTitle"/></font>
+								</webobject>
+								<webobject name = "CondNotIsGreyBlocItemTitle">
+									<webobject name = "StrBlocTitle"/>
+								</webobject>
+								<webobject name = "BaliseLabelEnd"/>
+							</font>
+							<br/>
+							<font class="textNote">
+								<webobject name = "StrTblCommentaire"/>
+							</font>
+						</td>
+					</tr>
+				
+					<!-- le contenu du bloc -->
+					
+					<webobject name = "CondIsBlocNatureDynamique">
+						<!-- bloc dynamique -->
+						<webobject name = "CondIsShowItemList">
+							<tr class="listboxLine">
+								<td>
+									<table>
+										<webobject name = "RepItem">
+											<tr>
+												
+												<td align="left">
+													<b>&raquo;</b>
+													<webobject name = "StrItemTitle"/>
+													<webobject name = "CondNotIsTexteStatique">
+														<webobject name = "InfoToolTipTplItemItem"/>
+													</webobject>
+												</td>
+												
+												<webobject name = "CondIsListe">
+												<td width="1%" nowrap>	
+													<webobject name = "ObserverPopUpTplItemValeur">
+														<webobject name = "PopUpTplItemValeur"/>
+													</webobject>
+												</td>
+												</webobject>
+												
+												<webobject name = "CondIsChampLibre">
+												<td>&nbsp;</td>
+												</webobject>
+												
+												<webobject name = "CondIsTexteStatique">
+												<td>&nbsp;</td>
+												</webobject>
+												
+											</tr>
+											
+											
+											<webobject name = "CondIsTexteStatique">
+											<tr>
+												<td colspan = "2" align = "left">
+														
+													<webobject name = "StrTexteStatique"/>
+													
+												</td>			
+											</tr>
+											</webobject>
+											
+											
+											<webobject name = "CondIsChampLibre">
+												<tr>
+													<td>
+														
+														<webobject name = "TextChampLibre"/>
+													
+													</td>									
+												
+													<td valign="bottom">
+														
+														<webobject name = "CondShowBtnSauvegardeChampLibre">
+															<webobject name = "ImgBtnDoSaveChampLibre"/>
+														</webobject>
+														
+														<webobject name = "CondShowLnkCancel">
+															<webobject name = "LnkCancel">
+																<webobject name = "ImgAnnuler"/>
+															</webobject>
+														</webobject>
+														
+														<webobject name = "CondShowLnkEditChampLibre">
+															<webobject name = "LnkEditChampLibre">
+																<webobject name = "ImgModifier"/>
+															</webobject>
+														</webobject>
+												
+													</td>
+												</tr>
+											</webobject>
+										</webobject>
+									</table>
+								</td>
+							</tr>
+						</webobject>
+					</webobject>
+					
+					<webobject name = "CondIsBlocNatureFormation">
+						<!-- bloc formation suivi -->
+						<tr class="listboxLine">
+							<td><webobject name = "CompTplBlocFormation"/></td>
+						</tr>
+					</webobject>
+					
+					<webobject name = "CondIsBlocNatureFormationSouhaitee">
+						<!-- bloc formation demandée -->
+						<tr class="listboxLine">
+							<td><webobject name = "CompTplBlocFormationSouhaitee"/></td>
+						</tr>
+					</webobject>
+					
+					<webobject name = "CondIsBlocNatureNoticeDePromotions">
+						<!-- bloc notice de promotions -->
+						<tr class="listboxLine">
+							<td><webobject name = "CompNoticePromotion"/></td>
+						</tr>
+					</webobject>
+					
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br/>
+</webobject>

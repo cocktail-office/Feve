@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="WOFramework/ERExtensions"/>
+	<classpathentry kind="con" path="WOFramework/ERJars"/>
+	<classpathentry kind="con" path="WOFramework/Ajax"/>
+	<classpathentry kind="lib" path="Libraries/ant.jar"/>
+	<classpathentry kind="lib" path="Libraries/checkstyle-all-2.4.jar"/>
+	<classpathentry kind="lib" path="Libraries/junit.jar"/>
+	<classpathentry kind="lib" path="Libraries/log4j.jar"/>
+	<classpathentry kind="lib" path="Libraries/lucene-1.3-final.jar"/>
+	<classpathentry kind="lib" path="Libraries/lucene-demos-1.3-final.jar"/>
+	<classpathentry kind="lib" path="Libraries/PDFBox-0.6.5.jar"/>
+	<classpathentry kind="lib" path="Libraries/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="Libraries/xml-apis.jar"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlWebApp"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlJefyAdmin"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlAjaxWebExt"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlThemes"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlPersonne"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlDroitsUtils"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlPersonneGuiAjax"/>
+	<classpathentry kind="lib" path="Libraries/ojdbc5.jar"/>
+	<classpathentry kind="con" path="WOFramework/JavaWOExtensions"/>
+	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/JavaXML"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
+	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

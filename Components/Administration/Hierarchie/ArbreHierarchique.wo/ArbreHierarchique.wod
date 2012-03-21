@@ -1,0 +1,105 @@
+CondIsAfficherMessage: WOConditional {
+	condition = isAfficherMessage;
+}
+
+StrMessage: WOString {
+	value = strMessage;
+}
+
+NoteMessage: CktlNote {
+	
+}
+
+FormPeriode: WOForm {
+	name = "FormPeriode";
+}
+
+PopupPeriodeList: WOPopUpButton {
+	list = periodeArray;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strDateDebutDateFin;
+	onChange = "this.form.submit();";
+}
+
+FormFiltres: WOForm {
+	name = "FormFiltres";
+}
+
+
+CondIsAfficherLienToutDevelopper: WOConditional {
+	condition = isAfficherLienToutDevelopper;
+}
+
+LnkToutDevelopper: WOHyperlink {
+	action = toutDevelopper;
+}
+
+ImgAdd: WOImage {
+	src = "images/plus16.gif";
+	width = "16";
+	heigth = "16";
+	border = "0";
+}
+
+CondIsAfficherLienCreerHierarchie: WOConditional {
+	condition = isAfficherLienCreerHierarchie;
+}
+
+LnkCreerHierarchie: WOHyperlink {
+	action = doCreerHierarchie;
+	title = "Effectuer la cr&eacute;ation de l'arbre hi&eacute;rarchique";
+}
+
+ImgDel: WOImage {
+	src = "images/moins16.gif";
+	width = "16";
+	heigth = "16";
+	border = "0";
+}
+
+CondIsAfficherLienSupprimerHierarchie: WOConditional {
+	condition = isAfficherLienSupprimerHierarchie;
+}
+
+
+LnkSupprimerHierarchie: WOHyperlink {
+	action = doSupprimerHierarchie;
+	title = "Supprimer l'arbre hi&eacute;rarchique associ&eacute; &agrave; cette p&eacute;riode";
+}
+
+ChkShowDroitsDirects: WOCheckBox {
+	checked = showDroitsAnnexes;
+	name = "ChkShowDroitsDirects";
+}
+
+ChkShowDroitsHerites: WOCheckBox {
+	checked = showDroitsHerites;
+	name = "ChkShowDroitsHerites";
+}
+
+ChkShowTotalEvaluation: WOCheckBox {
+	checked = showTotalEvaluation;
+	name = "ChkShowTotalEvaluation";
+}
+
+BtnFiltrer: WOSubmitButton {
+	action = doNothing;
+	value = "Filtrer";
+	name = "BtnFiltrer";
+	class = "bouton";
+}
+
+Legende: ArbreHierarchiqueLegende {
+	showDroitsAnnexes = showDroitsAnnexes;
+}
+
+NodeHierarchie1: NodeHierarchie {
+	inputLaHierarchie = eoHierarchieRacine;
+	inputLaPeriode = periodeSelected;
+	pageAdministrationHierarchie = ^pageAdministrationHierarchie;
+	showDroitsAnnexes = showDroitsAnnexesReadOnly;
+	showDroitsHerites = showDroitsHeritesReadOnly;
+	showEvaluations = showEvaluationsReadOnly;
+	arbreHierachieComponent = arbreHierarchieComponent;
+}

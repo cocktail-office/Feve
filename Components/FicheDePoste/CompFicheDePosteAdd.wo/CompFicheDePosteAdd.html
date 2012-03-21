@@ -1,0 +1,41 @@
+<webobject name = "ErrorAdd"/>
+<!-- creation d'une nouvelle fiche -->
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0">
+	<tr>
+		<th><font class="subTitleInverse">Ouverture d'une fiche de poste</font></th>
+	</tr>
+	<tr>
+		<td>
+			<table class="boxContents" border="0" cellpadding="5" cellspacing="0" width="100%">
+				<tr>
+					<td align="center">
+						<font class="textEntry">Date d'ouverture :</font><WEBOBJECT NAME="DtePickerNewFicheDebut"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font class="textEntry">Date de fermeture :</font><WEBOBJECT NAME="DtePickerNewFicheFin"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<webobject name = "LnkCancel"><webobject name = "ImgCancel"/></webobject>
+						<webobject name="BtnCreateFiche"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br>
+<webobject name="NoteNouvelleFiche">
+	Si une fiche existe d&eacute;j&agrave;, elle sera ferm&eacute;e &agrave; la date d'ouverture de la nouvelle
+</webobject>
+<webobject name = "CondShowAvertissementEmploiTypeAncienneNomenclature">
+	<br/>
+	<webobject name = "YPanelAvertissement">
+		Attention, la fiche de poste pr&eacute;c&eacute;dente pointe sur un emploi type de l'ancienne nomenclature.<br/>
+		La nouvelle fiche sera donc initialis&eacute;e <u>sans emploi type et sans activit&eacute;s / comp&eacute;tences.</u><br/>
+		Vous devrez donc <u>saisir</u> la nouvelle fiche avec les donn&eacute;es du r&eacute;f&eacute;rentiel actuel.
+	</webobject>
+</webobject>

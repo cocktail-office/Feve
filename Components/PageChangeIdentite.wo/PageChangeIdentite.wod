@@ -1,0 +1,17 @@
+Template: PageTemplate {
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+FieldSearchIndividu1: FieldSearchIndividu {
+	individu = lIndividuSelectionne;
+} 
+
+BtnPrendreIdentite: WOSubmitButton {
+	action = prendreIdentite;
+	class = "bouton";
+	value = "Prendre l'identité";
+	name = "BtnPrendreIdentite";
+}

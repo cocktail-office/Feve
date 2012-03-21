@@ -1,0 +1,57 @@
+<webobject name = "ContainerImpressions">
+	
+	<table>
+
+
+		<tr>
+					
+			<td>
+				<b>Entretien effectu&eacute; le</b>
+				<webobject name = "DateTenueEntretien"/>
+				<webobject name = "CondIsDTenueReinitialisable">
+					<webobject name = "BtnDoReinitialiserDTenue"/>
+				</webobject>
+			</td>
+			
+		</tr>
+
+		<tr>
+	
+			<td>
+			
+				<webobject name = "CondIsEntretienTenu">
+					<webobject name="PdfBoxEvaluationNonVierge"/>
+				</webobject>
+				<webobject name = "CondNotIsEntretienTenu">
+					<font class="textNote">
+						Veuillez saisir la date de tenue de l'entretien pour<br>
+						acc&eacute;der &agrave; l'&eacute;dition du compte rendu d&eacute;finitif
+					</font>
+				</webobject>
+				
+			</td>
+			
+		</tr>
+
+
+		<tr>
+			
+			<td>
+				<b>Visa RH le</b>
+				<webobject name="DateVisaResponsableRh"/>
+				<webobject name = "CondIsDVisaResponsableRhReinitialisable">
+					<webobject name = "BtnDoReinitialiserDVisaReponsableRh"/>
+				</webobject>
+			</td>
+		
+		 
+		
+		</tr>
+	</table>
+	
+	<webobject name = "CondIsAfficherAlerteTenueRealisee">
+		<webobject name = "JsAlertTenueRealisee"/>
+	</webobject>
+
+	
+</webobject>

@@ -1,0 +1,12 @@
+ContainerFormation: AjaxUpdateContainer {
+	id = "ContainerFormation";
+}
+
+CktlAjaxFormationSelect1: CktlAjaxFormationSelect {
+	id = "CktlAjaxFormationSelect1"; 
+	value = strChampLibre;
+	selection = eoFormationPersonnel;
+	userFiltersFormID = formName;
+	displayDeleteButton = false;
+	btnAddFormationName =  ^btnAddFormationName;
+}

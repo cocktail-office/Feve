@@ -1,0 +1,7 @@
+.read { /* un droit en lecture */
+	background: #dbffd7;
+}
+
+.write { /* un droit en ecriture */
+	background: #ffe5d8;
+}

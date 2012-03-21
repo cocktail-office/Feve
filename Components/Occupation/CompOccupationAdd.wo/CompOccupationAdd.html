@@ -1,0 +1,55 @@
+<webobject name = "ErrorAdd"/>
+<table>
+	<tr>
+		<td>
+			<!-- creation d'une nouvelle occupation -->
+			<webobject name = "CompSelectAffectationNouvelleOccupation"/>
+		</td>
+		<td style="width=50px"></td>
+		<webobject name="CondShowInfosCreateOccupation">
+		<td valign="top">
+			<table border="0" class="boxContents" cellpadding="2" cellspacing="0">
+				<tr>
+					<th class="listboxTitle">Dates de l'occupation</th>
+				</tr>
+				<tr>
+					<td><webobject name="ChkSameDateAffectation"></webobject> Identiques &agrave; l'affectation</td>
+				</tr>
+				<webobject name="CondIsNotSameDateAffectation">
+				<tr>
+					<td>
+						<table border="0" cellpadding="5" cellspacing="0" width="100%">
+							<tr>
+								<td align="center">
+									<font class="textEntry">Date d'ouverture :</font><WEBOBJECT NAME="DtePickerNewOccDebut"/>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<font class="textEntry">Date de fermeture :</font><WEBOBJECT NAME="DtePickerNewOccFin"/>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				</webobject>
+				<tr>
+					<td align="center">
+						<!-- on met les boutons de controle ici des l'affectation est selectionnée -->
+						<webobject name = "LnkCancel"><webobject name = "ImgCancel"/></webobject>
+						<webobject name="BtnDoAddOccupation"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</webobject>
+	</tr>
+	<webobject name = "CondNotShowInfosCreateOccupation">
+	<!-- on met les boutons de controle ici tant que l'affectation n'est pas selectionnée -->
+	<tr>
+		<td align="center">
+			<webobject name = "LnkCancel"><webobject name = "ImgCancel"/></webobject>
+		</td>
+	</tr>
+	</webobject>
+</table>

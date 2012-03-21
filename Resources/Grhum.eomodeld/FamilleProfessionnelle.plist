@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DCO_KEY"; 
+            externalType = NUMBER; 
+            name = dcoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FPR_KEY"; 
+            externalType = NUMBER; 
+            name = fprKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FPR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fprLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (dcoKey, fprKey, fprLibelle); 
+    className = "org.cocktail.feve.eos.modele.grhum.old.EOFamilleProfessionnelle"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        dcoKey, 
+        fprLibelle, 
+        toDomaineCompetence, 
+        tosEmploiType
+    ); 
+    externalName = "GRHUM.FAMILLE_PROFESSIONNELLE_OLD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dcoKey, fprLibelle, toDomaineCompetence, tosEmploiType); 
+    }; 
+    name = FamilleProfessionnelle; 
+    primaryKeyAttributes = (fprKey); 
+    relationships = (
+        {
+            destination = DomaineCompetence; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dcoKey; sourceAttribute = dcoKey; }); 
+            name = toDomaineCompetence; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = EmploiType; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fprKey; sourceAttribute = fprKey; }); 
+            name = tosEmploiType; 
+        }
+    ); 
+}

@@ -1,0 +1,115 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OBJ_KEY"; 
+            externalType = NUMBER; 
+            name = objKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OBJ_MESURE"; 
+            externalType = VARCHAR2; 
+            name = objMesure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OBJ_MOYEN"; 
+            externalType = VARCHAR2; 
+            name = objMoyen; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OBJ_OBJECTIF"; 
+            externalType = VARCHAR2; 
+            name = objObjectif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OBJ_OBSERVATION"; 
+            externalType = VARCHAR2; 
+            name = objObservation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "OBJ_POSITION"; 
+            externalType = NUMBER; 
+            name = objPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OBJ_RESULTAT"; 
+            externalType = VARCHAR2; 
+            name = objResultat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (objKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOObjectif"; 
+    classProperties = (
+        objObjectif, 
+        objMoyen, 
+        objMesure, 
+        objObservation, 
+        toEvaluation, 
+        objResultat, 
+        dCreation, 
+        dModification, 
+        objPosition
+    ); 
+    externalName = "MANGUE.OBJECTIF"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (objObjectif, objMoyen, objMesure, objObservation, objResultat); 
+    }; 
+    name = Objectif; 
+    primaryKeyAttributes = (objKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_CanChangePosition"; }; 
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PageAdministrationHierarchie" wocomponentcontent="false">
+
+		<binding name="ctrl"/>
+
+		<validation message="&apos;ctrl&apos; must be bound to a settable value">
+			<unsettable name="ctrl"/>
+		</validation>
+	</wo>
+</wodefinitions>

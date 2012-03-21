@@ -1,0 +1,45 @@
+FormDroitDeduit: WOForm {
+	name = "DroitDeduit";
+	multipleSubmit = true;
+}
+
+CktlNote1: CktlNote {
+	
+}
+
+FieldSearchIndividuDroitDeduit: FieldSearchIndividu {
+	individu = ctrl.individuSelected;
+}
+
+BtnDoSelectIndividu: WOSubmitButton {
+	action = ctrl.doSelectIndividu;
+	name = "BtnDoSelectIndividu";
+	value = "Voir ses droits déduits >>";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+CondHasDroitDeducted: WOConditional {
+	condition = ctrl.ui.droitDeductedList.@count;
+}
+
+CondIsAdmin: WOConditional {
+	condition = ctrl.ui.isAdmin;
+}
+
+RepDroitDeducted: WORepetition {
+	list = ctrl.ui.droitDeductedList;
+	item = ctrl.droitItem;
+}
+
+StrDroitCibleLibelle: WOString {
+	value = ctrl.droitItem.cibleDisplay;
+}
+
+StrDroitTypeAcces: WOString {
+	value = ctrl.droitItem.toTypeDroitAcces.dtaLibelle;
+}
+
+StrDroitTypeCible: WOString {
+	value = ctrl.droitItem.toTypeDroitCible.dtcLibelle;
+}

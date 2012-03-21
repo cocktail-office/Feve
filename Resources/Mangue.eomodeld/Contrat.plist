@@ -1,0 +1,74 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = cTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_CONTRAT"; 
+            externalType = NUMBER; 
+            name = noSeqContrat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_ANNULATION"; 
+            externalType = VARCHAR2; 
+            name = temAnnulation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noSeqContrat); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOContrat"; 
+    classProperties = (cTypeContratTrav, toIndividu, toTypeContratTravail, temAnnulation); 
+    externalName = "MANGUE.CONTRAT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noDossierPers, 
+            temAnnulation, 
+            toTypeContratTravail, 
+            toIndividu, 
+            cTypeContratTrav, 
+            noSeqContrat
+        ); 
+        "_nameInObjectStore" = CONTRAT; 
+    }; 
+    name = Contrat; 
+    primaryKeyAttributes = (noSeqContrat); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = TypeContratTravail; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = cTypeContratTrav; sourceAttribute = cTypeContratTrav; }
+            ); 
+            name = toTypeContratTravail; 
+        }
+    ); 
+    restrictingQualifier = "((temAnnulation <> 'O') and (toTypeContratTravail.temTitulaire <> 'O') and (toTypeContratTravail.temRemunerationAccessoire <> 'O'))"; 
+}

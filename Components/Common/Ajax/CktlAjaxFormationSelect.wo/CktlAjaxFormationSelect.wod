@@ -1,0 +1,85 @@
+ContainerFormationSelectionne : AjaxUpdateContainer {
+	id = containerFormationSelectionneId;
+}
+
+BtRechercher : CktlAjaxButton {
+	type = "find";
+	title = "Rechercher et selectionner une formation ";
+	action = doNothing;
+	dialogIDForOpen = formationTreeViewId;
+	
+}
+
+BtSupprimer : CktlAjaxButton {
+	action = supprimerSelection;
+	type = "cancel";
+	title = "Supprimer la selection";
+	updateContainerID = containerFormationSelectionneId;
+	style="vertical-align:bottom;";
+	onComplete=supprimerOnComplete;
+	showBusyImage = true;
+}
+
+FormationTreeViewDialog : CktlAjaxWindow {
+	id = formationTreeViewId;
+	showOpener = false; 
+	overlayClose = false; 
+	transitions = false; 
+	centerVertically = true;
+	minWidth = 450;
+	minHeight = 300;
+	closeUpdateContainerID = updateContainerID;
+	onClose = onClose;
+	
+}
+ContainerFormationTreeView : AjaxUpdateContainer {
+	id = componentId;
+	evalScripts = true;	
+}
+
+DisplayDeleteButton : WOConditional {
+	condition = displayDeleteButton;
+}
+
+FormationTreeView : CktlAjaxFormationTreeView {
+    utilisateurPersId = ^utilisateurPersId;
+    userFiltersFormID = ^userFiltersFormID;
+    userFiltersDictionary = ^userFiltersDictionary;
+    onSuccessSelect = onSuccessSelect;
+    confirmBeforeSelection = ^confirmBeforeSelection;
+    containerFormationSelectionneId = containerFormationSelectionneId;
+    editingContext = ^editingContext;
+    id = ^id;
+    selection = ^selection;
+    reset = resetTree;
+    treeCollapsedImage = ^treeCollapsedImage;
+    treeCollapsedImageFramework = ^treeCollapsedImage;
+    treeExclusions = ^treeExclusions;
+    treeExpandedImage = ^treeExpandedImage;
+    treeExpandedImageFramework = ^treeExpandedImage;
+    treeLeafImage = ^treeLeafImage;
+    treeLeafImageFramework = ^treeLeafImageFramework;
+    treeQualifier = ^treeQualifier;
+    treeRootObject = ^treeRootObject;
+    treeViewClassName = ^treeViewClassName;
+    treeViewHeight = ^treeViewHeight;
+    treeViewTitle = ^treeViewTitle;
+    treeViewWidth = ^treeViewWidth;        
+    filtreTexte = true;    
+}
+
+IfShowField : WOConditional {
+	condition = showField;	
+}
+
+CktlAjaxAutoComplete1: CktlAjaxAutoComplete {
+	list = formationPersonnelArray;
+	item = unItem;
+	displayString = displayString;
+	autoSelect = false;
+	name = "CktlAjaxAutoComplete1";
+	id = "CktlAjaxAutoComplete1";
+	title = "Formation";
+	value = ^value;
+	onKeyPress = onKeyPress;
+}

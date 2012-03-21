@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = IDTYPEGROUPEMENT; 
+            externalType = VARCHAR2; 
+            name = idtypegroupement; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = INTITULCOMP; 
+            externalType = VARCHAR2; 
+            name = intitulcomp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INTITULCOMP_CLEAN"; 
+            externalType = VARCHAR2; 
+            name = intitulcompClean; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = ORDRE; 
+            externalType = VARCHAR2; 
+            name = ordre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (codeemploi, idtypegroupement, intitulcomp, intitulcompClean, ordre); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOReferensCompetences"; 
+    classProperties = (idtypegroupement, intitulcomp, intitulcompClean, toReferensEmplois); 
+    externalName = "GRHUM.REFERENS_COMPETENCES"; 
+    fetchSpecificationDictionary = {}; 
+    name = ReferensCompetences; 
+    primaryKeyAttributes = (codeemploi, ordre); 
+    relationships = (
+        {
+            destination = ReferensEmplois; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = toReferensEmplois; 
+        }
+    ); 
+}

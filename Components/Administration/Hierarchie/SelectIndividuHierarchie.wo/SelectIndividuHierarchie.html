@@ -1,0 +1,43 @@
+<table style="border : 1px solid #000">
+
+	<tr>
+	
+		<webobject name = "CondIsAfficherBrowserIndividu">
+			<td rowspan="2">
+				<webobject name="BrowserIndividu"/>
+			</td>
+			<td valign="top" height="10">
+				<b><webobject name="StrIndividuCount"/></b>
+			</td>
+		</webobject>
+
+		<webobject name = "CondIsAfficherSearchIndividu">
+			<td>
+				<webobject name = "FieldSearchIndividu1"/>
+			</td>
+		</webobject>
+	
+	</tr>
+	
+	<tr>
+		<td valign="top">
+			<webobject name = "CondIsAfficherBrowserIndividu">
+				<label><webobject name="RadioNonHie"/>Pas dans la hi&eacute;rachie</label><br>
+				<label><webobject name="RadioHie"/>Dans la hi&eacute;rachie</label><br>
+				<hr>
+			</webobject>
+			<label><webobject name="RadioNonEns"/>Non enseignant</label><br>
+			<label><webobject name="RadioEns"/>Enseignant</label><br>
+			<label><webobject name="RadioAutre"/>Autre</label>
+	 </td>
+	</tr>
+	
+	<webobject name = "CondIsAfficherBrowserIndividu">
+		<tr>
+			<td>
+				<webobject name = "JSFilterList"/> <webobject name = "YCRILookupField"/>
+			</td>
+		</tr>
+	</webobject>
+	
+</table>

@@ -1,0 +1,51 @@
+PhotoIndividu: PhotoIndividu {
+	individu = inEvaluation.toIndividu;
+}
+
+
+StrIdentifiant: WOString {
+	value = inEvaluation.dicoAgent.identifiant;//VALID
+}
+
+StrNomUsuel : WOString {
+	value = inEvaluation.dicoAgent.nomUsuel;//VALID
+}
+
+StrPrenom : WOString {
+	value = inEvaluation.dicoAgent.prenom;//VALID
+}
+
+StrDNaissance : WOString {
+	value = inEvaluation.dicoAgent.dNaissance;//VALID
+}
+
+StrStatut : WOString {
+	value = inEvaluation.dicoAgent.statut;//VALID
+}
+
+StrCorps : WOString {
+	value = inEvaluation.dicoAgent.corps;//VALID
+}
+
+StrGrade : WOString {
+	value = inEvaluation.dicoAgent.grade;//VALID
+}
+
+StrStructure : WOString {
+	value = inEvaluation.dicoAgent.services;//VALID
+}
+
+StrResponsable : WOString {
+	value = inEvaluation.dicoAgent.responsable;//VALID
+}
+
+StrEmploiType : WOString {
+	value = inEvaluation.dicoAgent.emplois;//VALID
+}
+
+
+PdfBoxEvaluationVierge: FevePdfBoxLink {
+	ctrl = ctrlEvaluation;
+	printLabel = "Compte rendu vierge";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de cette fiche d'entretien professionnel &agrave; compl&eacute;ter &agrave; la main.";
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="ChampLibre" wocomponentcontent="false">    <binding name="value"/>
+        <validation message="'value' is a required binding.">
+            <unbound name="value"/>
+        </validation>
+        <binding name="disabled"/>
+    <validation message="'disabled' is a required binding.">
+            <unbound name="disabled"/>
+        </validation>
+    <binding defaults="Boolean" name="isEnCoursDeModif"/>
+    <binding name="containerIdToUse"/>
+    <binding name="onBeforeModif"/>
+    </wo>
+</wodefinitions>

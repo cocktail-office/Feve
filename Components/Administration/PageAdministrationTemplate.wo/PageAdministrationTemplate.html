@@ -1,0 +1,56 @@
+<webobject name = "ContainerTemplate"> 
+<font class="title">Gestion de la forme des fiches</font>
+<hr/>
+<font class="title">Fiche de poste</font><br/>
+pas encore g&eacute;r&eacute;
+<br/>
+<br/>
+<font class="title">Fiche LOLF</font><br/>
+pas encore g&eacute;r&eacute;
+<br/>
+<br/>
+<font class="title">Fiche d'&eacute;valuation</font><br/>
+<table style = "border:2px solid #888">
+	<caption>
+		<webobject name = "ObserverPopupPeriodeList">
+			P&eacute;riode : <webobject name = "PopupPeriodeList"/>
+		</webobject>
+	</caption>
+	<tr>
+		<webobject name = "RepTplOngletEvaluation">
+			<td valign="top">
+				<font class="title"><webobject name = "StrTplOngletItem"/></font><br/>
+				<table style = "border:1px solid #888">
+					<webobject name = "RepTplBloc">
+						<tr>
+							<td style = "border:1px dotted #888">
+								<font class="subTitle">* <webobject name = "StrTplBlocItem"/></font><br/>
+								<webobject name = "CondIslBlocDynamique">
+								<table>
+									<webobject name = "RepTplItem">
+										<tr>
+											<td>
+												&raquo;
+												<webobject name = "StrTplItemItem"/>
+												<webobject name = "CondIsListe"><webobject name = "PopUpTplItemValeur"/></webobject>
+												<webobject name = "CondIsChampLibre"><input type="text" value="Champ libre" disabled/></webobject>
+											</td>
+										</tr>					
+									</webobject>
+								</table>
+								</webobject>
+								<webobject name = "CondIslBlocFormation">
+									<webobject name = "CktlNote1"><b>Bloc formations suivies (champ libre et/ou nomenclature)</b></webobject>
+								</webobject>
+								<webobject name = "CondIslBlocFormationSouhaitee">
+									<webobject name = "CktlNote1"><b>Bloc formations souhait&eacute;es (champ libre et/ou nomenclature)</b></webobject>
+								</webobject>
+							</td>
+						</tr>					
+					</webobject>
+				</table>
+			</td>
+		</webobject>
+	</tr>
+</table>
+</webobject>

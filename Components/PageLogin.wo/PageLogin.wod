@@ -1,0 +1,61 @@
+PageTemplate1: CktlDefaultPage {
+	pageTitle = "Feve - Fiches de poste et d'entretien professionnel";
+}
+
+LnkSite: WOHyperlink {
+	href = app.mainWebSiteUrl;
+	title = "Retour au site de l'universit&eacute;";
+}
+
+ImgLogo: WOImage {
+	border = 0;
+	height = 80;
+	src = app.mainLogoUrl;
+	width = 80;
+}
+
+imgLigneJaune: WOImage {
+  
+	border = "0";
+	src = "images/ligneApplisDegradee.gif";
+	width = "100%";
+	height = "6";
+}
+
+CondUseCas: WOConditional {
+	condition = app.appUseCas;
+}
+
+LnkCas: WOHyperlink {
+	href = linkCasLogin;
+	title = "Se connecter &agrave; l'application Feve";
+}
+
+CondNotUseCas: WOConditional {
+	condition = app.appUseCas;
+	negate = true;
+}
+
+ImgClefs: WOImage {
+	border = "0";
+	src = "images/clefs.gif";
+}
+
+CktlLogin: CktlLogin {
+	loginResponder = loginResponder;
+	buttonTip = "Se connecter &agrave; l'application";
+}
+
+CktlNoteDT: CktlNote {
+	
+}
+
+LnkDT: WOHyperlink {
+	href = linkAppDT;
+	title = "Cliquer ici pour acc&eacute;der &agrave; l'application DT";
+}
+
+StrAppVersionDateInstanceInfo: WOString {
+	value = app.appVersionDateInstanceInfo;
+	escapeHTML = false;
+}

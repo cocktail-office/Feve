@@ -1,0 +1,111 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        composanteDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = Structure; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = isStrComposante; 
+                                selectorName = "isEqualTo:"; 
+                                value = 1; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = isStrArchive; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = isStrArchive; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = FetchComposante; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = llStructure; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+        ficheLolfDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = FicheLolf; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "toPoste.cStructure"; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "toPoste.toStructure.toComposante.cStructure"; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = cStructureComposante; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = exeOrdre; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = exeOrdre; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = FetchSuivi; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 10; 
+            selectsFirstObjectAfterFetch = YES; 
+        }; 
+        serviceDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = VService; 
+                    isDeep = YES; 
+                    prefetchingRelationshipKeyPaths = (); 
+                }; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = "toStructure.llStructure"; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+    }; 
+}

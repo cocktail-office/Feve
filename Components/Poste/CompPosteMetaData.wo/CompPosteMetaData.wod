@@ -1,0 +1,144 @@
+WOConditionalErrorMessage1: WOConditionalErrorMessage {
+	condition = ctrl.hasError;
+	value =  ctrl.errMsg;
+}
+
+CondIsModeCreatePoste: WOConditional {
+	condition = ctrl.isModeCreatePoste;
+}
+
+ChkCreerFromAffectation: WOCheckBox {
+	checked = ctrl.isCreatingFromExistingAffectation;
+	onClick = "this.form.submit();";
+}
+
+CompSelectAffectationNouveauPoste: CompSelectAffectation {
+	ctrl = ctrl.compSelectAffectationCtrlNouveauPoste;
+	affectationSelected = ctrl.newPosAffectation;
+}
+
+CondCreerFromAffectation: WOConditional {
+	condition = ctrl.isCreatingFromExistingAffectation;
+}
+
+CondShowInfosPoste: WOConditional {
+	condition = ctrl.showInfosPoste;
+	negate = false;
+}
+
+TxtNewPosCode: WOTextField {
+	value = ctrl.newPosCode;
+	disabled = ctrl.isDisabledCodePoste;
+	size = "20";
+	maxSize = "30";
+}
+
+TxtNewPosLibelle: WOTextField {
+	value = ctrl.newPosLibelle;
+	size = "40";
+	maxSize = "128";
+}
+
+DtePickerNewPosDebut: CktlDatePicker {
+	dateValue = ctrl.newPosDDebut;
+	fieldName = "dateDebut";
+	formName = "FormFdp";
+}
+
+DtePickerNewPosFin: CktlDatePicker {
+	dateValue = ctrl.newPosDFin;
+	fieldName = "dateFin";
+	formName = "FormFdp";
+}
+
+ChkCreerFicheDePoste: WOCheckBox {
+	checked = ctrl.isCreatingFicheDePoste;
+	disabled = ctrl.isDisabledChkCreateFicheDePoste;
+}
+
+BtnDoCreatePoste: WOImageButton {
+	action = ctrl.doCreatePoste;
+	title = "Creer le poste";
+	filename = "images/valider16.gif"; 
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+}
+
+CondNotIsModeCreatePoste: WOConditional {
+	condition = ctrl.isModeCreatePoste;
+	negate = true;
+}
+
+TxtUpdatePosCode: WOTextField {
+	value = ctrl.inPoste.posCode;
+	disabled = ctrl.isDisabledCodePoste;	
+	size = "20";
+	maxSize = "30";
+}
+
+TxtUpdatePosLibelle: WOTextField {
+	value = ctrl.inPoste.posLibelle;
+	// on autorise pas le changement de libelle d'un poste enseignant
+	// disabled = ctrl.inPoste.isEnseignant;
+	size = "40";
+	maxSize = "128";
+}
+
+DtePickerUpdatePosDebut: CktlDatePicker {
+	dateValue = ctrl.inPoste.posDDebut;
+	fieldName = "dateDebut";
+	formName = "FormFdp";
+	disabled = ctrl.isDisabledDDebutPoste;
+}
+
+DtePickerUpdatePosFin: CktlDatePicker {
+	dateValue = ctrl.inPoste.posDFin;
+	fieldName = "dateFin";
+	formName = "FormFdp";
+	disabled = ctrl.isDisabledDFinPoste;
+}
+
+ImgCancel: WOImage {
+	border = 0;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkCancelAdd: WOHyperlink {
+	action = ctrl.caller.doAfterCompPosteMetaDataCancel;
+	title = "Annuler l'ajout d'un nouveau poste";
+}
+
+LnkCancelUpdate: WOHyperlink {
+	action = ctrl.caller.doAfterCompPosteMetaDataCancel;
+	title = "Annuler les modifications de ce poste";
+}
+
+BtnUpdatePoste: WOImageButton {
+	action = ctrl.doUpdatePoste;
+	title = "Enregistrer les modifications";
+	filename = "images/valider16.gif"; 
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+}
+
+CondShowMsgInfoModifPoste: WOConditional {
+	condition = ctrl.showMsgInfoModifPoste;
+}
+
+CktlNoteModifPoste: YPanelAvertissement {
+	
+}
+
+StrMsgInfoModifPoste: WOString {
+	value = ctrl.strMsgInfoModifPoste;
+	escapeHTML = false;
+}
+
+TableTitleDescriptifPoste: TableTitle {
+	title = "Descriptif du poste";
+}

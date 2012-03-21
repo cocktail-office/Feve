@@ -1,0 +1,170 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = codeemploi; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = KEY; 
+            externalType = VARCHAR2; 
+            name = key; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            columnName = "KEY_PERE"; 
+            externalType = VARCHAR2; 
+            name = keyPere; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LIBELLE_SEUL"; 
+            externalType = VARCHAR2; 
+            name = libelleSeul; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = libelleSeulChaineClaire; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = libelleSeulChaineClaire; 
+            readFormat = "CHAINE_CLAIRE(LIBELLE_SEUL)"; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            columnName = NIVEAU; 
+            externalType = NUMBER; 
+            name = niveau; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = numdcp; 
+            externalType = VARCHAR2; 
+            name = numdcp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = numfp; 
+            externalType = VARCHAR2; 
+            name = numfp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ordre; 
+            externalType = VARCHAR2; 
+            name = ordre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (key, keyPere); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOVReferens"; 
+    classProperties = (
+        key, 
+        keyPere, 
+        libelle, 
+        libelleSeul, 
+        libelleSeulChaineClaire, 
+        niveau, 
+        toReferensActivites, 
+        toReferensCompetences, 
+        toReferensDcp, 
+        toReferensEmplois, 
+        toReferensFp, 
+        tosVReferensFils, 
+        toVReferensPere
+    ); 
+    externalName = "GRHUM.V_REFERENS"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VReferens; 
+    primaryKeyAttributes = (key); 
+    relationships = (
+        {
+            destination = ReferensActivites; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = codeemploi; sourceAttribute = codeemploi; }, 
+                {destinationAttribute = ordre; sourceAttribute = ordre; }
+            ); 
+            name = toReferensActivites; 
+        }, 
+        {
+            destination = ReferensCompetences; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = codeemploi; sourceAttribute = codeemploi; }, 
+                {destinationAttribute = ordre; sourceAttribute = ordre; }
+            ); 
+            name = toReferensCompetences; 
+        }, 
+        {
+            destination = ReferensDcp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = numdcp; sourceAttribute = numdcp; }); 
+            name = toReferensDcp; 
+        }, 
+        {
+            destination = ReferensEmplois; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = toReferensEmplois; 
+        }, 
+        {
+            destination = ReferensFp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = numdcp; sourceAttribute = numdcp; }, 
+                {destinationAttribute = numfp; sourceAttribute = numfp; }
+            ); 
+            name = toReferensFp; 
+        }, 
+        {
+            destination = VReferens; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = keyPere; sourceAttribute = key; }); 
+            name = tosVReferensFils; 
+        }, 
+        {
+            destination = VReferens; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = keyPere; }); 
+            name = toVReferensPere; 
+        }
+    ); 
+}

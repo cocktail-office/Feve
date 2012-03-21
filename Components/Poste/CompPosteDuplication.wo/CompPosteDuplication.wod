@@ -1,0 +1,84 @@
+SelectService: SelectService {
+	eoStructureSelected = ctrl.eoStructureSelected;
+	updateContainerID = "ContainerDuplication";
+}
+
+CondIsStructureSelected: WOConditional {
+	condition = ctrl.eoStructureSelected;
+}
+
+TFLibelle: WOTextField {
+	value = ctrl.newPosLibelle;	
+	size = "40";
+	maxSize = "128";
+}
+
+StrCode: WOString {
+	value = ctrl.newPosCode;
+}
+
+DDebut: CktlAjaxDatePicker {
+	dateValue = ctrl.newPosDDebut;
+}
+
+DFin: CktlAjaxDatePicker {
+	dateValue = ctrl.newPosDFin;
+}
+
+CondIsAfficherSelectAffectation: WOConditional {
+	condition = ctrl.isEoAffectationExiste;
+	negate = true;
+}
+
+SelectAffectation: CompSelectAffectation {
+	affectationSelected = ctrl.eoAffectation;
+	ctrl = ctrl.selectAffectationCtrl;
+}
+
+
+CondIsAfficherAffectation: WOConditional {
+	condition = ctrl.isEoAffectationExiste;
+}
+
+
+StrAffectation: WOString {
+	value = ctrl.eoAffectation.display;
+}
+
+ContainerDuplication: AjaxUpdateContainer {
+	 id = "ContainerDuplication";
+}
+
+ContainerAffectation: AjaxUpdateContainer {
+	 id = "ContainerAffectation";
+}
+
+LnkDoDeselectionnerAffectation: CktlAjaxUpdateLink {
+	action = ctrl.doDeselectionnerAffectation;
+	title = "Déselectionner cette affectation";
+	updateContainerID = "ContainerAffectation";
+}
+
+ImgAnnuler: WOImage {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}
+
+ChkIsCreationDepuisAffectation: WOCheckBox {
+	checked = ctrl.isCreationDepuisAffectation;
+	id = "ChkIsCreationDepuisAffectation";
+}
+
+CondIsCreationDepuisAffectation: WOConditional {
+	condition = ctrl.isCreationDepuisAffectation;
+}
+
+ObserverChkIsCreationDepuisAffectation: AjaxObserveField {
+	action = neFaitRien;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	updateContainerID = "ContainerAffectation";
+}

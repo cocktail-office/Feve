@@ -1,0 +1,78 @@
+ChkList: WOCheckBoxList {
+	list = ctrl.typeList;
+	selections = ctrl.typeSelecteds;
+	item = ctrl.typeItem;
+}
+
+BtnProut: WOSubmitButton {
+	action = neFaitRien;
+}
+
+StrPosteListCount: WOString {
+	value = ctrl.posteList.count;
+}
+
+RepPosteList: WORepetition {
+	list = ctrl.posteList;
+	item = ctrl.posteItem;
+	idnex = ctrl.posteIndex;
+}
+
+DivLigPoste: WOGenericContainer {
+	elementName = "div";
+	class = "DivLigPoste";
+	//style = ctrl.divLigPosteStyle; 
+}
+
+LnkToPrevPeriode: WOHyperlink {
+	action = ctrl.toPrevPeriode;
+	title = "reculer d'une ann&eacute;e";
+}
+
+StrDDebPeriode: WOString {
+	value = ctrl.dDebPeriode;
+	dateformat = "%d/%m/%Y";
+}
+
+StrDFinPeriode: WOString {
+	value = ctrl.dFinPeriode;
+	dateformat = "%d/%m/%Y";
+}
+
+LnkToNextPeriode: WOHyperlink {
+	action = ctrl.toNextPeriode;
+	title = "avancer d'une ann&eacute;e";
+}
+
+SpanPosteItemPosCode: WOGenericContainer {
+	elementName = "span";
+	title = ctrl.posteItem.posLibelle;
+}
+
+StrPosteItemPosCode: WOString {
+	value = ctrl.posteItem.posCode;
+}
+
+RepTypeSelecteds: WORepetition {
+	list = ctrl.typeSelecteds;
+	item = ctrl.typeItem;
+}
+
+RepAffectationDetail: WORepetition {
+	list = ctrl.recordListOnPeriode;
+	item = ctrl.recordItem;
+	index = ctrl.recordIndex;
+}
+
+DivAffectationDetailItem: WOGenericContainer {
+	elementName = "div";
+	class = "affectationDetail";
+	style = ctrl.recordItemStyle;
+	onMouseOver = ctrl.onMouseOverAffectationDetailItem;
+	onMouseOut = ctrl.onMouseOutAffectationDetailItem;
+	title = ctrl.recordItemTitle;
+}
+
+StrAffectationDetailItem: WOString {
+	value = ctrl.recordItemDisplay;
+}

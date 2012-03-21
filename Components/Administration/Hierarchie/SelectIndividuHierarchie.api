@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="SelectIndividuHierarchie" wocomponentcontent="false">    <binding name="inEoEvaluationPeriode"/>
+        <validation message="'inEoEvaluationPeriode' is a required binding.">
+            <unbound name="inEoEvaluationPeriode"/>
+        </validation>
+        <binding name="inEoHierarchie"/>
+        
+        
+        <validation message="'inEoHierarchie' is a required binding.">
+            <unbound name="inEoHierarchie"/>
+        </validation>
+    <binding name="outEoIndividuSelected"/>
+    <validation message="'individuSelected' is a required binding.">
+            <unbound name="outEoIndividuSelected"/>
+        </validation>
+    <binding name="formName"/>
+        <validation message="'formName' is a required binding.">
+            <unbound name="formName"/>
+        </validation>
+    </wo>
+</wodefinitions>

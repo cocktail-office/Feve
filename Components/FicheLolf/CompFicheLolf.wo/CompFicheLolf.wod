@@ -1,0 +1,302 @@
+TipInfoPeriodeLolf: CktlToolTip {
+	htmlText = infoPeriodeLolf;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+CondCanAccesFicheLolfSelected: WOConditional {
+	condition = canAccesFicheLolfSelected;
+}
+
+CondNotCanAccesFicheLolfSelected: WOConditional {
+	condition = canAccesFicheLolfSelected;
+	negate = true;
+}
+
+CondIsInPosteExists: WOConditional {
+	condition = isInPosteExists;
+}
+
+CondIsAFicheLolfSelected: WOConditional {
+	condition = isAFicheLolfSelected;
+}
+
+
+CondNotHasRepRepartSilland: WOConditional {
+	condition = sortedRepartFloSilland.count;
+	negate = true;
+}
+
+CondHasRepRepartSilland: WOConditional {
+	condition = sortedRepartFloSilland.count;
+}
+
+RepRepartSilland: WORepetition {
+	item = uneRepartSilland;
+	list = sortedRepartFloSilland;
+}
+
+CondRepartSillandIsEnCoursDeModification: WOConditional {
+	condition = uneRepartSilland.isEnCoursDeModification;
+	negate = true;
+}
+
+StrSilland: WOString {
+	value = uneRepartSilland.toFctSilland.display;
+}
+
+CondShowLienAjouterLolfNomenclature: WOConditional {
+	condition = showLienAjouterLolfNomenclature;
+}
+
+LnkActiverModeAjouterLolfNomenclature: WOHyperlink {
+	action = activerModeAjouterLolfNomenclature;
+	title = "Associer une nouvelle destination LOLF";
+}
+
+StrRfsQuotite: WOString {
+	value = uneRepartSilland.rfsQuotite;
+	numberformat = "0.00";
+}
+
+CondNotIsDisabledBtnModifierFctSilland: WOConditional {
+	condition = isDisabledBtnModifierFctSilland;
+	negate = true;
+}
+
+LnkModifierFctSilland: WOHyperlink {
+	action = modifierFctSilland;
+	title = "Modifier la quotite ou la fonction SILLAND";
+}
+
+ImgModifier: WOImage {
+	border = 0;
+	filename = "images/modifier16.gif";
+	framework = "app";
+}
+
+CondNotIsDisabledBtnSupprimerFctSilland: WOConditional {
+	condition = isDisabledBtnSupprimerFctSilland;
+	negate = true;
+}
+
+LnkSupprimerFctSilland: WOHyperlink {
+	action = supprimerFctSilland;
+	title = "Supprimer la fonction SILLAND";
+}
+
+ImgSupprimer: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+}
+
+CondShowLigneModiferFctSilland: WOConditional {
+	condition = showLigneModiferFctSilland;
+}
+
+TextfieldModifRfsQuotite: WOTextField {
+	maxlength = 6;
+	numberformat = "0.##";
+	size = 3;
+	value = uneRepartSilland.rfsQuotite;
+}
+
+CondNotIsDisabledBtnAppliquerFctSilland: WOConditional {
+	condition = isDisabledBtnAppliquerFctSilland;
+	negate = true;
+}
+
+BtnSauvegarderModificationFctSilland: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = sauvegarderModificationFctSilland;
+	title = "Appliquer";
+}
+
+RepRepartLolfNomen: WORepetition {
+	item = uneRepartLolfNomen;
+	list = sortedRepartFloLolfNomen;
+}
+
+CondNotRepartLolfNomenIsEnCoursDeModification: WOConditional {
+	condition = uneRepartLolfNomen.isEnCoursDeModification;
+	negate = true;
+}
+
+ImgClose: WOImage {
+	filename = "img/mitem-close.gif";
+	framework = "FwkCktlWebApp";
+}
+
+StrLolfNomenclature: WOString {
+	value = uneRepartLolfNomen.toLolfNomenclatureDepense.lolfLibelle;
+}
+
+StrRepartLolfNomenRflQuotite: WOString {
+	value = uneRepartLolfNomen.rrfQuotite;
+	numberformat = "0.00";
+}
+
+CondNotIsDisabledBtnModifierLolfNomenclature: WOConditional {
+	condition = isDisabledBtnModifierLolfNomenclature;
+	negate = true;
+}
+
+LnkModifierLolfNomenclature: WOHyperlink {
+	action = modifierLolfNomenclature;
+	title = "Modifier la quotite ou la destination LOLF";
+}
+
+CondNotIsDisabledBtnSupprimerLolfNomenclature: WOConditional {
+	condition = isDisabledBtnSupprimerLolfNomenclature;
+	negate = true;
+}
+
+LnkSupprimerLolfNomenclature: WOHyperlink {
+	action = supprimerLolfNomenclature;
+	title = "Supprimer la destination LOLF";
+}
+
+CondUneRepartLolfNomenIsEnCoursDeModification: WOConditional {
+	condition = uneRepartLolfNomen.isEnCoursDeModification;
+}
+
+ComboLolfNomenclatureModif: WOPopUpButton {
+	displayString = uneLolfNomenclature.lolfLibelle;
+	item = uneLolfNomenclature;
+	list = lolfNomenclatureListModif;
+	selection = uneRepartLolfNomen.toLolfNomenclatureDepense;
+}
+
+TextFieldRepartLolfNomenQuotite: WOTextField {
+	maxlength = 6;
+	numberformat = "0.00";
+	size = 3;
+	value = uneRepartLolfNomen.rrfQuotite;
+}
+
+CondNotIsDisabledBtnAppliquerLolfNomenclature: WOConditional {
+	condition = isDisabledBtnAppliquerLolfNomenclature;
+	negate = true;
+}
+
+BtnSauvegarderModificationLolfNomenclature: WOImageButton {
+	action = sauvegarderModificationLolfNomenclature;
+	filename = "images/valider16.gif";
+	framework = "app";
+	title = "Appliquer cette modification";
+}
+
+BtnAnnuler: WOImageButton {
+	action = annuler;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	title = "Annuler cette modification";
+}
+
+PopUpFicheLolf: WOPopUpButton {
+	item = ficheLolfItem;
+	list = ficheLolfList;
+	selection = ficheLolfSelected;
+	displayString = ficheLolfItem.toExercice.exeExercice;
+	onChange = "this.form.submit();";
+	disabled = false;
+}
+
+CondUneRepartSillandIsEnCoursDAjoutDeLolfNomenclature: WOConditional {
+	condition = uneRepartSilland.isEnCoursDAjoutDeLolfNomenclature;
+}
+
+ComboLolfNomenclatureAjout: WOPopUpButton {
+	displayString = uneLolfNomenclature.lolfLibelle;
+	item = uneLolfNomenclature;
+	list = lolfNomenclatureListAjout;
+	selection = laLolfNomenclatureSelectionnee;
+}
+
+TextFieldLaQuotiteLolfNomen: WOTextField {
+	maxlength = 6;
+	numberformat = "0.00";
+	size = 3;
+	value = laQuotiteLolfNomen;
+}
+
+CondNotIsDisabledBtnAjouterLolfNomenclature: WOConditional {
+	condition = isDisabledBtnAjouterLolfNomenclature;
+	negate = true;
+}
+
+BtnAjouterLolfNomenclature: WOImageButton {
+	action = ajouterLolfNomenclature;
+	filename = "images/valider16.gif";
+	framework = "app";
+	title = "Affecter cette destination";
+}
+
+
+CondShowLienAjouterFctSilland: WOConditional {
+	condition = showLienAjouterFctSilland;
+}
+
+ImgPlus: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+LnkActiverModeAjouterFctSilland: WOHyperlink {
+	action = activerModeAjouterFctSilland;
+	title = "Affecter une autre/nouvelle fonction SILLAND a la fiche LOLF";
+}
+
+CondIsModeAjouterFctSilland: WOConditional {
+	condition = isModeAjouterFctSilland;
+}
+
+ComboNouvelleFctSilland: WOPopUpButton {
+	displayString = uneFctSilland.display;
+	item = uneFctSilland;
+	list = lesFctSilland;
+	onChange = "this.form.submit();";
+	selection = laFctSillandSelectionnee;
+}
+
+TextFieldLaQuotiteFctSilland: WOTextField {
+	maxlength = 6;
+	numberformat = "0.00";
+	size = 3;
+	value = laQuotiteFctSilland;
+}
+
+CondNotIsDisabledBtnAjouterFctSilland: WOConditional {
+	condition = isDisabledBtnAjouterFctSilland;
+	negate = true;
+}
+
+BtnAjouterFctSilland: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = ajouterFctSilland;
+	title = "Affecter cette fonction";
+}
+
+CondShowLeTexteErreur: WOConditional {
+	condition = showLeTexteErreur;
+}
+
+YPanelAvertissement1: YPanelAvertissement {
+}
+
+StrLeTexteErreur: WOString {
+	escapeHTML = false;
+	value = leTexteErreur;
+}

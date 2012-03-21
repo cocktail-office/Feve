@@ -1,0 +1,128 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "POS_CODE"; 
+            externalType = VARCHAR2; 
+            name = posCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "POS_D_DEBUT"; 
+            externalType = DATE; 
+            name = posDDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "POS_D_FIN"; 
+            externalType = DATE; 
+            name = posDFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "POS_KEY"; 
+            externalType = NUMBER; 
+            name = posKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "POS_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = posLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (posKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOPoste"; 
+    classProperties = (
+        posLibelle, 
+        dCreation, 
+        dModification, 
+        posCode, 
+        posDDebut, 
+        posDFin, 
+        toStructure, 
+        cStructure, 
+        tosFicheDePoste, 
+        tosAffectationDetail, 
+        tosFicheLolf, 
+        temValide
+    ); 
+    externalName = "MANGUE.POSTE"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (posLibelle, dCreation, dModification, posCode, posDDebut, posDFin); 
+    }; 
+    name = Poste; 
+    primaryKeyAttributes = (posKey); 
+    relationships = (
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AffectationDetail; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = posKey; }); 
+            name = tosAffectationDetail; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = FicheDePoste; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = posKey; }); 
+            name = tosFicheDePoste; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = FicheLolf; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = posKey; }); 
+            name = tosFicheLolf; 
+        }
+    ); 
+    restrictingQualifier = "temValide = 'O'"; 
+}

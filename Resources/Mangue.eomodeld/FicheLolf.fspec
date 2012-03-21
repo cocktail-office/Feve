@@ -1,0 +1,36 @@
+{
+    FetchSuivi = {
+        class = EOFetchSpecification; 
+        entityName = FicheLolf; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "toPoste.cStructure"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "toPoste.toStructure.toComposante.cStructure"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = cStructureComposante; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = exeOrdre; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = exeOrdre; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "toPoste.temValide"; 
+                    selectorName = "isEqualTo:"; 
+                    value = O; 
+                }
+            ); 
+        }; 
+    }; 
+}

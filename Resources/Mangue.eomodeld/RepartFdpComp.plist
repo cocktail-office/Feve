@@ -1,0 +1,119 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "COM_KEY"; 
+            externalType = NUMBER; 
+            name = comKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FDP_KEY"; 
+            externalType = NUMBER; 
+            name = fdpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ORDRE; 
+            externalType = VARCHAR2; 
+            name = ordre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "RFC_KEY"; 
+            externalType = NUMBER; 
+            name = rfcKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RFC_POSITION"; 
+            externalType = NUMBER; 
+            name = rfcPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rfcKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFdpComp"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        rfcPosition, 
+        toCompetence, 
+        toFicheDePoste, 
+        toReferensCompetences, 
+        tosRepartNiveauComp
+    ); 
+    externalName = "MANGUE.REPART_FDP_COMP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (comKey, dCreation, dModification, fdpKey); }; 
+    name = RepartFdpComp; 
+    primaryKeyAttributes = (rfcKey); 
+    relationships = (
+        {
+            destination = Competence; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = comKey; sourceAttribute = comKey; }); 
+            name = toCompetence; 
+        }, 
+        {
+            destination = FicheDePoste; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = fdpKey; }); 
+            name = toFicheDePoste; 
+        }, 
+        {
+            destination = ReferensCompetences; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = codeemploi; sourceAttribute = codeemploi; }, 
+                {destinationAttribute = ordre; sourceAttribute = ordre; }
+            ); 
+            name = toReferensCompetences; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartNiveauComp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rfcKey; sourceAttribute = rfcKey; }); 
+            name = tosRepartNiveauComp; 
+            ownsDestination = Y; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_CanBeDeleted"; };  
+}

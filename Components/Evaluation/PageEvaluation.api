@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+	<wo class="PageEvaluation" wocomponentcontent="false">
+
+		<binding name="inputLEvaluation"/>
+
+		<validation message="'inputLEvaluation' is a required binding">
+			<unbound name="inputLEvaluation"/>
+		</validation>
+	
+        
+    <binding name="ctrl"/>
+        <validation message="'ctrl' is a required binding.">
+            <unbound name="ctrl"/>
+        </validation>
+    </wo>
+</wodefinitions>

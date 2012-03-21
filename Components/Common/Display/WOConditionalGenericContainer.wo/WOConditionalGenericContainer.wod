@@ -1,0 +1,22 @@
+CondIsConditionTrue: WOConditional {
+	condition = ^condition;
+}
+
+StrElementStart: WOString {
+	value = elementStart;
+	escapeHTML = "false";
+}
+
+StrElementEnd: WOString {
+	value = elementEnd;
+	escapeHTML = "false";
+}
+
+CondIsConditionFalse: WOConditional {
+	condition = ^condition;
+	negate = true;
+}
+
+WOComponentContent1: WOComponentContent {
+	
+}

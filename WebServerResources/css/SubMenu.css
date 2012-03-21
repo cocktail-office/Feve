@@ -1,0 +1,49 @@
+
+.disabledTab
+ {
+	font-weight: bold;
+	text-align: center;
+	color: #777777;
+	background: #DDDDDD;
+	border-top: thin solid #EEEEEE;
+	border-right: thin solid #EEEEEE;
+	border-left: thin solid #EEEEEE;
+	border-bottom: thin solid #EEEEEE;
+	cursor: pointer;
+	visibility: visible;
+	z-index:1;
+	height:2em;
+	width:15em;
+}
+
+.selectedTab
+ {
+	font-weight: bold;
+	text-align: center;
+	color: navy;
+	background: #aabbff;
+	border-top: thin solid #aabbff;
+	border-right: thin solid #aabbff;
+	border-left: thin solid #aabbff;
+	border-bottom: thin solid #aabbff;
+	cursor: pointer;
+	visibility: visible;
+	z-index:1;
+	height:2em;
+	width:15em;
+}
+.tab
+ {
+	font-weight: bold;
+	text-align: center;
+	background: #ddeeff;
+	color: navy;
+	border-top: thin solid white;
+	border-right: thin none;
+	border-left: thin solid white;
+	border-bottom: thin solid;
+	cursor: pointer;
+	visibility:visible;
+	z-index:20;
+	width:15em;
+}

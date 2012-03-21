@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "TUT_CODE"; 
+            externalType = VARCHAR2; 
+            name = tutCode; 
+            valueClassName = NSString; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TUT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tutLibelle; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "TUT_ORDRE"; 
+            externalType = NUMBER; 
+            name = tutOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (tutOrdre); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOTypeUniteTemps"; 
+    classProperties = (tutCode, tutLibelle); 
+    externalName = "GRHUM.TYPE_UNITE_TEMPS"; 
+    fetchSpecificationDictionary = {}; 
+    name = TypeUniteTemps; 
+    primaryKeyAttributes = (tutOrdre); 
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="CompCompetenceDisplay" wocomponentcontent="false">
+
+		<binding name="laCompetence"/>
+
+		<validation message="&apos;laCompetence&apos; is a required binding">
+			<unbound name="laCompetence"/>
+		</validation>
+	</wo>
+</wodefinitions>

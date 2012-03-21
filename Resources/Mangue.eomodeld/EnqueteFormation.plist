@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EFO_ANNEE"; 
+            externalType = NUMBER; 
+            name = efoAnnee; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EFO_CHAMP_LIBRE"; 
+            externalType = VARCHAR2; 
+            name = efoChampLibre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "EFO_KEY"; 
+            externalType = NUMBER; 
+            name = efoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (efoKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOEnqueteFormation"; 
+    classProperties = (
+        efoChampLibre, 
+        dCreation, 
+        dModification, 
+        toIndividu, 
+        toEvaluation, 
+        tosRepartEnqComp, 
+        efoAnnee
+    ); 
+    externalName = "MANGUE.ENQUETE_FORMATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification); }; 
+    name = EnqueteFormation; 
+    primaryKeyAttributes = (efoKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEnqComp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = efoKey; sourceAttribute = efoKey; }); 
+            name = tosRepartEnqComp; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

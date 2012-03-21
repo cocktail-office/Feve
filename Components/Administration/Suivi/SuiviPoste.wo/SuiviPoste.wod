@@ -1,0 +1,73 @@
+FilArianeSuiviPoste: FilAriane {
+	nodeRoot = compPosteListCtrl;
+}
+
+CRINavBarPoste: YCRINavigationBar {
+	displayGroup = posteDg;
+	longListLimit = 10;
+}
+
+CondHasResult: WOConditional {
+	condition = posteDg.allObjects.@count;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.display;
+	noSelectionString = "--- Tous les services ---";
+	onChange = "this.form.submit();";
+}
+
+PopupPosteNature: WOPopUpButton {
+	item = posteNatureItem;
+	list = posteNatureList;
+	selection = posteNatureSelected;
+	escapeHTML = false;
+	onChange = "this.form.submit();";
+}
+
+PopupPosteType: WOPopUpButton {
+	item = posteTypeItem;
+	list = posteTypeList;
+	selection = posteTypeSelected;
+	escapeHTML = false;
+	onChange = "this.form.submit();";
+}
+
+StrTotalPoste: WOString {
+	value = posteDg.allObjects.count;
+}
+
+BtnRefresh: WOSubmitButton {
+	value = "Rafraichir";
+	action = doRefresh;
+	class = "bouton";
+}
+
+CompPosteList1: CompPosteList {
+	posteDg = posteDg;
+	messageEmptyList = "Aucun poste ne r&eacute;pond &agrave; ces crit&egrave;res.";
+	ctrl = compPosteListCtrl;
+}

@@ -1,0 +1,357 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_CATEGORIE"; 
+            externalType = VARCHAR2; 
+            name = cCategorie; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "C_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = cTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VAL"; 
+            externalType = DATE; 
+            name = dDebVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VAL"; 
+            externalType = DATE; 
+            name = dFinVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DROIT_CONGES_CONTRAT"; 
+            externalType = VARCHAR2; 
+            name = droitCongesContrat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DUREE_INIT_CONTRAT"; 
+            externalType = NUMBER; 
+            name = dureeInitContrat; 
+            precision = 3; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DUREE_MAX_CONTRAT"; 
+            externalType = NUMBER; 
+            name = dureeMaxContrat; 
+            precision = 3; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HORAIRE_HEBDOMADAIRE"; 
+            externalType = NUMBER; 
+            name = horaireHebdomadaire; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = lcTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = llTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERIODE_REF_RENOUV"; 
+            externalType = NUMBER; 
+            name = periodeRefRenouv; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "REF_REGLEMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = refReglementaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "REGIME_URSSAF"; 
+            externalType = VARCHAR2; 
+            name = regimeUrssaf; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_CAV_AUTOR_TITUL"; 
+            externalType = VARCHAR2; 
+            name = temCavAutorTitul; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_CAV_CTRL_169H"; 
+            externalType = VARCHAR2; 
+            name = temCavCtrl169H; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_CDI"; 
+            externalType = VARCHAR2; 
+            name = temCdi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_DELEGATION"; 
+            externalType = VARCHAR2; 
+            name = temDelegation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_ENSEIGNANT"; 
+            externalType = VARCHAR2; 
+            name = temEnseignant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_EQUIV_GRADE"; 
+            externalType = VARCHAR2; 
+            name = temEquivGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_INVITE_ASSOCIE"; 
+            externalType = VARCHAR2; 
+            name = temInviteAssocie; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_MISSION"; 
+            externalType = VARCHAR2; 
+            name = temMission; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_PARTIEL"; 
+            externalType = VARCHAR2; 
+            name = temPartiel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_REMUNERATION_ACCESSOIRE"; 
+            externalType = VARCHAR2; 
+            name = temRemunerationAccessoire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_REMUNERATION_PRINCIPALE"; 
+            externalType = VARCHAR2; 
+            name = temRemunerationPrincipale; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_RENOUV_CONTRAT"; 
+            externalType = VARCHAR2; 
+            name = temRenouvContrat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_SERVICE_PUBLIC"; 
+            externalType = VARCHAR2; 
+            name = temServicePublic; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_TITULAIRE"; 
+            externalType = VARCHAR2; 
+            name = temTitulaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cCategorie, 
+        cTypeContratTrav, 
+        dCreation, 
+        dDebVal, 
+        dFinVal, 
+        dModification, 
+        droitCongesContrat, 
+        dureeInitContrat, 
+        dureeMaxContrat, 
+        horaireHebdomadaire, 
+        lcTypeContratTrav, 
+        llTypeContratTrav, 
+        periodeRefRenouv, 
+        refReglementaire, 
+        regimeUrssaf, 
+        temCavAutorTitul, 
+        temCavCtrl169H, 
+        temCdi, 
+        temDelegation, 
+        temEnseignant, 
+        temEquivGrade, 
+        temInviteAssocie, 
+        temMission, 
+        temPartiel, 
+        temRemunerationAccessoire, 
+        temRemunerationPrincipale, 
+        temRenouvContrat, 
+        temServicePublic, 
+        temTitulaire
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOTypeContratTravail"; 
+    classProperties = (
+        cCategorie, 
+        dCreation, 
+        dDebVal, 
+        dFinVal, 
+        dModification, 
+        droitCongesContrat, 
+        dureeInitContrat, 
+        dureeMaxContrat, 
+        horaireHebdomadaire, 
+        lcTypeContratTrav, 
+        llTypeContratTrav, 
+        periodeRefRenouv, 
+        refReglementaire, 
+        regimeUrssaf, 
+        temCavAutorTitul, 
+        temCavCtrl169H, 
+        temCdi, 
+        temDelegation, 
+        temEnseignant, 
+        temEquivGrade, 
+        temInviteAssocie, 
+        temMission, 
+        temPartiel, 
+        temRemunerationAccessoire, 
+        temRemunerationPrincipale, 
+        temRenouvContrat, 
+        temServicePublic, 
+        temTitulaire
+    ); 
+    externalName = "GRHUM.TYPE_CONTRAT_TRAVAIL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cCategorie, 
+            cTypeContratTrav, 
+            dCreation, 
+            dDebVal, 
+            dFinVal, 
+            dModification, 
+            droitCongesContrat, 
+            dureeInitContrat, 
+            dureeMaxContrat, 
+            horaireHebdomadaire, 
+            lcTypeContratTrav, 
+            llTypeContratTrav, 
+            periodeRefRenouv, 
+            refReglementaire, 
+            regimeUrssaf, 
+            temCavAutorTitul, 
+            temCavCtrl169H, 
+            temCdi, 
+            temDelegation, 
+            temEnseignant, 
+            temEquivGrade, 
+            temInviteAssocie, 
+            temMission, 
+            temPartiel, 
+            temRemunerationPrincipale, 
+            temRenouvContrat, 
+            temServicePublic
+        ); 
+    }; 
+    name = TypeContratTravail; 
+    primaryKeyAttributes = (cTypeContratTrav); 
+    restrictingQualifier = "((temTitulaire <> 'O') and (temRemunerationAccessoire <> 'O'))"; 
+    userInfo = {
+        Commentaire = "Tous les types de contrat de travail sauf temTitulaire \U00d5 O et temRemunerationAccessoire \U00d5 O qui sont utilis\U00dds dans Papaye.\n"; 
+    }; 
+}

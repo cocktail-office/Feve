@@ -1,0 +1,302 @@
+<style type = "text/css">
+.boxComposanteLift {
+	width: 100px; 
+	overflow: auto; 
+	height: 200px;
+}
+
+.boxServiceLift {
+	width: 100px; 
+	overflow: auto; 
+	height: 200px;
+}
+
+.boxPosteLift {
+	width: 300px; 
+	overflow: auto; 
+	height: 200px;
+}
+
+.archive {
+	text-decoration: line-through;
+}
+</style>
+<webobject name = "FormBrowserComposanteServicePoste">
+<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+  <tr>
+		<td>
+      <table cellpadding="2" cellspacing="0">
+      
+      	<!-- types de cibles -->
+				<tr class="listboxHeader">
+					<td colspan="4" nowrap>
+						<table width="100%">
+							<tr>
+								<td>
+									<webobject name = "BtnDoClearSelection"/>
+									&nbsp;&nbsp;&nbsp;
+									<font class="title">
+
+										<label>
+											<webobject name = "RadioTypeFilsServicePoste"/>Postes / LOLF
+										</label>
+
+										<webobject name = "CondShowPosteList">
+											<!-- nature des postes -->
+											<webobject name = "PopupPosteNature"/>&nbsp;&nbsp;&nbsp;
+										</webobject>			
+
+										<label>
+											<webobject name = "RadioTypeFilsServiceAgent"/>Agents / Entretiens professionnels
+										</label>
+
+										<webobject name = "CondShowIndividuList">
+											<webobject name = "PopUpEvaluationPeriode"/>
+										</webobject>
+
+									</font>
+								</td>
+								<td align="right" width="1%" nowrap>
+									<span title="Voir les composantes et services qui ont &eacute;t&eacute; archiv&eacute;s">
+									<font class="textNote"><webobject name = "ChkShowArchive"/> + service archiv&eacute;s</font>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>      
+      
+      	<!-- titre des colonnes -->
+				<tr class="listboxHeader" style = "border: 1px solid #000">
+					<th class="bordureGaucheHaut" width="1%" nowrap><font class="title">Comp. (<webobject name = "StrComposanteCount"/>)</font></th>
+					
+					<th class="bordureGaucheHaut"><font class="title">Serv. (<webobject name = "StrServiceCount"/>)</font></th>
+					
+					<th class="bordureGaucheHaut">
+						
+						<!-- affichage de la liste des postes -->
+						<webobject name = "CondShowPosteList">
+							<font class="title">Postes (<webobject name = "StrPosteCount"/>)</font>&nbsp;&nbsp;&nbsp;
+						</webobject>
+				
+						<!-- affichage de la liste des agents -->
+						<webobject name = "CondShowIndividuList">
+							<font class="title">Agents (<webobject name = "StrIndividuCount"/>)</font>
+						</webobject>
+						
+					</th>
+					
+					<!-- colonne supplementaires pour afficher les fiches de poste et les fiches LOLF -->
+					<webobject name = "CondShowFicheList">
+					<th class="bordureGaucheHaut">
+					
+					<!-- affichage de la liste des fiches de poste -->
+					<webobject name = "CondShowFicheDePosteList">
+						<webobject name = "RadioTypeFilsPosteFicheDePoste"/>
+						<font class="title">Fiches de Poste (<webobject name = "StrFicheDePosteCount"/>)</font>&nbsp;&nbsp;&nbsp;
+						<webobject name = "RadioTypeFilsPosteFicheLolf"/>
+						Fiches LOLF
+					</webobject>
+					
+					<!-- affichage de la liste des fiches Lolf -->
+					<webobject name = "CondShowFicheLolfList">
+						<webobject name = "RadioTypeFilsPosteFicheDePoste"/>
+						Fiches de Poste&nbsp;&nbsp;&nbsp;
+						<webobject name = "RadioTypeFilsPosteFicheLolf"/>
+						<font class="title">Fiches LOLF (<webobject name = "StrFicheLolfCount"/>)</font>
+					</webobject>
+					
+					</th>
+					</webobject>
+					
+				</tr>
+				<tr class="listboxLine">
+				
+					<!-- colonne des composantes -->
+					<td>
+						
+						<webobject name = "ContainerComposantes">
+							<div class="boxComposanteLift">
+								<table>
+	
+								<webobject name = "RepComposante">
+									<tr class="listboxLine">
+										<td align="left"> 
+											<webobject name = "CondIsComposanteItemArchive">
+												<webobject name = "StrBaliseArchiveOpen"/>
+											</webobject>
+											<webobject name = "CondIsTheComposanteSelected">
+												<a name="composanteSelected">&nbsp;</a>
+												<webobject name = "StrBaliseSelectedOpen"/>&raquo;
+											</webobject>
+											<webobject name = "LnkComposanteItem"/>
+											<webobject name = "CondIsTheComposanteSelected">
+												<webobject name = "StrBaliseSelectedClose"/>
+											</webobject>
+											<webobject name = "CondIsComposanteItemArchive">
+												<webobject name = "StrBaliseArchiveClose"/>
+											</webobject>
+										</td>
+									</tr>
+								</webobject>
+		
+								</table>
+							</div>
+						</webobject>
+					
+						<!-- filtre sur le libellé de composante -->
+						<webobject name = "TFFiltreComposante"/>
+						<webobject name = "ObserverTFFiltreComposante"/>
+
+					</td>
+					
+					<!-- colonne des services -->
+					<td>
+					
+						<webobject name = "ContainerServices">
+							<div class="boxServiceLift">
+								<table>
+								
+								<webobject name = "RepService">
+									<tr class="listboxLine">
+										<td align="left"> 
+											<webobject name = "CondIsServiceItemArchive">
+												<webobject name = "StrBaliseArchiveOpen"/>
+											</webobject>
+											<webobject name = "CondIsTheServiceSelected">
+												<a name="serviceSelected">&nbsp;</a>
+												<webobject name = "StrBaliseSelectedOpen"/>&raquo;
+											</webobject>
+											<webobject name = "LnkServiceItem"/>
+											<webobject name = "CondIsTheServiceSelected">
+												<webobject name = "StrBaliseSelectedClose"/>
+											</webobject>
+											<webobject name = "CondIsServiceItemArchive">
+												<webobject name = "StrBaliseArchiveClose"/>
+											</webobject>
+										</td>
+									</tr>
+								</webobject>
+								
+								</table>
+							</div>
+						</webobject>
+						
+						<!-- filtre sur le libellé de service -->
+						<webobject name = "TFFiltreService"/>
+						<webobject name = "ObserverTFFiltreService"/>
+						
+					</td>
+					
+					<!-- colonne des postes et des agents -->
+					<td>
+					
+						<!-- liste des postes -->	
+						<webobject name = "CondShowPosteList">
+
+							<webobject name = "ContainerPostes">
+								<div class="boxPosteLift">
+									<table>
+									<webobject name = "RepPoste">
+										<tr class="listboxLine">
+											<td align="left">
+												<webobject name = "CondIsThePosteSelected">
+													<a name="posteSelected">&nbsp;</a><webobject name = "StrBaliseSelectedOpen"/>&raquo;
+												</webobject>
+												<webobject name = "LnkPosteItem"/>
+												<webobject name = "CondIsThePosteSelected">
+													<webobject name = "StrBaliseSelectedClose"/>
+												</webobject>
+											</td>
+										</tr>
+									</webobject>
+									</table>
+								</div>
+							</webobject>
+							
+							<!-- filtre sur le libellé de poste -->
+							<webobject name = "TFFiltrePoste"/>
+							<webobject name = "ObserverTFFiltrePoste"/>
+							
+						</webobject>
+							
+						<!-- liste des agents -->
+						<webobject name = "CondShowIndividuList">
+							<div class="boxPosteLift">
+								<table>
+								<webobject name = "RepIndividu">
+									<tr class="listboxLine">
+										<td align="left">
+											<webobject name = "CondIsTheIndividuSelected">
+												<a name="individuSelected">&nbsp;</a><webobject name = "StrBaliseSelectedOpen"/>&raquo;
+											</webobject>
+											<webobject name = "LnkIndividuItem"/>
+											<webobject name = "CondIsTheIndividuSelected">
+												<webobject name = "StrBaliseSelectedClose"/>
+											</webobject>
+										</td>
+									</tr>
+								</webobject>
+								</table>
+							</div>
+						</webobject>
+						
+					</td>
+			
+			
+					<!-- colonne des fiches -->
+					<webobject name = "CondShowFicheList">
+					<td>
+					
+						<!-- colonne des fiches de poste -->
+						<webobject name = "CondShowFicheDePosteList">
+							<div class="boxPosteLift">
+								<table>
+								<webobject name = "RepFicheDePoste">
+									<tr class="listboxLine">
+										<td align="left">
+											<webobject name = "CondIsTheFicheDePosteSelected">
+												<a name="ficheDePosteSelected">&nbsp;</a><webobject name = "StrBaliseSelectedOpen"/>&raquo;
+											</webobject>
+											<webobject name = "LnkFicheDePosteItem"/>
+											<webobject name = "CondIsThePosteSelected">
+												<webobject name = "StrBaliseSelectedClose"/>
+											</webobject>
+										</td>
+									</tr>
+								</webobject>
+								</table>
+							</div>
+						</webobject>				
+						
+						<!-- colonne des fiches LOLF -->
+						<webobject name = "CondShowFicheLolfList">
+							<div class="boxPosteLift">
+								<table>
+								<webobject name = "RepFicheLolf">
+									<tr class="listboxLine">
+										<td align="left">
+											<webobject name = "CondIsTheFicheLolfSelected">
+												<a name="ficheLolfSelected">&nbsp;</a><webobject name = "StrBaliseSelectedOpen"/>&raquo;
+											</webobject>
+											<webobject name = "LnkFicheLolfItem"/>
+											<webobject name = "CondIsTheFicheLolfSelected">
+												<webobject name = "StrBaliseSelectedClose"/>
+											</webobject>
+										</td>
+									</tr>
+								</webobject>
+								</table>
+							</div>
+						</webobject>
+					
+						
+					</td>
+					</webobject>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>
+<script type = "text/javascript">document.location="#composanteSelected";document.location="#serviceSelected";document.location="#posteSelected";document.location="#ficheDePosteSelected";document.location="#ficheLolfSelected";document.location="#individuSelected";</script>

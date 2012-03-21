@@ -1,0 +1,1 @@
+ -destination src -extension java -java -model Modeles.subproj/Grhum.eomodeld -model Modeles.subproj/Mangue.eomodeld -packagedirs -refmodel /Library/WebObjects/Applications/Frameworks/JavaCarambole.framework/Resources/carambole.eomodeld -subclassDestination src -templatedir _EOGenTemplates -verbose -loadModelGroup

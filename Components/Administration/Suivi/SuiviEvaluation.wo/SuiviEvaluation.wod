@@ -1,0 +1,120 @@
+
+PopupPeriode: WOPopUpButton {
+	list = periodeDg.displayedObjects;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strAnneeDebutAnneeFin;
+	id = "PopupPeriode";
+}
+
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.display;
+	noSelectionString = "--- Tous les services ---";
+	id = "PopupService";
+}
+
+PopupPosteType: WOPopUpButton {
+	item = posteTypeItem;
+	list = posteTypeList;
+	selection = posteTypeSelected;
+	escapeHTML = false;
+	id = "PopupPosteType";
+}
+
+PopupEntretienTenu: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = entretienTenuOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupEntretienTenu";
+	noSelectionString = "";
+}
+
+PopupVisaRh: WOPopUpButton {
+	item = ouiNonItem;
+	list = ouiNonArray;
+	selection = visaRhOuiNonSelected;
+	escapeHTML = false;
+	id = "PopupVisaRh";
+	noSelectionString = "";
+}
+
+StrTotalEvaluation: WOString {
+	value = evaluationArray.count;
+}
+
+CondHasResult: WOConditional {
+	condition = evaluationArray.count;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br><u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br><u>convertir</u>, suivant, choisir s&eacute;parateur et fin";
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+CompEvaluationList1: CompEvaluationList {
+	evaluationList = evaluationArray;
+	messageEmptyList = "Aucun entretien professionnel ne r&eacute;pond &agrave; ces crit&egrave;res.";
+	isAfficherDateEntretien = true;
+	isAfficherDateVisaRh = true;
+}
+
+
+ContainerResultats: AjaxUpdateContainer {
+	 id = "ContainerResultats";
+}
+
+ObserverPopupPeriode: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupPeriode";
+}
+
+ObserverPopupService: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupService";
+}
+
+ObserverPopupPosteType: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupPosteType";
+}
+
+ObserverPopupEntretienTenu: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupEntretienTenu";
+}
+
+ObserverPopupVisaRh: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupVisaRh";
+}

@@ -1,0 +1,300 @@
+FormBrowserComposanteServicePoste: WOForm {
+	name = "FormBrowserComposanteServicePoste";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+ChkShowArchive: WOCheckBox {
+	checked = showArchive;
+	onClick = "this.form.submit();";
+}
+
+PopUpEvaluationPeriode: WOPopUpButton {
+	list = evaluationPeriodeList;
+	item = evaluationPeriodeItem;
+	selection = evaluationPeriodeSelected;
+	noSelectionString = "Toutes les periodes";
+	onChange = "this.form.submit();";
+	displayString = evaluationPeriodeItem.strDateDebutDateFin;
+}
+
+BtnDoClearSelection: WOSubmitButton {
+	action = doClearSelection;
+	value = "RAZ";
+	title = "D&eacute;selectionner tous les objets";
+	class = "bouton";
+	name = "BtnDoClearSelection";
+}
+
+StrComposanteCount: WOString {
+	value = composanteDisplayGroup.displayedObjects.count;
+	valueWhenEmpty = "0";
+}
+
+StrServiceCount: WOString {
+	value =	serviceList.count;
+	valueWhenEmpty = "0";
+}
+
+RadioTypeFilsServicePoste: WORadioButton {
+	value = TYPE_FILS_SERVICE_POSTE;
+	selection = typeFilsServiceSelected;
+	name = "RadioTypeFilsService";
+	onclick = "this.form.submit();";
+}
+
+RadioTypeFilsServiceAgent: WORadioButton {
+	value = TYPE_FILS_SERVICE_AGENT;
+	selection = typeFilsServiceSelected;
+	name = "RadioTypeFilsService";
+	onclick = "this.form.submit();";
+}
+
+CondShowPosteList: WOConditional {
+	condition = isTypeFilsServicePosteSelected;
+}
+
+StrPosteCount: WOString {
+	value = posteDisplayGroup.displayedObjects.count;
+	valueWhenEmpty = "0";
+}
+
+CondShowFicheList: WOConditional {
+	condition = showFicheList;
+}
+
+PopupPosteNature: WOPopUpButton {
+	item = posteNatureItem;
+	list = posteNatureList;
+	selection = posteNatureSelected;
+	onChange = "this.form.submit();";
+	escapeHTML = false;
+}
+
+RadioTypeFilsPosteFicheDePoste: WORadioButton {
+	value = TYPE_FILS_POSTE_FICHE_DE_POSTE;
+	selection = typeFilsPosteSelected;
+	name = "RadioTypeFilsPoste";
+	onclick = "this.form.submit();";
+}
+
+RadioTypeFilsPosteFicheLolf: WORadioButton {
+	value = TYPE_FILS_POSTE_FICHE_LOLF;
+	selection = typeFilsPosteSelected;
+	name = "RadioTypeFilsPoste";
+	onclick = "this.form.submit();";
+}
+
+CondShowFicheDePosteList: WOConditional {
+	condition = showFicheDePosteList;
+}
+
+StrFicheDePosteCount: WOString {
+	value = posteSelected.tosFicheDePoste.count;
+	valueWhenEmpty = "0";
+}
+
+CondShowFicheLolfList: WOConditional {
+	condition = showFicheLolfList;
+}
+
+StrFicheLolfCount: WOString {
+	value = posteSelected.tosFicheLolf.count;
+	valueWhenEmpty = "0";
+}
+
+CondShowIndividuList: WOConditional {
+	condition = isTypeFilsServiceAgentSelected;
+}
+
+StrIndividuCount: WOString {
+	value = individuList.count;
+	valueWhenEmpty = "0";
+}
+
+RepComposante: WORepetition {
+	list = composanteDisplayGroup.displayedObjects;
+	item = composanteItem;
+}
+
+CondIsTheComposanteSelected: WOConditional {
+	condition = isTheComposanteSelected;
+}
+
+LnkComposanteItem: WOHyperlink {
+	action = doComposanteSelection;
+	string = composanteItem.lcStructure;
+	//title = "cliquer pour afficher les services de la composante";
+	title = titleLnkComposanteItem;
+}
+
+ContainerComposantes: AjaxUpdateContainer {
+	id = "ContainerComposantes";
+}
+
+TFFiltreComposante: WOTextField {
+	value = filtreComposante;
+	name = "TFFiltreComposante";
+	id = "TFFiltreComposante";
+	size = "10";
+}
+
+ObserverTFFiltreComposante: AjaxObserveField {
+	updateContainerID = "ContainerComposantes";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "TFFiltreComposante";
+	observeFieldFrequency = "0.1";
+	observeDelay = "0.1";
+}
+
+RepService: WORepetition {
+	list = serviceList;
+	item = serviceItem;
+}
+
+CondIsTheServiceSelected: WOConditional {
+	condition = isTheServiceSelected;
+}
+
+LnkServiceItem: WOHyperlink {
+	action = doServiceSelection;
+	string = serviceItem.lcStructure;
+	//title = "cliquer pour afficher les postes associ&eacute;s";
+	title = titleLnkServiceItem;
+}
+
+ContainerServices: AjaxUpdateContainer {
+	id = "ContainerServices";
+}
+
+TFFiltreService: WOTextField {
+	value = filtreService;
+	name = "TFFiltreService";
+	id = "TFFiltreService";
+	size = "10";
+}
+
+ObserverTFFiltreService: AjaxObserveField {
+	updateContainerID = "ContainerServices";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "TFFiltreService";
+	observeFieldFrequency = "0.1";
+	observeDelay = "0.1";
+}
+
+
+RepPoste: WORepetition {
+	list = posteDisplayGroup.displayedObjects;
+	item = posteItem;
+}
+
+CondIsThePosteSelected: WOConditional {
+	condition = isThePosteSelected;
+}
+
+LnkPosteItem: WOHyperlink {
+	action = doPosteSelection;
+	string = posteItem.displayCodeOccupationActuelle;
+	title = "Cliquer pour s&eacute;lectionner le poste";
+}
+
+ContainerPostes: AjaxUpdateContainer {
+	id = "ContainerPostes";
+}
+
+TFFiltrePoste: WOTextField {
+	value = filtrePoste;
+	name = "TFFiltrePoste";
+	id = "TFFiltrePoste";
+	size = "10";
+}
+
+ObserverTFFiltrePoste: AjaxObserveField {
+	updateContainerID = "ContainerPostes";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "TFFiltrePoste";
+	observeFieldFrequency = "0.1";
+	observeDelay = "0.1";
+}
+
+
+
+RepFicheDePoste: WORepetition {
+	list = posteSelected.tosFicheDePoste;
+	item = ficheDePosteItem;
+}
+
+CondIsTheFicheDePosteSelected: WOConditional {
+	condition = isTheFicheDePosteSelected;
+}
+
+LnkFicheDePosteItem: WOHyperlink {
+	action = doFicheDePosteSelection;
+	string = ficheDePosteItem.display;
+	title = "Cliquer pour s&eacute;lectionner la fiche de poste";
+}
+
+RepFicheLolf: WORepetition {
+	list = posteSelected.tosFicheLolf;
+	item = ficheLolfItem;
+}
+
+CondIsTheFicheLolfSelected: WOConditional {
+	condition = isTheFicheLolfSelected;
+}
+
+LnkFicheLolfItem: WOHyperlink {
+	action = doFicheLolfSelection;
+	string = ficheLolfItem.display;
+	title = "Cliquer pour s&eacute;lectionner la fiche LOLF";
+}
+
+RepIndividu: WORepetition {
+	list = individuList;
+	item = individuItem;	
+}
+
+CondIsTheIndividuSelected: WOConditional {
+	condition = isTheIndividuSelected;
+}
+
+LnkIndividuItem: WOHyperlink {
+	action = doIndividuSelection;
+	string = individuItem.display;
+	title = "Cliquer pour s&eacute;lectionner l'individu";
+}
+
+
+StrBaliseSelectedOpen: WOString {
+	value = "<b>";
+	escapeHTML = "false";
+}
+
+StrBaliseSelectedClose: WOString {
+	value = "</b>";
+	escapeHTML = "false";
+}
+
+CondIsComposanteItemArchive: WOConditional {
+	condition = composanteItem.isArchive;
+}
+
+CondIsServiceItemArchive: WOConditional {
+	condition = serviceItem.isArchive;
+}
+
+StrBaliseArchiveOpen: WOString {
+	value = "<font class=\"archive\">";
+	escapeHTML = "false";
+}
+
+StrBaliseArchiveClose: WOString {
+	value = "</font>";
+	escapeHTML = "false";
+}

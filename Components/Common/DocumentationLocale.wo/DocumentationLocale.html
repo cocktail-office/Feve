@@ -1,0 +1,85 @@
+<webobject name = "ContainerGuideEntretien">
+
+	<webobject name = "CondIsAfficherGuideEntretien">
+		<b>Guide(s) de l'entretien professionnel</b>
+	</webobject>
+
+	<webobject name = "CondIsDisabled">
+		<webobject name = "CondIsAfficherGuideEntretien">
+			<ul>
+			<webobject name = "RepGuideEntretien">
+				<li>
+					<webobject name = "LigneDocumentationGuideEntretien"/>
+				</li>
+			</webobject>
+			</ul>
+		</webobject>
+	</webobject>
+
+	<webobject name = "CondNotIsDisabled">
+
+		<webobject name = "FormGuideEntretien">
+	
+			<webobject name = "SortableListGuideEntretien">
+				<webobject name = "LigneDocumentationGuideEntretien"/>
+				<webobject name = "CondNotIsEnModification">
+					<webobject name = "BtnSupprimerGuideEntretien"/>
+				</webobject>
+				<webobject name = "CondIsEnModification">
+					<webobject name = "BtnAnnulerGuideEntretien"/>
+				</webobject>
+			</webobject>
+			
+			<webobject name = "CondIsAfficherAjouterGuideEntretien">
+				<webobject name = "BtnAjouterGuideEntretien"/>
+			</webobject>
+	
+		</webobject>
+
+	</webobject>
+
+</webobject>
+
+<br>
+
+<webobject name = "ContainerGuideUtilisation">
+
+	<webobject name = "CondIsAfficherGuideUtilisation">
+		<b>Guide(s) d'utilisation</b>
+	</webobject>
+	
+	<webobject name = "CondIsDisabled">
+		<webobject name = "CondIsAfficherGuideUtilisation">
+			<ul>
+			<webobject name = "RepGuideUtilisation">
+				<li>
+					<webobject name = "LigneDocumentationGuideUtilisation"/>
+				</li>
+			</webobject>
+			</ul>
+		</webobject>
+	</webobject>
+
+	<webobject name = "CondNotIsDisabled">
+	
+		<webobject name = "FormGuideUtilisation">
+
+			<webobject name = "SortableListGuideUtilisation">
+				<webobject name = "LigneDocumentationGuideUtilisation"/>
+				<webobject name = "CondNotIsEnModification">
+					<webobject name = "BtnSupprimerGuideUtilisation"/>
+				</webobject>
+				<webobject name = "CondIsEnModification">
+					<webobject name = "BtnAnnulerGuideUtilisation"/>
+				</webobject>
+			</webobject>
+			
+			<webobject name = "CondIsAfficherAjouterGuideUtilisation">
+				<webobject name = "BtnAjouterGuideUtilisation"/>
+			</webobject>
+	
+		</webobject>
+
+	</webobject>
+
+</webobject>

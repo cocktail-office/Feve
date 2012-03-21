@@ -1,0 +1,103 @@
+<webobject name = "FilArianeEvaluation" />
+<webobject name = "CondNotIsSelectedRecordExists">
+  <webobject name = "CondNotInOnlyPersonnel">
+    <webobject name = "CondHasWarning">
+      <webobject name = "PanelWarning">
+        <center>
+          Attention, certains entretiens professionnels dont vous avez la responsabilit&eacute; 
+          <b>n'ont pas &eacute;t&eacute; vis&eacute;s.</b>
+          <br />
+          <webobject name = "LnkShowWarning">[Cliquez sur ce message pour en connaitre la liste.]</webobject>
+        </center>
+      </webobject>
+    </webobject>
+    <webobject name = "CondHasRecords">
+      <webobject name = "FormCRINavBar"> <webobject name = "CRINavBarDGRecords" /> </webobject>
+    </webobject>
+    <webobject name = "FormNeFaitRien">
+      <table style = "border:1px solid #888">
+        <tr>
+          <th style = "border-right:1px dotted #888"> P&eacute;riode : <webobject name = "ComboPeriode" /> </th>
+          <th style = "border-right:1px dotted #888">
+            <webobject name = "TextFieldNomPrenom" />
+            <webobject name = "BtnDoNothing" />
+            <webobject name = "BtnClearNomPrenom" />
+          </th>
+          <th title = "nombre total d'evaluations affichées">
+            <font class = "title">&raquo; <webobject name = "StrTotalEvaluation" /></font>
+          </th>
+          <th>
+            <webobject name = "TipInfoPeriodeEvaluation"><webobject name = "ImgInfo" /></webobject>
+          </th>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+  <webobject name = "CondHasRecords">
+    <webobject name = "FormSauverCoche">
+      <input type = "hidden" value = "bidon" name = "texteBidon" />
+      <table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0">
+        <tr>
+          <td>
+            <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+              <tr class = "listboxHeader">
+                <td>&nbsp;</td>
+                <th>Entretien Professionnel</th>
+                <th>R&eacute;alis&eacute; le</th>
+                <th>RH<webobject name = "TipVR"><webobject name = "ImgInfo" /></webobject>
+                </th>
+              </tr>
+              <webobject name = "RepEvaluation">
+                <webobject name = "TrEvaluation">
+                  <td>
+                    <webobject name = "CondIsLocked">
+                    	<webobject name = "ImgLocked" />
+                    </webobject>
+                    <webobject name = "CondNotIsLocked">
+                    	<webobject name = "ImgUnLocked" />
+                    </webobject>
+                    <webobject name = "CondCanUpdateEvaluation">
+                    	<webobject name = "ImgEdit" />
+                    </webobject>
+                    <webobject name = "CondNotCanUpdateEvaluation">
+                      <webobject name = "CondCanViewEvaluation">
+                      	<webobject name = "ImgVisu" />
+                      </webobject>
+                      <webobject name = "CondNotCanViewEvaluation">
+                      	<webobject name = "CondNotCanModifierObjectifsPrecedents">
+                     		 	<webobject name = "ImgInterdit" />
+                      	</webobject>
+                      </webobject>
+                    </webobject>
+                    <webobject name = "CondCanModifierObjectifsPrecedents">
+                    	<webobject name = "ImgCanModifierObjectifsPrecedents" />
+                    </webobject>
+                  </td>
+                  <td align = "left">
+                    <webobject name = "LnkDetailEvaluation">
+                      <b>
+                      	<webobject name = "StrEvaluationNomPrenom" />
+                      	<webobject name = "CondIsAfficherPeriode">
+                      		<webobject name = "StrEvaluationPeriode"/>
+                      	</webobject>	
+                      </b>
+                    </webobject>
+                  </td>
+                  <td align = "center"> <webobject name = "DTenueEntretien" /> </td>
+                  <td align = "center"> <webobject name = "CheckIsViseParResponsableRh" /> </td>
+                </webobject>
+              </webobject>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+  <webobject name = "CondNotHasRecords">
+    <font class = "textError">&lt;Aucun enregistrement&gt;</font>
+    <br />
+    <br />
+  </webobject>
+  <webobject name = "CondNotInOnlyPersonnel"> <webobject name = "CompLegendeListe1" /> </webobject>
+</webobject>
+<webobject name = "CondIsSelectedRecordExists"> <webobject name = "PageEvaluation1" /> </webobject>

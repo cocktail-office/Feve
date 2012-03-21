@@ -1,0 +1,99 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = CATEGORIE; 
+            externalType = VARCHAR2; 
+            name = categorie; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CODECORPS; 
+            externalType = VARCHAR2; 
+            name = codecorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CODGRADEECORPS; 
+            externalType = VARCHAR2; 
+            name = codgradeecorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = FILIERE; 
+            externalType = VARCHAR2; 
+            name = filiere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = INTITULCORPS; 
+            externalType = VARCHAR2; 
+            name = intitulcorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            columnName = SIGLECORPS; 
+            externalType = VARCHAR2; 
+            name = siglecorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = STATUT; 
+            externalType = VARCHAR2; 
+            name = statut; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        categorie, 
+        codecorps, 
+        codgradeecorps, 
+        filiere, 
+        intitulcorps, 
+        siglecorps, 
+        statut
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOReferensCorps"; 
+    classProperties = (
+        categorie, 
+        codecorps, 
+        codgradeecorps, 
+        filiere, 
+        intitulcorps, 
+        siglecorps, 
+        statut, 
+        tosReferensEmplois
+    ); 
+    externalName = "GRHUM.REFERENS_CORPS"; 
+    fetchSpecificationDictionary = {}; 
+    name = ReferensCorps; 
+    primaryKeyAttributes = (siglecorps); 
+    relationships = (
+        {
+            destination = ReferensEmplois; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = siglecorps; sourceAttribute = siglecorps; }); 
+            name = tosReferensEmplois; 
+        }
+    ); 
+}

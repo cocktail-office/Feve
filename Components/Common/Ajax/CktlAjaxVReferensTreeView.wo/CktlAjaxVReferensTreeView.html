@@ -1,0 +1,27 @@
+	<webobject name = "ContainerFormationTreeView">
+    <webobject name = "IsFiltrageTexteAvailable">
+    	<webobject name = "FiltreTexte"></webobject>
+     	<webobject name = "FiltreTexteObserver" />
+      <webobject name = "IsFiltrageAvailable">
+	      <webobject name = "Filtre" />
+      	<webobject name = "FiltreObserver" />
+	    </webobject>
+	    <webobject name = "ResetButton"></webobject>
+    </webobject>
+    <webobject name = "IsFiltrageTexteNotAvailable">
+	    <webobject name = "IsFiltrageAvailable">
+	      <span>Filtre:</span>
+	      <webobject name = "Filtre" />
+	      <webobject name = "FiltreObserver" />
+	      <webobject name = "ResetButton"></webobject>
+	    </webobject>
+    </webobject>
+    <webobject name = "ContainerAjaxTree">
+      <webobject name = "UnAjaxTree">
+        <webobject name = "IsAutorise">
+            <webobject name = "FormationLink"/>
+        </webobject>
+        <webobject name = "IsNotAutorise"><webobject name = "FormationLibelle" /></webobject>
+      </webobject>
+    </webobject>
+  </webobject>

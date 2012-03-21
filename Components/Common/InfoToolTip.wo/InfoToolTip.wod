@@ -1,0 +1,13 @@
+CondShouldBeDisplayed: WOConditional {
+	condition = shouldBeDisplayed;	
+}
+
+CktlToolTip1: CktlToolTip {
+	htmlText = inTextHtml;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}

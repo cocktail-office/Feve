@@ -1,0 +1,97 @@
+ContainerFormationTreeView : AjaxUpdateContainer {
+    id = componentId;
+    evalScripts = true; 
+}
+
+Filtre : WOPopUpButton {
+    id = filtrePopUpID;
+    list = filtres.allKeys;
+    item = unFiltre;
+    noSelectionString = "Tous";
+    selection = unFiltreSelectionne;
+}
+
+
+FiltreObserver : CktlAjaxObserveField {
+    observeFieldID = filtrePopUpID;
+    formID = ^userFiltersFormID;
+    action = filtrer;
+    updateContainerID = containerAjaxTreeID;
+}
+
+FiltreTexteObserver : CktlAjaxObserveField {
+    observeFieldID = "filtretexte";
+    formID = ^userFiltersFormID;
+    action = filtrer;
+    updateContainerID = containerAjaxTreeID;
+}
+
+ContainerAjaxTree : AjaxUpdateContainer {
+    id = containerAjaxTreeID;
+    
+}
+UnAjaxTree : CktlAjaxTree { 
+    id = unAjaxTreeID;
+    class = "tree";
+    root = ctrl.rootFormation;
+    item = ctrl.unFormation;
+    delegate = ctrl.delegate;
+    allExpanded = false;
+//  rootExpanded = true;
+    showRoot = false;
+    collapsedImage = treeCollapsedImage;
+    collapsedImageFramework = treeCollapsedImageFramework;
+    expandedImage = treeExpandedImage;
+    expandedImageFramework = treeExpandedImageFramework;
+    leafImage = treeLeafImage;
+    leafImageFramework = treeLeafImageFramework; 
+    cache = false;
+    treeModel = ctrl.myTreeModel;   
+}
+
+FormationLibelle : WOString {
+    value = ctrl.unFormationLibelle;
+}
+
+FormationLink : CktlAjaxUpdateLink {
+    string = ctrl.unFormationLibelle;
+    action = selectionner;
+    updateContainerID = ^containerFormationSelectionneId;
+    onClickBefore = selectionOnClickBefore;
+    class = cssClassForSelectedLink;
+}
+
+
+IsAutorise : WOConditional {
+  condition = isFormationSelectionnable;
+}
+IsNotAutorise : WOConditional {
+  condition = isFormationSelectionnable;
+  negate = true;
+}
+
+IsFiltrageAvailable : WOConditional {
+    condition = isFiltrageAvailable;
+}
+
+IsFiltrageTexteAvailable : WOConditional {
+	condition = ^filtreTexte;
+}
+
+IsFiltrageTexteNotAvailable : WOConditional {
+	condition = ^filtreTexte;
+	negate = true;
+}
+
+ResetButton : CktlAjaxSubmitButton {
+    action = resetFilters;
+    updateContainerID = componentId;
+    type = "reset";
+    title = "Recharger tous les formations (annule le filtre)";
+}
+
+FiltreTexte : WOTextField {
+	value = filtreTexte;
+	style = "width:100px;";
+	id = "filtretexte";
+}

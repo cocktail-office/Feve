@@ -1,0 +1,102 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FAU_KEY"; 
+            externalType = NUMBER; 
+            name = fauKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NCP_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "NCO_KEY"; }; 
+            name = ncpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RFC_KEY"; 
+            externalType = NUMBER; 
+            name = rfcKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RNC_KEY"; 
+            externalType = NUMBER; 
+            name = rncKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rncKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartNiveauComp"; 
+    classProperties = (
+        toEvaluation, 
+        dModification, 
+        dCreation, 
+        toNiveauCompetence, 
+        toRepartFdpComp, 
+        toRepartFdpAutre
+    ); 
+    externalName = "MANGUE.REPART_NIVEAU_COMP_PRO"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartNiveauComp; 
+    primaryKeyAttributes = (rncKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = NiveauCompetence; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ncpKey; sourceAttribute = ncpKey; }); 
+            name = toNiveauCompetence; 
+        }, 
+        {
+            destination = RepartFdpAutre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fauKey; sourceAttribute = fauKey; }); 
+            name = toRepartFdpAutre; 
+        }, 
+        {
+            destination = RepartFdpComp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rfcKey; sourceAttribute = rfcKey; }); 
+            name = toRepartFdpComp; 
+        }
+    ); 
+}

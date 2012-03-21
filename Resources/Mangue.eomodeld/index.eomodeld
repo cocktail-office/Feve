@@ -1,0 +1,162 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOAffectation"; 
+            name = Affectation; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOAffectationDetail"; 
+            name = AffectationDetail; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.mangue.EOContrat"; name = Contrat; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOContratAvenant"; 
+            name = ContratAvenant; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.mangue.EODroit"; name = Droit; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EODroitNouvelEntrant"; 
+            name = DroitNouvelEntrant; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOElementCarriere"; 
+            name = ElementCarriere; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOEnqueteFormation"; 
+            name = EnqueteFormation; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOEvaluation"; 
+            name = Evaluation; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOEvaluationNoticePromotion"; 
+            name = EvaluationNoticePromotion; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOEvaluationPeriode"; 
+            name = EvaluationPeriode; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOFicheDePoste"; 
+            name = FicheDePoste; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOFicheLolf"; 
+            name = FicheLolf; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOHierarchie"; 
+            name = Hierarchie; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOIndividuFormations"; 
+            name = IndividuFormations; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOMangueParametres"; 
+            name = MangueParametres; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOObjectif"; 
+            name = Objectif; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.mangue.EOPoste"; name = Poste; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartEnqComp"; 
+            name = RepartEnqComp; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartEvaNouvelleComp"; 
+            name = RepartEvaNouvelleComp; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFdpActi"; 
+            name = RepartFdpActi; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFdpAutre"; 
+            name = RepartFdpAutre; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFdpComp"; 
+            name = RepartFdpComp; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFicheBlocActivation"; 
+            name = RepartFicheBlocActivation; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFicheItem"; 
+            name = RepartFicheItem; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFloLolfNomen"; 
+            name = RepartFloLolfNomen; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFloSilland"; 
+            name = RepartFloSilland; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartFormationSouhaitee"; 
+            name = RepartFormationSouhaitee; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EORepartNiveauComp"; 
+            name = RepartNiveauComp; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOSituActivite"; 
+            name = SituActivite; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.mangue.EOStage"; name = Stage; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOStructureInfo"; 
+            name = StructureInfo; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.mangue.EOTplBloc"; name = TplBloc; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTplBlocNature"; 
+            name = TplBlocNature; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTplFiche"; 
+            name = TplFiche; 
+        }, 
+        {className = "org.cocktail.feve.eos.modele.mangue.EOTplItem"; name = TplItem; }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTplItemNature"; 
+            name = TplItemNature; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTplItemValeur"; 
+            name = TplItemValeur; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTplOnglet"; 
+            name = TplOnglet; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTplRepartItemItemValeur"; 
+            name = TplRepartItemItemValeur; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTypeDroitAcces"; 
+            name = TypeDroitAcces; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOTypeDroitCible"; 
+            name = TypeDroitCible; 
+        }, 
+        {
+            className = "org.cocktail.feve.eos.modele.mangue.EOVCandidatEvaluation"; 
+            name = VCandidatEvaluation; 
+        }
+    ); 
+    userInfo = {modelId = MANGUE; }; 
+}

@@ -1,0 +1,202 @@
+PopupPeriode: WOPopUpButton {
+	list = periodeDg.displayedObjects;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strAnneeDebutAnneeFin;
+	name = "PopupPeriode";
+	id = "PopupPeriode";
+}
+
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.display;
+	noSelectionString = "--- Tous les services ---";
+	name = "PopupService";
+	id = "PopupService";
+}
+
+StrTotalFormation: WOString {
+	value = repartFormationList.count;
+}
+
+CondHasResult: WOConditional {
+	condition = repartFormationList.count;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br><u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br><u>convertir</u>, suivant, choisir s&eacute;parateur et fin";
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+RepRepartFicheItem: WORepetition {
+	list = repartFormationList;
+	item = repartFormationItem;
+}
+
+StrRepartItemEvaluateur: WOString {
+	value = repartFormationItem.toEvaluation.toEvaluateur.nomPrenom;
+}
+
+StrRepartItemAgent: WOString {
+	value = repartFormationItem.toEvaluation.toIndividu.nomPrenom;
+}
+
+StrRepartItemFormation: WOString {
+	value = repartFormationItem.libelleFormation;
+}
+
+ImgNomenclature: ImgNomenclature {
+	isDansLaNomenclature = repartFormationItem.isNomenclature;
+}
+
+StrDTenueEntretien: WOString {
+	value = repartFormationItem.toEvaluation.dTenueEntretien;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "<font class='textError'>non fait</font>";
+}
+
+StrDVisaResponsableRh: WOString {
+	value = repartFormationItem.toEvaluation.dVisaResponsableRh;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "<font class='textError'>non vis&eacute;</font>";
+}
+
+
+ContainerResultats: AjaxUpdateContainer {
+	 id = "ContainerResultats";
+}
+
+
+ObserverPopupPeriode: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupPeriode";
+}
+
+ObserverPopupService: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupService";
+}
+
+LnkSortEvaluateur: AjaxUpdateLink {
+	action = sortEvaluateur;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortAgent: AjaxUpdateLink {
+	action = sortAgent;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortFormationSouhaitee: AjaxUpdateLink {
+	action = sortFormationSouhaitee;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortIsNomenclature: AjaxUpdateLink {
+	action = sortIsNomenclature;
+	updateContainerID = "ContainerResultats";
+	title = "Indique si la formation est référencée dans la nomenclature (O) ou pas (N)";
+}
+
+LnkSortDateEntretien: AjaxUpdateLink {
+	action = sortDateEntretien;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortDateVisaRh: AjaxUpdateLink {
+	action = sortDateVisaRh;
+	updateContainerID = "ContainerResultats";
+}
+
+
+CondIsEditingCurrentFormation: WOConditional {
+	condition = isEditingCurrentFormation;
+}
+
+ImgBtnDoEditFormation: CktlAjaxSubmitButton {
+	action = doEditFormation;
+	title = "Valider la saisie et modifier la formation";
+	name = "BtnDoEditFormation";
+	updateContainerID = "ContainerResultats";
+	type = "valid";
+}
+
+
+CondShowLnkEditFormation: WOConditional {
+	condition = showLnkEditFormation;
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	border = "0";
+	width = "16px";
+	height = "16px";
+}
+
+LnkEditFormation: AjaxUpdateLink {
+	action = editFormation;
+	title = "Modifier cette entrée";
+	escapeHTML = false;
+	updateContainerID = "ContainerResultats";
+}
+
+
+CondNotIsEditingCurrentFormation: WOConditional {
+	condition = isEditingCurrentFormation;
+	negate = true;
+}
+
+BtnDoEditFormationCache: AjaxSubmitButton {
+	action = doEditFormation;
+	name = "BtnDoEditFormationCache";
+	style = "visibility:hidden;display:none";
+	updateContainerID = "ContainerResultats";
+}
+
+SelectFormation: SelectFormation {
+	eoFormationPersonnel = eoFormationPersonnelSelected;
+	formName = "FormSuiviPoste";
+	strChampLibre = champLibre;
+	isFormationNomenclature = isNomenclature;
+	btnAddFormationName = "BtnDoEditFormationCache";
+}
+
+
+CondShowLnkCancel: WOConditional {
+	condition = showLnkCancel;
+}
+
+ImgAnnuler: WOImage {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}
+
+LnkCancel: AjaxUpdateLink {
+	action = doCancel;
+	title = "Annuler l'op&eacute;ration en cours";
+	updateContainerID = "ContainerResultats";
+}

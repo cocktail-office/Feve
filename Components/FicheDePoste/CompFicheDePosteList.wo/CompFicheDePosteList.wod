@@ -1,0 +1,341 @@
+FormFiltres: WOForm {
+	name = "FormFiltres";
+	action = neFaitRien;
+}
+
+FormCompFicheDePosteList: WOForm {
+	name = "FormCompFicheDePosteList";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+
+ContentFilters: WOComponentContent {
+	
+}
+
+CondFicheDePosteListNotEmpty: WOConditional {
+	condition = ctrl.eoFicheDePosteArray.count;
+}
+
+CondFicheDePosteListEmpty: WOConditional {
+	condition = ctrl.eoFicheDePosteArray.count;
+	negate = true;
+}
+
+CondShowOccupant: WOConditional {
+	condition = ctrl.showOccupant;
+}
+
+CondShowDelete: WOConditional {
+	condition = ctrl.showBtnDelete;
+}
+
+CondShowUpdate: WOConditional {
+	condition = ctrl.showBtnUpdate;
+}
+
+CondShowCopier: WOConditional {
+	condition = ctrl.showBtnCopier;
+}
+
+
+LnkToDuplicationFicheDePoste: WOHyperlink {
+	action = ctrl.toDuplicationFicheDePoste;
+	title = "Dupliquer cette fiche de poste vers un autre poste";
+}
+
+
+ImgDupliquer: WOImage {
+	border = 0;
+	filename = "images/Dupliquer.png";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+RepFicheDePoste: WORepetition {
+	list = ctrl.eoFicheDePosteArray;
+	item = ctrl.ficheDePosteItem;
+}
+
+TrFicheDePosteItem: WOGenericContainer {
+	elementName = "tr";
+	class = ctrl.classTrFicheDePosteItem;
+}
+
+CondIsLocked: WOConditional {
+	condition = ctrl.isLockedFicheDePosteItem;
+}
+
+ImgLocked: WOImage {
+	src = "images/VerrouOn.png";
+	border = 0;
+}
+
+CondNotIsLocked: WOConditional {
+	condition = ctrl.isLockedFicheDePosteItem;
+	negate = true;
+}
+
+ImgUnLocked: WOImage {
+	src = "images/VerrouOff.png";
+	border = 0;
+}
+
+ImgModification: WOImage {
+	src = "images/edit.png";
+}
+
+CondNotCanAccesItemFicheDePoste: WOConditional {
+	condition = ctrl.canNotAccesItemFicheDePoste;
+}
+
+CondCanAccesItemFicheDePoste: WOConditional {
+	condition = ctrl.canNotAccesItemFicheDePoste;
+	negate = true;
+}
+
+CondNotCanModifItemFicheDePoste: WOConditional {
+	condition = ctrl.canModifItemFicheDePoste;
+	negate = true;
+}
+
+CondCanModifItemFicheDePoste: WOConditional {
+	condition = ctrl.canModifItemFicheDePoste;
+}
+
+CondCanViewItemFicheDePoste: WOConditional {
+	condition = ctrl.canViewItemFicheDePoste;
+}
+
+CondCanDeleteItemFicheDePoste: WOConditional {
+	condition = ctrl.canDeleteItemFicheDePoste;
+}
+
+
+ImgVisu: WOImage {
+	src = "images/Visu.png";
+	border = 0;
+}
+
+ImgInterdit: WOImage {
+	src = "images/Interdit.gif";
+	border = 0;
+}
+
+ImgUpd: WOImage {
+	border = "0";
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+ImgDel: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+CompItalicBoldFicheActuelle: CompItalicBold {
+	isBold = ctrl.ficheDePosteItem.isActuelle;
+	isItalic = ctrl.ficheDePosteItem.isNotActuelle;
+}
+
+StrPosteComposante: WOString {
+	value = ctrl.ficheDePosteItem.toPoste.toComposante.lcStructure;
+}
+
+StrPosteService: WOString {
+	value = ctrl.ficheDePosteItem.toPoste.toStructure.lcStructure;
+}
+
+StrPosCode: WOString {
+	value = ctrl.ficheDePosteItem.toPoste.posCode;
+}
+
+StrId: WOString {
+	value = ctrl.ficheDePosteItem.identifiant;
+}
+
+StrEmploiType: WOString {
+	value = ctrl.ficheDePosteItem.toReferensEmplois.display;
+	valueWhenEmpty = "<b><font color='red'>NON DEFINI !</font></b>";
+}
+
+StrDDeb: WOString {
+	//value = ficheDePosteItem.fdpDDebut;
+	value = ctrl.itemFicheDePosteDateDebut;
+	dateformat = "%d/%m/%Y";
+}
+
+StrDFin: WOString {
+	//value =ficheDePosteItem.fdpDFin;
+	value = ctrl.itemFicheDePosteDateFin;
+	dateformat = "%d/%m/%Y";
+}
+
+StrOccupant: WOString {
+	value = ctrl.recAffectationDetail.toAffectation.toIndividu.display;
+	valueWhenEmpty = "<b><font color='red'>AUCUN OCCUPANT !</font></b>";
+}
+CondShouldSaveOnClick: WOConditional {
+	condition = ctrl.shouldSaveOnClick;
+}
+
+CondNotShouldSaveOnClick: WOConditional {
+	condition = ctrl.shouldSaveOnClick;
+	negate = true;
+}
+
+ChkVisaAgentSaveOnClick: WOCheckBox {
+	checked = ctrl.ficheDePosteItem.fdpVisaAgentBool;
+	onClick = "BtnSave.click();";
+	disabled = ctrl.disabledLaCocheAgent;
+	title = ctrl.messageFlottantCocheAgent;
+}
+
+ChkVisaAgentNothingOnClick: WOCheckBox {
+	checked = ctrl.ficheDePosteItem.fdpVisaAgentBool;
+	disabled = ctrl.disabledLaCocheAgent;
+	title = ctrl.messageFlottantCocheAgent;
+}
+
+ChkVisaRespSaveOnClick: WOCheckBox {
+	checked = ctrl.ficheDePosteItem.fdpVisaRespBool;
+	onClick = "BtnSave.click();";
+	disabled = ctrl.disabledLaCocheResp;
+	title = ctrl.messageFlottantCocheResp;
+}
+
+ChkVisaRespNothingOnClick: WOCheckBox {
+	checked = ctrl.ficheDePosteItem.fdpVisaRespBool;
+	disabled = ctrl.disabledLaCocheResp;
+	title = ctrl.messageFlottantCocheResp;
+}
+
+ChkVisaDirecSaveOnClick: WOCheckBox {
+	checked = ctrl.ficheDePosteItem.fdpVisaDirecBool;
+	onClick = "BtnSave.click();";
+	disabled = ctrl.disabledLaCocheDirec;
+	title = ctrl.messageFlottantCocheDirec;
+}
+
+ChkVisaDirecNothingOnClick: WOCheckBox {
+	checked = ctrl.ficheDePosteItem.fdpVisaDirecBool;
+	disabled = ctrl.disabledLaCocheDirec;
+	title = ctrl.messageFlottantCocheDirec;
+}
+
+StrMessageEmptyList: WOString {
+	value = ctrl.messageEmptyList;
+	escapeHTML = false;
+}
+
+LnkDoSelectFicheDePoste: WOHyperlink {
+	action = ctrl.doSelectFicheDePoste;
+	title = "D&eacute;tailler cette fiche de poste";
+	disabled = ctrl.canNotAccesItemFicheDePoste;
+}
+
+CondNotIsAFicheDePosteSelected: WOConditional {
+	condition = ctrl.isAFicheDePosteSelected;
+	negate = true;
+}
+
+CondIsAFicheDePosteSelected: WOConditional {
+	condition = ctrl.isAFicheDePosteSelected;
+}
+
+CompFicheDePoste1: CompFicheDePoste {
+	inputLaFicheDePoste = ctrl.ficheDePosteSelected;
+	ctrl = ctrl.compFicheDePosteCtrl;
+}
+
+LnkDoDeleteFicheDePosteItem: WOHyperlink {
+	action = doDeleteFicheDePosteItem;
+	title = "Supprimer cette fiche de poste";
+}
+
+BtnSave: WOSubmitButton {
+	action = sauvegarde;
+	name = "BtnSave";
+	style = "display: none";
+}
+
+CondShowBtnAdd: WOConditional {
+	condition = ctrl.showBtnAdd;
+}
+
+ImgAdd: WOImage {
+	border = 0;
+	filename = "images/plus16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+
+CondHasFicheDePoste: WOConditional {
+	condition = ctrl.poste.tosFicheDePoste.count;
+}
+
+CondNotHasFicheDePoste: WOConditional {
+	condition = ctrl.poste.tosFicheDePoste.count;
+	negate = true;
+}
+
+LnkToAddFicheDePoste: WOHyperlink {
+	action = ctrl.toAddFicheDePoste;
+	title = "Une nouvelle fiche identique sera cree, afin d'historiser la derniere.";
+}
+
+CondIsAdding: WOConditional {
+	condition = ctrl.isAdding;
+}
+
+CompFicheDePosteAdd1: CompFicheDePosteAdd {
+	ctrl = ctrl.compFicheDePosteAddCtrl;
+}
+
+LnkToUpdateFicheDePoste: WOHyperlink {
+	action = ctrl.toUpdateFicheDePoste;
+	title = "Cliquer ici pour modifier les dates de validit&eacute; de cette fiche";
+}
+
+CondIsUpdating: WOConditional {
+	condition = ctrl.isUpdating;
+}
+
+CompFicheDePosteUpdate1: CompFicheDePosteUpdate {
+	ctrl = ctrl.compFicheDePosteUpdateCtrl;
+}
+
+CondIsDuplicationFiche: WOConditional {
+	condition = ctrl.isDuplicationFiche;
+}
+
+CompFicheDePosteDuplication1: CompFicheDePosteDuplication {
+	ctrl = ctrl.compFicheDePosteDuplicationCtrl;
+}
+
+CondIsAfficherFiltresLocaux: WOConditional {
+	condition = ctrl.isAfficherFiltresLocaux;
+}
+
+
+PopupReferensEmplois: WOPopUpButton {
+	list = ctrl.eoReferensEmploisArray;
+	item = ctrl.eoReferensEmploisItem;
+	selection = ctrl.eoReferensEmploisSelected;
+	displayString = ctrl.eoReferensEmploisItem.display;
+	noSelectionString = "";
+	onChange = "FormFiltres.submit();";
+}
+
+StrTotalFicheDePoste: WOString {
+	value = ctrl.eoFicheDePosteArray.count;
+}

@@ -1,0 +1,75 @@
+<webobject name = "FormCompPosteDetail">
+
+	<webobject name = "CondShowFullComponent">
+	  <table class = "boxContents" width="100%">
+	    <tr>
+	      <td align = "center">
+	        <table>
+	        	<tr>
+	        		<td valign="top" align="center">
+	        			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+									<tr>
+										<td>
+											<table border=="0"  cellpadding=="2"  cellspacing=="1" width="100%">
+												<tr class="listboxHeader"><th colspan="2">Informations g&eacute;n&eacute;rales du poste</th></tr>
+			                  <tr class="listboxLine">
+			                    <td align="right">Libell&eacute; : </td>
+			                    <td align="left"><b><webobject name = "StrPostePosLibelle" /></b></td>
+			                  </tr>
+			                  <tr class="listboxLine">
+			                    <td align="right">Code : </td>
+			                    <td align="left"><b><webobject name = "StrPostePosCode" /></b></td>
+			                  </tr>
+			                  <tr class="listboxLine">
+			                    <td align="right">Date d'ouverture : </td>
+			                    <td align="left"><b><webobject name = "StrPostePosDDebut" /></b></td>
+			                 	</tr>
+			               		<tr class="listboxLine">
+			                    <td align="right" nowrap>Date de fermeture :</td>
+			                    <td align="left"><b><webobject name = "StrPostePosDFin" /></b></td>
+			                  </tr>
+			                  <webobject name = "CondCanUpdatePoste">
+					              	<!-- afficher un bouton de modification si l'utilisateur a les droits -->
+					                <tr class="listboxLine">
+					                  <th align = "center" colspan = "2">
+					                    <webobject name = "LnkUpdPoste"><webobject name = "ImgUpd"> Modifier ces donn&eacute;es</webobject></webobject>
+					                  </th>
+					                </tr>
+	                	  	</webobject>
+	                	  	<webobject name = "CondShowCompPosteMetaDataCtrl">
+													<tr>
+														<td align = "center" colspan = "2" class="boxContents">
+															<webobject name = "CompPosteMetaDataCtrlUpdate"/>
+														</td>
+													</tr>
+												</webobject>
+	         			   		</table>
+			              </td>
+	    		        </tr>
+	        	    </table>
+	          	</td>
+	       		  <td width = "10px"></td>
+	      			<td valign = "top" align="center"><webobject name = "CompFicheLolf1"/></td>
+	         	</tr>
+	        </table>
+	      </td>
+	    </tr>
+	    <!-- les occupations liees au poste -->
+	   	<tr><td align = "center"><webobject name = "CompOccupation1"/></td></tr>	            
+	    <!-- la partie fiche de poste est reservee aux non enseignant -->
+	    <webobject name = "CondNotIsPosteEnseignant">
+	    <tr><td align = "center"><webobject name = "CompFicheDePosteList1"/></td></tr>
+	 		</webobject>
+	  </table>
+	</webobject>
+
+</webobject>
+
+<webobject name = "CondNotShowFullComponent">
+	
+	<webobject name = "CondIsAFicheDePosteSelected">
+		<!-- afficher le détail de la fiche de poste en page pleine -->
+		<webobject name = "CompFicheDePosteList1"/>
+	</webobject>
+		
+</webobject>

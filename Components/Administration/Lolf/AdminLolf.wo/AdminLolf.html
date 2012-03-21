@@ -1,0 +1,87 @@
+
+<font class="title">Affectation des fonctions Silland aux destinations LOLF</font>
+<hr/>
+
+<webobject name = "FormSillandVisibilite">
+<table>
+	<tr>
+		<td align="right">
+			<font class="textEntry">Visibilit&eacute :</font>
+		</td>
+		<td align="left">
+			<webobject name = "BtnDoChangeVisibilite"/>
+			<webobject name = "ChkEnseignant"/>Enseignant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<webobject name = "ChkNonEnseignant"/>Non Enseignant
+		</td>	
+	</tr>
+</table>
+</webobject>
+
+<webobject name = "FormLolf">
+<webobject name = "BtnNeFaitRien"/>
+
+<table>
+	<tr>
+		<td align="right"><font class="textEntry">Exercice :</font></td>	
+		<td align="left"><webobject name = "PopUpExercice"/></td>	
+	</tr>
+	<tr>
+		<td align="right">
+			<font class="textEntry">Fonctions Silland :</font><br/>
+			<font class="textNote">(entre parenth&egrave;ses le nombre de destinations associ&eacute;s)</font>
+		</td>	
+		<td align="left"><webobject name = "PopUpSilland"/></td>	
+	</tr>
+</table>
+
+<br/>
+<webobject name = "CondShowBtnDoImportFromExerciceNM1"><webobject name = "BtnDoImportFromExerciceNM1"/><br/><br/></webobject>
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+    			<th>Destination LOLF</th>
+    			<th>&nbsp;</th>
+    		</tr>
+				<webobject name = "RepRepartSillandLolf">
+				<tr class="listboxLine">
+					<td>
+						<webobject name = "StrRepartSillandLolfItem"/>
+					</td>
+					<td>
+						<webobject name = "CondNotIsAdding">
+							<webobject name = "LnkDel"><webobject name = "ImgDel"/></webobject>
+						</webobject>
+					</td>
+				</tr>
+				</webobject>
+				<webobject name = "CondNotIsAdding">
+				<tr class="listboxLine">
+					<th colspan = "2">
+						<webobject name = "LnkAdd">
+							<webobject name = "ImgAdd"/>
+							Affecter une action
+						</webobject>
+					</th>
+				</tr>
+				</webobject>
+				<webobject name = "CondIsAdding">
+				<tr>
+					<td colspan = "2">
+						<webobject name = "PopUpLolfNomenclature"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = "2">
+						<webobject name = "BtnDoAdd"/>
+						<webobject name = "BtnDoCancel"/>
+					</td>
+				</tr>
+			</webobject>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>
+

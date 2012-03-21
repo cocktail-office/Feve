@@ -1,0 +1,85 @@
+<webobject name = "ContainerEntretiens">
+
+	<webobject name = "CondEvaluationListNotEmpty">
+		<webobject name = "PopupEvaluateur"/>
+		<webobject name = "ObserverPopupEvaluateur"/>	
+	</webobject>
+	
+	
+	<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	  <tr>
+	    <td>
+	      <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+			      
+			      
+	        <webobject name = "CondEvaluationListNotEmpty">
+	          
+	          <tr class = "listboxHeader">
+	          	<th><webobject name = "LnkSortEvaluateur">&Eacute;valuateur</webobject></th>
+	            <th><webobject name = "LnkSortAgent">Agent</webobject></th>
+	            
+	            <webobject name = "CondIsAfficherDateEntretien">
+		            <th><webobject name = "LnkSortDateEntretien">Date entretien</webobject></th>
+	            </webobject>
+	
+	            <webobject name = "CondIsAfficherDateVisaRh">
+		            <th><webobject name = "LnkSortDateVisaRh">Date visa RH</webobject></th>
+	            </webobject>
+	
+	            <webobject name = "CondIsAfficherEvolutionCarriere">
+		            <th>Carrière</th>
+	            </webobject>
+	
+	            <webobject name = "CondIsAfficherEvolutionPoste">
+		            <th>Poste</th>
+	            </webobject>
+	          </tr>	
+	          
+	          <webobject name = "RepEvaluationFiltree">
+	            <tr class = "listboxLine">
+	              <td align="left"><webobject name = "StrEvaluateur" /></td>
+	              <td align="left"><webobject name = "StrAgent" /></td>
+	              
+	              
+	              
+	              <webobject name = "CondIsAfficherDateEntretien">
+		         	  	<td align="left"><webobject name = "StrDateEntretien" /></td>
+	            	</webobject>
+	
+		            <webobject name = "CondIsAfficherDateVisaRh">
+			            <td align="left"><webobject name = "StrDateVisaResponsableRh" /></td>
+		            </webobject>
+		
+		            <webobject name = "CondIsAfficherEvolutionCarriere">
+			            <td align="left"><webobject name = "StrEvolutionCarriere" /></td>
+		            </webobject>
+		
+		            <webobject name = "CondIsAfficherEvolutionPoste">
+			            <td align="left"><webobject name = "StrEvolutionPoste" /></td>
+		            </webobject>
+		              
+	            </tr>
+	          
+	          </webobject>
+	        </webobject>
+	
+	        
+	        <webobject name = "CondEvaluationListEmpty">
+	          <tr class = "listboxLine">
+	            <td align = "center">
+	              <font class = "textError">
+	                <br />
+	                <webobject name = "StrMessageEmptyList" />
+	                <br />
+	                <br />
+	              </font>
+	            </td>
+	          </tr>
+	          
+	        </webobject>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+
+</webobject>

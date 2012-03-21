@@ -1,0 +1,95 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "COM_KEY"; 
+            externalType = NUMBER; 
+            name = comKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ORDRE; 
+            externalType = VARCHAR2; 
+            name = ordre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "RNC_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ENC_KEY"; }; 
+            name = rncKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rncKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartEvaNouvelleComp"; 
+    classProperties = (toEvaluation, dModification, dCreation, toCompetence, toReferensCompetences); 
+    externalName = "MANGUE.REPART_NOUVELLE_COMP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "MANGUE.REPART_NOUVELLE_COMPETENCE"; }; 
+    name = RepartEvaNouvelleComp; 
+    primaryKeyAttributes = (rncKey); 
+    relationships = (
+        {
+            destination = Competence; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = comKey; sourceAttribute = comKey; }); 
+            name = toCompetence; 
+        }, 
+        {
+            destination = Evaluation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = ReferensCompetences; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = codeemploi; sourceAttribute = codeemploi; }, 
+                {destinationAttribute = ordre; sourceAttribute = ordre; }
+            ); 
+            name = toReferensCompetences; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_CanBeDeleted"; }; 
+}

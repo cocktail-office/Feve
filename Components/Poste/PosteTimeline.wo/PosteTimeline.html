@@ -1,0 +1,48 @@
+<style type="text/css">
+.affectationDetail {
+	white-space: nowrap;
+	overflow:auto;
+	float: left;
+}
+
+.divLigPoste {
+	background-color:#eee; 
+	height:60px;
+	border-bottom: 1px solid #888;
+}
+
+.divPosteLibelle {
+	float: left;
+	width: 80px;
+	height:20px;
+	text-align: left; 
+	border-right:1px dotted #000;
+}
+
+</style>
+<div>
+<form><webobject name = "ChkList"/><webobject name = "BtnProut"/></form>
+</div>
+<div class = "divLigPoste">
+	<div class="divPosteLibelle" style="text-align: center"><b><font class="textNote">Postes (<webobject name = "StrPosteListCount"/>)</font></b></div>
+	<div style="float: left; align: left">&nbsp;<b><font class="title"><webobject name = "LnkToPrevPeriode">&laquo;&laquo;</webobject></font></b> <font class="textNote"><webobject name = "StrDDebPeriode"/></font></div>
+	<div style="float: right; align: right"><font class="textNote"><webobject name = "StrDFinPeriode"/></font> <font class="title"><b><webobject name = "LnkToNextPeriode">&raquo;&raquo;</webobject></b></font>&nbsp;</div>
+</div>
+<webobject name = "RepPosteList">
+<webobject name = "DivLigPoste">
+	<div class="divPosteLibelle">
+		<webobject name = "SpanPosteItemPosCode"><font class="textNote"><webobject name = "StrPosteItemPosCode"/></font></webobject>
+	</div>
+	<div style="height: 60px; float:left">
+		<webobject name = "RepTypeSelecteds">
+		<div>
+		<webobject name = "RepAffectationDetail">
+			<webobject name = "DivAffectationDetailItem">
+				<font class="textNote"><b><webobject name = "StrAffectationDetailItem"/></b></font>
+			</webobject>
+		</webobject>
+		</div>
+		</webobject>
+	</div>
+</webobject>
+</webobject>

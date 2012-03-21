@@ -1,0 +1,59 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, cStructureComposante, cStructurePere); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOVService"; 
+    classProperties = (cStructureComposante, cStructurePere, toComposante, toStructure); 
+    externalName = "GRHUM.V_SERVICE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cStructurePere); 
+        "_nameInObjectStore" = "V_SERVICE"; 
+    }; 
+    isReadOnly = Y; 
+    name = VService; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructureComposante; }); 
+            name = toComposante; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }
+    ); 
+}

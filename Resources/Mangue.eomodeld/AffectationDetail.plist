@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            columnName = "ADE_D_DEBUT"; 
+            externalType = DATE; 
+            name = adeDDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ADE_D_FIN"; 
+            externalType = DATE; 
+            name = adeDFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "ADE_DATE_DIFF_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = adeDateDiffAffectation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ADE_KEY"; 
+            externalType = NUMBER; 
+            name = adeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_SEQ_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = noSeqAffectation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "POS_KEY"; 
+            externalType = NUMBER; 
+            name = posKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (adeKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOAffectationDetail"; 
+    classProperties = (
+        adeDDebut, 
+        adeDFin, 
+        dCreation, 
+        dModification, 
+        toAffectation, 
+        toPoste, 
+        adeDateDiffAffectation
+    ); 
+    externalName = "MANGUE.AFFECTATION_DETAIL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (adeDDebut, adeDFin, dCreation, dModification); 
+        "_nameInObjectStore" = "AFFECTATION_DETAIL"; 
+    }; 
+    name = AffectationDetail; 
+    primaryKeyAttributes = (adeKey); 
+    relationships = (
+        {
+            destination = Affectation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = noSeqAffectation; sourceAttribute = noSeqAffectation; }
+            ); 
+            name = toAffectation; 
+        }, 
+        {
+            destination = Poste; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = posKey; }); 
+            name = toPoste; 
+        }
+    ); 
+    restrictingQualifier = "toAffectation.temValide = 'O' and toPoste.temValide = 'O'"; 
+}

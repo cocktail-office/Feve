@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "TGRP_CODE"; 
+            externalType = VARCHAR2; 
+            name = tgrpCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, tgrpCode); 
+    className = "org.cocktail.feve.eos.modele.grhum.EORepartTypeGroupe"; 
+    classProperties = (tgrpCode); 
+    externalName = "GRHUM.REPART_TYPE_GROUPE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (cStructure, tgrpCode); }; 
+    name = RepartTypeGroupe; 
+    primaryKeyAttributes = (cStructure, tgrpCode); 
+}

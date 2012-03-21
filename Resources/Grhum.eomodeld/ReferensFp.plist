@@ -1,0 +1,58 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = INTITULFP; 
+            externalType = VARCHAR2; 
+            name = intitulfp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = NUMDCP; 
+            externalType = VARCHAR2; 
+            name = numdcp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = NUMFP; 
+            externalType = VARCHAR2; 
+            name = numfp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (numdcp, numfp); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOReferensFp"; 
+    classProperties = (intitulfp, toReferensDcp, tosReferensEmplois); 
+    externalName = "GRHUM.REFERENS_FP"; 
+    fetchSpecificationDictionary = {}; 
+    name = ReferensFp; 
+    primaryKeyAttributes = (numdcp, numfp); 
+    relationships = (
+        {
+            destination = ReferensDcp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = numdcp; sourceAttribute = numdcp; }); 
+            name = toReferensDcp; 
+        }, 
+        {
+            destination = ReferensEmplois; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = numdcp; sourceAttribute = numdcp; }, 
+                {destinationAttribute = numfp; sourceAttribute = numfp; }
+            ); 
+            name = tosReferensEmplois; 
+        }
+    ); 
+}

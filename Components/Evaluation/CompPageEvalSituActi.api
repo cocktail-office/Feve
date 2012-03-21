@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="CompPageEvalSituActi" wocomponentcontent="false">
+
+		<binding name="inputLEvaluation"/>
+
+		<validation message="&apos;inputLEvaluation&apos; is a required binding">
+			<unbound name="inputLEvaluation"/>
+		</validation>
+	</wo>
+</wodefinitions>

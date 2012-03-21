@@ -1,0 +1,270 @@
+{
+    attributes = (
+        {
+            columnName = "C_CIVILITE"; 
+            externalType = VARCHAR2; 
+            name = cCivilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_NAISSANCE"; 
+            externalType = DATE; 
+            name = dNaissance; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_PHOTO"; 
+            externalType = VARCHAR2; 
+            name = indPhoto; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_QUALITE"; 
+            externalType = VARCHAR2; 
+            name = indQualite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            columnName = isEnseignant; 
+            definition = "decode(toVPersonnelActuelEns.noDossierPers,null,0,1)"; 
+            externalType = VARCHAR2; 
+            name = isEnseignant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = isNonEnseignant; 
+            definition = "decode(toVPersonnelActuelNonEns.noDossierPers,null,0,1)"; 
+            externalType = VARCHAR2; 
+            name = isNonEnseignant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_PATRONYMIQUE"; 
+            externalType = VARCHAR2; 
+            name = nomPatronymique; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PRENOM2; 
+            externalType = VARCHAR2; 
+            name = prenom2; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOIndividu"; 
+    classProperties = (
+        cCivilite, 
+        dNaissance, 
+        indPhoto, 
+        indQualite, 
+        nomPatronymique, 
+        nomUsuel, 
+        persId, 
+        prenom, 
+        prenom2, 
+        temValide, 
+        toVPersonnelActuelEns, 
+        toVPersonnelActuelNonEns, 
+        tosAffectation, 
+        tosEnqueteFormation, 
+        tosEvaluation, 
+        tosPoste, 
+        tosAffectationDetail, 
+        isEnseignant, 
+        isNonEnseignant, 
+        tosVCandidatEvaluation, 
+        tosVPersonnelNonEns, 
+        tosHierarchieNm1, 
+        tosHierarchieNp1, 
+        tosIndividuFormations, 
+        toPhotosEmployesGrhum, 
+        toVPersonnelActuel
+    ); 
+    externalName = "GRHUM.INDIVIDU_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cCivilite, 
+            dNaissance, 
+            indPhoto, 
+            indQualite, 
+            noIndividu, 
+            nomPatronymique, 
+            nomUsuel, 
+            persId, 
+            prenom, 
+            prenom2
+        ); 
+        "_nameInObjectStore" = "INDIVIDU_ULR"; 
+    }; 
+    name = Individu; 
+    primaryKeyAttributes = (noIndividu); 
+    relationships = (
+        {
+            destination = VPersonnelActuelEns; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noIndividu; }); 
+            name = toVPersonnelActuelEns; 
+        }, 
+        {
+            destination = VPersonnelActuelNonEns; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noIndividu; }); 
+            name = toVPersonnelActuelNonEns; 
+        }, 
+        {
+            destination = Affectation; 
+            internalInfo = {"_nameInObjectStore" = tosOccupationPoste; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noIndividu; }); 
+            name = tosAffectation; 
+        }, 
+        {
+            definition = "tosAffectation.tosAffectationDetail"; 
+            internalInfo = {"_nameInObjectStore" = "tosAffectation_tosAffectationDetail"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = tosAffectationDetail; 
+        }, 
+        {
+            destination = EnqueteFormation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = tosEnqueteFormation; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = Evaluation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = tosEvaluation; 
+        }, 
+        {
+            definition = "tosAffectation.tosAffectationDetail.toPoste"; 
+            internalInfo = {"_nameInObjectStore" = "tosAffectation_tosAffectationDetail_toPoste"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = tosPoste; 
+        }, 
+        {
+            destination = VCandidatEvaluation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = tosVCandidatEvaluation; 
+        }, 
+        {
+            destination = VPersonnelNonEns; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noIndividu; }); 
+            name = tosVPersonnelNonEns; 
+        }, 
+        {
+            destination = Hierarchie; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividuResp; sourceAttribute = noIndividu; }); 
+            name = tosHierarchieNm1; 
+        }, 
+        {
+            destination = Hierarchie; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = tosHierarchieNp1; 
+        }, 
+        {
+            destination = IndividuFormations; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = tosIndividuFormations; 
+        }, 
+        {
+            destination = PhotosEmployesGrhum; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toPhotosEmployesGrhum; 
+        }, 
+        {
+            destination = VPersonnelActuel; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noIndividu; }); 
+            name = toVPersonnelActuel; 
+        }
+    ); 
+    restrictingQualifier = "(temValide = 'O')"; 
+}

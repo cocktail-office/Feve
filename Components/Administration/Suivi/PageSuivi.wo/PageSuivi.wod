@@ -1,0 +1,93 @@
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+FormSuiviPoste: WOForm {
+	multipleSubmit = true;
+	action = neFaitRien;
+	name = "FormSuiviPoste";
+	id = "FormSuiviPoste";
+}
+
+CondIsPoste: WOConditional {
+	condition = isPoste;
+}
+
+SuiviPoste1: SuiviPoste {
+	
+}
+
+CondIsFicheDePoste: WOConditional {
+	condition = isFicheDePoste;
+}
+
+SuiviFicheDePoste1: SuiviFicheDePoste {
+	
+}
+
+CondIsFicheLolf: WOConditional {
+	condition = isFicheLolf;
+}
+
+SuiviFicheLolf1: SuiviFicheLolf {
+	
+}
+
+CondIsEvaluation: WOConditional {
+	condition = isEvaluation;
+}
+
+SuiviEvaluation1: SuiviEvaluation {
+	
+}
+
+CondIsEvolution: WOConditional {
+	condition = isEvolution;
+}
+
+SuiviEvolution1: SuiviEvolution {
+	
+}
+
+CondIsPromotion: WOConditional {
+	condition = isPromotion;
+}
+
+SuiviPromotion1: SuiviPromotion {
+	
+}
+
+CondIsDemFormation: WOConditional {
+	condition = isDemFormation;
+}
+
+SuiviDemFormation1: SuiviDemFormation {
+	
+}
+
+CondIsFormation: WOConditional {
+	condition = isFormation;
+}
+
+SuiviFormation1: SuiviFormation {
+	
+}

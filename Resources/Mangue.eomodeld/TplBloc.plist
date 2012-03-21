@@ -1,0 +1,148 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VAL"; 
+            externalType = DATE; 
+            name = dDebVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VAL"; 
+            externalType = DATE; 
+            name = dFinVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TBL_CODE"; 
+            externalType = VARCHAR2; 
+            name = tblCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TBL_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = tblCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TBL_FACULTATIF"; 
+            externalType = VARCHAR2; 
+            name = tblFacultatif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TBL_KEY"; 
+            externalType = NUMBER; 
+            name = tblKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TBL_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tblLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }, 
+        {
+            columnName = "TBL_POSITION"; 
+            externalType = NUMBER; 
+            name = tblPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TBN_KEY"; 
+            externalType = NUMBER; 
+            name = tbnKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TON_KEY"; 
+            externalType = NUMBER; 
+            name = tonKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (tblKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplBloc"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        tblCommentaire, 
+        tblFacultatif, 
+        tblLibelle, 
+        tblPosition, 
+        toTplBlocNature, 
+        toTplOnglet, 
+        tosRepartFicheBlocActivation, 
+        tosTplItem, 
+        tblCode, 
+        dDebVal, 
+        dFinVal
+    ); 
+    externalName = "MANGUE.TPL_BLOC"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplBloc; 
+    primaryKeyAttributes = (tblKey); 
+    relationships = (
+        {
+            destination = TplBlocNature; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tbnKey; sourceAttribute = tbnKey; }); 
+            name = toTplBlocNature; 
+        }, 
+        {
+            destination = TplOnglet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tonKey; sourceAttribute = tonKey; }); 
+            name = toTplOnglet; 
+        }, 
+        {
+            destination = RepartFicheBlocActivation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tblKey; sourceAttribute = tblKey; }); 
+            name = tosRepartFicheBlocActivation; 
+        }, 
+        {
+            destination = TplItem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tblKey; sourceAttribute = tblKey; }); 
+            name = tosTplItem; 
+        }
+    ); 
+}

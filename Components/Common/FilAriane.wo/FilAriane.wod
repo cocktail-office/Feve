@@ -1,0 +1,3 @@
+FilArianeNodeRoot: FilArianeNode {
+	node = nodeRoot;
+}

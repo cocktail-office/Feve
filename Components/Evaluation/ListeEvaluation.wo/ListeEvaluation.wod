@@ -1,0 +1,222 @@
+FilArianeEvaluation: FilAriane {
+	nodeRoot = ctrl;
+}
+
+CondNotIsSelectedRecordExists: WOConditional {
+	condition = isSelectedRecordExists;
+	negate = true;
+}
+
+CondNotInOnlyPersonnel: WOConditional {
+	condition = inOnlyPersonnel;
+	negate = true;
+}
+
+CondHasWarning: WOConditional {
+	condition = hasWarning;
+}
+
+PanelWarning: YPanelAvertissement {
+}
+
+LnkShowWarning: WOHyperlink {
+	action = afficherWarning;
+	title = "cliquez ici pour connaitre la liste des avertissements";
+}
+
+TipInfoPeriodeEvaluation: CktlToolTip {
+	htmlText = getInfoPeriodeEvaluation;
+}
+
+FormCRINavBar: WOForm {
+}
+
+CRINavBarDGRecords: YCRINavigationBar {
+	displayGroup = displayGroupRecords;
+	longListLimit = 10;
+}
+
+FormNeFaitRien: WOForm {
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+ComboPeriode: WOPopUpButton {
+	list = periodeList;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strAnneeDebutAnneeFin;
+	onChange = "this.form.submit();";
+}
+
+TextFieldNomPrenom: WOTextField {
+	value = nomPrenom;
+	onClick = TF_SEARCH_ON_CLICK;
+	onBlur = TF_SEARCH_ON_BLUR;
+}
+
+BtnDoNothing: WOSubmitButton {
+	action = neFaitRien;
+	style = "visibility:hidden;display:none";
+}
+
+BtnClearNomPrenom: WOSubmitButton {
+	action = clearNomPrenom;
+	value = "RAZ";
+	class = "bouton";
+	title = "effacer le contenu de la zone de recherche";
+}
+
+StrTotalEvaluation: WOString {
+	value = displayGroupRecords.allObjects.count;
+}
+
+CondHasRecords: WOConditional {
+	condition = displayGroupRecords.allObjects.count;
+}
+
+FormSauverCoche: WOForm {
+	action = sauverCoche;
+}
+
+RepEvaluation: WORepetition {
+	item = itemRecord;
+	list = displayGroupRecords.displayedObjects;
+}
+
+TrEvaluation: WOGenericContainer {
+	elementName = "tr";
+	class = classTrElementList;
+}
+
+CondIsLocked: WOConditional {
+	condition = isLockedItemRecord;
+}
+
+ImgLocked: WOImage {
+	src = "images/VerrouOn.png";
+	border = 0;
+	title = "L'entretien professionnel est verrouill&eacute;";
+}
+
+CondNotIsLocked: WOConditional {
+	condition = isLockedItemRecord;
+	negate = true;
+}
+
+ImgUnLocked: WOImage {
+	src = "images/VerrouOff.png";
+	border = 0;
+	title = "L'entretien professionnel n'est pas verrouill&eacute;.";
+}
+
+CondCanUpdateEvaluation: WOConditional {
+	condition = canUpdateEvaluation;
+}
+
+ImgEdit: WOImage {
+	src = "images/edit.png";
+	title = "Vous pouvez modifier cet entretien professionnel.";
+}
+
+CondNotCanUpdateEvaluation: WOConditional {
+	condition = canUpdateEvaluation;
+	negate = true;
+}
+
+ImgVisu: WOImage {
+	src = "images/Visu.png";
+	title = "Vous pouvez consulter cet entretien professionnel.";
+}
+
+CondCanViewEvaluation: WOConditional {
+	condition = canViewEvaluation;
+}
+
+CondNotCanViewEvaluation: WOConditional {
+	condition = canViewEvaluation;
+	negate = true;
+}
+
+CondNotCanModifierObjectifsPrecedents: WOConditional {
+	condition = canModifierObjectifsPrecedents;
+	negate = true;
+}
+
+
+ImgInterdit: WOImage {
+	src = "images/Interdit.gif";
+	title = "Vous ne pouvez pas consulter le contenu de cet entretien professionnel.";
+}
+
+LnkDetailEvaluation: WOHyperlink {
+	action = doCreateAndClicEvaluation;
+	title = "D&eacute;tailler cet entretien professionnel.";
+	disabled = isDisabledLnkSelectEvaluation;
+}
+
+StrEvaluationNomPrenom: WOString {
+	value = itemRecord.toIndividu.nomPrenom;//VALID
+}
+
+CondIsAfficherPeriode: WOConditional {
+	condition = ctrl.isAfficherPeriode;
+}
+
+StrEvaluationPeriode: WOString {
+	value = itemEvaluation.toEvaluationPeriode.strAnneeDebutAnneeFin;
+}
+
+DTenueEntretien: WOString {
+	value = itemEvaluation.dTenueEntretien;
+	dateformat = "%d/%m/%Y";
+}
+
+CheckIsViseParResponsableRh: WOCheckBox {
+	checked = itemEvaluation.isViseParResponsableRh;
+	disabled = disabledLaCocheResp;
+	onChange = "this.form.submit();";
+	title = itemEvaluation.tipChkDVisaResponsableRh;
+}
+
+CondNotHasRecords: WOConditional {
+	condition = displayGroupRecords.displayedObjects.count;
+	negate = true;
+}
+
+CompLegendeListe1: CompLegendeListe {
+}
+
+CondIsSelectedRecordExists: WOConditional {
+	condition = isSelectedRecordExists;
+}
+
+PageEvaluation1: PageEvaluation {
+	inputLEvaluation = selectedRecord.toEvaluation;//VALID
+	ctrl = ctrl.pageEvaluationCtrl;
+}
+
+TipVR: CktlToolTip {
+	htmlText = "Indique si le responsable RH a vis&eacute; l'entretien professionnel correspondant. Il n'est plus modifiable une fois vis&eacute;.";
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+CondCanModifierObjectifsPrecedents: WOConditional {
+	condition = canModifierObjectifsPrecedents;
+}
+
+ImgCanModifierObjectifsPrecedents: WOImage {
+	filename = "images/editnm1.png";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+	title = "Vous pouvez modifier les objectifs précédents";
+}

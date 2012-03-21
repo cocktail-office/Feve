@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CompTplOnglet" wocomponentcontent="false">    <binding name="inTplOnglet"/>
+        <validation message="'inTplOnglet' is a required binding.">
+            <unbound name="inTplOnglet"/>
+        </validation>
+    <binding name="inFiche"/>
+        <validation message="'inFiche' is a required binding.">
+            <unbound name="inFiche"/>
+        </validation>
+    <binding defaults="Boolean" name="inDisabled"/>
+    </wo>
+</wodefinitions>

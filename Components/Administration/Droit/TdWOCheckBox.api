@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="TdWOCheckBox" wocomponentcontent="false">    <binding defaults="Boolean" name="hidden"/>
+        <binding defaults="Boolean" name="disabled"/>
+        <binding name="checked"/>
+    </wo>
+</wodefinitions>

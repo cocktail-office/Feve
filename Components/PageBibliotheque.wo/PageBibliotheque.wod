@@ -1,0 +1,52 @@
+PageTemplate1: PageTemplate {
+}
+
+CondIsAfficherLnkModification: WOConditional {
+	condition = isAfficherLnkModification;
+}
+
+
+BtnToModification : CktlAjaxButton {
+    action = toModification;
+	updateContainerID = "ContainerBibiliotheque";
+    text = "Modifier les documentations locales";
+    title = "Cliquer ici pour modifier les documentations locales";
+    type = "edit";
+}
+
+BtnToLectureSeule : CktlAjaxButton {
+    action = toLectureSeule;
+	updateContainerID = "ContainerBibiliotheque";
+    text = "Repasser en lecture seule";
+    title = "Cliquer ici pour revenir en mode lecture seule";
+    type = "validate";
+}
+
+ContainerBibiliotheque : AjaxUpdateContainer {
+	id = "ContainerBibiliotheque";
+	elementName = "div";
+}
+
+CondIsModification: WOConditional {
+	condition = isModification;
+}
+
+CondNotIsModification: WOConditional {
+	condition = isModification;
+	negate = true;
+}
+
+CktlNote1 : CktlNote {
+	
+}
+
+ImgPdf: WOImage {
+	border = 0;
+	width = 16;
+	filename = "images/FichierPDF.png";
+	framework = "app";
+}
+
+DocumentationLocale: DocumentationLocale {
+	isDisabled = isDisabled;
+}

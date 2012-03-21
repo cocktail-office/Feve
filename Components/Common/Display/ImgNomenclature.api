@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="ImgNomenclature" wocomponentcontent="false">    <binding defaults="Boolean" name="isDansLaNomenclature"/>
+        <validation message="'isDansLaNomenclature' is a required binding.">
+            <unbound name="isDansLaNomenclature"/>
+        </validation>
+    </wo>
+</wodefinitions>

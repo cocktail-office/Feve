@@ -1,0 +1,102 @@
+FormDoNothing: WOForm {
+	action = neFaitRien;
+}
+
+CondShowLastInfoMessage: WOConditional {
+	condition = showLastInfoMessage;
+}
+
+CktlNoteLastInfoMessage: CktlNote {
+}
+
+StrLastInfoMessage: WOString {
+	value = lastInfoMessage;
+}
+
+ComboListPeriode: WOPopUpButton {
+	list = periodeArray;
+	item = periodeItem;
+	selection = periodeSelected;
+	displayString = periodeItem.strDateDebutDateFin;
+}
+
+CondShowBtnEdit: WOConditional {
+	condition = showBtnEdit;
+}
+
+BtnEdit: WOImageButton {
+	action = editPeriode;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+	border = "0";
+	title = "Modifier les dates de cette periode d'entretien professionnel";
+}
+
+CondShowBtnAdd: WOConditional {
+	condition = showBtnAdd;
+}
+
+LnkAdd: WOHyperlink {
+	action = addPeriode;
+	string = "Ajouter une nouvelle periode";
+	title = "Creer une nouvelle periode d'entretien professionnel";
+}
+
+ImgAdd: WOImage {
+	src = "images/plus16.gif";
+	width = "16";
+	heigth = "16";
+	border = "0";
+}
+
+BtnDelete: WOImageButton {
+	action = doDelete;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+	border = "0";
+	title = "Effacer cette periode";
+}
+
+CondIsAdding: WOConditional {
+	condition = isAdding;
+}
+
+DatePickerNewDebut: CktlDatePicker {
+	dateValue = newPeriodeDDebut;
+}
+
+DatePickerNewFin: CktlDatePicker {
+	dateValue = newPeriodeDFin;
+}
+
+Note: CktlNote {
+	
+}
+
+BtnDoSave: WOSubmitButton {
+	action = doSave;
+	value = "Enregistrer";
+	class = "bouton";
+}
+
+BtnDoCancel: WOSubmitButton {
+	action = doCancel;
+	value = "Annuler";
+	class = "bouton";
+}
+
+CondIsEditing: WOConditional {
+	condition = isEditing;
+}
+
+DatePickerDebut: CktlDatePicker {
+	dateValue = periodeChanged.epeDDebut;//VALID
+}
+
+DatePickerFin: CktlDatePicker {
+	dateValue = periodeChanged.epeDFin;//VALID
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="CompEvaluationList" wocomponentcontent="false">    <binding name="messageEmptyList"/>
+        <binding name="evaluationList"/>
+        <validation message="'evaluationList' is a required binding.">
+            <unbound name="evaluationList"/>
+        </validation>
+    
+    <binding defaults="Boolean" name="isAfficherDateEntretien"/>
+        <binding defaults="Boolean" name="isAfficherDateVisaRh"/>
+        <binding defaults="Boolean" name="isAfficherEvolutionPoste"/>
+        <binding name="isAfficherEvolutionCarriere"/>
+    </wo>
+</wodefinitions>

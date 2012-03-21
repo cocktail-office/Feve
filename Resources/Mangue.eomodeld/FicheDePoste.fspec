@@ -1,0 +1,13 @@
+{
+    FetchSuivi = {
+        class = EOFetchSpecification; 
+        entityName = FicheDePoste; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = "toPoste.cStructure"; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

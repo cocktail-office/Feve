@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="SwapFicheLolfDescription" wocomponentcontent="false">
+
+		<binding name="inPoste"/>
+
+		<validation message="'inputLaFicheLolf' is a required binding">
+			<unbound name="inPoste"/>
+		</validation>
+	
+        
+    </wo>
+</wodefinitions>

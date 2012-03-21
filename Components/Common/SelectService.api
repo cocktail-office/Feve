@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="SelectService" wocomponentcontent="false">    <binding name="eoStructureSelected"/>
+        <validation message="'eoStructureSelected' is a required binding.">
+            <unbound name="eoStructureSelected"/>
+        </validation>
+    <binding name="updateContainerID"/>
+        <validation message="'updateContainerID' is a required binding.">
+            <unbound name="updateContainerID"/>
+        </validation>
+    </wo>
+</wodefinitions>

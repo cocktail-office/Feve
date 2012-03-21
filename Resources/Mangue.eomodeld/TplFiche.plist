@@ -1,0 +1,66 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TFI_CODE"; 
+            externalType = VARCHAR2; 
+            name = tfiCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TFI_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = tfiCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TFI_KEY"; 
+            externalType = NUMBER; 
+            name = tfiKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TFI_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tfiLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }
+    ); 
+    attributesUsedForLocking = (tfiKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplFiche"; 
+    classProperties = (dCreation, dModification, tfiCode, tfiCommentaire, tfiLibelle, tosTplOnglet); 
+    externalName = "MANGUE.TPL_FICHE"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplFiche; 
+    primaryKeyAttributes = (tfiKey); 
+    relationships = (
+        {
+            destination = TplOnglet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tfiKey; sourceAttribute = tfiKey; }); 
+            name = tosTplOnglet; 
+        }
+    ); 
+}

@@ -1,0 +1,188 @@
+<table>
+	<tr>
+		<td colspan="2"><webobject name = "Browser"/></td>
+	</tr>
+	<tr>
+		<td colspan="2">S&eacute;lection : <font class="title"><webobject name = "StrCibleDisplay"/></font></td>
+	</tr>
+	<tr>
+		<td align="center">
+		
+		<a href="#" onclick = "document.getElementById('add').style.display='inline';"><b>Ajouter un nouveau droit</b></a>
+		
+		<webobject name = "SpanAddDroit">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick = "document.getElementById('add').style.display='none';"><b>Masquer le panneau d'ajout de droit</b></a>
+		<br/>
+		<!-- la ligne d'ajout d'un nouveau droit -->
+		<webobject name = "FormAddDroit">
+		<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+		 	<tr>
+				<td>
+		    	<table cellpadding="2" cellspacing="0">
+						<tr class="listboxHeader">
+							<th class="bordureGaucheHaut" rowspan = "2"><font class="mainTitle">Ajout d'un nouveau droit</font></th>
+							<!-- liste des types d'acces -->
+							<webobject name = "RepTypeDroitAcces">
+								<webobject name = "ThTypeDroitAccesItem"><font class="title"><webobject name = "StrTypeDroitAccesItem"/></font></webobject>
+							</webobject>
+						</tr>
+						
+							
+						<!-- liste des types de cible par type d'acces -->
+						<tr class="listboxHeader">
+							<webobject name = "RepTypeDroitAcces">
+								<webobject name = "RepTypeDroitCible">
+									<td class="bordureGaucheHaut"><webobject name = "StrTypeDroitCibleItem"/></td>
+								</webobject>
+							</webobject>
+						</tr>
+						<tr class="listboxLine">
+							<td class="bordureGaucheHaut">
+								<webobject name = "FieldSearchIndividu1"/>
+							</td>
+							<!-- les cellule pour les coches -->									
+							<webobject name = "RepTypeDroitAcces">
+								<webobject name = "RepTypeDroitCible">
+									<webobject name = "TdWOCheckBoxAddDroit"/>
+								</webobject>
+							</webobject>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+		<webobject name = "CondErrAddDroitSelectionIndividu">
+			<font class="textError">Veuillez s&eacute;lectionner un individu b&eacute;n&eacute;ficiaire du nouveau droit...</font>
+		</webobject>
+		<webobject name = "CondErrAddDroitSelectionCheckbox">
+			<font class="textError">Veuillez attribuer au moins un droit &agrave; l'individu ...</font>
+		</webobject>
+		<webobject name = "CondErrAddDroitBeneficiaireExistant">
+			<font class="textError">Cet individu &agrave; d&eacute;j&agrave; d'un droit direct, veuillez directement<br/>
+				modifier ses attributions dans le tableau plus bas...</font>
+		</webobject>
+		<webobject name = "BtnDoAddDroit"/>
+		
+		</webobject>
+		</webobject>	
+			
+		<webobject name = "FormEditDroit">
+		<!-- un champ bidon pour que le formulaire puisse etre envoyé si aucun coche n'est cochée -->
+		<input type = "hidden" value = "bidon" name = "bidon"/>
+		
+		<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+		 	<tr>
+				<td>
+		    	<table cellpadding="2" cellspacing="0">
+					
+						<!-- liste des types d'acces -->
+						<tr class="listboxHeader">
+							<th class="bordureGaucheHaut" rowspan = "2"><font class="mainTitle">Provenance</font></th>
+							<th class="bordureGaucheHaut" rowspan = "2"><font class="mainTitle">B&eacute;n&eacute;ficiaire</font></th>
+							<webobject name = "RepTypeDroitAcces">
+								<webobject name = "ThTypeDroitAccesItem"><font class="title"><webobject name = "StrTypeDroitAccesItem"/></font></webobject>
+							</webobject>
+						</tr>
+						
+						<!-- liste des types de cible par type d'acces -->
+						<tr class="listboxHeader">
+							<webobject name = "RepTypeDroitAcces">
+								<webobject name = "RepTypeDroitCible">
+									<td class="bordureGaucheHaut"><webobject name = "StrTypeDroitCibleItem"/></td>
+								</webobject>
+							</webobject>
+						</tr>
+
+						<!-- liste des provenances  -->
+						<webobject name = "RepStrProvenance">
+						<tr class="listboxLine">
+							<webobject name = "TdProvenance">
+								<!-- libelle de la provenance -->
+								<font class="title"><webobject name = "StrProvenanceItem"/></font>
+							</webobject>
+			
+							<!-- pas de beneficiaire, on affiche une ligne vierge -->
+							<webobject name = "CondNotHasBeneficiaire">
+								<td class="bordureGaucheHaut">&lt;aucun&gt;</td>
+								<!-- les cellule pour les coches -->									
+								<webobject name = "RepTypeDroitAcces">
+									<webobject name = "RepTypeDroitCible">
+										<td class="bordureGaucheHaut">&nbsp;</td>
+									</webobject>
+								</webobject>
+							</webobject>
+							
+					
+							<!-- on a un ou plusieurs beneficiaires -->		
+							<webobject name = "CondHasBeneficiaire">
+
+								<webobject name = "CondNotIsProvenanceHeritee">
+									<webobject name = "RepBeneficiaire">
+										<!-- on affiche la premiere ligne entiere sans commencer par TR, puis les autres oui -->		
+										<webobject name = "CondShowBaliseTrOpen">
+											<webobject name = "StrBaliseTrOpen"/>		
+										</webobject>
+										<td class="bordureGaucheHaut">
+											<!-- libelle du beneficiare -->
+											<webobject name = "ToolTipBeneficiaireItem"><webobject name = "StrBeneficiaireItem"/></webobject><br/>
+											<font class="textNote"><webobject name = "StrBeneficiaireItemTip"/></font>
+										</td>
+										<webobject name = "RepTypeDroitAcces">
+											<webobject name = "RepTypeDroitCible">
+												<webobject name = "TdWOCheckBox"/>
+											</webobject>
+										</webobject>
+										<!-- on affiche la dernier ligne sans terminer par TR, mais les autres oui -->		
+										<webobject name = "CondShowBaliseTrClose">
+											<webobject name = "StrBaliseTrClose"/>		
+										</webobject>
+									
+									</webobject>
+								</webobject>
+							
+								<!-- la meme chose, mais pour les provenances heritees (une WORepetition en plus) -->		
+								<webobject name = "CondIsProvenanceHeritee">
+									<webobject name = "RepBeneficiaire">
+										<webobject name = "RepDroitNature">
+											<!-- on affiche la premiere ligne entiere sans commencer par TR, puis les autres oui -->		
+											<webobject name = "CondShowBaliseTrOpen">
+												<webobject name = "StrBaliseTrOpen"/> 
+											</webobject>
+											<td class="bordureGaucheHaut">
+												<!-- libelle du beneficiare -->
+												<webobject name = "StrBeneficiaireItem"/><br>
+												<font class="textNote"><webobject name = "StrBeneficiaireItemTip"/></font>
+											</td>
+											<webobject name = "RepTypeDroitAcces">
+												<webobject name = "RepTypeDroitCible">
+													<webobject name = "TdWOCheckBox"/>
+												</webobject>
+											</webobject>
+											<!-- on affiche la dernier ligne sans terminer par TR, mais les autres oui -->		
+											<webobject name = "CondShowBaliseTrClose">
+												<webobject name = "StrBaliseTrClose"/>		
+											</webobject>
+										
+										</webobject>
+									</webobject>
+								</webobject>							
+				
+				
+							</webobject>
+				
+						</tr>
+						</webobject>
+
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+		<webobject name = "BtnDoUpdateDroit"/>
+		</webobject>
+
+		</td>
+	</tr>
+</table>

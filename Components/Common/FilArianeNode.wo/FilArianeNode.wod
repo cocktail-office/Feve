@@ -1,0 +1,38 @@
+CondIsNotNodeNull: WOConditional {
+	condition = isNodeNull;
+	negate = true;
+}
+
+CondShowNode: WOConditional {
+	condition = node.showNode;
+}
+
+LiNode: WOGenericContainer {
+	elementName = "li";
+	class = cssClass; 
+}
+
+FilArianeNodeChild: FilArianeNode {
+	node = node.child;
+}
+
+CondIsLastNode: WOConditional {
+	condition = isLastNode;
+}
+
+StrNodeTitle: WOString {
+	value = node.stringLabel;
+	escapeHTML = true;
+}
+
+CondNotIsLastNode: WOConditional {
+	condition = isLastNode;
+	negate = true;
+}
+
+LnkNodeToFullComponent: WOHyperlink {
+	action = node.toFullComponent;
+	string = node.linkLabel;
+	title = node.linkTitle;
+	disabled = lastNode;
+}

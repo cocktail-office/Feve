@@ -1,0 +1,139 @@
+<a name="CompTplBlocFormation"></a>
+
+	
+<webobject name = "ErrSaisieFormation">
+	Attention, l'erreur suivante est suvenue :
+</webobject>
+
+
+<table>
+
+	<webobject name = "CondHasFormation">
+		<tr class="listboxHeader">
+
+			<th/>
+
+			<th>Formation</th>
+
+			<webobject name = "CondIsGestionPeriode">
+				<th>D&eacute;but</th>
+				<th>Fin</th>
+			</webobject>
+
+			<webobject name = "CondIsGestionDuree">
+				<th>Dur&eacute;e</th>
+				<th>Unit&eacute; de temps</th>
+			</webobject>
+
+			<td></td>
+
+		</tr>
+		<webobject name = "RepFormation">
+		<tr>
+			
+			<td>
+				<webobject name = "ImgNomenclature"/>
+			</td>
+		
+			<td align="left">
+				<webobject name = "CondNotIsEditingCurrentFormation">
+					<webobject name = "StrFormationItemLibelle"/>
+				</webobject>
+				<webobject name = "CondIsEditingCurrentFormation">
+					<webobject name = "BtnDoEditFormationCache"/>
+					<webobject name = "SelectFormationExistingFormation"/>
+				</webobject>
+			</td>
+			
+			<webobject name = "CondIsGestionPeriode">
+				<td>
+					<webobject name = "CondNotIsEditingCurrentFormation"><webobject name = "StrFormationItemDebut"/></webobject>
+					<webobject name = "CondIsEditingCurrentFormation"><webobject name = "CktlDatePickerExistingFormationDebut"/></webobject>
+				</td>
+				<td>
+					<webobject name = "CondNotIsEditingCurrentFormation"><webobject name = "StrFormationItemFin"/></webobject>
+					<webobject name = "CondIsEditingCurrentFormation"><webobject name = "CktlDatePickerExistingFormationFin"/></webobject>
+				</td>
+			</webobject>
+			
+			<webobject name = "CondIsGestionDuree">
+				<td align="right">
+					<webobject name = "CondNotIsEditingCurrentFormation"><webobject name = "StrFormationDuree"/></webobject>
+					<webobject name = "CondIsEditingCurrentFormation"><webobject name = "TFDuree"/></webobject>
+				</td>
+				<td>
+					<webobject name = "CondNotIsEditingCurrentFormation"><webobject name = "StrFormationTypeUniteTemps"/></webobject>
+					<webobject name = "CondIsEditingCurrentFormation"><webobject name = "PopUpTypeUniteTemps"/></webobject>
+				</td>
+			</webobject>
+				
+			<td>
+				<webobject name = "CondIsEditingCurrentFormation">
+					<webobject name = "ImgBtnDoEditFormation"/>
+				</webobject>
+				<webobject name = "CondShowLnkEditFormation">
+					<webobject name = "LnkEditFormation">
+						<webobject name = "ImgModifier"/>
+					</webobject>
+				</webobject>
+				<webobject name = "CondShowLnkDeleteFormation">
+					<webobject name = "LnkDeleteFormation">
+						<webobject name = "ImgMoins"/>
+					</webobject>
+				</webobject>
+				<webobject name = "CondShowLnkCancel">
+					<webobject name = "LnkCancel">
+						<webobject name = "ImgAnnuler"/>
+					</webobject>
+				</webobject>
+			</td>
+		</tr>
+		</webobject>	
+	</webobject>
+	
+	<webobject name = "CondNotHasFormation">
+		<tr>
+			<td align="center">
+				<font class="textError">&lt;aucune formation enregistr&eacute;e&gt;</font>
+			</td>
+		</tr>
+	</webobject>
+	
+	<webobject name = "CondShowLnkAddNewFormation">
+		<tr>
+			<th colspan = "7" style = "text-align:center">
+				<webobject name = "ImgAddNewFormation"/><webobject name = "LnkAddNewFormation">[Saisir une formation]</webobject>
+			</th>
+		</tr>
+	</webobject>
+	
+	<webobject name = "CondShowFormAddNewFormation">
+		<tr>
+			
+			<td/>
+			
+			<td>
+				<webobject name = "BtnDoAddNewFormationCache"/>
+				<webobject name = "SelectFormationNewFormation"/>
+			</td>
+			
+			<webobject name = "CondIsGestionPeriode">
+				<td><webobject name = "CktlDatePickerNewFormationDebut"/></td>
+				<td><webobject name = "CktlDatePickerNewFormationFin"/></td>
+			</webobject>
+		
+			<webobject name = "CondIsGestionDuree">
+				<td><webobject name = "TFNewFormationDuree"/></td>
+				<td><webobject name = "PopUpNewFormationTypeUniteTemps"/></td>
+			</webobject>
+				
+			<td>
+				<webobject name = "ImgBtnDoAddNewFormation"/>
+				<webobject name = "LnkCancel">
+					<webobject name = "ImgAnnuler"/>
+				</webobject>
+			</td>
+		</tr>
+	</webobject>
+	
+</table>

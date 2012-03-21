@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = INFOSDCP; 
+            externalType = CLOB; 
+            name = infosdcp; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = INTITULDCP; 
+            externalType = VARCHAR2; 
+            name = intituldcp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LETTREBAP; 
+            externalType = VARCHAR2; 
+            name = lettrebap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = NUMDCP; 
+            externalType = VARCHAR2; 
+            name = numdcp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = SYGLEDCP; 
+            externalType = VARCHAR2; 
+            name = sygledcp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (intituldcp, lettrebap, numdcp, sygledcp); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOReferensDcp"; 
+    classProperties = (infosdcp, intituldcp, lettrebap, numdcp, sygledcp, tosReferensFp); 
+    externalName = "GRHUM.REFERENS_DCP"; 
+    name = ReferensDcp; 
+    primaryKeyAttributes = (numdcp); 
+    relationships = (
+        {
+            destination = ReferensFp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = numdcp; sourceAttribute = numdcp; }); 
+            name = tosReferensFp; 
+        }
+    ); 
+}

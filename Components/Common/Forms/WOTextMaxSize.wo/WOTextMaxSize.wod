@@ -1,0 +1,16 @@
+WOText1 : WOText {
+	value = value;
+	disabled = disabled;
+	class = defaultCssClass;
+	onKeyDown = onKeyEvent;
+	onKeyUp = onKeyEvent;
+	onMouseOut = onKeyEvent;
+	onBlur = onKeyEvent;
+	id = textId;
+}
+
+SpanInfo: WOGenericContainer {
+	elementName = "span";
+	id = spanId;
+	class = "textError";
+}

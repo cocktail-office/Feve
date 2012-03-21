@@ -1,0 +1,54 @@
+{
+    attributes = (
+        {
+            columnName = "ACT_KEY"; 
+            externalType = NUMBER; 
+            name = actKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = actLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }
+    ); 
+    attributesUsedForLocking = (actKey, actLibelle); 
+    className = "org.cocktail.feve.eos.modele.grhum.old.EOActivite"; 
+    classProperties = (actLibelle, dCreation, dModification, tosRepartEmploiActivite); 
+    externalName = "GRHUM.ACTIVITE_PROFESSIONNELLE_OLD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (actLibelle); }; 
+    name = Activite; 
+    primaryKeyAttributes = (actKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEmploiActivite; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actKey; sourceAttribute = actKey; }); 
+            name = tosRepartEmploiActivite; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

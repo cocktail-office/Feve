@@ -1,0 +1,83 @@
+TDEvaEvolutionPropo: WOTextMaxSize {
+	value = inputLEvaluation.evaEvolutionPropo;
+	disabled = isDisabledTextePropo;
+	maxSize = 2000;
+}
+
+CondNotIsModeModifPropo: WOConditional {
+	condition = isModeModifPropo;
+	negate = true;
+}
+
+CondShowLnkModifierPropo: WOConditional {
+	condition = isDisabledBtnModifPropo;
+	negate = true;
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	border = "0";
+	width = "16px";
+	height = "16px";
+}
+
+LnkModifierPropo: WOHyperlink {
+	action = modifierPropo;
+	title = "Cliquez ici pour modifier";
+	escapeHTML = false;
+}
+
+CondIsModeModifPropo: WOConditional {
+	condition = isModeModifPropo;
+}
+
+ImgBtnEnregistrer: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrer;
+	title = "Enregistrer la saisie";
+}
+
+ImgBtnAnnulerEnregistrer: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerEnregistrer;
+	title = "Annuler les modifications";
+}
+
+TFEvaEvolutionEnvis: WOTextMaxSize {
+	value = inputLEvaluation.evaEvolutionEnvis;
+	disabled = isDisabledTexteEnvis;
+	maxSize = 2000;	
+}
+
+CondNotIsModeModifEnvis: WOConditional {
+	condition = isModeModifEnvis;
+	negate = true;
+}
+
+CondIsModeModifEnvis: WOConditional {
+	condition = isModeModifEnvis;
+}
+
+CondNotIsDisabledBtnModifPropo: WOConditional {
+	condition = isDisabledBtnModifPropo;
+	negate = true;
+}
+
+CondNotIsDisabledBtnModifEvolu: WOConditional {
+	condition = isDisabledBtnModifEvolu;
+	negate = true;
+}
+
+CondShowLnkModifierEvolu: WOConditional {
+	condition = isDisabledBtnModifEvolu;
+	negate = true;
+}
+
+LnkModifierEvolu: WOHyperlink {
+	action = modifierEvolu;
+	title = "Cliquez ici pour modifier";
+	escapeHTML = false;
+}

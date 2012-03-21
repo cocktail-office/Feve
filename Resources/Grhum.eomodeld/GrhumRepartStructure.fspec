@@ -1,0 +1,13 @@
+{
+    FetchRepartStructure = {
+        class = EOFetchSpecification; 
+        entityName = GrhumRepartStructure; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = cStructure; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

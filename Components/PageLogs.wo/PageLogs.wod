@@ -1,0 +1,22 @@
+PageTemplate1: PageTemplate {
+
+}
+
+LnkUpdateTop: WOHyperlink {
+	action = neFaitRien;
+	fragmentIdentifier = "top";
+	string = "actualiser";
+	title = "Actualiser le fichier de logs";
+}
+
+StrLog: WOString {
+	value = logs;
+	escapeHTML = false;
+}
+
+LnkUpdateBottom: WOHyperlink {
+	action = neFaitRien;
+	fragmentIdentifier = "bottom";
+	string = "actualiser";
+	title = "Actualiser le fichier de logs";
+}

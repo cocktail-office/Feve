@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="FilArianeNode" wocomponentcontent="false">    <binding name="node"/>
+        <validation message="'node' is a required binding.">
+            <unbound name="node"/>
+        </validation>
+    </wo>
+</wodefinitions>

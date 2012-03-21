@@ -1,0 +1,123 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_DEB_FORMATION"; 
+            externalType = DATE; 
+            name = dDebFormation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_FORMATION"; 
+            externalType = DATE; 
+            name = dFinFormation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DUREE; 
+            externalType = VARCHAR2; 
+            name = duree; 
+            valueClassName = NSString; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOR_ID"; 
+            externalType = NUMBER; 
+            name = forId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_FORMATION"; 
+            externalType = VARCHAR2; 
+            name = llFormation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_INDIVIDU_FORMATION"; 
+            externalType = NUMBER; 
+            name = noSeqIndividuFormation; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TUT_ORDRE"; 
+            externalType = NUMBER; 
+            name = tutOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noSeqIndividuFormation); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOIndividuFormations"; 
+    classProperties = (
+        dCreation, 
+        dDebFormation, 
+        dFinFormation, 
+        dModification, 
+        duree, 
+        llFormation, 
+        toFormationPersonnel, 
+        toIndividu, 
+        toTypeUniteTemps
+    ); 
+    externalName = "MANGUE.INDIVIDU_FORMATIONS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification); }; 
+    name = IndividuFormations; 
+    primaryKeyAttributes = (noSeqIndividuFormation); 
+    relationships = (
+        {
+            destination = FormationPersonnel; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = forId; sourceAttribute = forId; }); 
+            name = toFormationPersonnel; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = TypeUniteTemps; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tutOrdre; sourceAttribute = tutOrdre; }); 
+            name = toTypeUniteTemps; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_DescriptionFormation"; }; 
+}

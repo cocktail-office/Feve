@@ -1,0 +1,62 @@
+<webobject name = "ErrorUpdate"/>
+<table border="0" class="boxTitle" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<table class="boxContents" border="0" cellpadding="5" cellspacing="0" width="100%">
+				<tr>
+					<td align="center">
+						<font class="textEntry">Service :</font><WEBOBJECT NAME="StrInAffectationDetailService"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font class="textEntry">Occupant :</font><WEBOBJECT NAME="StrInAffectationDetailNomPrenom"/>&nbsp;&nbsp;&nbsp;
+						<font class="textEntry">Quotit&eacute; :</font><WEBOBJECT NAME="StrInAffectationDetailQuotite"/>%
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font class="textEntry">Debut :</font><WEBOBJECT NAME="StrInAffectationDetailAffectationDebut"/>&nbsp;&nbsp;&nbsp;
+						<font class="textEntry">Fin :</font><WEBOBJECT NAME="StrInAffectationDetailAffectationFin"/>
+					</td>
+				</tr>
+				<webobject name = "CondHasOccupationWarning">
+				<tr>
+					<td align="center">
+  	          <webobject name = "TipPosteOccupationItemWarn"><webobject name = "ImgWarning" /> Attention chevauchement d&eacute;tect&eacute;</webobject>
+	        </td>
+  			</tr>
+      </webobject>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="boxContents">
+			<webobject name="ChkInAffectationDetailIsAdeDateSameAffectation"/> Identiques &agrave; l'affectation
+		</td>
+	</tr>
+	<webobject name="CondNotInAffectationDetailIsAdeDateSameAffectation">
+	<tr>
+		<td>
+			<table class="boxContents" border="0" cellpadding="5" cellspacing="0" width="100%">
+				<tr>
+					<td colspan=2 align="center">
+						<font class="textEntry">Date d'ouverture :</font><WEBOBJECT NAME="DtePickerInAffectationDetailAdeDDebut"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2 align="center">
+						<font class="textEntry">Date de fermeture :</font><WEBOBJECT NAME="DtePickerInAffectationDetailAdeDFin"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</webobject>
+	<tr>
+		<td align="center" class="boxContents">
+			<webobject name = "LnkCancel"><webobject name = "ImgCancel"/></webobject>
+			<webobject name="BtnDoUpdateOccupation"/>
+		</td>
+	</tr>
+</table>

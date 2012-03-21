@@ -1,0 +1,81 @@
+FilArianeSuiviFicheDePostePoste: FilAriane {
+	nodeRoot = compFicheDePosteListCtrl;
+} 
+
+CondHasResult: WOConditional {
+	condition = compFicheDePosteListCtrl.ficheDePosteList.@count;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.display;
+	noSelectionString = "";
+}
+
+PopupPosteType: WOPopUpButton {
+	item = posteTypeItem;
+	list = posteTypeList;
+	selection = posteTypeSelected;
+	escapeHTML = false;
+}
+
+ChkFicheDePosteActuelle: WOCheckBox {
+	checked = isActuelle;
+}
+
+PopupFicheDePosteType: WOPopUpButton {
+	item = ficheDePosteTypeItem;
+	list = ficheDePosteTypeList;
+	selection = ficheDePosteTypeSelected;
+	escapeHTML = false;	
+}
+
+BtnRefresh: WOSubmitButton {
+	value = "Rafraichir";
+	action = doRefresh;
+	class = "bouton";
+	name = "BtnRefresh";
+	title = "Appliquer les filtres / rafraichir la liste des objets";
+}
+
+CompFicheDePosteList1: CompFicheDePosteList {
+	ctrl = compFicheDePosteListCtrl;
+}
+
+FormSuiviFicheDePosteFiltres: WOForm {
+	name = "FormSuiviFicheDePosteFiltres";
+	action = neFaitRien;
+}
+
+ObserverFiltres: AjaxObserveField {
+	updateContainerID = "ContainerCompFicheDePosteList";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+ContainerCompFicheDePosteList: AjaxUpdateContainer {
+	id = "ContainerCompFicheDePosteList";
+}

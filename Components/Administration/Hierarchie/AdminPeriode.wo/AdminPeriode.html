@@ -1,0 +1,44 @@
+<webobject name = "FormDoNothing">
+  <webobject name = "CondShowLastInfoMessage">
+    <webobject name = "CktlNoteLastInfoMessage"><webobject name = "StrLastInfoMessage" /></webobject>
+  </webobject>
+  <table>
+    <tr>
+      <td> <webobject name = "ComboListPeriode" /> </td>
+      <webobject name = "CondShowBtnEdit">
+        <td>
+          <webobject name = "BtnEdit" />
+          <webobject name = "BtnDelete" />
+        </td>
+      </webobject>
+    </tr>
+  </table>
+  <br />
+  <webobject name = "CondShowBtnAdd">
+    <webobject name = "LnkAdd"> <webobject name = "ImgAdd" /> </webobject>
+  </webobject>
+  <webobject name = "CondIsAdding">
+    <font class = "title">Ajout d'une nouvelle p&eacute;riode</font>
+    <br />
+    du 
+    <webobject name = "DatePickerNewDebut" />
+    au 
+    <webobject name = "DatePickerNewFin" />
+    <br />
+    <br />
+    <webobject name = "Note"> L'arbre hi&eacute;rarchique de la p&eacute;riode pr&eacute;c&eacute;dente sera recopi&eacute; ainsi que l'ensemble des droits associ&eacute;s </webobject>
+    <br />
+    <webobject name = "BtnDoSave" />&nbsp;<webobject name = "BtnDoCancel" />
+  </webobject>
+  <webobject name = "CondIsEditing">
+    <font class = "title">Modification d'une p&eacute;riode existante</font>
+    <br />
+    du 
+    <webobject name = "DatePickerDebut" />
+    au 
+    <webobject name = "DatePickerFin" />
+    <br />
+    <br />
+    <webobject name = "BtnDoSave" />&nbsp;<webobject name = "BtnDoCancel" />
+  </webobject>
+</webobject>

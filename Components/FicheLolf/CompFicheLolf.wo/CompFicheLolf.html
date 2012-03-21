@@ -1,0 +1,133 @@
+<webobject name = "CondIsInPosteExists">
+	<font class="title">Profil LOLF</font> - <font class="textEntry">Exercice comptable : </font><webobject name = "PopUpFicheLolf"/> <webobject name = "TipInfoPeriodeLolf"><webobject name = "ImgInfo"/></webobject>
+	<webobject name = "CondIsAFicheLolfSelected">
+		<webobject name = "CondCanAccesFicheLolfSelected">
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+		<tr>
+			<td>
+				<table border=="0"  cellpadding=="2"  cellspacing=="1" width="100%">
+					<webobject name = "CondNotHasRepRepartSilland">
+					<tr>
+						<th colspan="3" class="listboxHeader">
+							<font class="textError">&lt;Aucune r&eacute;partition SILLAND / LOLF d&eacute;clar&eacute;e&gt;</font>
+						</th>
+					</tr>
+					</webobject>
+					<webobject name = "CondHasRepRepartSilland">
+					<tr class="listboxHeader">
+						<th>Fonction SILLAND</th>
+						<th>Quotit&eacute;</th>
+						<th>&nbsp;</th>
+					</tr>
+					</webobject>
+					<webobject name="RepRepartSilland">
+					<webobject name="CondRepartSillandIsEnCoursDeModification">
+					<tr class="listboxLine">
+						<td nowrap align="left">
+							<b><webobject name="StrSilland"/></b>
+							<webobject name="CondShowLienAjouterLolfNomenclature">(<webobject name="LnkActiverModeAjouterLolfNomenclature"><webobject name = "ImgPlus"/>Nouvelle destination LOLF</webobject>)</webobject>
+						</td>
+						<td align="right" nowrap><b><webobject name="StrRfsQuotite"></webobject>%</b></td>
+						<td align="center" nowrap>
+							<webobject name="CondNotIsDisabledBtnModifierFctSilland"><webobject name="LnkModifierFctSilland"><webobject name="ImgModifier"/></webobject></webobject>
+							<webobject name="CondNotIsDisabledBtnSupprimerFctSilland"><webobject name="LnkSupprimerFctSilland"><webobject name="ImgSupprimer"/></webobject></webobject>
+						</td>
+					</tr>
+					</webobject>
+					<webobject name="CondShowLigneModiferFctSilland">
+					<tr class="listboxLine">
+						<td align="left">
+							<b><webobject name="StrSilland"/></b>
+						</td>
+						<td nowrap><webobject name="TextfieldModifRfsQuotite"></webobject>%</td>
+						<td align="center">
+							<webobject name = "CondNotIsDisabledBtnAppliquerFctSilland">
+								<webobject name="BtnSauvegarderModificationFctSilland"/>
+							</webobject>
+							<webobject	name="BtnAnnuler"/>
+						</td>
+					</tr>
+					</webobject>
+					<webobject name="RepRepartLolfNomen">
+					<webobject name="CondNotRepartLolfNomenIsEnCoursDeModification">
+					<tr class="listboxLine">
+						<td align="left"><webobject name="ImgClose"></webobject><i><webobject	name="StrLolfNomenclature"/></i></td>
+						<td align="right" nowrap><i><webobject name="StrRepartLolfNomenRflQuotite"/>%</i></td>
+						<td align="center" nowrap>
+							<webobject name="CondNotIsDisabledBtnModifierLolfNomenclature"><webobject name="LnkModifierLolfNomenclature"><webobject name="ImgModifier"/></webobject></webobject>
+							<webobject name="CondNotIsDisabledBtnSupprimerLolfNomenclature"><webobject name="LnkSupprimerLolfNomenclature"><webobject	name="ImgSupprimer"/></webobject></webobject>
+						</td>
+					</tr>
+					</webobject>
+					<webobject name="CondUneRepartLolfNomenIsEnCoursDeModification">
+					<tr class="listboxLine">
+						<td align="left">
+							<webobject name="ComboLolfNomenclatureModif"/>
+						</td>
+						<td nowrap><webobject name="TextFieldRepartLolfNomenQuotite"></webobject>%</td>
+						<td align="center">
+							<webobject name = "CondNotIsDisabledBtnAppliquerLolfNomenclature">
+								<webobject name="BtnSauvegarderModificationLolfNomenclature"/>
+							</webobject>
+							<webobject name="BtnAnnuler"/>
+						</td>
+					</tr>
+					</webobject>
+					</webobject>
+					<webobject name="CondUneRepartSillandIsEnCoursDAjoutDeLolfNomenclature">
+					<tr class="listboxLine">
+						<td>
+							<webobject name="ImgClose"/>
+							<webobject name="ComboLolfNomenclatureAjout"/>
+						</td>
+						<td nowrap><webobject name="TextFieldLaQuotiteLolfNomen"></webobject>%</td>
+						<td>
+							<webobject name = "CondNotIsDisabledBtnAjouterLolfNomenclature">
+								<webobject name="BtnAjouterLolfNomenclature"/>
+							</webobject>
+							<webobject	name="BtnAnnuler"/>
+						</td>
+					</tr>
+					</webobject>
+					</webobject>
+					<webobject name="CondShowLienAjouterFctSilland">
+					<tr class="listboxLine">
+						<th colspan="3" align="center" class="feveTRAjoutNouveau">
+							<webobject name="LnkActiverModeAjouterFctSilland"><webobject name = "ImgPlus"/>Affecter une nouvelle fonction SILLAND</webobject>
+						</th>
+					</tr>
+					</webobject>
+					<webobject name="CondIsModeAjouterFctSilland">
+					<tr class="listboxLine">
+						<td><webobject name="ComboNouvelleFctSilland"/></td>
+						<td nowrap><webobject name="TextFieldLaQuotiteFctSilland"/>%</td>
+						<td align="center">
+							<webobject name = "CondNotIsDisabledBtnAjouterFctSilland">
+								<webobject name="BtnAjouterFctSilland"/>
+							</webobject>
+							<webobject	name="BtnAnnuler"/>
+						</td>
+					</tr>
+					</webobject>
+				</table>
+			</td>
+		</tr>
+	</table>
+		</webobject>
+	
+	
+		<webobject name = "CondNotCanAccesFicheLolfSelected">
+			<br/><br/>
+			<webobject name="YPanelAvertissement1">
+			Vous n'&ecirc;tes pas autoris&eacute; &agrave; voir<br/>
+			le contenu de cette fiche LOLF
+			</webobject>
+		</webobject>
+	
+		<webobject name="CondShowLeTexteErreur">
+			<br/><br/>
+			<webobject name="YPanelAvertissement1"><webobject name="StrLeTexteErreur"/></webobject>
+		</webobject>
+	</webobject>
+
+</webobject>

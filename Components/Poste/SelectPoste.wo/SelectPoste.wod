@@ -1,0 +1,49 @@
+ContainerSelectPoste: AjaxUpdateContainer {
+	 id = "ContainerSelectPoste";
+}
+
+PopUpStructure: WOPopUpButton {
+	noSelectionString = "----- Choix du service d'appartenance -----";
+	list = eoStructureArray;
+	item = eoStructureItem;
+	displayString = eoStructureItem.displayCourt;
+	selection = eoStructureSelected;
+}
+
+PopupPosteNature: WOPopUpButton {
+	item = posteNatureItem;
+	list = posteNatureArray;
+	selection = posteNatureSelected;
+	escapeHTML = false;
+}
+
+PopupPosteType: WOPopUpButton {
+	item = posteTypeItem;
+	list = posteTypeArray;
+	selection = posteTypeSelected;
+	escapeHTML = false;
+}
+
+PopUpPoste: WOPopUpButton {
+	list = dgPoste.displayedObjects;
+	selection = eoPosteSelected;
+	item = eoPosteItem;
+	displayString = eoPosteItem.displayCodeOccupationActuelle;
+	id = "PopUpPoste";
+}
+
+ChkIsAfficherArchive: WOCheckBox {
+	checked = isAfficherArchive;
+}
+
+ObserverSelectPoste: AjaxObserveField {
+	action = doFilterDgPoste;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	updateContainerID = "ContainerSelectPoste";
+}
+
+StrTotalPoste: WOString {
+	value = dgPoste.displayedObjects.count;
+	numberformat = "0";
+}

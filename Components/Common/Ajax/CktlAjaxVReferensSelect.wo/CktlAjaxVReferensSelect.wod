@@ -1,0 +1,90 @@
+ContainerFormationSelectionne : AjaxUpdateContainer {
+	id = containerReferensSelectionneId;
+}
+
+FormationSelectionne : WOTextField {
+  value = ^value;
+  disabled = true;
+  style = "float:left;text-align: left;";
+  size = textFieldSize;
+}
+
+BtRechercher : CktlAjaxButton {
+	type = "find";
+	title = "Rechercher et selectionner une formation ";
+	action = doNothing;	
+	dialogIDForOpen = referensTreeViewId;
+	
+}
+
+
+BtSupprimer : CktlAjaxButton {
+	action = supprimerSelection;
+	type = "cancel";
+	title = "Supprimer la selection";
+	updateContainerID = containerReferensSelectionneId;
+	style="vertical-align:bottom;";
+	onComplete=supprimerOnComplete;
+	showBusyImage = true;
+}
+
+FormationTreeViewDialog : CktlAjaxWindow {
+	id = referensTreeViewId;
+	//title = "Select Company";
+	showOpener = false; 
+	//label = "Ajouter"; 
+	overlayClose = false; 
+	transitions = false; 
+	centerVertically = true;
+	minWidth = 450;
+	minHeight = 300;
+	closeUpdateContainerID = updateContainerID;
+	
+	//aspnet = true;
+	//afterHide
+	onClose = onClose;
+	
+}
+ContainerFormationTreeView : AjaxUpdateContainer {
+	id = componentId;
+	evalScripts = true;	
+}
+
+DisplayDeleteButton : WOConditional {
+	condition = displayDeleteButton;
+}
+
+FormationTreeView : CktlAjaxVReferensTreeView {
+    utilisateurPersId = ^utilisateurPersId;
+    userFiltersFormID = ^userFiltersFormID;
+    userFiltersDictionary = ^userFiltersDictionary;
+    onSuccessSelect = onSuccessSelect;
+    confirmBeforeSelection = ^confirmBeforeSelection;
+    containerFormationSelectionneId = containerReferensSelectionneId;
+    editingContext = ^editingContext;
+    id = ^id;
+    selection = ^selection;
+    reset = resetTree;
+    treeCollapsedImage = ^treeCollapsedImage;
+    treeCollapsedImageFramework = ^treeCollapsedImage;
+    treeExclusions = ^treeExclusions;
+    treeExpandedImage = ^treeExpandedImage;
+    treeExpandedImageFramework = ^treeExpandedImage;
+    treeLeafImage = ^treeLeafImage;
+    treeLeafImageFramework = ^treeLeafImageFramework;
+    treeQualifier = ^treeQualifier;
+    treeRootObject = ^treeRootObject;
+    treeViewClassName = ^treeViewClassName;
+    treeViewHeight = ^treeViewHeight;
+    treeViewTitle = ^treeViewTitle;
+    treeViewWidth = ^treeViewWidth;        
+    filtreTexte = true;    
+}
+
+IfShowField : WOConditional {
+	condition = showField;	
+}
+IfNotShowField : WOConditional {
+	condition = showField;
+	negate = true;	
+}

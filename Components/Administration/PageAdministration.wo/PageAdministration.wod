@@ -1,0 +1,72 @@
+PageTemplate1: PageTemplate {
+}
+
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+CondIsPageAdministrationArbre: WOConditional {
+	condition = isPageAdministrationArbre;
+}
+
+AdminHierarchie1: PageAdministrationHierarchie {
+	ctrl = pageAdministrationHierarchieCtrl;
+}
+
+CondIsPageAdministrationDivers: WOConditional {
+	condition = isPageAdministrationDivers;
+}
+
+PageAdminDivers1: PageAdminDivers {
+
+}
+
+CondIsPageAdministrationSuivi: WOConditional {
+	condition = isPageAdministrationSuivi;
+}
+
+PageSuivi1: PageSuivi {
+
+}
+
+CondIsPageAdministrationLolf: WOConditional {
+	condition = isPageAdministrationLofl;
+}
+
+PageAdminLolf1: PageAdminLolf {
+	
+}
+
+CondIsPageAdministrationOuverture: WOConditional {
+	condition = isPageAdministrationOuverture;
+}
+
+PageAdminOuverture1: PageAdminOuverture {
+	
+}
+
+CondIsPageAdminDroits: WOConditional {
+	condition = isPageAdminDroits;
+}
+
+PageAdminDroit1: PageAdminDroit {
+
+}

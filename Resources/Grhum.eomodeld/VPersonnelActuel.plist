@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noDossierPers); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOVPersonnelActuel"; 
+    classProperties = (toIndividu); 
+    externalName = "GRHUM.V_PERSONNEL_ACTUEL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (noDossierPers, toIndividu); 
+        "_nameInObjectStore" = "V_PERSONNEL_ACTUEL"; 
+    }; 
+    isReadOnly = Y; 
+    name = VPersonnelActuel; 
+    primaryKeyAttributes = (noDossierPers); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }
+    ); 
+}

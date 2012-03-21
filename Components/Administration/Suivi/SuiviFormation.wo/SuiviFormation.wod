@@ -1,0 +1,107 @@
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.display;
+	noSelectionString = "--- Tous les services ---";
+	name = "PopupService";
+	id = "PopupService";
+}
+
+StrTotalFormation: WOString {
+	value = formationArray.count;
+}
+
+CondHasResult: WOConditional {
+	condition = formationArray.count;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br><u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br><u>convertir</u>, suivant, choisir s&eacute;parateur et fin";
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+RepFormation: WORepetition {
+	list = formationArray;
+	item = formationItem;
+}
+
+StrAgent: WOString {
+	value = formationItem.toIndividu.nomPrenom;
+}
+
+StrFormation: WOString {
+	value = formationItem.libelle;
+}
+
+ImgNomenclature: ImgNomenclature {
+	isDansLaNomenclature = formationItem.isNomenclature;
+}
+
+StrDDebut: WOString {
+	value = formationItem.dDebut;
+	dateformat = "dd/MM/yyyy";
+}
+
+StrDFin: WOString {
+	value = formationItem.dFin;
+	dateformat = "dd/MM/yyyy";
+}
+
+StrDuree: WOString {
+	value = formationItem.duree;
+}
+
+StrTypeUniteTemps: WOString {
+	value = formationItem.toTypeUniteTemps.tutLibelle;
+}
+
+ContainerResultats: AjaxUpdateContainer {
+	 id = "ContainerResultats";
+}
+
+ObserverPopupService: AjaxObserveField {
+	updateContainerID = "ContainerResultats";
+	action = doNothing;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	observeFieldID = "PopupService";
+}
+
+LnkSortAgent: AjaxUpdateLink {
+	action = sortAgent;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortFormationSuivie: AjaxUpdateLink {
+	action = sortFormationSuivie;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortIsNomenclature: AjaxUpdateLink {
+	action = sortIsNomenclature;
+	updateContainerID = "ContainerResultats";
+	title = "Indique si la formation est référencée dans la nomenclature (O) ou pas (N)";
+}
+
+LnkSortDDebut: AjaxUpdateLink {
+	action = sortDDebut;
+	updateContainerID = "ContainerResultats";
+}
+
+LnkSortDFin: AjaxUpdateLink {
+	action = sortDFin;
+	updateContainerID = "ContainerResultats";
+}

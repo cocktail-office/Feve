@@ -1,0 +1,25 @@
+ImgModif: WOImage {
+	src = "images/edit.png";
+}
+
+ImgVisu: WOImage {
+	src = "images/Visu.png";
+}
+
+ImgInterdit: WOImage {
+	src = "images/Interdit.gif";
+}
+ImgUnLocked: WOImage {
+	src = "images/VerrouOff.png";
+	border = 0;
+}
+
+
+ImgLocked: WOImage {
+	src = "images/VerrouOn.png";
+	border = 0;
+}
+
+CondShowLegendeIcones: WOConditional {
+	condition = showLegendeIcones;
+}

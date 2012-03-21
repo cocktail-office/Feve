@@ -1,0 +1,102 @@
+<webobject name = "ContainerNoticePromotion">
+
+	<ul>	
+		<li>Filière : <webobject name = "StrPopulation"/></li>
+		<li>Corps : <webobject name = "StrCorps"/></li>
+		<li>Grade : <webobject name = "StrGrade"/></li>
+	</ul>
+	
+	<ol class="noticeDePromotions">
+	
+		<li>
+			<font class="title">Avis de réduction du temps moyen d'échelon</font>
+			
+			<br>
+			Sous réserve que l'agent remplisse les conditions de réduction d'ancienneté.
+			<br>
+			<webobject name = "ObserverReductionEchelonList">
+				<ul>
+				<webobject name = "RepReductionEchelon">
+					<li>
+					<label>
+						<webobject name = "RadioReductionEchelon"/>
+						<webobject name = "StrReductionEchelon"/>
+					</label>
+					</li>
+				</webobject>
+				</ul>
+			</webobject>
+		
+			<webobject name = "CondIsReductionEchelonAMotiver">
+				<webobject name = "TextReductionEchelonRefusMotif"/>
+			</webobject>
+			
+		</li>
+	
+	
+	<li>
+		<font class="title">Avis sur une promotion de grade</font>
+
+		<br>
+		Sous réserve que l'agent remplisse les conditions de réduction de promouvabilité.
+		
+		<br>
+		<webobject name = "ObserverPromotionGradeList">
+			<ul>
+			<webobject name = "RepPromotionGrade">
+				<li>
+				<label>
+					<webobject name = "RadioPromotionGrade"/>
+					<webobject name = "StrPromotionGrade"/>
+				</label>
+				</li>
+			</webobject>
+			</ul>
+		</webobject>
+	
+		<webobject name = "CondIsPromotionGradeAMotiver">
+			<webobject name = "TextPromotionGradeRefusMotif"/>
+		</webobject>
+		
+	</li>
+
+	<li>
+		<font class="title">Avis sur une promotion de corps</font>
+
+		<br>
+		Sous réserve que l'agent remplisse les conditions de réduction de promouvabilité.
+		
+		<br>
+		<webobject name = "ObserverPromotionCorpsList">
+			<ul>
+			<webobject name = "RepPromotionCorps">
+				<li>
+				<label>
+					<webobject name = "RadioPromotionCorps"/>
+					<webobject name = "StrPromotionCorps"/>
+				</label>
+				</li>
+			</webobject>
+			</ul>
+		</webobject>
+	
+			<webobject name = "CondIsPromotionCorpsAMotiver">
+				<webobject name = "TextPromotionCorpsRefusMotif"/>
+			</webobject>
+		
+	</li>
+
+	<li>
+		<font class="title">Avis général sur une promotion</font>
+		
+		<br>
+		<webobject name = "CondShowBtnRecopier">
+			Recopier la valeur saisie de l'entretien : 
+			<webobject name = "BtnRecopier"/>
+		</webobject>
+		<webobject name = "TextAppreciationGenerale"/>
+	</li>
+	
+	</ol>
+
+</webobject>

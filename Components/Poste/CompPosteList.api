@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CompPosteList" wocomponentcontent="false">    <binding name="posteDg"/>
+        <validation message="'posteList' is a required binding.">
+            <unbound name="posteDg"/>
+        </validation>
+    <binding name="messageEmptyList"/>
+    <binding name="posteSelected"/>
+    <binding name="ctrl"/>
+    <validation message="'ctrl' is a required binding.">
+            <unbound name="ctrl"/>
+        </validation>
+    </wo>
+</wodefinitions>

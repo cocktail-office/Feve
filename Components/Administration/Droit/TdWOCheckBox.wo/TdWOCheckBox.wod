@@ -1,0 +1,19 @@
+TdCheckBox: WOGenericContainer {
+	elementName = "td";
+	class = tdCheckBoxClass;
+}
+
+WOCheckBox1: WOCheckBox {
+	disabled = ^disabled;
+	checked = ^checked;
+	onClick = "changeCouleur(this);";
+}
+
+CondNotIsHidden: WOConditional {
+	condition = ^hidden;
+	negate = true;
+}
+
+CondIsHidden: WOConditional {
+	condition = ^hidden;
+}

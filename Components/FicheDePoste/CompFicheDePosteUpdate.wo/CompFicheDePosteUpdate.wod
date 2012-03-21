@@ -1,0 +1,31 @@
+
+DtePickerUpdateFicheDebut: CktlDatePicker {
+	dateValue = ctrl.ficheDePoste.dDebut;
+}
+
+DtePickerUpdateFicheFin: CktlDatePicker {
+	dateValue = ctrl.ficheDePoste.dFin; 
+}
+
+
+ImgCancel: WOImage {
+	border = 0;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkCancel: WOHyperlink {
+	action = ctrl.caller.doCancelCompFicheDePosteUpdate;
+	title = "Annuler la mise a jour de cette fiche de poste";
+}
+
+BtnUpdateFiche: WOImageButton {
+	action = ctrl.doUpdateFiche;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+	title = "Valider et enregistrer les modifications des dates";
+}

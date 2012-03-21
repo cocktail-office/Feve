@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="FieldSearchIndividu" wocomponentcontent="false">    <binding name="individu"/>
+        <validation message="'individu' is a required binding.">
+            <unbound name="individu"/>
+        </validation>
+    <binding defaults="Boolean" name="isJustClicked"/>
+    </wo>
+</wodefinitions>

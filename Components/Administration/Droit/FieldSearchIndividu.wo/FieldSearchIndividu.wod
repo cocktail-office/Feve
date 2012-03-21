@@ -1,0 +1,59 @@
+BtnDoSearchHidden: WOSubmitButton {
+	action = doSearch;
+	name = btnBtnDoSearchHiddenName;
+	style = "visibility:hidden;display:none";
+}
+
+CondNotHasResult: WOConditional {
+	condition = individuList.count;	
+	negate = true;
+}
+
+TFSearch: WOTextField {
+	value = strSearch;
+	onclick = TF_SEARCH_ON_CLICK;
+	onblur = TF_SEARCH_ON_BLUR;
+	onKeyDown = tFSearchOnKeyDown;
+	class = "searchField";
+}
+
+BtnDoSearch: WOSubmitButton {
+	action = doSearch;
+	name = btnBtnDoSearchName;
+	value = "RECH.";
+	title = "Lancer la recherche parmi les individus ...";
+	class = "bouton";
+}
+
+CondHasErrorLength: WOConditional {
+	condition = hasErrorLength;
+}
+
+StrSearchMinSize: WOString {
+	value = STR_SEARCH_MIN_SIZE;
+}
+
+CondHasResult: WOConditional {
+	condition = individuList.count;	
+}
+
+PopUpIndividu: WOPopUpButton {
+	list = individuList;
+	item = individuItem;
+	selection = individuSelected;
+	displayString = individuItem.nomPrenomQualite;
+}
+
+BtnDoClear: WOSubmitButton {
+	action = doClear;
+	name = btnBtnDoClearName;
+	value = "RAZ";
+	title = "Remettre &agrave; z&eacute;ro le champ de recherche";
+	class = "bouton";
+}
+
+
+ChkPersonnelActuel: WOCheckBox {
+	checked = isOnlyPersonnelActuel;
+	name = chkPersonnelActuelName;
+}

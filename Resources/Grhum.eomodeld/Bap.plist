@@ -1,0 +1,54 @@
+{
+    attributes = (
+        {
+            columnName = "C_BAP"; 
+            externalType = VARCHAR2; 
+            name = cBap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_BAP"; 
+            externalType = VARCHAR2; 
+            name = lcBap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_BAP"; 
+            externalType = VARCHAR2; 
+            name = llBap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (cBap, dCreation, dModification, lcBap, llBap); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOBap"; 
+    classProperties = (dCreation, dModification, lcBap, llBap); 
+    externalName = "GRHUM.BAP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cBap, dCreation, dModification, lcBap, llBap); 
+    }; 
+    name = Bap; 
+    primaryKeyAttributes = (cBap); 
+}

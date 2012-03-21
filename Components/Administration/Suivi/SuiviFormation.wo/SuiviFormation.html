@@ -1,0 +1,60 @@
+<div align="center">
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+					<td>
+						<webobject name = "PopupService"/>
+						<webobject name = "ObserverPopupService"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</div>
+
+<webobject name = "ContainerResultats">
+
+<br/>
+<webobject name = "CondHasResult">
+	<center>
+		<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+		<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+		<font class="title">&raquo; <webobject name = "StrTotalFormation"/></font>
+	</center>
+	<br/>
+</webobject>
+
+	<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	  <tr>
+	    <td>
+	      <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+	      	<tr class = "listboxHeader">
+	      	  <th><webobject name = "LnkSortAgent">Agent</webobject></th>
+	       	 	<th><webobject name = "LnkSortFormationSuivie">Formation suivie</webobject></th>
+	       	 	<th><webobject name = "LnkSortIsNomenclature">Ref</webobject></th>
+	       	 	<th><webobject name = "LnkSortDDebut">Début</webobject></th>
+	       	 	<th><webobject name = "LnkSortDFin">Fin</webobject></th>
+	       	 	<th>Durée</th>
+	      	</tr>
+	      	<webobject name = "RepFormation">
+	      	<tr class = "listboxLine">
+	      	  <td nowrap><webobject name = "StrAgent"/></td>
+	       	 	<td><webobject name = "StrFormation"/></td>
+	       	 	<td><webobject name = "ImgNomenclature"/></td>
+	       	 	<td><webobject name = "StrDDebut"/></td>
+	       	 	<td><webobject name = "StrDFin"/></td>
+	       	 	<td>
+		       	 	<webobject name = "StrDuree"/>
+		       	 	<webobject name = "StrTypeUniteTemps"/>
+	       	 	</td>
+	      	</tr>
+	     	 </webobject>
+	   		</table>
+	  	</td>
+		</tr>
+	</table>
+</webobject>
+    

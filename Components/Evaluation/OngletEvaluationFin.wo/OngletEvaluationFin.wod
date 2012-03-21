@@ -1,0 +1,67 @@
+ContainerImpressions: AjaxUpdateContainer {
+	 id = "ContainerImpressions";
+}
+
+CondIsEntretienTenu: WOConditional {
+	condition = inEvaluation.isEntretienTenu;
+}
+
+
+DateTenueEntretien: CktlAjaxDatePicker {
+	dateValue = dTenueEntretien;
+	disabled = isDisableDdTenueEntretien;
+	updateContainerID = "ContainerImpressions";
+	id = "DateTenueEntretien";
+}
+
+CondIsDTenueReinitialisable: WOConditional {
+	condition = isDTenueReinitialisable;
+}
+
+BtnDoReinitialiserDTenue: CktlAjaxButton {
+	action = doReinitialiserDTenue;
+	type = "cancel";
+	title = "RAZ la date de la tenue de cet entretien professionnel";
+	updateContainerID = "ContainerImpressions";
+	style = "vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+PdfBoxEvaluationNonVierge: FevePdfBoxLink {
+	ctrl = ctrlEvaluation;
+	printLabel = "Compte rendu d'entretien d&eacute;finitif";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de cette fiche d'entretien professionnel.";
+}
+
+CondNotIsEntretienTenu: WOConditional {
+	condition = inEvaluation.isEntretienTenu;
+	negate = true;
+}
+
+DateVisaResponsableRh: CktlAjaxDatePicker {
+	dateValue = dVisaResponsableRh;
+	disabled = isDisabledDVisaResponsableRh;
+	updateContainerID = "ContainerImpressions";
+}
+
+CondIsDVisaResponsableRhReinitialisable: WOConditional {
+	condition = isDVisaResponsableRhReinitialisable;
+}
+
+BtnDoReinitialiserDVisaReponsableRh: CktlAjaxButton {
+	action = doReinitialiserDVisaReponsableRh;
+	type = "cancel";
+	title = "RAZ la date de visa RH pour cet entretien professionnel";
+	updateContainerID = "ContainerImpressions";
+	style="vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+CondIsAfficherAlerteTenueRealisee: WOConditional {
+	condition = isAfficherAlerteTenueRealisee;
+}
+
+JsAlertTenueRealisee: WOJavaScript {
+	scriptString = jsAlertTenueRealisee;
+}
+

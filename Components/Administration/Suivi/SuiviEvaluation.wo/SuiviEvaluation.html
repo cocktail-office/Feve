@@ -1,0 +1,54 @@
+<div align="center">
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+					<td>
+						<font class="textEntry">P&eacute;riode :</font>
+						<webobject name = "PopupPeriode"/><br/>
+						<webobject name = "ObserverPopupPeriode"/>
+					</td>
+					<td>
+						<webobject name = "PopupService"/>
+						<webobject name = "ObserverPopupService"/>
+					</td>
+					<td>
+						<font class="textEntry">Postes :</font> 
+						<webobject name = "PopupPosteType"/>
+						<webobject name = "ObserverPopupPosteType"/>
+					</td>
+					<td>
+						<font class="textEntry">Entretien tenus :</font> 
+						<webobject name = "PopupEntretienTenu"/>
+						<webobject name = "ObserverPopupEntretienTenu"/>
+					</td>
+					<td>
+						<font class="textEntry">Visa RH :</font> 
+						<webobject name = "PopupVisaRh"/>
+						<webobject name = "ObserverPopupVisaRh"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</div>
+
+<br/>
+
+
+<webobject name = "ContainerResultats">
+
+	<webobject name = "CondHasResult">
+		<center>
+			<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+			<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+			<font class="title">&raquo; <webobject name = "StrTotalEvaluation"/></font>
+		</center>
+		<br/>
+	</webobject>
+
+	<webobject name = "CompEvaluationList1"/>
+
+</webobject>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+	<wo class="NodeHierarchie" wocomponentcontent="false">
+
+		<binding name="inputLaHierarchie"/>
+		<binding name="inputForcerMonterFils"/>
+		<binding name="pageAdministrationHierarchie"/>
+		<binding name="showDroitsAnnexes"/>
+		<binding name="showEvaluations"/>
+
+		<validation message="'inputLaHierarchie' is a required binding">
+			<unbound name="inputLaHierarchie"/>
+		</validation>
+
+		<validation message="'pageAdministrationHierarchie' is a required binding">
+			<unbound name="pageAdministrationHierarchie"/>
+		</validation>
+
+		<validation message="'showDroitsAnnexes' is a required binding">
+			<unbound name="showDroitsAnnexes"/>
+		</validation>
+
+		<validation message="'showEvaluations' is a required binding">
+			<unbound name="showEvaluations"/>
+		</validation>
+	<binding name="inputLaPeriode"/>
+        <validation message="'inputLaPeriode' is a required binding.">
+            <unbound name="inputLaPeriode"/>
+        </validation>
+    <binding defaults="Boolean" name="showDroitsHerites"/>
+        <validation message="'showDroitsHerites' is a required binding.">
+            <unbound name="showDroitsHerites"/>
+        </validation>
+    <binding name="showTotalEvaluation"/>
+        <validation message="'showTotalEvaluation' must be bound to a settable value">
+            <unsettable name="showTotalEvaluation"/>
+        </validation>
+    <binding name="arbreHierachieComponent"/>
+        <validation message="'arbreHierachieComponent' is a required binding.">
+            <unbound name="arbreHierachieComponent"/>
+        </validation>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,173 @@
+ContentFilters: WOComponentContent {
+	
+}
+
+CondShowPosteDetailItem: WOConditional {
+	condition = ctrl.showPosteDetailItem;
+}
+
+CondIsAffichageFullComponent: WOConditional {
+	condition = ctrl.isAffichageFullComponent;
+}
+
+TipTitleWarnOccupation: CktlToolTip {
+	htmlText = "Indique la liste des probl&egrave;mes li&eacute;s aux<br/>chevauchements de dates d'occupation des postes";
+}
+
+TipTitleWarnFiche: CktlToolTip {
+	htmlText = "Indique la liste des visa des fiches non faits";
+}
+
+TipTitleWarnReferens: CktlToolTip {
+	htmlText = "Indique la liste des fiches de postes en cours ne pointant<br/>pas sur des emplois types de la base REFERENS en vigueur";
+}
+
+CondPosteListNotEmpty: WOConditional {
+	condition = posteDg.allObjects.count;
+}
+
+CondPosteListEmpty: WOConditional {
+	condition = posteDg.allObjects.count;
+	negate = true;
+}
+
+TipOccupant: CktlToolTip {
+	htmlText = "Occupant en cours du poste (pr&eacute;c&eacute;d&eacute; du nombre total d'occupants).<br><br>Le nom est en <b>GRAS</b> si il est actuellement occup&eacute;, ou bien s'il occup&eacute; jusqu'&agrave; sa fermeture (pour les postes ferm&eacute;s).<br><br>Il est en <i>ITALIQUE</i> pour un poste non occup&eacute; actuellement";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+RepPoste: WORepetition {
+	list = posteDg.displayedObjects;
+	item = ctrl.posteItem;
+}
+
+TrPoste: WOGenericContainer {
+	elementName = "tr";
+ 	class = trPosteClass;
+ 	onMouseOver = trPosteClassOnMouseOver;
+ 	onMouseOut = trPosteClassOnMouseOut;
+}
+
+
+StrCode: WOString {
+	value = ctrl.posteItem.posCode;
+}
+
+StrLibelle: WOString {
+	value = ctrl.posteItem.posLibelle;
+}
+
+StrDDeb: WOString {
+	value = ctrl.posteItem.posDDebut;
+	dateformat = "%d/%m/%Y";
+}
+
+StrDFin: WOString {
+	value = ctrl.posteItem.posDFin;
+	dateformat = "%d/%m/%Y";
+}
+
+CompItalicBold1: CompItalicBold {
+	isBold = ctrl.isOccupationCourante;
+	isItalic = ctrl.isNotOccupationCourante;
+}
+
+StrOccupantTotal: WOString {
+	value = ctrl.nbOccupations;
+}
+
+StrOccupant: WOString {
+	value = ctrl.recAffectationDetail.toAffectation.toIndividu.display;
+}
+
+StrNbFicheDePoste: WOString {
+	value = ctrl.nbFicheDePoste;
+}
+
+StrNbFicheLolf: WOString {
+	value = ctrl.nbFicheLolf;
+}
+
+
+StrMessageEmptyList: WOString {
+	value = messageEmptyList;
+	escapeHTML = false;
+}
+
+CondCanAccessPoste: WOConditional {
+	condition = ctrl.canAccessPosteItem;
+}
+
+CondHasFicheWarningItemPoste: WOConditional {
+	condition = ctrl.posteItem.hasFicheWarning;
+}
+
+CondHasOccupationWarningItemPoste: WOConditional {
+	condition = ctrl.posteItem.hasOccupationWarning;
+}
+
+TipPosteFicheItemWarn: CktlToolTip {
+	htmlText = ctrl.posteItem.htmlFicheWarnMessage;
+}
+
+ImgWarning: WOImage {
+	filename = "images/important.png";
+	framework = "app";
+	border = 0;
+}
+
+TipPosteOccupationItemWarn: CktlToolTip {
+	htmlText = ctrl.posteItem.htmlOccupationWarnMessage;
+}
+
+CondHasCurrentFicheDePosteEmploiTypeAncienWarning: WOConditional {
+	condition = ctrl.posteItem.hasCurrentFicheDePosteEmploiTypeAncienWarning;
+}
+
+TipPosteItemCurrentFicheDePosteEmploiTypeAncienWarn: CktlToolTip {
+	htmlText = "La fiche de poste actuelle de ce poste pointe<br/>sur un emploi type de l'ancienne nomenclature...";
+}
+
+
+LnkSelectPoste: WOHyperlink {
+	action = ctrl.doSelectPoste;
+	title = "D&eacute;tailler ce poste";
+}
+
+CondCanDeletePosteItem: WOConditional {
+	condition = ctrl.canDeletePosteItem;
+}
+
+LnkDelPoste: WOHyperlink {
+	action = supprimerPoste;
+	title = "Supprimer ce poste";
+}
+
+ImgDel: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+CompPosteDetailItem: CompPosteDetail {
+	ctrl = ctrl.compPosteDetailCtrlItem;
+}
+
+LnkDup: WOHyperlink {
+	action = ctrl.doDupliquerPoste;
+	string = "Dupliquer";
+}
+
+CondShowPosteDuplicationItem: WOConditional {
+	condition = ctrl.showPosteDuplicationItem;
+}
+CompPosteDuplicationItem: CompPosteDuplication {
+	ctrl = ctrl.compPosteDuplicationCtrlItem;
+}

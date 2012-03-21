@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EXE_ORDRE"; 
+            externalType = NUMBER; 
+            name = exeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOLF_ID"; 
+            externalType = NUMBER; 
+            name = lolfId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SIL_KEY"; 
+            externalType = NUMBER; 
+            name = silKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (exeOrdre, lolfId, silKey); 
+    className = "org.cocktail.feve.eos.modele.grhum.EORepartSillandLolf"; 
+    classProperties = (dCreation, dModification, toExercice, toFctSilland, toLolfNomenclatureDepense); 
+    externalName = "GRHUM.REPART_SILLAND_LOLF"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (toFctSilland); 
+        "_nameInObjectStore" = "REPART_SILLAND_LOLF"; 
+    }; 
+    name = RepartLolfSilland; 
+    primaryKeyAttributes = (exeOrdre, lolfId, silKey); 
+    relationships = (
+        {
+            destination = "FwkJefyAdmin_Exercice"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = exeOrdre; sourceAttribute = exeOrdre; }); 
+            name = toExercice; 
+        }, 
+        {
+            destination = FctSilland; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = silKey; sourceAttribute = silKey; }); 
+            name = toFctSilland; 
+        }, 
+        {
+            destination = "FwkJefyAdmin_LolfNomenclatureDepense"; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lolfId; sourceAttribute = lolfId; }); 
+            name = toLolfNomenclatureDepense; 
+        }
+    ); 
+}

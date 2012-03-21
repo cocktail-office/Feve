@@ -1,0 +1,65 @@
+Container: AjaxUpdateContainer {
+	id = containerId;
+}
+
+TextChampLibre: WOTextMaxSize {
+	value = value;
+	disabled = isDisabledChampLibre;
+	maxSize = 2000;	
+}
+
+CondShowBtnSauvegardeChampLibre: WOConditional {
+	condition = showBtnSauvegardeChampLibre;
+}
+
+BtnDoSaveChampLibre: CktlAjaxSubmitButton {
+	action = doSauvegarde;
+	title = "Cliquez ici pour enregistrer vos modifications";
+	type = "valid";
+	updateContainerID = btnContainerId;
+}
+
+
+ImgAnnuler: WOImage {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+	border = 0;
+}
+
+CondShowLnkCancel: WOConditional {
+	condition = showLnkCancel;
+}
+
+LnkCancel: AjaxUpdateLink {
+	action = doCancel;
+	title = "Cliquez ici pour annuler vos modifications";
+	updateContainerID = btnContainerId;
+}
+
+CondShowLnkEditChampLibre: WOConditional {
+	condition = showLnkEditChampLibre;
+}
+
+LnkEditChampLibre: AjaxUpdateLink {
+	action = editChampLibre;
+	title = "Cliquez ici pour modifier la valeur de ce champ";
+	updateContainerID = btnContainerId;
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	border = "0";
+	width = "16";
+	height = "16";
+}
+
+CondIsAfficherOnBeforeModif: WOConditional {
+	condition = isAfficherOnBeforeModif;
+}
+
+JSOnBeforeModif: WOJavaScript {
+	scriptString = onBeforeModif;
+}

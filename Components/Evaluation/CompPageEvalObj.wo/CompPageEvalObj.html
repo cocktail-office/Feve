@@ -1,0 +1,143 @@
+<font class = "title">Revue du programme d'objectifs de la p&eacute;riode <webobject name = "StrPeriode" /></font>
+<br />
+<br />
+<webobject name = "CondIsInputLEvaluationExiste">
+  <table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+    <tr>
+      <td>
+        <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+          <tr class = "listboxHeader">
+            <webobject name = "CondShowBtnRemonterDescendre">
+              <th>&nbsp;</th>
+            </webobject>
+            <th>Objectifs</th>
+            <th>Moyens</th>
+            <th>El&eacute;ments de mesure</th>
+            <webobject name = "CondNotIsHiddenColonneResultats">
+              <th>R&eacute;sultats obtenus</th>
+            </webobject>
+            <th>Observations</th>
+            <th>&nbsp;</th>
+          </tr>
+          <webobject name = "RepObjectif">
+            <webobject name = "CondNotIsEnCoursDeModif">
+              <tr class = "listboxLine">
+                <webobject name = "CondShowBtnRemonterDescendre">
+                  <td valign = "top" width = "1%">
+                    <webobject name = "LnkRemonterObjectif"><webobject name = "ImgHaut" /></webobject>
+                    <br />
+                    <br />
+                    <webobject name = "LnkDescendreObjectif"><webobject name = "ImgBas" /></webobject>
+                  </td>
+                </webobject>
+                <td valign = "top" align = "left">
+                  <webobject name = "AncreUnObjectif" />
+                  <webobject name = "StrObjectif" />
+                </td>
+                <td valign = "top" align = "left"><webobject name = "StrMoyen" /></td>
+                <td valign = "top" align = "left"><webobject name = "StrMesure" /></td>
+                <webobject name = "CondNotIsHiddenColonneResultats">
+                  <td valign = "top" align = "left"><webobject name = "StrResultat" /></td>
+                </webobject>
+                <td valign = "top" align = "left"><webobject name = "StrObservation" /></td>
+                <td valign = "bottom" width = "1%">
+                  <webobject name = "CondShowBtnModifer">
+                    <webobject name = "LnkModifierObjectif"> <webobject name = "ImgModifier" /> </webobject>
+                  </webobject>
+                  <br />
+                  <br />
+                  <webobject name = "CondShowBtnSupprimer">
+                    <webobject name = "LnkSuppObjectif"> <webobject name = "ImgMoins" /> </webobject>
+                  </webobject>
+                  <br />
+                  <br />
+                </td>
+              </tr>
+            </webobject>
+            <webobject name = "CondIsEnCoursDeModif">
+              <webobject name = "TRUnObjectif">
+                <th>Objectifs</th>
+                <td colspan = "4" valign = "middle" align = "left">
+                  <webobject name = "AncreUnObjectif" />
+                  <webobject name = "TFUnObjectifObjectif" />
+                </td>
+                <td rowspan = "5">
+                  <webobject name = "ImgBtnEnregistrerObjectif" />
+                  <br />
+                  <webobject name = "LnkAnnulerEnregistrerObjectif"> <webobject name = "ImgAnnuler" /> </webobject>
+                </td>
+              </webobject>
+              <webobject name = "TRUnObjectif">
+                <th>Moyens</th>
+                <td colspan = "4" align = "left"><webobject name = "TFUnObjectifMoyen" /></td>
+              </webobject>
+              <webobject name = "TRUnObjectif">
+                <th>El&eacute;ments de mesure</th>
+                <td colspan = "4" align = "left"><webobject name = "TFUnObjectifMesure" /></td>
+              </webobject>
+              <webobject name = "CondNotIsHiddenColonneResultats">
+                <webobject name = "TRUnObjectif">
+                  <th>R&eacute;sultats obtenus</th>
+                  <td colspan = "4" align = "left"><webobject name = "TFUnObjectifResultat" /></td>
+                </webobject>
+              </webobject>
+              <webobject name = "TRUnObjectif">
+                <th>Observations</th>
+                <td colspan = "4" align = "left"><webobject name = "TFUnObjectifObservation" /></td>
+              </webobject>
+            </webobject>
+          </webobject>
+          <webobject name = "CondShowLigneAjouter">
+            <!-- Ligne de saisie d'un nouvel objectif -->
+            <tr class = "feveTRAjoutNouveau">
+              <td class = "YTdLibelleInput">
+                <a name = "nouvelObjectif"></a>
+                Objectifs 
+              </td>
+              <td colspan = "4" valign = "middle" align = "left"><webobject name = "TFObjectif" /></td>
+              <td rowspan = "5">
+                <webobject name = "ImgBtnAjouterObjectif" />
+                <br />
+                <webobject name = "LnkAnnulerAjouterObjectif"> <webobject name = "ImgAnnuler" /> </webobject>
+              </td>
+            </tr>
+            <tr class = "feveTRAjoutNouveau">
+              <td class = "YTdLibelleInput">Moyens</td>
+              <td colspan = "4"><webobject name = "TFMoyen" /></td>
+            </tr>
+            <tr class = "feveTRAjoutNouveau">
+              <td class = "YTdLibelleInput">El&eacute;ments de mesure</td>
+              <td colspan = "4"><webobject name = "TFMesure" /></td>
+            </tr>
+            <webobject name = "CondNotIsHiddenColonneResultats">
+              <tr class = "feveTRAjoutNouveau">
+                <td class = "YTdLibelleInput">R&eacute;sultats obtenus</td>
+                <td colspan = "4"><webobject name = "TFResultat" /></td>
+              </tr>
+            </webobject>
+            <tr class = "feveTRAjoutNouveau">
+              <td class = "YTdLibelleInput">Observations</td>
+              <td colspan = "4"><webobject name = "TFObservation" /></td>
+            </tr>
+          </webobject>
+          <webobject name = "CondShowLienAjouter">
+            <!-- Le lien pour ajouter un nouvel objectif -->
+            <tr class = "feveTRAjoutNouveau">
+              <webobject name = "ThLienAjouter">
+                <webobject name = "ImgAjouter" />
+                <webobject name = "LnkActiverModeAjouter">[Ajouter un nouvel objectif]</webobject>
+              </webobject>
+            </tr>
+          </webobject>
+        </table>
+      </td>
+    </tr>
+  </table>
+</webobject>
+<webobject name = "CondNotIsInputLEvaluationExiste">
+  <br />
+  <br />
+  <font class = "textError">Pas d'objectifs fix&eacute;s sur cette p&eacute;riode</font>
+  <br />
+  <br />
+</webobject>

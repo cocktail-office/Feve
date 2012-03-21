@@ -1,0 +1,44 @@
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+FormAdminLolf: WOForm {
+	multipleSubmit = true;
+	action = neFaitRien;
+	name = "FormAdminLolf";
+}
+
+CondIsLolfGestion: WOConditional {
+	condition = isLolfGestion;
+}
+
+AdminLolf1: AdminLolf {
+
+}
+
+CondIsLolfSync: WOConditional {
+	condition = isLolfSync;
+} 
+
+AdminSyncFicheLolf1: AdminSyncFicheLolf {
+
+}

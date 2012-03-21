@@ -1,0 +1,130 @@
+FormSillandVisibilite: WOForm {
+	name = "FormSillandVisibilite";
+	multipleSubmit = "true";
+}
+
+
+FormLolf: WOForm {
+	name = "FormLolf";
+	multipleSubmit = "true";
+}
+
+BtnNeFaitRien: WOSubmitButton {
+	action = neFaitRien;
+	value = "BOUTON CACHE";
+	style = "visibility:hidden;display:none";
+	name = "BtnNeFaitRien";
+}
+
+PopUpSilland: WOPopUpButton {
+	item = sillandItem;
+	list = sillandList;
+	selection = sillandSelected;
+	displayString = sillandItemDisplay;
+	onChange = "this.form.submit();";
+	disabled = isAdding;
+}
+
+BtnDoChangeVisibilite: WOSubmitButton {
+	action = doChangeVisibilite;
+	name = "BtnDoChangeVisibilite";
+	style = "visibility:hidden;display:none";
+}
+
+ChkEnseignant: WOCheckBox {
+	checked = sillandSelected.isEnseignant;
+	onclick = "BtnDoChangeVisibilite.click();";
+}
+
+ChkNonEnseignant: WOCheckBox {
+	checked = sillandSelected.isNonEnseignant;
+	onclick = "BtnDoChangeVisibilite.click();";
+}
+
+CondShowBtnDoImportFromExerciceNM1: WOConditional {
+	condition = showBtnDoImportFromExerciceNM1;
+}
+
+BtnDoImportFromExerciceNM1: WOSubmitButton {
+	action = doImportFromExerciceNM1;
+	class = "bouton";
+	value = "Recréer les répartitions à l'identique de l'année N-1";
+	escapeHTML = false;
+}
+
+RepRepartSillandLolf: WORepetition {
+	list = repartSilLolfList;
+	item = repartSillandLolfItem;
+}
+
+StrRepartSillandLolfItem: WOString {
+	value = repartSillandLolfItem.toLolfNomenclatureDepense.lolfLibelle;
+	valueWhenEmpty = "<font class=\"textError\">&lt;erreur action LOLF invalide ...&gt;</font>";
+}
+
+LnkDel: WOHyperlink {
+	action = doDelete;
+	title = "Enlever l'affectation de cette action &agrave; la fonction SILLAND";
+}
+
+ImgDel: WOImage {
+	filename = "images/moins16.gif";
+	framework = "app";
+	border = "0";
+	width = "16";
+	heigth = "16";
+}
+
+CondNotIsAdding: WOConditional {
+	condition = isAdding;
+	negate = true;
+}
+
+ImgAdd: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+	border = "0";
+	width = "16";
+	heigth = "16";
+}
+
+LnkAdd: WOHyperlink {
+	action = add;
+	title = "Affecter une action &agrave; une fonction SILLAND";
+}
+
+CondIsAdding: WOConditional {
+	condition = isAdding;
+}
+
+PopUpExercice: WOPopUpButton {
+	item = exerciceItem;
+	list = exerciceList;
+	selection = exerciceSelected;
+	displayString = exerciceItem.exeExercice;
+	onChange = "this.form.submit();";
+	disabled = isAdding;
+}
+
+PopUpLolfNomenclature: WOPopUpButton {
+	item = lolfNomenclatureItem;
+	list = lolfNomenclatureList;
+	selection = lolfNomenclatureSelected;
+	displayString = lolfNomenclatureItem.lolfLibelle;
+}
+
+BtnDoAdd: WOSubmitButton {
+	action = doAdd;
+	name = "BtnDoAdd";
+	value = "Affecter";
+	class = "bouton";
+	title = "Affecter cette action &agrave; la fonction SILLAND selectionn&eacute;e";
+}
+
+BtnDoCancel: WOSubmitButton {
+	action = doCancel;
+	name = "BtnDoCancel";
+	value = "Annuler";
+	class = "bouton";
+	title = "Annuler l'op&eacute;ration";
+}

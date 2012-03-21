@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            columnName = "COM_KEY"; 
+            externalType = NUMBER; 
+            name = comKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EFO_KEY"; 
+            externalType = NUMBER; 
+            name = efoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "REC_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = recCommentaire; 
+            valueClassName = NSString; 
+            valueType = T; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "REC_KEY"; 
+            externalType = NUMBER; 
+            name = recKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (recKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartEnqComp"; 
+    classProperties = (dCreation, dModification, toEnqueteFormation, recCommentaire, toCompetence); 
+    externalName = "MANGUE.FEV_REPART_ENQ_COMP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification); }; 
+    name = RepartEnqComp; 
+    primaryKeyAttributes = (recKey); 
+    relationships = (
+        {
+            destination = Competence; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = comKey; sourceAttribute = comKey; }); 
+            name = toCompetence; 
+        }, 
+        {
+            destination = EnqueteFormation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = efoKey; sourceAttribute = efoKey; }); 
+            name = toEnqueteFormation; 
+        }
+    ); 
+}

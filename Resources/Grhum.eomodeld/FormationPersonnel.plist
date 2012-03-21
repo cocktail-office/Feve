@@ -1,0 +1,121 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOR_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = forCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOR_D_FERMETURE"; 
+            externalType = DATE; 
+            name = forDFermeture; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOR_D_OUVERTURE"; 
+            externalType = DATE; 
+            name = forDOuverture; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FOR_ID"; 
+            externalType = NUMBER; 
+            name = forId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FOR_ID_PERE"; 
+            externalType = NUMBER; 
+            name = forIdPere; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FOR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = forLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = forLibelleDescendance; 
+            definition = "grhum.formation_pers_descendance(FOR_ID)"; 
+            externalType = VARCHAR2; 
+            name = forLibelleDescendance; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }
+    ); 
+    attributesUsedForLocking = (forId); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOFormationPersonnel"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        forCommentaire, 
+        forDFermeture, 
+        forDOuverture, 
+        forId, 
+        forIdPere, 
+        forLibelle, 
+        forLibelleDescendance, 
+        toFormationPere, 
+        tosFormationFille, 
+        tosRepartFormationSouhaitee
+    ); 
+    externalName = "GRHUM.FORMATION_PERSONNEL"; 
+    fetchSpecificationDictionary = {}; 
+    name = FormationPersonnel; 
+    primaryKeyAttributes = (forId); 
+    relationships = (
+        {
+            destination = FormationPersonnel; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = forId; sourceAttribute = forIdPere; }); 
+            name = toFormationPere; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = FormationPersonnel; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = forIdPere; sourceAttribute = forId; }); 
+            name = tosFormationFille; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFormationSouhaitee; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = forId; sourceAttribute = forId; }); 
+            name = tosRepartFormationSouhaitee; 
+        }
+    ); 
+}

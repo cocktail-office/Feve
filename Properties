@@ -1,0 +1,2 @@
+# activer les logs SQL
+#log4j.logger.er.transaction.adaptor.EOAdaptorDebugEnabled=DEBUG

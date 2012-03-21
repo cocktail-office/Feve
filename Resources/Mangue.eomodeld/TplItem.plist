@@ -1,0 +1,122 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TBL_KEY"; 
+            externalType = NUMBER; 
+            name = tblKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TIN_KEY"; 
+            externalType = NUMBER; 
+            name = tinKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TIT_CODE"; 
+            externalType = VARCHAR2; 
+            name = titCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TIT_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = titCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TIT_KEY"; 
+            externalType = NUMBER; 
+            name = titKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TIT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = titLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 512; 
+        }, 
+        {
+            columnName = "TIT_POSITION"; 
+            externalType = NUMBER; 
+            name = titPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (titKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplItem"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        titCommentaire, 
+        titLibelle, 
+        titPosition, 
+        toTplBloc, 
+        toTplItemNature, 
+        tosRepartFicheItem, 
+        tosTplRepartItemItemValeur, 
+        titCode
+    ); 
+    externalName = "MANGUE.TPL_ITEM"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplItem; 
+    primaryKeyAttributes = (titKey); 
+    relationships = (
+        {
+            destination = TplBloc; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tblKey; sourceAttribute = tblKey; }); 
+            name = toTplBloc; 
+        }, 
+        {
+            destination = TplItemNature; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tinKey; sourceAttribute = tinKey; }); 
+            name = toTplItemNature; 
+        }, 
+        {
+            destination = RepartFicheItem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = titKey; sourceAttribute = titKey; }); 
+            name = tosRepartFicheItem; 
+        }, 
+        {
+            destination = TplRepartItemItemValeur; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = titKey; sourceAttribute = titKey; }); 
+            name = tosTplRepartItemItemValeur; 
+        }
+    ); 
+}

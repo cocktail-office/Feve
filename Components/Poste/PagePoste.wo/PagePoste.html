@@ -1,0 +1,81 @@
+<webobject name = "FilAriane1"/> 
+
+<webobject name = "FormGestPoste">
+<table style="border:1px solid #dedede;">
+	<tr>
+		<td>
+			<table class="boxContents" cellspacing="0" cellpadding="2" border="0" width="100%"><tr><td>
+		
+		
+			<webobject name = "CondShowFullComponent">
+ 	 	 		<webobject name = "CompPosteList1">		
+ 			   	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+        
+        
+        
+        		<!-- ligne des filtres -->
+	      		<tr class = "listboxHeader">
+	      			<td width = "1%"><webobject name = "RadioTypeFiltre"/></td>
+	      			<td align="center" colspan="4">
+			      		<webobject name = "BtnDoFilterDgPoste"/>
+	      				<font class="textEntry">Service</font> :
+	      				<webobject name = "CondShowPopUpStructure">
+	      					<webobject name = "PopUpStructure"/>
+	      					<span title = "Indique si la liste des services doit contenir les services ant&eacute;rieurs / archiv&eacute;s">
+	      					<font class="textNote"><label><webobject name = "ChkShowArchive"/> + service archiv&eacute;s</label></font>
+	      					</span>
+	      				</webobject>
+	      				<webobject name = "CondNotShowPopUpStructure"><webobject name = "StrStructure"/></webobject>
+  						</td>
+	      			<td align="center" colspan="3">
+	      				<span title = "Type de profil de l'occupant actuel du poste, le dernier occupant le cas &eacute;ch&eacute;ant">
+	      				<font class="textEntry">Nature</font> : <webobject name = "PopupPosteNature"/>
+	      				</span>
+	      				<span title = "Nature de l'occupation du poste">
+	      				<font class="textEntry">Type</font> : <webobject name = "PopupPosteType"/>
+	      				</span>
+	      				&raquo; <font class="title"><webobject name = "StrTotalPoste"/></font>	
+	      			</td>
+	      			<td align="right" valign="middle" colspan="3" nowrap>
+	      			<webobject name = "CondCanCreatePosteOnStructureSelected">
+	      				<webobject name = "LnkToCompPosteMetaDataAdd"><webobject name = "ImgAdd" /> <b>Cr&eacute;er un nouveau poste</b></webobject>
+	      			</webobject>
+	      			</td>
+	      		</tr>
+		      		
+			      		
+		      		<!-- ligne de recherche textuelle -->
+    		
+    				<tr class = "listboxHeader">
+    					<td width = "1%"><webobject name = "RadioTypeRecherche"/></td>
+    					<td colspan = "10">
+    						<webobject name = "TFSearch"/>
+    						<webobject name = "BtnDoClearStrSearch"/>
+    						<font class="textNote">Parmi les noms, pr&eacute;noms, libell&eacute;s et codes des postes
+    						(accents / majuscules / minuscules sont ignor&eacute;s)</font>
+    						<webobject name = "CondShowWarningSizeStrSearch">
+    							<br/>
+    							<font class="textError">La taille minimum de caract&egrave;re n'a pas &eacute;t&eacute; atteinte - recherche ignor&eacute;e</font>
+    						</webobject>
+    					</td> 
+    				</tr>
+    				
+    				
+	 	    	</table>
+   			</webobject>
+		  </webobject>
+			  
+			  
+			  <webobject name = "CondNotShowFullComponent">
+				  <webobject name = "CondShowCompPosteMetaDataAddCtrl">
+				 	 	<webobject name = "CompPosteMetaDataAdd"/>
+				  </webobject>
+			  </webobject>
+			  
+		</td></tr></table>
+		</td>
+	</tr>
+</table>
+
+
+</webobject>

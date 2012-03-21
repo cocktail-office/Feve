@@ -1,0 +1,112 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EPE_KEY"; 
+            externalType = NUMBER; 
+            name = epeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "HIE_KEY"; 
+            externalType = NUMBER; 
+            name = hieKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU_RESP"; 
+            externalType = NUMBER; 
+            name = noIndividuResp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (hieKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOHierarchie"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        toIndividu, 
+        toIndividuResp, 
+        tosHierarchieNm1, 
+        hieKey, 
+        tosHierarchieNp1, 
+        toEvaluationPeriode
+    ); 
+    externalName = "MANGUE.HIERARCHIE"; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification); }; 
+    name = Hierarchie; 
+    primaryKeyAttributes = (hieKey); 
+    relationships = (
+        {
+            destination = EvaluationPeriode; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = epeKey; }); 
+            name = toEvaluationPeriode; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividuResp; }); 
+            name = toIndividuResp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Hierarchie; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = epeKey; sourceAttribute = epeKey; }, 
+                {destinationAttribute = noIndividuResp; sourceAttribute = noIndividu; }
+            ); 
+            name = tosHierarchieNm1; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Hierarchie; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = epeKey; sourceAttribute = epeKey; }, 
+                {destinationAttribute = noIndividu; sourceAttribute = noIndividuResp; }
+            ); 
+            name = tosHierarchieNp1; 
+        }
+    ); 
+}

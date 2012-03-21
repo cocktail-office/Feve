@@ -1,0 +1,104 @@
+Repetition1: WORepetition {
+	item = uneSituActivite;
+	list = inputLEvaluation.tosSituActivite;
+	index = indexRepetition;
+}
+
+GenericContainer1: WOGenericContainer {
+	bgColor = trBgColorUneSituActi;
+	elementName = "TR";
+}
+
+String1: WOString {
+	value = titreSituation;
+	escapeHTML = false;
+}
+
+Text1: WOTextMaxSize {
+	disabled = isDisabledTexteUneSituActi;
+	value = uneSituActivite.sacSituation;
+	maxSize = 2000;	
+}
+
+CondNotUneSituActiviteIsEnCoursDeModification: WOConditional {
+	condition = uneSituActivite.isEnCoursDeModification;
+	negate = true;
+}
+
+CondNotIsDisabledBtnModifSup: WOConditional {
+	condition = isDisabledBtnModifSup;
+	negate = true;
+}
+
+ImgBtnModifierSituActi: WOImageButton {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	action = modifierSituActi;
+	disabled = isDisabledBtnModifSup;
+	title = "Cliquez ici pour modifier";
+}
+
+ImgBtnSupprimerSituActi: WOImageButton {
+	filename = "images/moins16.gif";
+	framework = "app";
+	action = supprimerSituActi;
+	disabled = isDisabledBtnModifSup;
+	title = "Cliquez ici pour effacer l'enregistrement";
+}
+
+
+CondUneSituActiviteIsEnCoursDeModification: WOConditional {
+	condition = uneSituActivite.isEnCoursDeModification;
+}
+
+ImgBtnEnregistrerSituActi: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrerSituActi;
+	title = "Enregistrer la saisie";
+}
+
+ImgBtnAnnulerEnregistrerSituActi: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerEnregistrerSituActi;
+	title = "Annuler la saisie";
+}
+
+CondShowLigneAjouter: WOConditional {
+	condition = showLigneAjouter;
+}
+
+Text2: WOTextMaxSize {
+	value = activiteLibelle;
+	maxSize = 2000;	
+}
+
+ImgAjouter: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+}
+
+ImgBtnAjouterSituActi: WOImageButton {
+	filename = "images/plus16.gif";
+	framework = "app";
+	action = ajouterSituActi;
+	title = "Enregistrer la saisie";
+}
+
+ImgBtnAnnulerAjouterSituActi: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerAjouterSituActi;
+	title = "Annuler la saisie";
+}
+
+Conditional4: WOConditional {
+	condition = showLienAjouter;
+}
+
+LnkActiverModeAjouter: WOHyperlink {
+	action = activerModeAjouter;
+	title = "Saisir une situation d'activit&eacute; suppl&eacute;mentaire";
+	escapeHTML = "false";
+}

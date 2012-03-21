@@ -1,0 +1,41 @@
+FormAdminSyncFicheLolf: WOForm {
+	name = "FormAdminSyncFicheLolf";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+BtnNeFaitRien: WOSubmitButton {
+	action = neFaitRien;
+	value = "BOUTON CACHE";
+	style = "visibility:hidden;display:none";
+	name = "BtnNeFaitRien";
+}
+
+PopUpExercice: WOPopUpButton {
+	list = exerciceList;
+	item = exerciceItem;
+	selection = exerciceSelected;
+	displayString = exerciceItem.exeExercice;
+	onChange = "BtnNeFaitRien.click()";	
+}
+
+CktlNote1: CktlNote {
+	
+}
+
+CondShowLastMessage: WOConditional {
+	condition = lastMessage.length;
+}
+
+StrLastMessage: WOString {
+	value = lastMessage;
+	escapeHTML = false;
+}
+
+BtnDoCreateMissingFicheLolf: WOSubmitButton {
+	action = doCreateMissingFicheLolf;
+	name = "BtnDoCreateMissingFicheLolf";
+	class = "bouton";
+	value = "Cr&eacute;ation des fiches LOLF";
+	escapeHTML = false;
+}

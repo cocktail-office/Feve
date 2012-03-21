@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "DTC_CODE"; 
+            externalType = VARCHAR2; 
+            name = dtcCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            columnName = "DTC_KEY"; 
+            externalType = NUMBER; 
+            name = dtcKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DTC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = dtcLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 256; 
+        }
+    ); 
+    attributesUsedForLocking = (dtcKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTypeDroitCible"; 
+    classProperties = (dCreation, dModification, dtcCode, dtcLibelle); 
+    externalName = "MANGUE.FEV_TYPE_DROIT_CIBLE"; 
+    fetchSpecificationDictionary = {}; 
+    name = TypeDroitCible; 
+    primaryKeyAttributes = (dtcKey); 
+}

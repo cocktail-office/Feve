@@ -1,0 +1,99 @@
+<webobject name = "FormDoNothing">
+	<font class="title">Synchronisation des donn&eacute;es de Feve avec REFERENS</font><br/>
+	<hr/>
+	<webobject name = "CondIsARecordSelected">
+		<table>
+			<tr>
+				<td valign="top">
+					<b>Donn&eacute;e selectionn&eacute;e (<webobject name = "StrNatureRecordSelected"></webobject>)
+					<webobject name = "LnkClearSelection">&lt;d&eacute;selectionner&gt;</webobject> </b><br/>
+					<div class="textBoxContent" style="border:1px solid grey; padding: 5px">
+						<font color="red">
+							<webobject name = "StrRecordSelected"></webobject>
+						</font>
+					</div>
+					<br/>
+					<br/>
+					<b>Trouver un &eacute;quivalent dans REFERENS:</b> <webobject name = "TFKeyword"></webobject>
+					<webobject name = "CondErrKeyworkTooShort"><font class="textError">Veuillez entrez au moins 3 car.</font></webobject>
+					<webobject name = "BtnDoSearch"></webobject><br/>
+					<font class="textNote"> (* = caract&egrave;re rempla&ccedil;ant un ou plusieurs autres, quels que soient ces derniers)</font>
+					<webobject name = "CondIsSearchDone">
+						<webobject name = "CondErrNoResult"><font class="textError">Aucun r&eacute;sultats !</font></webobject>
+						<webobject name = "CondNotErrNoResult">
+							<br/><br/><b>R&eacute;sultats:</b><br/>
+							<webobject name = "BrowserResult"></webobject><br/>
+							<webobject name="JavaScript1"></WEBOBJECT>
+							R&eacute;duire la liste des r&eacute;sultats : <webobject name = "YCRILookupField1"></webobject>
+							<webobject name = "CondIsAResultSelected">
+								<br/><br/>
+								<b>Correspondance s&eacute;lectionn&eacute;e :</b><br/>
+								<div class="textBoxContent" style="border:1px solid grey; padding: 5px">
+									<font color="green">
+										<webobject name = "StrResultSelected"></webobject>
+									</font>
+								</div>
+							</webobject>
+						</webobject>
+					</webobject>
+				</td>
+				<td style="border-left:1px solid #CCC" valign="top">
+					<b>Fiches / &Eacute;valuations concern&eacute;es</b><br/>
+					<br/>
+					<u>Fiches de poste :</u>
+					<ul>
+						<webobject name = "RepFicheDePoste">
+						<li><webobject name = "StrFicheDePosteItemDisplay"></webobject> <webobject name = "StrFicheDePosteItemOccupantDisplay"></webobject></li>
+						</webobject>
+					</ul>
+					<br/>
+					<u>&Eacute;valuations :</u>
+					<ul>
+						<webobject name = "RepEvaluation">
+						<li><webobject name = "StrEvaluationItemDisplay"></webobject></li>
+						</webobject>
+					</ul>
+				</td>
+			</tr>
+			<webobject name = "CondIsAResultSelected">
+			<tr>
+				<td colspan="2" align="center">
+					<webobject name = "BtnReaffecter"></webobject>
+				</td>
+			</tr>
+			</webobject>
+		</table>
+	</webobject>
+	<webobject name = "CondNotIsARecordSelected">
+	<table>
+		<tr>
+			<th>Emplois type (<webobject name = "StrEmploiListCount"></webobject>)</th>
+			<th>Activit&eacute;s (<webobject name = "StrActiviteListCount"></webobject>)</th>
+			<th>Comp&eacute;tences (<webobject name = "StrCompetenceListCount"></webobject>)</th>
+		</tr>
+		<tr>
+			<td align="left" valign="top" style="border-left:1px dotted grey">
+				<ul>
+				<webobject name = "RepEmploi">
+					<li><webobject name = "LnkDoSelectRecord"><webobject name = "StrEmploiItem"></webobject></webobject></li>
+				</webobject>
+				</ul>
+			</td>
+			<td align="left" valign="top" style="border-left:1px dotted grey">
+				<ul>
+				<webobject name = "RepActivite">
+					<li><webobject name = "LnkDoSelectRecord"><webobject name = "StrActiviteItem"></webobject></webobject></li>
+				</webobject>
+				</ul>
+			</td>
+			<td align="left" valign="top">
+				<ul>
+				<webobject name = "RepCompetence">
+					<li><webobject name = "LnkDoSelectRecord"><webobject name = "StrCompetenceItem"></webobject></webobject></li>
+				</webobject>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	</webobject>
+</webobject>

@@ -1,0 +1,89 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VAL"; 
+            externalType = DATE; 
+            name = dDebVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VAL"; 
+            externalType = DATE; 
+            name = dFinVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TIT_KEY"; 
+            externalType = NUMBER; 
+            name = titKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TIV_KEY"; 
+            externalType = NUMBER; 
+            name = tivKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TIV_POSITION"; 
+            externalType = NUMBER; 
+            name = tivPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (titKey, tivKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplRepartItemItemValeur"; 
+    classProperties = (
+        dCreation, 
+        dDebVal, 
+        dFinVal, 
+        dModification, 
+        tivPosition, 
+        toTplItem, 
+        toTplItemValeur
+    ); 
+    externalName = "MANGUE.TPL_REPART_ITEM_ITEM_VALEUR"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplRepartItemItemValeur; 
+    primaryKeyAttributes = (titKey, tivKey); 
+    relationships = (
+        {
+            destination = TplItem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = titKey; sourceAttribute = titKey; }); 
+            name = toTplItem; 
+        }, 
+        {
+            destination = TplItemValeur; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tivKey; sourceAttribute = tivKey; }); 
+            name = toTplItemValeur; 
+        }
+    ); 
+}

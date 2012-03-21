@@ -1,0 +1,42 @@
+<font class="subTitle">Service de destination</font>
+<webobject name = "SelectService"/>
+<br>
+<webobject name = "ContainerDuplication">
+	<webobject name = "CondIsStructureSelected">
+		<font class="subTitle">D&eacute;tails du nouveau poste</font><br>
+		Code : <webobject name = "StrCode"/><br>
+		Libellé : <webobject name = "TFLibelle"/><br>
+		Date d'ouverture : <webobject name = "DDebut"/><br>
+		Date fermeture : <webobject name = "DFin"/><br>
+		
+		<br>
+		
+		<webobject name = "ObserverChkIsCreationDepuisAffectation">
+			<label>
+				<webobject name="ChkIsCreationDepuisAffectation"/>Cr&eacute;er le poste &agrave; partir d'une affectation existante
+			</label>	
+		</webobject>
+		
+		<webobject name = "ContainerAffectation">	
+			<webobject name = "CondIsCreationDepuisAffectation">
+		
+				<font class="subTitle">Affectation à rattacher au nouveau poste</font>
+				<br>
+			
+		
+				<webobject name = "CondIsAfficherSelectAffectation">
+					<webobject name = "SelectAffectation"/>
+				</webobject>
+		
+				<webobject name = "CondIsAfficherAffectation">
+					<webobject name = "StrAffectation"/>
+					<webobject name = "LnkDoDeselectionnerAffectation">
+						<webobject name = "ImgAnnuler"/>
+					</webobject>
+				</webobject>
+	
+			</webobject>
+		</webobject>
+
+	</webobject>
+</webobject>

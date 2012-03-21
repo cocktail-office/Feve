@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="WOTextMaxSize" wocomponentcontent="false">    <binding name="value"/>
+        
+    <binding name="maxSize"/>
+        
+    <validation message="'value' is a required binding.">
+            <unbound name="value"/>
+        </validation>
+    
+    </wo>
+</wodefinitions>

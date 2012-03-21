@@ -1,0 +1,168 @@
+{
+    attributes = (
+        {
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CODEMEN; 
+            externalType = VARCHAR2; 
+            name = codemen; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DEFINTION_CLEAN"; 
+            externalType = VARCHAR2; 
+            name = definition; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = INTITULEMPLOI; 
+            externalType = VARCHAR2; 
+            name = intitulemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LETTREBAP; 
+            externalType = VARCHAR2; 
+            name = lettrebap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NUMBAP; 
+            externalType = VARCHAR2; 
+            name = numbap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NUMDCP; 
+            externalType = VARCHAR2; 
+            name = numdcp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NUMEMPLOI; 
+            externalType = VARCHAR2; 
+            name = numemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NUMFP; 
+            externalType = VARCHAR2; 
+            name = numfp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = OUVERTCONCOURS; 
+            externalType = VARCHAR2; 
+            name = ouvertconcours; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = SIGLECORPS; 
+            externalType = VARCHAR2; 
+            name = siglecorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        codeemploi, 
+        codemen, 
+        definition, 
+        intitulemploi, 
+        lettrebap, 
+        numbap, 
+        numdcp, 
+        numemploi, 
+        numfp, 
+        ouvertconcours, 
+        siglecorps
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOReferensEmplois"; 
+    classProperties = (
+        codemen, 
+        definition, 
+        intitulemploi, 
+        lettrebap, 
+        numbap, 
+        numdcp, 
+        numemploi, 
+        numfp, 
+        ouvertconcours, 
+        siglecorps, 
+        toReferensCorps, 
+        toReferensFp, 
+        tosReferensActivites, 
+        tosReferensCompetences
+    ); 
+    externalName = "GRHUM.REFERENS_EMPLOIS"; 
+    name = ReferensEmplois; 
+    primaryKeyAttributes = (codeemploi); 
+    relationships = (
+        {
+            destination = ReferensCorps; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = siglecorps; sourceAttribute = siglecorps; }); 
+            name = toReferensCorps; 
+        }, 
+        {
+            destination = ReferensFp; 
+            isToMany = N; 
+            joinSemantic = EORightOuterJoin; 
+            joins = (
+                {destinationAttribute = numdcp; sourceAttribute = numdcp; }, 
+                {destinationAttribute = numfp; sourceAttribute = numfp; }
+            ); 
+            name = toReferensFp; 
+        }, 
+        {
+            destination = ReferensActivites; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = tosReferensActivites; 
+        }, 
+        {
+            destination = ReferensCompetences; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = tosReferensCompetences; 
+        }
+    ); 
+}

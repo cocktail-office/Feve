@@ -1,0 +1,85 @@
+Note: CktlNote {
+	
+}
+
+FormPopUpEvaluationPeriode: WOForm {
+	name = "PopUpEvaluationPeriode";
+	action = neFaitRien;
+}
+
+PopUpEvaluationPeriode: WOPopUpButton {
+	list = ctrl.evaluationPeriodeList;
+	item = ctrl.evaluationPeriodeItem; 
+	selection = ctrl.evaluationPeriodeSelected;
+	onChange = "this.form.submit();";
+	displayString = ctrl.evaluationPeriodeItem.strAnneeDebutAnneeFin;
+}
+
+RepVCandidatEvaluation: WORepetition {
+	list = ctrl.evaluationPeriodeSelected.eoVCandidatEvaluationNouveauxEntrantsArray;
+	item = ctrl.eoVCandidatEvaluationItem;	
+}
+
+StrVCandidatEvaluation: WOString {
+	value = ctrl.eoVCandidatEvaluationItem.toIndividu.nomPrenom;
+}
+
+LnkToAjouter: WOHyperlink {
+	action = ctrl.toAjouter;
+	string = "Ajouter responsable";
+}
+
+LnkToAjouterNonDefini: WOHyperlink {
+	action = ctrl.toAjouterNonDefini;
+	string = "Ajouter un responsable pour quelqu'un qui n'est pas dans cette liste";
+}
+
+CondIsAfficherAjouter: WOConditional {
+	condition = ctrl.isAfficherAjouter;
+}
+
+AjoutDroitNouvelEntrant: AjoutDroitNouvelEntrant {
+	ctrl = ctrl.ajoutDroitNouvelEntrantCtrl;
+}
+
+LnkAnnuler: WOHyperlink {
+	action = ctrl.annuler;
+	string = "annuler";	
+}
+
+RepDroitNouvelEntrant: WORepetition {
+	list = ctrl.evaluationPeriodeSelected.eoDroitNouvelEntrantArray;
+	item = ctrl.eoDroitNouvelEntrantItem;	
+}
+
+StrDroitNouvelEntrant: WOString {
+	value = ctrl.eoDroitNouvelEntrantItem.toIndividuEntrant.nomPrenom;
+}
+
+StrDroitNouvelEntrantResp: WOString {
+	value = ctrl.eoDroitNouvelEntrantItem.toIndividuResp.nomPrenom;
+}
+
+ContainerDroitsAccordes: AjaxUpdateContainer {
+	id = "ContainerDroitsAccordes";
+}
+
+FormDroitsAccordes: WOForm {
+	name = "FormDroitsAccordes";
+}
+
+DDebut: CktlAjaxDatePicker {
+	dateValue = ctrl.dDebut;
+	updateContainerID = "ContainerDroitsAccordes";
+}
+
+DFin: CktlAjaxDatePicker {
+	dateValue = ctrl.dFin;
+	updateContainerID = "ContainerDroitsAccordes";
+}
+
+LnkSupprimer: AjaxUpdateLink {
+	action = ctrl.supprimer;
+	string  = "Supprimer";
+	updateContainerID = "ContainerDroitsAccordes";		
+}

@@ -1,0 +1,280 @@
+/* centrer les th (plus par défaut avec firefox 4?) */
+table tr th {
+	text-align: center;
+}
+
+
+/* mise en valeur d'un activite competence juste ajoutee */
+.listboxLineHighlight {
+	background-color: #F1F6FC;
+	background: #F1F6FC;
+	font-weight: bold;
+}
+
+
+/* une ligne d'ajout d'un nouvel element */ 
+.feveTRAjoutNouveau {
+	background-color: #FFF1D9;
+	background: #FFF1D9;
+	font-weight: bold;
+}
+
+
+/* zone de texte */
+.feveTextarea {
+	width:620px;
+	height:75px;
+	margin-top: 0pt;
+	margin-right-value: 0pt;
+	margin-bottom: 0pt;
+	margin-left-value: 0pt;
+	margin-left-ltr-source: physical;
+	margin-left-rtl-source: physical;
+	margin-right-ltr-source: physical;
+	margin-right-rtl-source: physical;
+	font-size: 1em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(200, 200, 200);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+	color: black;
+}
+
+/* zone de texte en erreur */
+.feveTextareaError {
+	width:620px;
+	height:75px;
+	margin-top: 0pt;
+	margin-right-value: 0pt;
+	margin-bottom: 0pt;
+	margin-left-value: 0pt;
+	margin-left-ltr-source: physical;
+	margin-left-rtl-source: physical;
+	margin-right-ltr-source: physical;
+	margin-right-rtl-source: physical;
+	font-size: 1em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(255, 0, 0);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+	color: red;
+}
+
+/* elements communs */
+
+
+/* ligne de poste / fiche de poste / fiche LOLF / evaluation */
+
+.feveTRPOccupe {
+	font-style: "normal";
+}
+
+.feveTRVacant {
+	font-style: "italic";
+}
+
+.feveTRModifiable {
+	background-color: #F1F6FC;
+	background: #F1F6FC;
+}
+
+.feveTRNonModifiable {
+	background-color: #DDD;
+	background: #DDD;	
+}
+
+.feveTRNonModifiable td a {
+	color: #00A;
+}
+
+.feveTROuvert {
+	color: #000;
+}
+
+.feveTRFerme {
+	color: #990;
+}
+
+.feveTROnMouseOver {
+	background-color: #9F9;
+	background: #9F9;	
+}
+
+/* liste des occupations */
+
+.feveTROccupationActuelle {
+	font-weight: bold;
+	color: #000;
+	font-style: "normal";
+	background-color: #F1F6FC;
+	background: #F1F6FC;
+}
+
+.feveTROccupationNonActuelle {
+	color: #000;
+	font-style: oblique;
+	background-color: #F1F6FC;
+	background: #F1F6FC;
+}
+
+/* tableaux d'administration des droits */
+
+.tdAlignerHaut, .tdSeparateurGauche, .tdSeparateurHaut {
+	vertical-align: text-top;
+}
+
+.bordureGaucheHaut {
+	border-left: 1px solid #888;
+	border-top: 1px solid #888;
+	text-align: center;
+}
+
+/* la gestion des checkbox */
+
+.fondVert {
+	background-color: #6F6;
+}
+
+.fondRouge {
+	background-color: #FAA;
+}
+
+.fondGrise {
+	background-color: #DDD;
+}
+
+.fondTresGrise {
+	background-color: #BBB;
+}
+
+
+/************************************
+ *      CHAMPS DE RECHERCHE         *
+ ************************************/
+.searchField {
+  background: #FFFFFF url(images/forms/find.png) no-repeat scroll left top;
+  padding-left: 18px;
+} 
+
+/************************************
+ *           FIL D'ARIANE           *
+ ************************************/
+
+ul#crumbs {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+
+#crumbs {
+	height:2.3em;
+	border:1px solid #dedede;
+}
+
+ul#crumbs li {
+	float:left;
+	line-height:2.3em;
+	/*color:#777;*/
+	padding-left:.75em;
+}
+
+ul#crumbs li a {
+	background:url(images/crumbs.gif) no-repeat right center;
+	display:block;
+	padding:0 15px 0 0;
+	font-weight: bold;
+}							
+
+ul#crumbs li.lastNode {
+	color:#000;
+	font-weight: bold;
+}
+
+/************************************
+ *      SUIVI DES FICHES LOLF       *
+ ************************************/
+
+/* Elements generals */
+.fonctionSilland {
+	font-size: 14px;
+	color: #00F;
+}
+
+.ficheLolfIncomplete {
+	color: #F00;	
+}
+
+/*****************************
+ *      BOITE D'ERREUR       *
+ ****************************/
+.WOConditionalErrorMessageTable {
+	border: 2px #B22222 dotted;
+	background: #FFF1C0;
+}
+
+.WOConditionalErrorMessageTable tr td {
+	color: #B22222;
+	font-weight: bold;
+}
+
+
+/**************************************************
+ *      SURCHARGE DES CLASSES DE CKTLCOMMON       *
+ **************************************************/
+.cktl_action_cancel {
+    background: url("images/forms/annuler16.gif") no-repeat scroll 0 0 transparent;
+}
+
+.cktl_action_reset {
+    background: url("images/forms/annuler16.gif") no-repeat scroll 0 0 transparent;
+}
+
+.autocompletefield {
+		width: 400px;
+}
+
+.cktl_action_valid {
+	background: url("images/forms/valider16.gif") no-repeat scroll 0 0 transparent;
+}
+
+/**************************************************
+ *      BIBLIOTHEQUE DE DOCUMENTATIONS            *
+ **************************************************/
+ul#listeGuideEntretien {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul#listeGuideEntretien li {
+	border: 1px solid #888;
+	margin-bottom: 3px;
+	padding: 3px;
+	list-style: none;
+}
+
+ul#listeGuideUtilisation {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul#listeGuideUtilisation li {
+	border: 1px solid black;
+	margin-bottom: 3px;
+	padding: 3px;
+	list-style: none;
+}
+
+/**************************************************
+ *             NOTICE DE PROMOTIONS               *
+ **************************************************/
+ 
+ ol.noticeDePromotions li {
+ 	padding: 10px;
+ }
+ 
+ ol.noticeDePromotions ul li {
+ 	padding: 0px;
+ 	list-style: none;
+ }

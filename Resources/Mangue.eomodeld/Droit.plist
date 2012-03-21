@@ -1,0 +1,234 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = droCStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            name = droCStructureComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_EPE_KEY"; 
+            externalType = NUMBER; 
+            name = droEpeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_FDP_KEY"; 
+            externalType = NUMBER; 
+            name = droFdpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_FLO_KEY"; 
+            externalType = NUMBER; 
+            name = droFloKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DRO_KEY"; 
+            externalType = NUMBER; 
+            name = droKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = droNoIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DRO_POS_KEY"; 
+            externalType = NUMBER; 
+            name = droPosKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DTA_KEY"; 
+            externalType = NUMBER; 
+            name = dtaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DTC_KEY"; 
+            externalType = NUMBER; 
+            name = dtcKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (droKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EODroit"; 
+    classProperties = (
+        noIndividu, 
+        droFdpKey, 
+        dCreation, 
+        dModification, 
+        droPosKey, 
+        droNoIndividu, 
+        droCStructure, 
+        toIndividu, 
+        toDroitIndividu, 
+        toDroitStructure, 
+        toDroitFicheDePoste, 
+        toDroitPoste, 
+        droFloKey, 
+        toDroitFicheLolf, 
+        droCStructureComposante, 
+        toDroitComposante, 
+        droEpeKey, 
+        toTypeDroitAcces, 
+        toTypeDroitCible, 
+        toDroitEvaluationPeriode, 
+        toDroitVCandidatEvaluation
+    ); 
+    externalName = "MANGUE.FEV_DROIT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noIndividu, 
+            droFdpKey, 
+            dCreation, 
+            dModification, 
+            droPosKey, 
+            droNoIndividu, 
+            droCStructure
+        ); 
+    }; 
+    name = Droit; 
+    primaryKeyAttributes = (droKey); 
+    relationships = (
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {
+                    destinationAttribute = cStructure; 
+                    sourceAttribute = droCStructureComposante; 
+                }
+            ); 
+            name = toDroitComposante; 
+        }, 
+        {
+            destination = EvaluationPeriode; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = droEpeKey; }); 
+            name = toDroitEvaluationPeriode; 
+        }, 
+        {
+            destination = FicheDePoste; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = droFdpKey; }); 
+            name = toDroitFicheDePoste; 
+        }, 
+        {
+            destination = FicheLolf; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = floKey; sourceAttribute = droFloKey; }); 
+            name = toDroitFicheLolf; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = droNoIndividu; }); 
+            name = toDroitIndividu; 
+        }, 
+        {
+            destination = Poste; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = droPosKey; }); 
+            name = toDroitPoste; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = droCStructure; }); 
+            name = toDroitStructure; 
+        }, 
+        {
+            destination = VCandidatEvaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = epeKey; sourceAttribute = droEpeKey; }, 
+                {destinationAttribute = noIndividu; sourceAttribute = droNoIndividu; }
+            ); 
+            name = toDroitVCandidatEvaluation; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = TypeDroitAcces; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dtaKey; sourceAttribute = dtaKey; }); 
+            name = toTypeDroitAcces; 
+        }, 
+        {
+            destination = TypeDroitCible; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dtcKey; sourceAttribute = dtcKey; }); 
+            name = toTypeDroitCible; 
+        }
+    ); 
+}

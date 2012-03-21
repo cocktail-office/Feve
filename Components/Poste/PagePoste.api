@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PagePoste" wocomponentcontent="false">
+
+		<binding name="ctrl"/>
+
+		<validation message="&apos;ctrl&apos; is a required binding">
+			<unbound name="ctrl"/>
+		</validation>
+	</wo>
+</wodefinitions>

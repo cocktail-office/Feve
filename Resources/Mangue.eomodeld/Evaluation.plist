@@ -1,0 +1,226 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_TENUE_ENTRETIEN"; 
+            externalType = DATE; 
+            name = dTenueEntretien; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_VISA_RESPONSABLE_RH"; 
+            externalType = DATE; 
+            name = dVisaResponsableRh; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EPE_KEY"; 
+            externalType = NUMBER; 
+            name = epeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = epeKeyVisible; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = epeKeyVisible; 
+            readFormat = "EPE_KEY"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EVA_CHAMP_LIBRE"; 
+            externalType = VARCHAR2; 
+            name = evaChampLibre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EVA_EVOLUTION_ENVIS"; 
+            externalType = VARCHAR2; 
+            name = evaEvolutionEnvis; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EVA_EVOLUTION_PROPO"; 
+            externalType = VARCHAR2; 
+            name = evaEvolutionPropo; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = evaKeyVisible; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = evaKeyVisible; 
+            readFormat = "EVA_KEY"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU_RESP"; 
+            externalType = NUMBER; 
+            name = noIndividuResp; 
+            readFormat = "NO_INDIVIDU"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = noIndividuVisible; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = noIndividuVisible; 
+            readFormat = "NO_INDIVIDU"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (evaKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOEvaluation"; 
+    classProperties = (
+        evaEvolutionPropo, 
+        evaEvolutionEnvis, 
+        toIndividu, 
+        tosObjectif, 
+        tosSituActivite, 
+        evaChampLibre, 
+        noIndividuResp, 
+        dCreation, 
+        dModification, 
+        toIndividuResp, 
+        tosRepartEvaNouvelleComp, 
+        toEvaluationPeriode, 
+        epeKeyVisible, 
+        evaKeyVisible, 
+        noIndividuVisible, 
+        toVCandidatEvaluation, 
+        tosRepartFormationSouhaitee, 
+        dTenueEntretien, 
+        dVisaResponsableRh, 
+        tosEvaluationNoticePromotion
+    ); 
+    externalName = "MANGUE.EVALUATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (evaEvolutionPropo, evaEvolutionEnvis); }; 
+    name = Evaluation; 
+    primaryKeyAttributes = (evaKey); 
+    relationships = (
+        {
+            destination = EvaluationPeriode; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = epeKey; }); 
+            name = toEvaluationPeriode; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividuResp; }); 
+            name = toIndividuResp; 
+        }, 
+        {
+            destination = EvaluationNoticePromotion; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = tosEvaluationNoticePromotion; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Objectif; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = tosObjectif; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartEvaNouvelleComp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = tosRepartEvaNouvelleComp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFormationSouhaitee; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = tosRepartFormationSouhaitee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SituActivite; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = tosSituActivite; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = VCandidatEvaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = epeKey; sourceAttribute = epeKey; }, 
+                {destinationAttribute = noIndividu; sourceAttribute = noIndividu; }
+            ); 
+            name = toVCandidatEvaluation; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_EOEvaluationKeyValueCoding"; }; 
+}

@@ -1,0 +1,248 @@
+TdHierarchie: WOGenericContainer {
+	bgColor = inputLaHierarchie.couleurHtml;
+	colspan = 2;
+	elementName = "td";
+	style = "border-left: 1px dotted";
+}
+
+CondHasNm1: WOConditional {
+	condition = inputLaHierarchie.tosHierarchieNm1.count;
+}
+
+CondNotShowNm1: WOConditional {
+	condition = inputLaHierarchie.voirNm1;
+	negate = true;
+}
+
+LnkVoirNm1: WOHyperlink {
+	action = voirNm1;
+	title = "Afficher les N-1";
+}
+
+ImgPlus: WOImage {
+	border = 0;
+	filename = "images/plus.gif";
+	framework = "app";
+	width = 9;
+	height = 9;
+}
+
+CondShowNm1: WOConditional {
+	condition = inputLaHierarchie.voirNm1;
+}
+
+LnkCacherNm1: WOHyperlink {
+	action = cacherNm1;
+	title = "Masquer les N-1";
+}
+
+ImgMoins: WOImage {
+	border = 0;
+	filename = "images/moins.gif";
+	framework = "app";
+	width = 9;
+	height = 9;
+}
+
+CondNotHasNm1: WOConditional {
+	condition = inputLaHierarchie.tosHierarchieNm1.count;
+	negate = true;
+}
+
+LnkAjouterIndividu: WOHyperlink {
+	action = ajouterIndividu;
+	title = "Ajouter un N-1 a cette personne";
+	name = inputLaHierarchie.toIndividu.persId;
+	fragmentIdentifier = inputLaHierarchie.toIndividu.persId;
+}
+
+ImgAjouter: WOImage {
+	border = 0;
+	filename = "images/plus16.gif";
+	framework = "app";
+	height = 12;
+	width = 12;
+	class="imgLink";
+}
+
+LnkModifier: WOHyperlink {
+	action = modifier;
+	title = "Echanger cette personne avec une autre";
+}
+
+ImgModifier: WOImage {
+	border = 0;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	height = 12;
+	width = 12;
+	class="imgLink";
+}
+
+LnkSupprimer: WOHyperlink {
+	action = supprimer;
+	title = "Enlever cette personne de la hierarchie et tous ses N-1";
+}
+
+ImgSupprimer: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+	height = 12;
+	width = 12;
+	class="imgLink";
+}
+
+StrInputLaHierarchieDisplay: WOString {
+	value = inputLaHierarchie.toIndividu.display;
+}
+
+CondShowTotalEvaluation: WOConditional {
+	condition = showTotalEvaluation;
+}
+
+StrCountEvaluation: WOString {
+	value = inputLaHierarchie.toIndividu.tosEvaluation.count;
+}
+
+CondShowEvaluations: WOConditional {
+	condition = showEvaluations;
+}
+
+RepEvaluations: WORepetition {
+	list = inputLaHierarchie.toIndividu.tosEvaluation;
+	item = evaluationItem;
+}
+
+StrEvaluationItem: WOString {
+	value = evaluationItemDisplay;
+}
+
+CondHasListModif: WOConditional {
+	condition = listModif.count;
+}
+
+RepListModif: WORepetition {
+	item = droitItem;
+	list = listModif;
+}
+
+StrDroitItemTitulaireDisplay: WOString {
+	value = droitItem.toIndividu.nomPrenom;
+}
+
+
+StrDroitItemCibleDisplay: WOString {
+	value = droitItem.cibleDisplay;
+}
+
+CondIsShowDroit: WOConditional {
+	condition = isShowDroit;
+}
+
+CondHasListVisu: WOConditional {
+	condition = listVisu.count;
+}
+
+RepListVisu: WORepetition {
+	item = droitItem;
+	list = listVisu;
+}
+
+CondIsModeModifier: WOConditional {
+	condition = isModeModifier;
+}
+
+SelectIndividuHierarchieModifier: SelectIndividuHierarchie {
+	inEoEvaluationPeriode = inputLaPeriode;
+	inEoHierarchie = inputLaHierarchie;
+	outEoIndividuSelected = eoIndividuSelected;
+	formName = formName;
+}
+
+Form1: WOForm {
+	action = neFaitRien;
+	multipleSubmit = true;
+	name = formName;
+}
+
+BtnEnregistrerModif: WOSubmitButton {
+	action = enregistrerModif;
+	class = "bouton";
+	value = "Echanger";
+}
+
+BtnAnnuler: WOSubmitButton {
+	action = annuler;
+	class = "bouton";
+	value = "Annuler";
+}
+
+
+RepNm1: WORepetition {
+	item = uneHierarchie;
+	list = inputLaHierarchie.tosHierarchieNm1;
+}
+
+NodeHierarchie1: NodeHierarchie {
+	inputLaHierarchie = uneHierarchie;
+	inputLaPeriode = uneHierarchie.toEvaluationPeriode;
+	pageAdministrationHierarchie = ^pageAdministrationHierarchie;
+	showDroitsAnnexes = ^showDroitsAnnexes;
+	showDroitsHerites = ^showDroitsHerites;
+	showEvaluations = ^showEvaluations;
+	arbreHierachieComponent = arbreHierachieComponent;
+}
+
+CondIsModeAjouter: WOConditional {
+	condition = isModeAjouter;
+}
+
+Form2: WOForm {
+	action = neFaitRien;
+	multipleSubmit = true;
+	name = formName;
+}
+
+
+SelectIndividuHierarchieAjout: SelectIndividuHierarchie {
+	inEoEvaluationPeriode = inputLaPeriode;
+	inEoHierarchie = inputLaHierarchie;
+	outEoIndividuSelected = eoIndividuSelected;
+	formName = formName;
+}
+
+BtnEnregistrerAjout: WOSubmitButton {
+	action = enregistrerAjout;
+	class = "bouton";
+	value = "Ajouter en N-1";
+}
+
+BtnIntercaler: WOSubmitButton {
+	action = enregistrerIntercaler;
+	class = "bouton";
+	value = "Intercaler";
+}
+
+
+BtnAnnulerAjout: WOSubmitButton {
+	action = annuler;
+	class = "bouton";
+	value = "Annuler";
+}
+
+ImgDroitVisu: WOImage {
+	border = 0;
+	filename = "images/Visu.png";
+	framework = "app";
+	height = 12;
+	width = 12;
+}
+
+ImgDroitModif: WOImage {
+	border = 0;
+	filename = "images/edit.png";
+	framework = "app";
+	height = 12;
+	width = 12;
+}

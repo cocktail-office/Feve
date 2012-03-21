@@ -1,0 +1,112 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_BAP"; 
+            externalType = VARCHAR2; 
+            name = cBap; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_GRADE"; 
+            externalType = VARCHAR2; 
+            name = cGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            columnName = "CTRA_ORDRE"; 
+            externalType = NUMBER; 
+            name = ctraOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_DEB_CONTRAT_AV"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "D_DEB_CONTRAT_TRAV"; }; 
+            name = dDebContratTravAv; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_CONTRAT_AV"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "D_FIN_CONTRAT_TRAV"; }; 
+            name = dFinContratTravAv; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_SEQ_CONTRAT"; 
+            externalType = NUMBER; 
+            name = noSeqContrat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ctraOrdre); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOContratAvenant"; 
+    classProperties = (
+        dDebContratTravAv, 
+        dFinContratTravAv, 
+        toBap, 
+        toGrade, 
+        noSeqContrat, 
+        toContrat, 
+        tosReferensEmploi
+    ); 
+    externalName = "MANGUE.CONTRAT_AVENANT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cGrade, cBap, toBap, toGrade, noSeqContrat, toContrat); 
+        "_nameInObjectStore" = "MANGUE.CONTRAT_AVENANT"; 
+    }; 
+    name = ContratAvenant; 
+    primaryKeyAttributes = (ctraOrdre); 
+    relationships = (
+        {
+            destination = Bap; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cBap; sourceAttribute = cBap; }); 
+            name = toBap; 
+        }, 
+        {
+            destination = Contrat; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noSeqContrat; sourceAttribute = noSeqContrat; }); 
+            name = toContrat; 
+        }, 
+        {
+            destination = Grade; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cGrade; sourceAttribute = cGrade; }); 
+            name = toGrade; 
+        }, 
+        {
+            destination = ReferensEmplois; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = tosReferensEmploi; 
+        }
+    ); 
+}

@@ -1,0 +1,59 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAC_KEY"; 
+            externalType = NUMBER; 
+            name = sacKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAC_SITUATION"; 
+            externalType = VARCHAR2; 
+            name = sacSituation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (sacKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOSituActivite"; 
+    classProperties = (sacSituation, toEvaluation, dCreation, dModification); 
+    externalName = "MANGUE.SITU_ACTIVITE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (sacSituation); }; 
+    name = SituActivite; 
+    primaryKeyAttributes = (sacKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }
+    ); 
+}

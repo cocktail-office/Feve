@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="CompListeGenerique" wocomponentcontent="false">
+
+		<binding name="lesObjets"/>
+		<binding name="classeListener"/>
+		<binding name="nbObjetsMaximum"/>
+		<binding name="rechercheActive" defaults="Boolean"/>
+		<binding name="lesObjetsPrecharges"/>
+		<binding name="disabled" defaults="Boolean"/>
+		<binding name="modeModification" defaults="Boolean"/>
+
+		<validation message="&apos;lesObjets&apos; is a required binding">
+			<unbound name="lesObjets"/>
+		</validation>
+
+		<validation message="&apos;classeListener&apos; is a required binding">
+			<unbound name="classeListener"/>
+		</validation>
+
+		<validation message="&apos;nbObjetsMaximum&apos; is a required binding">
+			<unbound name="nbObjetsMaximum"/>
+		</validation>
+
+		<validation message="&apos;rechercheActive&apos; is a required binding">
+			<unbound name="rechercheActive"/>
+		</validation>
+	</wo>
+</wodefinitions>

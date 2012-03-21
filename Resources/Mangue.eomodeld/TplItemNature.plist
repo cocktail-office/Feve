@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TIN_KEY"; 
+            externalType = NUMBER; 
+            name = tinKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TIN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tinLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }
+    ); 
+    attributesUsedForLocking = (tinKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplItemNature"; 
+    classProperties = (dCreation, dModification, tinLibelle); 
+    externalName = "MANGUE.TPL_ITEM_NATURE"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplItemNature; 
+    primaryKeyAttributes = (tinKey); 
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="CompSelectAffectation" wocomponentcontent="false">    <binding name="affectationSelected"/>
+    
+        
+    <validation message="'affectationSelected' is a required binding.">
+            <unbound name="affectationSelected"/>
+        </validation>
+    </wo>
+</wodefinitions>

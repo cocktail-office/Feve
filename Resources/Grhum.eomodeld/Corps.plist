@@ -1,0 +1,222 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_BUREAU_GESTION"; 
+            externalType = VARCHAR2; 
+            name = cBureauGestion; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_CATEGORIE"; 
+            externalType = VARCHAR2; 
+            name = cCategorie; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "C_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_FILIERE"; 
+            externalType = VARCHAR2; 
+            name = cFiliere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_TYPE_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cTypeCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FERMETURE_CORPS"; 
+            externalType = DATE; 
+            name = dFermetureCorps; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_OUVERTURE_CORPS"; 
+            externalType = DATE; 
+            name = dOuvertureCorps; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_CORPS"; 
+            externalType = VARCHAR2; 
+            name = lcCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_CORPS"; 
+            externalType = VARCHAR2; 
+            name = llCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MASSE_INDICIAIRE"; 
+            externalType = NUMBER; 
+            name = masseIndiciaire; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_CFP"; 
+            externalType = VARCHAR2; 
+            name = temCfp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_CRCT"; 
+            externalType = VARCHAR2; 
+            name = temCrct; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_DELEGATION"; 
+            externalType = VARCHAR2; 
+            name = temDelegation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_MISDEP"; 
+            externalType = VARCHAR2; 
+            name = temMisdep; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_SURNOMBRE"; 
+            externalType = VARCHAR2; 
+            name = temSurnombre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cBureauGestion, 
+        cCategorie, 
+        cCorps, 
+        cFiliere, 
+        cTypeCorps, 
+        dCreation, 
+        dFermetureCorps, 
+        dModification, 
+        dOuvertureCorps, 
+        lcCorps, 
+        llCorps, 
+        masseIndiciaire, 
+        temCfp, 
+        temCrct, 
+        temDelegation, 
+        temMisdep, 
+        temSurnombre
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOCorps"; 
+    classProperties = (
+        cBureauGestion, 
+        cCategorie, 
+        cFiliere, 
+        dCreation, 
+        dFermetureCorps, 
+        dModification, 
+        dOuvertureCorps, 
+        lcCorps, 
+        llCorps, 
+        masseIndiciaire, 
+        temCfp, 
+        temCrct, 
+        temDelegation, 
+        temMisdep, 
+        temSurnombre, 
+        toTypePopulation
+    ); 
+    externalName = "GRHUM.CORPS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cBureauGestion, 
+            cCategorie, 
+            cCorps, 
+            cFiliere, 
+            cTypeCorps, 
+            dCreation, 
+            dFermetureCorps, 
+            dModification, 
+            dOuvertureCorps, 
+            lcCorps, 
+            llCorps, 
+            masseIndiciaire, 
+            temCfp, 
+            temCrct, 
+            temDelegation, 
+            temMisdep, 
+            temSurnombre
+        ); 
+    }; 
+    name = Corps; 
+    primaryKeyAttributes = (cCorps); 
+    relationships = (
+        {
+            destination = TypePopulation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cTypePopulation; sourceAttribute = cTypeCorps; }); 
+            name = toTypePopulation; 
+        }
+    ); 
+}

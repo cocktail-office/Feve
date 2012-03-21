@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="BrowserComposanteServicePoste" wocomponentcontent="false">    <binding name="service"/>
+        <binding name="poste"/>
+        <binding name="composante"/>
+    
+    <binding name="individu"/>
+    <binding name="vCandidatEvaluation"/>
+    
+    <binding name="ficheLolf"/>
+        <binding name="ficheDePoste"/>
+    <binding name="evaluationPeriode"/>
+    <binding defaults="Boolean" name="isTypeFilsServicePosteSelected"/>
+    </wo>
+</wodefinitions>

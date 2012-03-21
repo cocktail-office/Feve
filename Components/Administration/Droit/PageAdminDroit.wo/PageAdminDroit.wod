@@ -1,0 +1,63 @@
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+CondIsDroitGestion: WOConditional {
+	condition = isDroitGestion;
+}
+
+GestionDroits1: GestionDroits {
+	ctrl = gestionDroitsCtrl;
+}
+
+
+CondIsDroitGestionNouveauxEntrants: WOConditional {
+	condition = isDroitGestionNouveauxEntrants;
+}
+
+GestionDroitsNouveauxEntrants1: GestionDroitsNouveauxEntrants {
+	ctrl = gestionDroitsNouveauxEntrantsCtrl;
+}
+
+CondIsDroitEtat: WOConditional {
+	condition = isDroitEtat;
+}
+
+PageAdminEtatDroits1: PageAdminEtatDroits {
+	ctrl = pageAdminEtatDroitsCtrl;
+}
+
+CondIsDroitDeduit: WOConditional {
+	condition = isDroitDeduit;
+}
+
+PageAdminDroitsDeduits1: PageAdminDroitsDeduits {
+	ctrl = pageAdminDroitsDeduitsCtrl;	
+}
+
+CondIsDroitAdmin: WOConditional {
+	condition = isDroitAdmin;
+}
+
+PageAdminAdministrateur1: PageAdminAdministrateur {
+	ctrl = pageAdminAdministrateurCtrl;
+}

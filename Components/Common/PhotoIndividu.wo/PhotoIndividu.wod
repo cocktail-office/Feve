@@ -1,0 +1,27 @@
+CondUseGrhumPhoto: WOConditional {
+	condition = app.grhumPhoto; 
+}
+
+CondIsPhotoExiste: WOConditional {
+	condition = individu.toPhoto;
+}
+
+ImgIndividu: WOImage {
+	data = individu.toPhoto;
+	heigth = 100;
+	mimeType = "image/jpeg";
+	width = 63;
+	alt = "Photo de l'agent";
+}
+
+CondIsNotPhotoExiste: WOConditional {
+	condition = individu.toPhoto;
+	negate = true;
+}
+
+ImgInconnu: WOImage {
+	heigth = 100;
+	width = 63;
+	src = "images/inconnu.jpg";
+	alt = "Photo absente ou non publique";
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="ArbreHierarchiqueLegende" wocomponentcontent="false">    <binding defaults="Boolean" name="showDroitsAnnexes"/>
+        <validation message="'showDroitsAnnexes' must be bound to a settable value">
+            <unsettable name="showDroitsAnnexes"/>
+        </validation>
+    </wo>
+</wodefinitions>

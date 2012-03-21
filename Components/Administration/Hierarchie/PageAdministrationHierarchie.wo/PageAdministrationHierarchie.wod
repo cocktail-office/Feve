@@ -1,0 +1,38 @@
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+	valign = "center";
+}
+
+LinkMenu: WOHyperlink {
+	action=selectMenu;
+	disabled = isDisabledUnItemMenu;
+}
+
+LibelleTabMenu: WOString {
+	value=unItemMenu;
+	escapeHTML = false;
+}
+
+CondIsPeriode: WOConditional {
+	condition = isPeriode;
+}
+
+AdminPeriode1: AdminPeriode {
+	pageAdministrationHierarchie = self;
+}
+
+CondIsArbreHierarchie: WOConditional {
+	condition = isArbreHierarachie;
+}
+
+ArbreHierarchique1: ArbreHierarchique {
+	pageAdministrationHierarchie = self;
+}

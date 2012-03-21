@@ -1,0 +1,180 @@
+Browser: BrowserComposanteServicePoste {
+	composante = ctrl.composanteSelected;
+	service = ctrl.serviceSelected;
+	poste = ctrl.posteSelected;	
+	individu = ctrl.individuSelected;
+	ficheDePoste = ctrl.ficheDePosteSelected;
+	ficheLolf = ctrl.ficheLolfSelected;
+	evaluationPeriode = ctrl.evaluationPeriodeSelected;
+	isTypeFilsServicePosteSelected = ctrl.isGestionPoste;
+}
+
+StrCibleDisplay: WOString {
+	value = ctrl.cibleDisplay;
+	escapeHTML = false;
+}
+
+SpanAddDroit: WOGenericContainer {
+	elementName = "span";
+	id = "add";
+	style = ctrl.styleAddDroit;
+}
+
+FormAddDroit: WOForm {
+	name = "FormAddDroit";
+	multipleSubmit = true;
+}
+
+FieldSearchIndividu1: FieldSearchIndividu {
+	individu = ctrl.individuSearch;
+	isJustClicked = ctrl.isFieldSearchIndividuUsed;
+} 
+
+RepTypeDroitAcces: WORepetition {
+	list = ctrl.typeDroitAccesList;
+	item = ctrl.typeDroitAccesItem;
+}
+
+ThTypeDroitAccesItem: WOGenericContainer {
+	elementName = "th";
+	class = "bordureGaucheHaut";
+	colspan = ctrl.typeDroitCibleList.count;
+}
+
+StrTypeDroitAccesItem: WOString {
+	value = ctrl.typeDroitAccesItem.dtaLibelle;
+}
+
+RepTypeDroitCible: WORepetition {
+	list = ctrl.typeDroitCibleList;
+	item = ctrl.typeDroitCibleItem;
+}
+
+StrTypeDroitCibleItem: WOString {
+	value = ctrl.typeDroitCibleItem.dtcCode; 
+}
+
+CondErrAddDroitSelectionIndividu: WOConditional {
+	 condition = ctrl.errAddDroitSelectionIndividu;
+}
+
+CondErrAddDroitSelectionCheckbox: WOConditional {
+	 condition = ctrl.errAddDroitSelectionCheckbox;
+}
+
+CondErrAddDroitBeneficiaireExistant: WOConditional {
+	 condition = ctrl.errAddDroitBeneficiaireExistant;
+}
+
+
+BtnDoAddDroit: WOImageButton {
+	action = ctrl.doAddDroit;
+	class = "bouton";
+	filename = "images/plus16.gif";
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+	title = "Valider la saisie du nouveau droit"; 
+}
+
+
+FormEditDroit: WOForm {
+	name = "FormModifDroit";
+	multipleSubmit = true;
+}
+
+RepStrProvenance: WORepetition {
+	list = ctrl.strProvenanceList;
+	item = ctrl.strProvenanceItem;
+}
+
+TdProvenance: WOGenericContainer {
+	elementName = "td";
+	rowspan = ctrl.tdProvenanceRowspan;
+	class = "bordureGaucheHaut";
+}
+
+CondHasBeneficiaire: WOConditional {
+	condition = ctrl.beneficiaireList.count;
+}
+
+CondNotHasBeneficiaire: WOConditional {
+	condition = ctrl.beneficiaireList.count;
+	negate = true;
+}
+
+StrProvenanceItem: WOString {
+	value = ctrl.strProvenanceItem;
+	escapeHTML = "false";
+}
+
+RepBeneficiaire: WORepetition {
+	list = ctrl.beneficiaireList;
+	item = ctrl.beneficiaireItem;
+}
+
+CondShowBaliseTrOpen: WOConditional {
+	condition = ctrl.showBaliseTrOpen;
+}
+
+StrBaliseTrOpen: WOString {
+	value = "<tr class=\"listboxLine\">";
+	escapeHTML = "false";
+}
+
+CondShowBaliseTrClose: WOConditional {
+	condition = ctrl.showBaliseTrClose;
+}
+
+StrBaliseTrClose: WOString {
+	value = "</tr>";
+	escapeHTML = "false";
+}
+
+ToolTipBeneficiaireItem: CktlToolTip {
+	htmlText = ctrl.beneficiaireItem.noIndividuLogin;
+}
+
+StrBeneficiaireItem: WOString {
+	value = ctrl.beneficiaireItem.display;
+}
+
+StrBeneficiaireItemTip: WOString {
+	value = ctrl.getStrBeneficiaireItemTip;
+}
+
+TdWOCheckBoxAddDroit: TdWOCheckBox {
+	checked = ctrl.isCheckedAddDroit;
+	hidden = ctrl.hideCheckBox;
+	disabled = ctrl.isDisabledCheckBox;
+}
+
+TdWOCheckBox: TdWOCheckBox {
+	checked = ctrl.isChecked;
+	disabled = ctrl.isDisabledCheckBox;
+	hidden = ctrl.hideCheckBox;
+}
+
+CondIsProvenanceHeritee: WOConditional {
+	condition = ctrl.isProvenanceHeritee;
+}
+
+CondNotIsProvenanceHeritee: WOConditional {
+	condition = ctrl.isProvenanceHeritee;
+	negate = true;
+}
+
+RepDroitNature: WORepetition {
+	list = ctrl.natureList;
+	item = ctrl.natureItem;
+}
+
+BtnDoUpdateDroit: WOImageButton {
+	action = ctrl.doUpdateDroit;
+	class = "bouton";
+	filename = "images/valider16.gif"; 
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+	title = "Valider les modifications de droits"; 
+}

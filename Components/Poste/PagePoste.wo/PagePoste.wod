@@ -1,0 +1,144 @@
+FilAriane1: FilAriane {
+	nodeRoot = ctrl;
+}
+
+FormGestPoste: WOForm {
+	name = "FormFdp";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+RadioTypeFiltre: WORadioButton {
+	value = ctrl.radioTypeFiltre;
+	selection = ctrl.radioType;
+	name = "radioType";
+	onClick = "this.form.submit();";
+	title = "Cliquer pour filtrer les postes par service, nature ...";
+}
+
+BtnDoFilterDgPoste: WOSubmitButton {
+	action = ctrl.doFilterDgPoste;
+	name = "BtnDoFilterDgPoste";
+	style = "visibility:hidden;display:none";
+}
+
+CondShowPopUpStructure: WOConditional {
+	condition = ctrl.showPopUpStructure; 
+}
+
+PopUpStructure: WOPopUpButton {
+	displayString = ctrl.structureItem.display;
+	item = ctrl.structureItem;
+	list = ctrl.serviceList;
+	noSelectionString = "----- selection du service d'appartenance des postes -----";
+	selection = ctrl.structureSelected;
+	onChange = "BtnDoFilterDgPoste.click();";
+	disabled = ctrl.isRecherche;
+}
+
+CondNotShowPopUpStructure: WOConditional {
+	condition = ctrl.showPopUpStructure; 
+	negate = true;
+}
+
+ChkShowArchive: WOCheckBox {
+	checked = ctrl.showArchive;
+	onClick = "this.form.submit();";
+	disabled = ctrl.isRecherche;
+}
+
+StrStructure: WOString {
+	value = ctrl.structureSelected.display;
+}
+
+PopupPosteNature: WOPopUpButton {
+	item = ctrl.posteNatureItem;
+	list = ctrl.posteNatureList;
+	selection = ctrl.posteNatureSelected;
+	onChange = "BtnDoFilterDgPoste.click();";
+	escapeHTML = false;
+	disabled = ctrl.isRecherche;
+}
+
+PopupPosteType: WOPopUpButton {
+	item = ctrl.posteTypeItem;
+	list = ctrl.posteTypeList;
+	selection = ctrl.posteTypeSelected;
+	onChange = "BtnDoFilterDgPoste.click();";
+	escapeHTML = false;
+	disabled = ctrl.isRecherche;
+}
+
+StrTotalPoste: WOString {
+	value = dgPoste.displayedObjects.count;
+	numberformat = "0";
+}
+
+CondCanCreatePosteOnStructureSelected: WOConditional {
+	condition = ctrl.canCreatePosteOnStructureSelected;
+}
+
+ImgAdd: WOImage {
+	border = 0;
+	filename = "images/plus16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+	class = "bouton";
+}
+
+RadioTypeRecherche: WORadioButton {
+	value = ctrl.radioTypeRecherche;
+	selection = ctrl.radioType;
+	name = "radioType";
+	onClick = "this.form.submit();";
+	title = "Cliquer pour faire des recherches textuelles parmi les postes et ses occupants";
+}
+
+TFSearch: WOTextField {
+	value = strSearch;
+	onclick = TF_SEARCH_ON_CLICK;
+	onblur = TF_SEARCH_ON_BLUR;
+	class = "searchField";
+	disabled = ctrl.isFiltre;
+}
+
+BtnDoClearStrSearch: WOSubmitButton {
+	action = ctrl.doClearStrSearch;
+	value = "X";
+	class = "bouton";
+	title = "R&eacute;initialiser le nom recherch&eacute;";
+	disabled = ctrl.isFiltre;
+}
+
+CondShowWarningSizeStrSearch: WOConditional {
+	condition = ctrl.isShowWarningSizeStrSearch;
+}
+
+CompPosteList1: CompPosteList {
+	ctrl = ctrl.compPosteListCtrl;
+	posteDg = dgPoste;
+	messageEmptyList = "Aucun poste ne r&eacute;pond &agrave; ces crit&egrave;res.<br/><br/>S'il en existe malgr&eacute; tout, vous n'avez pas peut-&ecirc;tre<br>pas les droits suffisants pour les consulter ...<br/><br/>";
+}
+
+LnkToCompPosteMetaDataAdd: WOHyperlink {
+	action = ctrl.toCompPosteMetaDataAdd;
+	disabled = ctrl.isRecherche;	
+}
+
+CondShowCompPosteMetaDataAddCtrl: WOConditional {
+	condition = ctrl.showCompPosteMetaDataAdd;
+}
+
+CondShowFullComponent: WOConditional {
+	condition = ctrl.showFullComponent;
+}
+
+CondNotShowFullComponent: WOConditional {
+	condition = ctrl.showFullComponent;
+	negate = true;
+}
+
+CompPosteMetaDataAdd: CompPosteMetaData {
+	ctrl = ctrl.compPosteMetaDataCtrlAdd;
+}

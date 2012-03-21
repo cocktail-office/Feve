@@ -1,0 +1,38 @@
+<webobject name = "CktlNote1">
+	Cette liste rassemble l'ensemble des droits qui d&eacute;coulent des param&egrave;tres g&eacute;n&eacute;raux.<br/>
+	Attention, cette liste <u>ne comprend pas</u> les droits d&eacute;duits des droits &quot;annexes&quot;
+</webobject>
+<br/>
+<webobject name = "FormDroitDeduit">
+	<webobject name = "FieldSearchIndividuDroitDeduit"/>
+	<webobject name = "BtnDoSelectIndividu"/>
+</webobject>
+<webobject name = "CondHasDroitDeducted">
+<webobject name = "CondIsAdmin">
+<font class="textError">
+	Cet utilisateur est administrateur : il acc&egrave;de &agrave; toutes les donn&eacute;es
+</font>
+</webobject>
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+	<tr>
+		<td>
+			<table border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tbody>
+				<tr class="listboxHeader">
+					<th>Type acc&egrave;s</th>
+					<th>Type cible</th>
+					<th>Cible</th>
+				</tr>
+				<webobject name="RepDroitDeducted">
+				<tr class="listboxLine">
+					<td nowrap><webobject name="StrDroitTypeAcces"/></td>
+					<td nowrap><webobject name="StrDroitTypeCible"/></td>
+					<td><webobject name="StrDroitCibleLibelle"/></td>
+				</tr>
+				</webobject>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>

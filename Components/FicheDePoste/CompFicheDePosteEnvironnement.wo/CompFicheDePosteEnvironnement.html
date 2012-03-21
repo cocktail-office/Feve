@@ -1,0 +1,91 @@
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0" width=1%>
+	<tr>
+		<th colspan=2><font class="subTitleInverse">Informations rattachement</font></th>
+	</tr>
+	<tr>
+		<td>
+			<table class="boxContents">
+				<tr>
+					<th nowrap align="right" width=1%>Composante:</th>
+					<td nowrap><webobject name="StrComposante"/></td>
+				</tr>
+				<tr>
+					<th nowrap align="right">Structure de	rattachement:</th>
+					<td nowrap><webobject name="StrStructure"/></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br>
+<webobject name=CondHasError><webobject name=YPanelAvertissement1><webobject name=StrErrorMessage></webobject></webobject></webobject>
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0" width=1%>
+	<tr>
+		<th colspan=2><WEBOBJECT NAME=GenericContainer1></WEBOBJECT><font class="subTitleInverse">Objectifs</font></th>
+	</tr>
+	<tr>
+		<td>
+			<table class="boxContents">
+				<tr>
+					<th nowrap align=RIGHT width=1%><WEBOBJECT NAME=GenericContainer2></WEBOBJECT>Missions	de la composante:</th>
+					<td width=1%><webobject name="TFNewMissionComposante"/></td>
+					<td>
+						<webobject name = "CondNotIsDisabledBtnModifMissionComposante">
+							<webobject name="CondNotIsModeModifMissionComposante">
+								<webobject name="BtnActiverModeModifMissionComposante"/>
+							</webobject>
+						</webobject>
+						<webobject name="CondIsModeModifMissionComposante">
+							<webobject name="BtnEnregistrerMissionComposante"/><br/>
+							<webobject name="BtnAnnulerModifMissionComposante"/>
+						</webobject>
+						</td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT><WEBOBJECT NAME=GenericContainer3></WEBOBJECT>Mission du	service:</th>
+					<td><webobject name="TFNewMissionService"/></td>
+					<td>
+						<webobject name = "CondNotIsDisabledBtnModif2"><webobject name="CondNotIsModeModif2"><webobject name="BtnActiverModeModif2"/></webobject></webobject>
+						<webobject name="CondIsModeModif2">
+							<webobject name="BtnEnregistrerMissionService"/><br>
+							<webobject name="BtnAnnulerModifMissionService"/>
+						</webobject>
+					</td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT><WEBOBJECT NAME=GenericContainer4></WEBOBJECT>Projet de	service:</th>
+					<td><webobject name="TFNewProjetService"/></td>
+					<td>
+						<webobject name = "CondNotIsDisabledBtnModif3"><webobject name="CondNotIsModeModif3"><webobject name="BtnActiverModeModif3"/></webobject></webobject>
+						<webobject name="CondIsModeModif3">
+							<webobject name="BtnEnregistrerProjetService"/><br>
+							<webobject name="BtnAnnulerModifProjetService"/>
+						</webobject>
+					</td>
+				</tr>
+				<tr>
+					<th nowrap align=RIGHT><WEBOBJECT NAME=GenericContainer5></WEBOBJECT>Missions	li&eacute;es au poste:</th>
+					<td><webobject name="TFNewMissionPoste"/></td>
+					<td>
+						<webobject name = "CondNotIsDisabledBtnModif4"><webobject name="CondNotIsModeModif4"><webobject name="BtnActiverModeModif4"/></webobject></webobject>
+						<webobject name="CondIsModeModif4">
+							<webobject name="BtnEnregistrerMissionPoste"/><br>
+							<webobject name="BtnAnnulerModifMissionPoste"/>
+						</webobject>
+					</td>
+				</tr>
+				<tr>
+					<th width=1% nowrap align=RIGHT>Contexte et environnement de travail :</th>
+					<td><webobject name="TFNewContexteTravail"/></td>
+					<td>
+						<webobject name = "CondNotIsDisabledBtnModif5"><webobject name="CondNotIsModeModif5"><webobject name="BtnActiverModeModif5"/></webobject></webobject>
+						<webobject name="CondIsModeModif5">
+							<webobject name="BtnEnregistrerContexteTravail"/><br>
+							<webobject name="BtnAnnulerModifContexteTravail"/>
+						</webobject>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

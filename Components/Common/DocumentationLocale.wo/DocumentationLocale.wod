@@ -1,0 +1,148 @@
+ContainerGuideEntretien : AjaxUpdateContainer {
+	id = "ContainerGuideEntretien";
+	elementName = "div";
+}
+
+ContainerGuideUtilisation : AjaxUpdateContainer {
+	id = "ContainerGuideUtilisation";
+	elementName = "div";
+}
+
+CondIsAfficherGuideEntretien: WOConditional {
+	condition = guideEntretienArray.count;
+}
+
+CondIsAfficherGuideUtilisation: WOConditional {
+	condition = guideUtilisationArray.count;
+}
+
+CondIsDisabled: WOConditional {
+	condition = isDisabled;
+}
+
+CondNotIsDisabled: WOConditional {
+	condition = isDisabled;
+	negate = true;
+}
+
+FormGuideEntretien: WOForm {
+	name = "FormGuideEntretien";
+}
+
+FormGuideUtilisation: WOForm {
+	name = "FormGuideUtilisation";
+}
+
+RepGuideEntretien: WORepetition {
+	list = guideEntretienArray;
+	item = guideItem;
+}
+
+SortableListGuideEntretien : AjaxSortableList {
+	id = "listeGuideEntretien";
+	listElementName = "ul";
+	listItemElementName = "li";
+	list = guideEntretienArray;
+	item = guideItem;
+	listItemIDKeyPath = "objetInterfaceDocumentation.position";
+	action = changementOrdreListeGuideEntretien;
+}
+
+RepGuideUtilisation: WORepetition {
+	list = guideUtilisationArray;
+	item = guideItem;
+}
+
+SortableListGuideUtilisation : AjaxSortableList {
+	id = "listeGuideUtilisation";
+	listElementName = "ul";
+	listItemElementName = "li";
+	list = guideUtilisationArray;
+	item = guideItem;
+	listItemIDKeyPath = "objetInterfaceDocumentation.position";
+	action = changementOrdreListeGuideUtilisation;
+}
+
+LigneDocumentationGuideEntretien: LigneDocumentation {
+	eoMangueParametre = guideItem;
+	updateContainerID = "ContainerGuideEntretien";
+	isDisabled = isDisabled;
+}
+
+LigneDocumentationGuideUtilisation: LigneDocumentation {
+	eoMangueParametre = guideItem;
+	updateContainerID = "ContainerGuideUtilisation";
+	isDisabled = isDisabled;	
+}
+
+CondNotIsEnModification: WOConditional {
+	condition = guideItem.objetInterfaceDocumentation.isEnModification;
+	negate = true;
+}
+
+CondIsEnModification: WOConditional {
+	condition = guideItem.objetInterfaceDocumentation.isEnModification;
+	
+}
+
+BtnSupprimerGuideEntretien : CktlAjaxButton {
+	action = supprimerGuide;
+	type = "delete";
+	title = "Supprimer";
+	updateContainerID = "ContainerGuideEntretien";
+	style="vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+BtnSupprimerGuideUtilisation : CktlAjaxButton {
+	action = supprimerGuide;
+	type = "delete";
+	title = "Supprimer";
+	updateContainerID = "ContainerGuideUtilisation";
+	style="vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+
+BtnAnnulerGuideEntretien : CktlAjaxButton {
+	action = annuler;
+	type = "cancel";
+	title = "Annuler";
+	updateContainerID = "ContainerGuideEntretien";
+	style="vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+
+BtnAnnulerGuideUtilisation : CktlAjaxButton {
+	action = annuler;
+	type = "cancel";
+	title = "Annuler";
+	updateContainerID = "ContainerGuideUtilisation";
+	style="vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+CondIsAfficherAjouterGuideEntretien: WOConditional {
+	condition = isAfficherAjouterGuideEntretien;
+}
+
+CondIsAfficherAjouterGuideUtilisation: WOConditional {
+	condition = isAfficherAjouterGuideUtilisation;
+}
+
+BtnAjouterGuideEntretien : CktlAjaxButton {
+    action = ajouterGuideEntretien;
+	updateContainerID = "ContainerGuideEntretien";
+    text = "Ajouter un guide d'entretien";
+    title = "Cliquer ici pour ajouter un nouveau guide d'entretien";
+    type = "new";
+}
+
+BtnAjouterGuideUtilisation : CktlAjaxButton {
+    action = ajouterGuideUtilisation;
+	updateContainerID = "ContainerGuideUtilisation";
+    text = "Ajouter un guide d'utilisation";
+    title = "Cliquer ici pour ajouter un nouveau guide d'utilisation";
+    type = "new";
+}

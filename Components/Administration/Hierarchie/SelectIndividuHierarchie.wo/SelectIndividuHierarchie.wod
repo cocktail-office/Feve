@@ -1,0 +1,71 @@
+CondIsAfficherBrowserIndividu: WOConditional {
+	condition = isAfficherBrowserIndividu;
+}
+
+FieldSearchIndividu1: FieldSearchIndividu {
+	individu = individuSelected;
+} 
+
+CondIsAfficherSearchIndividu: WOConditional {
+	condition = isAfficherBrowserIndividu;
+	negate = true;
+}
+
+BrowserIndividu: WOBrowser {
+	displayString = individuItem.display;
+	item = individuItem;
+	list = individuArray;
+	multiple = false;
+	selections = individuSelectedArray;
+	size = 10;
+	name = selectName;
+}
+
+StrIndividuCount: WOString {
+	value = individuArray.count;
+}
+
+RadioNonHie: WORadioButton {
+	name = "hieIndividu";
+	value = HIE_INDIVIDU_NON_HIE;
+	selection = hieIndividu;
+	onChange = "this.form.submit();";
+}
+
+RadioHie: WORadioButton {
+	name = "hieIndividu";
+	onChange = "this.form.submit();";
+	selection = hieIndividu;
+	value = HIE_INDIVIDU_HIE;
+}
+
+RadioNonEns: WORadioButton {
+	name = "typeIndividu";
+	value = TYPE_INDIVIDU_NON_ENS;
+	selection = typeIndividu;
+	onChange = "this.form.submit();";
+}
+
+RadioEns: WORadioButton {
+	name = "typeIndividu";
+	onChange = "this.form.submit();";
+	selection = typeIndividu;
+	value = TYPE_INDIVIDU_ENS;
+}
+
+RadioAutre: WORadioButton {
+	name = "typeIndividu";
+	onChange = "this.form.submit();";
+	selection = typeIndividu;
+	value = TYPE_INDIVIDU_AUTRE;
+}
+
+JSFilterList: WOJavaScript {
+	scriptSource = "js/filterlist.js";
+}
+
+YCRILookupField: YCRILookupField {
+	fieldName = fieldName;
+	formName = formName;
+	selectName = selectName;
+}

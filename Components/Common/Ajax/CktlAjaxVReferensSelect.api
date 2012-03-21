@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="CktlAjaxVReferensSelect" wocomponentcontent="false">    
+    <binding name="selection"/>
+    <binding name="value"/>
+        <validation message="'value' is a required binding.">
+            <unbound name="value"/>
+        </validation>
+    <binding name="editingContext"/>
+    <binding name="id"/>
+        <validation message="'id' is a required binding.">
+            <unbound name="id"/>
+        </validation>
+    <binding name="treeViewTitle"/>
+    <binding name="treeLeafImageFramework"/>
+    <binding name="treeLeafImage"/>
+    <binding name="treeCollapsedImageFramework"/>
+    <binding name="treeCollapsedImage"/>
+    <binding name="treeExpandedImage"/>
+    <binding name="treeExpandedImageFramework"/>
+    <binding defaults="Number Format Strings" name="treeViewWidth"/>
+    <binding defaults="Number Format Strings" name="treeViewHeight"/>
+    <binding name="treeViewClassName"/>
+    <binding name="treeQualifier"/>
+    <binding name="treeRootObject"/>
+    <binding name="userFiltersDictionary"/>
+    <binding name="textFieldSize"/>
+    <binding name="userFiltersFormID"/>
+    <binding name="updateContainerID"/>
+    <binding name="treeExclusions"/>
+    <binding defaults="Boolean" name="displayDeleteButton"/>
+    <binding name="supprimerOnComplete"/>
+    <binding defaults="Boolean" name="confirmBeforeSelection"/>
+    <binding name="utilisateurPersId"/>
+            
+    
+        
+    <binding defaults="Boolean" name="showField"/>
+    </wo>
+</wodefinitions>

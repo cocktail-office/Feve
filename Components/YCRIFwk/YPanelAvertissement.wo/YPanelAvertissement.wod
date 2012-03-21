@@ -1,0 +1,7 @@
+Image1: WOImage {
+	filename = "img/alert-exclam.gif";
+	framework = "FwkCktlWebApp";
+}
+
+ComponentContent1: WOComponentContent {
+}

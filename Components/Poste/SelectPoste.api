@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="SelectPoste" wocomponentcontent="false">    <binding name="eoPosteSelected"/>
+        <validation message="'eoPosteSelected' is a required binding.">
+            <unbound name="eoPosteSelected"/>
+        </validation>
+    
+        
+    </wo>
+</wodefinitions>

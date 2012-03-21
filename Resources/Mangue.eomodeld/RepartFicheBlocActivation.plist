@@ -1,0 +1,85 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FIC_KEY"; 
+            externalType = NUMBER; 
+            name = ficKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RFB_KEY"; 
+            externalType = NUMBER; 
+            name = rfbKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TBL_KEY"; 
+            externalType = NUMBER; 
+            name = tblKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rfbKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFicheBlocActivation"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        toEvaluation, 
+        toFicheDePoste, 
+        toFicheLolf, 
+        toTplBloc
+    ); 
+    externalName = "MANGUE.REPART_FICHE_BLOC_ACTI"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartFicheBlocActivation; 
+    primaryKeyAttributes = (rfbKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = ficKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = FicheDePoste; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = ficKey; }); 
+            name = toFicheDePoste; 
+        }, 
+        {
+            destination = FicheLolf; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = floKey; sourceAttribute = ficKey; }); 
+            name = toFicheLolf; 
+        }, 
+        {
+            destination = TplBloc; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tblKey; sourceAttribute = tblKey; }); 
+            name = toTplBloc; 
+        }
+    ); 
+}

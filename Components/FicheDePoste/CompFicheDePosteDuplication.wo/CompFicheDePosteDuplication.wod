@@ -1,0 +1,43 @@
+ErrorDuplication: WOConditionalErrorMessage {
+	condition = ctrl.hasError;
+	value = ctrl.errMsg;
+}
+
+StrFicheDePoste: WOString {
+	value = ctrl.ficheDePoste.display;
+}
+
+SelectPoste: SelectPoste {
+	eoPosteSelected = ctrl.eoPosteSelected;
+}
+
+DteDebut: CktlDatePicker {
+	dateValue = ctrl.newFicheDDebut;
+}
+
+DteFin: CktlDatePicker {
+	dateValue = ctrl.newFicheDFin;
+}
+
+
+ImgCancel: WOImage {
+	border = 0;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkCancel: WOHyperlink {
+	action = ctrl.caller.doCancelCompFicheDePosteDuplication;
+	title = "Annuler la copie de cette fiche cette fiche de poste";
+}
+
+BtnDupliquerFiche: WOImageButton {
+	action = ctrl.doDupliquerFiche;
+	filename = "images/valider16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+	title = "Copier la fiche de poste vers ce poste et ces dates de validité";
+}

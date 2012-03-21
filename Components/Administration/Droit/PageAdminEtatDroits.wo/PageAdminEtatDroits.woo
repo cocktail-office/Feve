@@ -1,0 +1,23 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        droitDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = Droit; 
+                    isDeep = YES; 
+                    prefetchingRelationshipKeyPaths = (); 
+                }; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 30; 
+            selectsFirstObjectAfterFetch = NO; 
+        }; 
+    }; 
+}

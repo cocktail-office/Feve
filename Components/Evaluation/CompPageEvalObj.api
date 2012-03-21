@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="CompPageEvalObj" wocomponentcontent="false">
+
+		<binding name="inputLEvaluation"/>
+		
+
+		<validation message="'inputLEvaluation' is a required binding">
+			<unbound name="inputLEvaluation"/>
+		</validation>
+	<binding defaults="Boolean" name="isHiddenColonneResultats"/>
+        <validation message="'isEvaluationPrecedente' is a required binding.">
+            <unbound name="isHiddenColonneResultats"/>
+        </validation>
+    <binding name="inputEvaluationPeriode"/>
+        <validation message="'inputEvaluationPeriode' is a required binding.">
+            <unbound name="inputEvaluationPeriode"/>
+        </validation>
+    <binding defaults="Boolean" name="isAllowedAjoutSuppModif"/>
+        <validation message="'isResultatModifiable' is a required binding.">
+            <unbound name="isAllowedAjoutSuppModif"/>
+        </validation>
+    <binding defaults="Boolean" name="isAllowedModifResultatObservation"/>
+        <validation message="'isAllowedModifResultatObservation' is a required binding.">
+            <unbound name="isAllowedModifResultatObservation"/>
+        </validation>
+    </wo>
+</wodefinitions>

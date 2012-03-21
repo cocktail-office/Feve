@@ -1,0 +1,159 @@
+FormDoNothing: WOForm {
+	action = neFaitRien;
+	name = "FormSync";
+	multipleSubmit = true;
+}
+
+CondIsARecordSelected: WOConditional {
+	condition = isARecordSelected;
+}
+
+CondNotIsARecordSelected: WOConditional {
+	condition = isARecordSelected;
+	negate = true;
+}
+
+BrowserResult: WOBrowser {
+	list = resultList;
+	item = resultItem;
+	displayString = resultItem.display; //VALID
+	selections = resultSelecteds;
+	multiple = false;
+	size = 10;
+	onChange = "this.form.submit();";
+	name = "BrowserResult";
+}
+
+JavaScript1: WOJavaScript {
+	scriptSource = "js/filterlist.js";
+}
+
+YCRILookupField1: YCRILookupField {
+	fieldName = "resFiltre";
+	formName = "FormSync";
+	selectName = "BrowserResult";
+}
+
+CondIsAResultSelected: WOConditional {
+	condition = isAResultSelected;
+}
+
+StrResultSelected: WOString {
+	value = resultSelected.displayLong;//VALID
+}
+
+StrNatureRecordSelected: WOString {
+	value = natureRecordSelected;
+}
+
+LnkClearSelection: WOHyperlink {
+	action = doClearSelection;
+	title = "Revenir a la liste";
+}
+
+StrRecordSelected: WOString {
+	value = recordSelected.displayLong;//VALID
+}
+
+TFKeyword: WOTextField {
+	value = keyword;
+}
+
+BtnDoSearch: WOSubmitButton {
+	action = doSearch;
+	value = "Chercher";
+	class = "bouton";
+}
+
+CondErrNoResult: WOConditional {
+	condition = errNoResult;
+}
+
+CondNotErrNoResult: WOConditional {
+	condition = errNoResult;
+	negate = true;
+}
+
+CondIsSearchDone: WOConditional {
+	condition = isSearchDone;
+}
+
+CondErrKeyworkTooShort: WOConditional {
+	condition = errKeyworkTooShort;
+}
+
+StrEmploiListCount: WOString {
+	value = emploiList.@count;
+	numberformat = "0";	
+}
+
+RepEmploi: WORepetition {
+	list = emploiList;
+	item = emploiItem;
+}
+
+StrEmploiItem: WOString {
+	value = emploiItem.etyLibelle;
+}
+
+StrActiviteListCount: WOString {
+	value = activiteList.@count;
+	numberformat = "0";	
+}
+
+RepActivite: WORepetition {
+	list = activiteList;
+	item = activiteItem;
+}
+
+StrActiviteItem: WOString {
+	value = activiteItem.actLibelle;
+}
+
+StrCompetenceListCount: WOString {
+	value = competenceList.@count;
+	numberformat = "0";	
+}
+
+RepCompetence: WORepetition {
+	list = competenceList;
+	item = competenceItem;
+}
+
+StrCompetenceItem: WOString {
+	value = competenceItem.comLibelle;
+}
+
+LnkDoSelectRecord: WOHyperlink {
+	action = doSelectRecord;
+	title = "Selectionner cette donnee pour lui trouver une correspondance dans REFERENS";
+}
+
+RepFicheDePoste: WORepetition {
+	list = ficheDePosteList;
+	item = ficheDePosteItem;
+}
+
+StrFicheDePosteItemDisplay: WOString {
+	value = ficheDePosteItem.display;
+}
+
+StrFicheDePosteItemOccupantDisplay: WOString {
+	value = ficheDePosteItem.toAffectationDetailActuelle.toAffectation.toIndividu.display;
+}
+
+RepEvaluation: WORepetition {
+	list = evaluationList;
+	item = evaluationItem;
+}
+
+StrEvaluationItemDisplay: WOString {
+	value = evaluationItem.display;
+}
+
+BtnReaffecter: WOSubmitButton {
+	action = doReaffecter;
+	value = "&lt;&lt;&lt;&lt;  R&eacute;affecter &gt;&gt;&gt;&gt;";
+	class = "bouton";
+	escapeHTML = false;
+}

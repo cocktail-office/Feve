@@ -1,0 +1,650 @@
+CompBrowserReferensET: CompBrowserReferens{
+	inReferensEmploi = inputLaFicheDePoste.toReferensEmplois;
+	shouldForceSelectionInReferensEmploi = shouldForceSelectionInReferensEmploi;
+	outReferensEmploi = inputLaFicheDePoste.toReferensEmplois;
+	showContentOnlyOnLeaf = true;
+}
+
+StrInputLaFicheDePosteToReferensEmplois: WOString {
+	value = inputLaFicheDePoste.toReferensEmplois.intitulemploi;
+	valueWhenEmpty = "&lt;pas d'emploi type affect&eacute;&gt;";
+}
+
+StrDefinitionEmploi: WOString {
+	value = inputLaFicheDePoste.toReferensEmplois.definition;
+}
+
+CktlNoteInfoEmploi: CktlNote {
+	
+}
+
+StrInputLaFicheDePosteToReferensEmploisCorps: WOString {
+	value = inputLaFicheDePoste.toReferensEmplois.toReferensCorps.intitulcorps;
+}
+
+StrInputLaFicheDePosteToReferensEmploisFamille: WOString {
+	value = inputLaFicheDePoste.toReferensEmplois.toReferensFp.intitulfp;
+}
+
+StrInputLaFicheDePosteToReferensEmploisDcp: WOString {
+	value = inputLaFicheDePoste.toReferensEmplois.toReferensFp.toReferensDcp.intituldcp;
+}
+
+CondNotIsModeModifET: WOConditional {
+	condition = isModeModifET;
+	negate = true;
+}
+
+CondNotIsDisabledBtnModifET: WOConditional {
+	condition = isDisabledBtnModifET;
+	negate = true;
+}
+
+BtnActiverModeModifET: WOImageButton {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	action = activerModeModifET;
+	title = "Modifier l'emploi type";
+	width = "16";
+	height = "16";
+}
+
+CondIsModeModifET: WOConditional {
+	condition = isModeModifET;
+}
+
+BtnAnnulerModif: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerModif;
+	title = "Annuler la modification de l'emploi type";	
+	width = "16";
+	height = "16";
+}
+
+BtnSupprimerET: WOImageButton {
+	filename = "images/moins16.gif";
+	framework = "app";
+	action = supprimerET;
+	title = "Supprimer la d&eacute;finition de l'emploi type pour cette fiche de poste";	
+	width = "16";
+	height = "16";
+}
+
+CondShowBtnAssocierET: WOConditional {
+	condition = showBtnAssocierET;
+}
+
+BtnAssocierET: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrer;
+	title = "Enregistrer la modification de l'emploi type";
+	width = "16";
+	height = "16";
+	name = "BtnAssocierET";
+}
+
+CondShowAssoAuto: WOConditional {
+	condition = showAssociationAutomatique;
+}
+
+CktlNoteAssoAuto: CktlNote {
+}
+
+LnkAssoAuto: WOHyperlink {
+	action = associationAutomatique;
+	title = "Associer toutes les activites et competences de l'emploi type";
+}
+
+ImgWizard: WOImage {
+	border = 0;
+	filename = "images/Wizard.png";
+	framework = "app";
+	height = "18";
+	width = "18";
+}
+
+RepActFiche: WORepetition {
+	item = uneRepartActivite;
+	list = inputLaFicheDePoste.tosRepartFdpActi;
+}
+
+TrRepartActivite: WOGenericContainer {
+	elementName = "tr";
+	class = classTrRepartActivite;
+}
+
+BtnSupprimerActivitesSelectionnees: WOActiveImage {
+	action = supprimerActivitesSelectionnees;
+	filename = "images/moins16.gif";
+	framework = "app";
+	title = "Supprimer les associations fiche de poste - activit&eacute;s selectionn&eacute;es";
+	escapeHTML = true;
+	name = "BtnSupprimerActivitesSelectionnees";
+}
+
+BtnSupprimerActivitesAutresSelectionnees: WOActiveImage {
+	action = supprimerActivitesAutresSelectionnees;
+	filename = "images/moins16.gif";
+	framework = "app";
+	title = "Supprimer les associations fiche de poste - activit&eacute;s autres selectionn&eacute;es";
+	escapeHTML = true;
+	name = "BtnSupprimerActivitesAutresSelectionnees";
+}
+
+CondShowSuppressionActivite: WOConditional {
+	condition = showSuppressionActivite;
+}
+
+CondShowSuppressionActiviteAutre: WOConditional {
+	condition = showSuppressionActiviteAutre;
+}
+
+CondShowSuppressionCompetence: WOConditional {
+	condition = showSuppressionCompetence;
+}
+
+CondShowSuppressionCompetenceAutre: WOConditional {
+	condition = showSuppressionCompetenceAutre;
+}
+
+BtnSupprimerCompetencesSelectionnees: WOActiveImage {
+	action = supprimerCompetencesSelectionnees;
+	filename = "images/moins16.gif";
+	framework = "app";
+	title = "Supprimer les associations fiche de poste - competenc&eacute;s autres selectionn&eacute;es";
+	escapeHTML = true;
+	name = "BtnSupprimerCompetencesSelectionnees";
+}
+
+
+BtnSupprimerCompetencesAutresSelectionnees: WOActiveImage {
+	action = supprimerCompetencesAutresSelectionnees;
+	filename = "images/moins16.gif";
+	framework = "app";
+	title = "Supprimer les associations fiche de poste - comp&eacute;tences autres selectionn&eacute;es";
+	escapeHTML = true;
+	name = "BtnSupprimerCompetencesAutresSelectionnees";
+}
+
+
+CondNotIsDisabledBtnSupprimer: WOConditional {
+	condition = isDisabledBtnSupprimer;
+	negate = true;
+}
+
+LnkRemonterActivite: WOActiveImage {
+	action = remonterActivite;
+	filename = "images/haut.gif";
+	framework = "app";
+	title = "placer plus haut dans la liste";
+	width = "12";
+	height = "12";
+}
+
+LnkDescendreActivite: WOActiveImage {
+	action = descendreActivite;
+	filename = "images/bas.gif";
+	framework = "app";
+	title = "placer plus bas dans la liste";
+	width = "12";
+	height = "12";	
+}
+
+StrPosActivite: WOString {
+	value = uneRepartActivite.rfaPosition;
+}
+
+StrActDisplayLong: WOString {
+	value = uneRepartActivite.toReferensActivites.displayLong;
+}
+
+ChkSupprimerActivite: WOCheckBox {
+	id = uneRepartActivite.toReferensActivites.id;
+	checked = uneRepartActivite.isMarkedToDelete;
+	title = "cocher pour marquer cette activit&eacute; comme &eacute;tant &agrave; supprimer. Confirmer avec le bouton de suppression ci-dessous.";
+}
+
+ChkSupprimerActiviteAutre: WOCheckBox {
+	id = uneRepartActiviteAutre.id;
+	checked = uneRepartActiviteAutre.isMarkedToDelete;
+	title = "cocher pour marquer cette activit&eacute; &quot;autre&quot; comme &eacute;tant &agrave; supprimer. Confirmer avec le bouton de suppression ci-dessous.";
+}
+
+ChkSupprimerCompetence: WOCheckBox {
+	id = uneRepartCompetence.toReferensCompetences.id;
+	checked = uneRepartCompetence.isMarkedToDelete;
+	title = "cocher pour marquer cette comp&eacute;tence comme &eacute;tant &agrave; supprimer. Confirmer avec le bouton de suppression ci-dessous.";
+}
+
+ChkSupprimerCompetenceAutre: WOCheckBox {
+	id = uneRepartCompetenceAutre.id;
+	checked = uneRepartCompetenceAutre.isMarkedToDelete;
+	title = "cocher pour marquer cette comp&eacute;tence &quot;autre&quot; comme &eacute;tant &agrave; supprimer. Confirmer avec le bouton de suppression ci-dessous.";
+}
+
+CondIsModeAjouterActivite: WOConditional {
+	condition = isModeAjouterActivite;
+}
+
+CompBrowserReferensActivite: CompBrowserReferens {
+	inReferensEmploi = inputLaFicheDePoste.toReferensEmplois;
+	showActivites = true;
+	outReferensActivite = lActiviteSelectionnee;
+	shouldForceSelectionInReferensEmploi = shouldForceSelectionInReferensEmploi;
+	showContentOnlyOnLeaf = true;
+	referensActivitesToHideList = inputLaFicheDePoste.tosReferensActivites;
+}
+
+CondShowBtnAssocierActivite: WOConditional {
+	condition = showBtnAssocierActivite;
+}
+
+BtnAssocierActivite: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = associerActivite;
+	title = "Associer cette activit&eacute; &agrave; la fiche de poste";
+	width = "16";
+	height = "16";
+	name = "BtnAssocierActivite";
+}
+
+BtnAnnulerAssocierActivite: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerModif;
+	title = "Annuler l'affectation de cette activit&eacute; &agrave; cette fiche de poste";	
+	width = "16";
+	height = "16";
+	name = "BtnAnnulerSaisieActiviteAutre";
+}
+
+ImgAdd: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+}
+
+LnkActiverModeAjoutActivite: WOHyperlink {
+	action = activerModeAjoutActivite;
+	title = "Saisir une nouvelle activit&eacute;";
+}
+
+RepRepartFdpActivitesAutres: WORepetition {
+	item = uneRepartActiviteAutre;
+	list = inputLaFicheDePoste.tosRepartFdpActivitesAutres;
+}
+
+TrRepartActiviteAutre: WOGenericContainer {
+	elementName = "tr";
+	class = classTrRepartActiviteAutre;
+}
+
+BtnRemonterActiviteAutre: WOActiveImage {
+	action = remonterActiviteAutre;
+	filename = "images/haut.gif";
+	framework = "app";
+	title = "placer plus haut dans la liste";
+	width = "12";
+	height = "12";
+}
+
+BtnDescendreActiviteAutre: WOActiveImage {
+	action = descendreActiviteAutre;
+	filename = "images/bas.gif";
+	framework = "app";
+	title = "placer plus bas dans la liste";	
+	width = "12";
+	height = "12";
+}
+
+StrPosActiviteAutre: WOString {
+	value = uneRepartActiviteAutre.fauPosition;
+}
+
+StrFauActiviteAutre: WOString {
+	value = uneRepartActiviteAutre.fauChampLibre;
+}
+
+CondIsShowModificationActiviteAutre: WOConditional {
+	condition = isShowBtnModifierActiviteAutre;
+}
+
+CondIsShowBtnValiderModificationActiviteAutre: WOConditional {
+	condition = isShowBtnValiderModificationActiviteAutre;
+}
+
+CondUneRepartActiviteAutreIsEnCoursDeModification: WOConditional {
+	condition = uneRepartActiviteAutre.isEnCoursDeModification;
+}
+
+CondNotUneRepartActiviteAutreIsEnCoursDeModification: WOConditional {
+	condition = uneRepartActiviteAutre.isEnCoursDeModification;
+	negate = true;
+}
+
+TFFauActiviteAutre: WOTextField {
+	value = uneRepartActiviteAutre.fauChampLibre;
+	maxlength = 2000;
+	size = 60;
+	onKeyDown = "if(event.keyCode==13){BtnValiderModifActiviteAutre.click();};";	
+}
+
+BtnActiverModeModifActiviteAutre: WOImageButton {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	action = activerModeModifActiviteAutre;
+	title = "Modifier cette activité autre";
+	width = "16";
+	height = "16";
+}
+
+BtnValiderModifActiviteAutre: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrer;
+	title = "Enregistrer la modification de cette activite";
+	width = "16";
+	height = "16";
+	name = "BtnValiderModifActiviteAutre";
+}
+
+CondIsModeAjouterActiviteAutre: WOConditional {
+	condition = isModeAjouterActiviteAutre;
+}
+
+TFLaNouvelleActiviteAutre: WOTextField {
+	maxlength = 2000;
+	size = 60;
+	value = laNouvelleActiviteAutre;
+}
+
+BtnAssocierActiviteAutre: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = associerActiviteAutre;
+	title = "Affecter cette activit&eacute;";
+	width = "16";
+	height = "16";
+}
+
+BtnAnnulerSaisieActiviteAutre: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerModif;
+	title = "Annuler la saisie de cette activit&eacute; &quot;autre&quot;";	
+	width = "16";
+	height = "16";
+	name = "BtnAnnulerSaisieActiviteAutre";
+}
+
+LnkActiverModeAjoutActiviteAutre: WOHyperlink {
+	action = activerModeAjoutActiviteAutre;
+	title = "Saisir une nouvelle activit&eacute; 'autre'";
+}
+
+RepRepartFdpComp: WORepetition {
+	item = uneRepartCompetence;
+	list = inputLaFicheDePoste.tosRepartFdpComp;
+}
+
+
+TrRepartCompetence: WOGenericContainer {
+	elementName = "tr";
+	class = classTrRepartCompetence;
+}
+
+BtnRemonterCompetence: WOActiveImage {
+	action = remonterCompetence;
+	filename = "images/haut.gif";
+	framework = "app";
+	title = "placer plus haut dans la liste";
+	width = "12";
+	height = "12";
+}
+
+BtnDescendreCompetence: WOActiveImage {
+	action = descendreCompetence;
+	filename = "images/bas.gif";
+	framework = "app";
+	title = "placer plus bas dans la liste";
+	width = "12";
+	height = "12";
+}
+
+StrPosCompentence: WOString {
+	value = uneRepartCompetence.rfcPosition;
+}
+
+CompCompetenceDisplay1: CompCompetenceDisplay {
+	laCompetence = uneRepartCompetence.toReferensCompetences;
+}
+
+CondIsModeAjouterCompetence: WOConditional {
+	condition = isModeAjouterCompetence;
+}
+
+RepRepartFdpCompetencesAutres: WORepetition {
+	item = uneRepartCompetenceAutre;
+	list = inputLaFicheDePoste.tosRepartFdpCompetencesAutres;
+}
+
+TrRepartCompetenceAutre: WOGenericContainer {
+	elementName = "tr";
+	class = classTrRepartCompetenceAutre;
+}
+
+BtnRemonterCompetenceAutre: WOActiveImage {
+	action = remonterCompetenceAutre;
+	filename = "images/haut.gif";
+	framework = "app";
+	title = "placer plus haut dans la liste";
+	width = "12";
+	height = "12";
+}
+
+BtnDescendreCompetenceAutre: WOActiveImage {
+	action = descendreCompetenceAutre;
+	filename = "images/bas.gif";
+	framework = "app";
+	title = "placer plus bas dans la liste";	
+	width = "12";
+	height = "12";
+}
+
+StrPosCompetenceAutre: WOString {
+	value = uneRepartCompetenceAutre.fauPosition;
+}
+
+StrFauCompetenceAutre: WOString {
+	value = uneRepartCompetenceAutre.fauChampLibre;
+}
+
+CondIsShowModificationCompetenceAutre: WOConditional {
+	condition = isShowBtnModifierCompetenceAutre;
+}
+
+CondIsShowBtnValiderModificationCompetenceAutre: WOConditional {
+	condition = isShowBtnValiderModificationCompetenceAutre;
+}
+
+CondUneRepartCompetenceAutreIsEnCoursDeModification: WOConditional {
+	condition = uneRepartCompetenceAutre.isEnCoursDeModification;
+}
+
+CondNotUneRepartCompetenceAutreIsEnCoursDeModification: WOConditional {
+	condition = uneRepartCompetenceAutre.isEnCoursDeModification;
+	negate = true;
+}
+
+TFFauCompetenceAutre: WOTextField {
+	value = uneRepartCompetenceAutre.fauChampLibre;
+	maxlength = 2000;
+	size = 60;
+	onKeyDown = "if(event.keyCode==13){BtnValiderModifCompetenceAutre.click();};";	
+}
+
+BtnActiverModeModifCompetenceAutre: WOImageButton {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	action = activerModeModifCompetenceAutre;
+	title = "Modifier cette comp&eacute;tence autre";
+	width = "16";
+	height = "16";
+}
+
+BtnValiderModifCompetenceAutre: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrer;
+	title = "Enregistrer la modification de cette competence";
+	width = "16";
+	height = "16";
+	name = "BtnValiderModifCompetenceAutre";
+}
+
+CondIsModeAjouterCompetenceAutre: WOConditional {
+	condition = isModeAjouterCompetenceAutre;
+}
+
+TFLaNouvelleCompetenceAutre: WOTextField {
+	maxlength = 2000;
+	size = 60;
+	value = laNouvelleActiviteAutre;
+}
+
+BtnAssocierCompetenceAutre: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = associerCompetenceAutre;
+	title = "Affecter cette activit&eacute;";
+	width = "16";
+	height = "16";
+}
+
+BtnAnnulerSaisieCompetenceAutre: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerModif;
+	title = "Annuler la saisie de cette activit&eacute; &quot;autre&quot;";	
+	width = "16";
+	height = "16";
+	name = "BtnAnnulerSaisieCompetenceAutre";
+}
+
+LnkActiverModeAjoutCompetenceAutre: WOHyperlink {
+	action = activerModeAjoutCompetenceAutre;
+	title = "Saisir une nouvelle activit&eacute; 'autre'";
+}
+
+
+CompBrowserReferensCompetence: CompBrowserReferens {
+	inReferensEmploi = inputLaFicheDePoste.toReferensEmplois;
+	showCompetences = true;
+	outReferensCompetence = laCompetenceSelectionnee;
+	shouldForceSelectionInReferensEmploi = shouldForceSelectionInReferensEmploi;
+	showContentOnlyOnLeaf = true;	
+	referensCompetencesToHideList = inputLaFicheDePoste.tosReferensCompetences;
+}
+
+CondShowBtnAssocierCompetence: WOConditional {
+	condition = showBtnAssocierCompetence;
+}
+
+BtnAssocierCompetence: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = associerCompetence;
+	title = "Associer cette comp&eacute;tence &agrave; la fiche de poste";
+	width = "16";
+	height = "16";
+}
+
+BtnAnnulerAssocierCompetence: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerModif;
+	title = "Annuler l'affectation de cette comp&eacute;tence &agrave; cette fiche de poste";	
+	width = "16";
+	height = "16";
+	name = "BtnAnnulerSaisieActiviteAutre";
+}
+
+LnkActiverModeAjoutCompetence: WOHyperlink {
+	action = activerModeAjoutCompetence;
+	title = "Saisir une nouvelle comp&eacute;tence";
+}
+
+CondIsFicheDePosteSaisieActiviteAutre: WOConditional {
+	condition = feveUserInfo.isFicheDePosteSaisieActiviteAutre;
+}
+
+CondShowPanelActiviteAutre: WOConditional {
+	condition = showPanelActiviteAutre;
+}
+
+CondIsFicheDePosteSaisieCompetenceAutre: WOConditional {
+	condition = feveUserInfo.isFicheDePosteSaisieCompetenceAutre;
+}
+
+CondShowPanelCompetenceAutre: WOConditional {
+	condition = showPanelCompetenceAutre;
+}
+
+ChkSelectAllActivite: WOGenericElement {
+	elementName = "input";
+	type = "checkbox";
+	onClick = onClickSelectionActivite;
+	name = "ChkSelectAllActivite";
+	title = "Marquer toutes les activit&eacute;s comme &eacute;tant &agrave; supprimer.";
+}
+
+ChkSelectAllActiviteAutre: WOGenericElement {
+	elementName = "input";
+	type = "checkbox";
+	onClick = onClickSelectionActiviteAutre;
+	name = "ChkSelectAllActiviteAutre";
+	title = "Marquer toutes les activit&eacute;s &quot;autres&quot; comme &eacute;tant &agrave; supprimer.";	
+}
+
+ChkSelectAllCompetence: WOGenericElement {
+	elementName = "input";
+	type = "checkbox";
+	onClick = onClickSelectionCompetence;
+	name = "ChkSelectAllCompetence";
+	title = "Marquer toutes les comp&eacute;tences comme &eacute;tant &agrave; supprimer.";	
+}
+
+ChkSelectAllCompetenceAutre: WOGenericElement {
+	elementName = "input";
+	type = "checkbox";
+	onClick = onClickSelectionCompetenceAutre;
+	name = "ChkSelectAllCompetenceAutre";
+	title = "Marquer toutes les comp&eacute;tences &quot;autres&quot; comme &eacute;tant &agrave; supprimer.";	
+}
+
+JsFunctionSelectionActivite: WOJavaScript {
+	scriptString = jsFunctionSelectionActivite;
+}
+
+JsFunctionSelectionActiviteAutre: WOJavaScript {
+	scriptString = jsFunctionSelectionActiviteAutre;
+}
+
+JsFunctionSelectionCompetence: WOJavaScript {
+	scriptString = jsFunctionSelectionCompetence;
+}
+
+JsFunctionSelectionCompetenceAutre: WOJavaScript {
+	scriptString = jsFunctionSelectionCompetenceAutre;
+} 
+
+CktlAjaxVReferensSelect1: CktlAjaxVReferensSelect {
+	id = "testAjaxVReferensSelect"; 
+	value = vReferensTest.libelle;
+	selection = vReferensTest;
+	userFiltersFormID = "FormTest";
+}

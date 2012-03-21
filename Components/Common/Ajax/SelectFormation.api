@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="SelectFormation" wocomponentcontent="false">    <binding name="formName"/>
+        <validation message="'formName' is a required binding.">
+            <unbound name="formName"/>
+        </validation>
+    <binding name="eoFormationPersonnel"/>
+        <validation message="'eoFormationPersonnel' is a required binding.">
+            <unbound name="eoFormationPersonnel"/>
+        </validation>
+    
+        
+    
+        
+    <binding defaults="Boolean" name="isFormationNomenclature"/>
+        <validation message="'isFormationNomenclature' is a required binding.">
+            <unbound name="isFormationNomenclature"/>
+        </validation>
+    
+        
+    <binding name="strChampLibre"/>
+        <validation message="'strChampLibre' is a required binding.">
+            <unbound name="strChampLibre"/>
+        </validation>
+    <binding name="btnAddFormationName"/>
+        <validation message="'btnAddFormationName' is a required binding.">
+            <unbound name="btnAddFormationName"/>
+        </validation>
+    </wo>
+</wodefinitions>

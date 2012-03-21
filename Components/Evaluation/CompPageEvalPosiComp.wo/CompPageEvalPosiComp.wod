@@ -1,0 +1,242 @@
+btnSauver: WOSubmitButton {
+	action = sauvegarder;
+	name = "btnSauver";
+	value = "BOUTON CACHE";
+	style = "visibility:hidden;display:none";
+}
+
+StrFdpCount: WOString {
+	value = inputLEvaluation.tosLastFicheDePoste.count;
+}
+
+TipInfoDernieresFiche: CktlToolTip {
+	htmlText = "Ce sont les derni&egrave;res fiches en date, des postes occup&eacute;s par l'agent, sur cette p&eacute;riode d'entretien professionnel.";
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16";
+}
+
+RepFdp: WORepetition {
+	item = uneFicheDePoste;
+	list = inputLEvaluation.tosLastFicheDePoste;
+}
+
+StrFicheDePosteEmploiType: WOString {
+	value = uneFicheDePoste.toReferensEmplois.intitulemploi;
+	valueWhenEmpty = "emploi type REFERENS non précisé";
+}
+
+TipFicheDePosteEmploiType: CktlToolTip {
+	htmlText = uneFicheDePoste.display;
+}
+
+
+CondHasRepartFdpComp: WOConditional {
+	condition = uneFicheDePoste.tosRepartFdpComp.count;
+}
+
+RepRepartFdpComp: WORepetition {
+	item = uneRepart;
+	list = uneFicheDePoste.tosRepartFdpComp;
+}
+
+CompCompetenceDisplay1: CompCompetenceDisplay {
+	laCompetence = uneRepart.toReferensCompetences;
+}
+
+ObserverPopUpTousLesNiveauCompetence: AjaxObserveField {
+	action = sauvegarder;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+PopUpTousLesNiveauCompetence: WOPopUpButton {
+	displayString = unNiveauCompetence.ncpLibelle;
+	item = unNiveauCompetence;
+	list = inputLEvaluation.toEvaluationPeriode.niveauCompetenceList;
+	noSelectionString = "-- choix --";
+	selection = laRepartNiveauCompCorrespondant.toNiveauCompetence;
+	//onChange = "this.form.btnSauver.click();";
+	disabled = isDisabledPopupNotation;
+	title = "Selectionnez le niveau";
+}
+
+CondIsFicheDePosteSaisieCompetenceAutre: WOConditional {
+	condition = feveUserInfo.isFicheDePosteSaisieCompetenceAutre;
+}
+
+CondHasCompetencesAutres: WOConditional {
+	condition = uneFicheDePoste.tosRepartFdpCompetencesAutres.count;
+}
+
+RepRepartCompetencesAutres: WORepetition {
+	item = uneRepartAutre;
+	list = uneFicheDePoste.tosRepartFdpCompetencesAutres;
+}
+
+StrCompetenceAutre: WOString {
+	value = uneRepartAutre.fauChampLibre;
+}
+
+
+ObserverPopUpTousLesNiveauCompetenceAutre: AjaxObserveField {
+	action = sauvegarder;
+	fullSubmit = true;
+	onComplete = " function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+PopUpTousLesNiveauCompetenceAutre: WOPopUpButton {
+	displayString = unNiveauCompetence.ncpLibelle;
+	item = unNiveauCompetence;
+	list = inputLEvaluation.toEvaluationPeriode.niveauCompetenceList;
+	noSelectionString = "-- choix --";
+	selection = laRepartNiveauCompAutreCorrespondant.toNiveauCompetence;
+	onChange = "this.form.btnSauver.click();";
+	disabled = isDisabledPopupNotation;
+}
+
+
+
+RepNouvelleComp: WORepetition {
+	item = uneRepartNouvelleComp;
+	list = inputLEvaluation.tosRepartEvaNouvelleComp;
+}
+
+CompCompetenceDisplay2: CompCompetenceDisplay {
+	laCompetence = uneRepartNouvelleComp.toReferensCompetences;
+}
+
+CondShowSuppressionCompetencesAnnexes: WOConditional {
+	condition = showSuppressionCompetencesAnnexes;
+}
+
+CondShowLigneAjouter: WOConditional {
+	condition = showLigneAjouter;
+}
+
+CompBrowserReferensNouvelleCompetence: CompBrowserReferens {
+	inReferensEmploi = uneFicheDePoste.toReferensEmplois;
+	showCompetences = true;
+	outReferensCompetence = laCompetenceSelectionnee;
+	shouldForceSelectionInReferensEmploi = false;
+	showContentOnlyOnLeaf = true;	
+	referensCompetencesToHideList = competencesAssociesAuxFiches;
+}
+
+ImgBtnAssocierNouvelleCompetence: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	title = "Affecter cette nouvelle comp&eacute;tence";
+	action = associerNouvelleCompetence;
+}
+
+CondShowLienAjouter: WOConditional {
+	condition = showLienAjouter;
+}
+
+LnkActiverModeAjouter: WOHyperlink {
+	action = activerModeAjouter;
+	title = "Saisir une nouvelle competence";
+	escapeHTML = false;
+}
+
+Text1: WOTextMaxSize {
+	value = inputLEvaluation.evaChampLibre;
+	disabled = isDisabledChampLibre;
+	maxSize = 2000;	
+}
+
+Conditional4: WOConditional {
+	condition = isModeModifierChampLibre;
+	negate = true;
+}
+
+LnkModifierChampLibre: WOHyperlink {
+	action = modifierChampLibre;
+	title = "Cliquez ici pour modifier";
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	border = "0";
+	width = "16px";
+	height = "16px";
+}
+
+Conditional3: WOConditional {
+	condition = isModeModifierChampLibre;
+}
+
+ImgBtnEnregistrerChampLibre: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = enregistrerChampLibre;
+	title = "Enregistrer la saisie";
+}
+
+ImgBtnAnnulerEnregistrerChampLibre: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerEnregisterChampLibre;
+	title = "Annuler les modifications";
+}
+
+CondNotIsDisabled: WOConditional {
+	condition = disabled;
+	negate = true;
+}
+
+ImgAjouter: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+}
+
+CondShowBlocCompetenceAnnexes: WOConditional {
+	condition = showBlocCompetenceAnnexes;
+}
+
+CondShowBlocChampLibre: WOConditional {
+	condition = showBlocChampLibre;
+}
+
+ChkSelectAllCompetenceAnnexes: WOGenericElement {
+	elementName = "input";
+	type = "checkbox";
+	onClick = onClickSelectionCompetencesAnnexes;
+	name = "ChkSelectAllCompetence";
+	title = "Marquer toutes les comp&eacute;tences comme &eacute;tant &agrave; supprimer.";	
+}
+
+ChkSupprimerCompetence: WOCheckBox {
+	id = uneRepartNouvelleComp.id;
+	checked = uneRepartNouvelleComp.isMarkedToDelete;
+	title = "cocher pour marquer cette comp&eacute;tence annexe comme &eacute;tant &agrave; supprimer. Confirmer avec le bouton de suppression ci-dessous.";
+}
+
+BtnSupprimerCompetencesAnnexesSelectionnees: WOActiveImage {
+	action = supprimerCompetencesAnnexesSelectionnees;
+	filename = "images/moins16.gif";
+	framework = "app";
+	title = "Supprimer les comp&eacute;tences annexes selectionn&eacute;es";
+	escapeHTML = true;
+	name = "BtnSupprimerCompetencesAnnexesSelectionnees";
+}
+
+JsFunctionSelectionCompetencesAnnexes: WOJavaScript {
+	scriptString = jsFunctionSelectionCompetencesAnnexes;
+}
+
+BtnAnnulerAssocierNouvelleCompetence: WOImageButton {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	action = annulerModif;
+	title = "Annuler l'affectation de cette comp&eacute;tence &agrave; cette fiche de poste";	
+	width = "16";
+	height = "16";
+	name = "BtnAnnulerAssocierNouvelleCompetence";
+}

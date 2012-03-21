@@ -1,0 +1,131 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VAL"; 
+            externalType = DATE; 
+            name = dDebVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VAL"; 
+            externalType = DATE; 
+            name = dFinVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TEM_CONTRACTUEL"; 
+            externalType = VARCHAR; 
+            name = temContractuel; 
+            valueClassName = NSString; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_TITULAIRE"; 
+            externalType = VARCHAR; 
+            name = temTitulaire; 
+            valueClassName = NSString; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TFI_KEY"; 
+            externalType = NUMBER; 
+            name = tfiKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TON_CODE"; 
+            externalType = VARCHAR2; 
+            name = tonCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TON_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = tonCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TON_KEY"; 
+            externalType = NUMBER; 
+            name = tonKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TON_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tonLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }, 
+        {
+            columnName = "TON_POSITION"; 
+            externalType = NUMBER; 
+            name = tonPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (tonKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplOnglet"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        toTplFiche, 
+        tonCommentaire, 
+        tonLibelle, 
+        tonPosition, 
+        tosTplBloc, 
+        tonCode, 
+        dDebVal, 
+        dFinVal, 
+        temContractuel, 
+        temTitulaire
+    ); 
+    externalName = "MANGUE.TPL_ONGLET"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplOnglet; 
+    primaryKeyAttributes = (tonKey); 
+    relationships = (
+        {
+            destination = TplFiche; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tfiKey; sourceAttribute = tfiKey; }); 
+            name = toTplFiche; 
+        }, 
+        {
+            destination = TplBloc; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tonKey; sourceAttribute = tonKey; }); 
+            name = tosTplBloc; 
+        }
+    ); 
+}

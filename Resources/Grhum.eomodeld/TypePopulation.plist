@@ -1,0 +1,43 @@
+{
+    attributes = (
+        {
+            columnName = "C_TYPE_POPULATION"; 
+            externalType = VARCHAR2; 
+            name = cTypePopulation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "TEM_ATOS"; 
+            externalType = VARCHAR2; 
+            name = temAtos; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_BIBLIO"; 
+            externalType = VARCHAR2; 
+            name = temBiblio; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_ITARF"; 
+            externalType = VARCHAR2; 
+            name = temItarf; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (cTypePopulation); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOTypePopulation"; 
+    classProperties = (temAtos, temBiblio, temItarf); 
+    externalName = "GRHUM.TYPE_POPULATION"; 
+    fetchSpecificationDictionary = {}; 
+    name = TypePopulation; 
+    primaryKeyAttributes = (cTypePopulation); 
+}

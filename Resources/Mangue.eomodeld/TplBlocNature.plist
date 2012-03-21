@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "TBN_KEY"; 
+            externalType = NUMBER; 
+            name = tbnKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TBN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tbnLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }
+    ); 
+    attributesUsedForLocking = (tbnKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOTplBlocNature"; 
+    classProperties = (dCreation, dModification, tbnLibelle); 
+    externalName = "MANGUE.TPL_BLOC_NATURE"; 
+    fetchSpecificationDictionary = {}; 
+    name = TplBlocNature; 
+    primaryKeyAttributes = (tbnKey); 
+}

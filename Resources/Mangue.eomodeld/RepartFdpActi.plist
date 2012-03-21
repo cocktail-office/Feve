@@ -1,0 +1,111 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ACT_KEY"; 
+            externalType = NUMBER; 
+            name = actKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FDP_KEY"; 
+            externalType = NUMBER; 
+            name = fdpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ORDRE; 
+            externalType = VARCHAR2; 
+            name = ordre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "RFA_KEY"; 
+            externalType = NUMBER; 
+            name = rfaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RFA_POSITION"; 
+            externalType = NUMBER; 
+            name = rfaPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rfaKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFdpActi"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        rfaPosition, 
+        toActivite, 
+        toFicheDePoste, 
+        toReferensActivites
+    ); 
+    externalName = "MANGUE.REPART_FDP_ACTI"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (actKey, dCreation, dModification, fdpKey, rfaPosition); 
+    }; 
+    name = RepartFdpActi; 
+    primaryKeyAttributes = (rfaKey); 
+    relationships = (
+        {
+            destination = Activite; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actKey; sourceAttribute = actKey; }); 
+            name = toActivite; 
+        }, 
+        {
+            destination = FicheDePoste; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = fdpKey; }); 
+            name = toFicheDePoste; 
+        }, 
+        {
+            destination = ReferensActivites; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = codeemploi; sourceAttribute = codeemploi; }, 
+                {destinationAttribute = ordre; sourceAttribute = ordre; }
+            ); 
+            name = toReferensActivites; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_CanBeDeleted"; };  
+}

@@ -1,0 +1,90 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FAU_ACTIVITE_AUTRE"; 
+            externalType = VARCHAR2; 
+            name = fauChampLibre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "FAU_KEY"; 
+            externalType = NUMBER; 
+            name = fauKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FAU_POSITION"; 
+            externalType = NUMBER; 
+            name = fauPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FAU_TYPE"; 
+            externalType = VARCHAR2; 
+            name = fauType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FDP_KEY"; 
+            externalType = NUMBER; 
+            name = fdpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fauKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFdpAutre"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        fauChampLibre, 
+        fauPosition, 
+        fauType, 
+        toFicheDePoste, 
+        tosRepartNiveauComp
+    ); 
+    externalName = "MANGUE.REPART_FDP_AUTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification, fdpKey); }; 
+    name = RepartFdpAutre; 
+    primaryKeyAttributes = (fauKey); 
+    relationships = (
+        {
+            destination = FicheDePoste; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = fdpKey; }); 
+            name = toFicheDePoste; 
+        }, 
+        {
+            destination = RepartNiveauComp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fauKey; sourceAttribute = fauKey; }); 
+            name = tosRepartNiveauComp; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_CanBeDeleted"; };  
+}

@@ -1,0 +1,139 @@
+LnkResult: WOHyperlink {
+	action = selectReferensFoundItem;
+	title = "Selectionner cette donn&eacute; dans l'arborescence";
+}
+
+CondHasErrSizeStrSearch: WOConditional {
+	condition = errSizeStrSearch;
+}
+
+CondHasNoResult: WOConditional {
+	condition = errNoResults;
+}
+
+CondNoErrNoResults: WOConditional {
+	condition = errNoResults;
+	negate = true;
+}
+
+RepResults: WORepetition {
+	item = vReferensFoundItem;
+	list = vReferensFoundList;
+}
+
+StrMinSize: WOString {
+	value = MIN_SIZE_STRING_SEARCH;
+}
+
+StrVReferensFoundItem: WOString {
+	value = vReferensFoundItem.libelle;
+}
+
+StrVReferensFoundItemLettreBap: WOString {
+	value = vReferensFoundItem.toReferensDcp.lettrebap;
+}
+
+StrVReferensFoundItemBap: WOString {
+	value = vReferensFoundItem.toReferensDcp.intituldcp;
+}
+
+StrVReferensFoundItemFamille: WOString {
+	value = vReferensFoundItem.toReferensFp.intitulfp;
+}
+
+CondShowStrVReferensFoundItemEmploi: WOConditional {
+	condition = showStrVReferensFoundItemEmploi;
+}
+
+StrVReferensFoundItemEmploi: WOString {
+	value = vReferensFoundItem.toReferensEmplois.intitulemploi;
+}
+
+BtnSearch: WOSubmitButton {
+	value = "Chercher";
+	action = searchReferens;
+	class = "bouton"; 
+	title = "Trouver les donn&eacute;es contenant la chaine indiqu&eacute;e";
+	name = "BtnSearch";
+}
+
+BtnSearchCache: WOSubmitButton {
+	action = searchReferens;
+	value = "BOUTON CACHE (BtnSearchCache)";
+	style = "visibility:hidden;display:none";
+	name = "BtnSearchCache";
+}
+
+
+TFSearch: WOTextField {
+	value = strEmploiSearch;
+	onKeyDown = "if(event.keyCode==13){this.form.BtnSearchCache.click();};";
+	class = "searchField";
+}
+
+CRIHXBrowserVReferens: org.cocktail.feve.components.common.CktlHXBrowser {
+	columnHeight = 6;
+	columnsCount = 4;
+	selectedObject = referensNodeSelected;
+	selectedPath = referensNodesSelectedPath;
+	zeroItem = referensNodeZero;
+	hideColumnsControl = true;
+}
+
+CondShowContent: WOConditional {
+	condition = showContent;
+}
+
+ComponentContent1: WOComponentContent {
+	
+}
+
+CondShowCorps: WOConditional {
+	condition = showCorps;
+}
+
+StrCorps: WOString {
+	value = strCorps;
+}
+
+RepReferensNodesSelectedPath: WORepetition {
+	list = referensNodesSelectedPath;
+	item = referensNodesSelectedPathItem;
+}
+
+StrReferensNodesSelectedPathItem: WOString {
+	value = referensNodesSelectedPathItem.displayLongName;
+}
+
+CondShowActiviteCompetences: WOConditional {
+	condition = showActiviteCompetences;
+}
+
+CondNotShowActiviteCompetences: WOConditional {
+	condition = showActiviteCompetences;
+	negate = true;
+}
+
+StrActivitesCount: WOString {
+	value = outReferensEmploi.tosReferensActivites.count;
+	valueWhenEmpty = "0";
+}
+
+StrCompetencesCount: WOString {
+	value = outReferensEmploi.tosReferensCompetences.count;
+	valueWhenEmpty = "0";
+}
+
+TipActivites: CktlToolTip {
+	htmlText = tipActivites;
+}
+
+TipCompetences: CktlToolTip {
+	htmlText = tipCompetences;
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}

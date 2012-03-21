@@ -1,0 +1,126 @@
+CondIsLOccupationEnCoursExiste: WOConditional {
+	condition = isLOccupationEnCoursExiste;
+}
+
+StrOccupation: WOString {
+	value = lOccupationEnCours.display;
+}
+
+CondNotIsLOccupationEnCoursExiste: WOConditional {
+	condition = isLOccupationEnCoursExiste;
+	negate = true;
+}
+
+CondLIndividuEnCoursExiste: WOConditional {
+	condition = lIndividuEnCoursExiste;
+}
+
+Photo: PhotoIndividu {
+	individu = lOccupationEnCours.toAffectation.toIndividu;
+}
+
+StrNoIndividu: WOString {
+	value = leDicoIndividuEnCours.identifiant;//VALID
+}
+
+StrNumQuotAffectation: WOString {
+	numberformat = "0.00";
+	value = lOccupationEnCours.toAffectation.numQuotAffectation;
+}
+
+StrIndexOccupantEnCoursAffichage: WOString {
+	value = indexOccupantEnCoursAffichage;
+}
+
+StrTotalOccupationCount: WOString {
+	value = lesOccupations.count;
+}
+
+CondShowLienRecule: WOConditional {
+	condition = showLienRecule;
+}
+
+LnkReculeOccupant: WOHyperlink {
+	action = reculeOccupant;
+	title = "Occupant pr�c�dent";
+}
+
+ImgPrevOccupant: WOImage {
+	border = 0;
+	filename = "images/back.png";
+	framework = "app";
+}
+
+CondNotShowLienRecule: WOConditional {
+	condition = showLienRecule;
+	negate = true;
+}
+
+ImgPrevDisabled: WOImage {
+	border = 0;
+	filename = "images/back_disabled.png";
+	framework = "app";
+	title = "Occupant pr�c�dent";
+}
+
+CondShowLienAvance: WOConditional {
+	condition = showLienAvance;
+}
+
+LnkAvanceOccupant: WOHyperlink {
+	action = avanceOccupant;
+	title = "Occupant suivant";
+}
+
+ImgNextOccupant: WOImage {
+	border = 0;
+	filename = "images/forward.png";
+	framework = "app";
+}
+
+CondNotShowLienAvance: WOConditional {
+	condition = showLienAvance;
+	negate = true;
+}
+
+ImgNextOccupantDisabled: WOImage {
+	border = 0;
+	filename = "images/forward_disabled.png";
+	framework = "app";
+	title = "Occupant suivant";
+}
+
+CondIsOccupationActuelle: WOConditional {
+	condition = lOccupationEnCours.isActuelle;
+}
+
+CktlNote1: CktlNote {
+}
+
+CondIsOccupationAncienne: WOConditional {
+	condition = lOccupationEnCours.isAncienne;
+}
+
+StrNomUsuel: WOString {
+	value = leDicoIndividuEnCours.nomUsuel;//VALID
+}
+
+StrPrenom: WOString {
+	value = leDicoIndividuEnCours.prenom;//VALID
+}
+
+StrDNaissance: WOString {
+	value = leDicoIndividuEnCours.dNaissance;//VALID
+}
+
+StrStatut: WOString {
+	value = leDicoIndividuEnCours.statut;//VALID
+}
+
+StrCorps: WOString {
+	value = leDicoIndividuEnCours.corps;//VALID
+}
+
+StrGrade: WOString {
+	value = leDicoIndividuEnCours.grade;//VALID
+}

@@ -1,0 +1,53 @@
+CondNotIsDisabled: WOConditional {
+	condition = isDisabled;
+	negate = true;
+}
+
+CondIsDisabled: WOConditional {
+	condition = isDisabled;
+}
+
+CondNotIsEnModification: WOConditional {
+	condition = eoMangueParametre.objetInterfaceDocumentation.isEnModification;
+	negate = true;
+}
+
+LnkDoc: WOHyperlink {
+	string = eoMangueParametre.objetInterfaceDocumentation.libelle;
+	href = eoMangueParametre.objetInterfaceDocumentation.url;
+	target = "_blank";
+	title = "Cliquer pour accéder à la documentation";
+}
+
+BtnModifier : CktlAjaxButton {
+	action = eoMangueParametre.objetInterfaceDocumentation.modifier;
+	type = "edit";
+	title = "Modifier";
+	updateContainerID = updateContainerID;
+	style="vertical-align:bottom;";
+	showBusyImage = true;
+}
+
+BtnSauvegarder: WOSubmitButton {
+	title = "sauver";
+	action = eoMangueParametre.objetInterfaceDocumentation.sauvegarder;
+	value = "Appliquer";
+}
+CondIsEnModification: WOConditional {
+	condition = eoMangueParametre.objetInterfaceDocumentation.isEnModification;
+}
+
+TFLibelle: ERXWOTextField {
+	value = eoMangueParametre.objetInterfaceDocumentation.libelle;
+	size = "60";
+}
+
+TFUrl: ERXWOTextField {
+	value = eoMangueParametre.objetInterfaceDocumentation.url;
+	size = "120";
+}
+
+Error: WOConditionalErrorMessage {
+	condition = eoMangueParametre.objetInterfaceDocumentation.isError;
+	value = eoMangueParametre.objetInterfaceDocumentation.errorMessage;
+}

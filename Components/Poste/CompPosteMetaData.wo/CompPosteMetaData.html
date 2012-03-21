@@ -1,0 +1,65 @@
+<webobject name="WOConditionalErrorMessage1"/><br/>
+<webobject name="CondIsModeCreatePoste">
+	<!-- creation d'un nouveau poste -->
+	<label>
+		<webobject name="ChkCreerFromAffectation"/>Cr&eacute;er le poste &agrave; partir d'une affectation existante
+	</label>	
+	<br>
+	<table>
+		<tr>
+			<webobject name="CondCreerFromAffectation">
+			<td>
+				<!-- creation nouveau poste avec nouvelle affectation -->
+				<webobject name = "CompSelectAffectationNouveauPoste"/>
+			</td>
+			</webobject>
+			<td style="width:50px"></td>
+			<webobject name="CondShowInfosPoste">
+			<td valign="top">
+				<webobject name = "TableTitleDescriptifPoste">
+					<table width="100%">
+						<tr><td align="left"><font class="textEntry">Code :</font><webobject name="TxtNewPosCode"/></td></tr>
+						<tr><td align="left"><font class="textEntry">Libell&eacute; :</font><webobject name="TxtNewPosLibelle"/></td></tr>
+						<tr><td align="left"><font class="textEntry">Date d'ouverture : </font><webobject NAME="DtePickerNewPosDebut"/></td></tr>
+						<tr><td align="left"><font class="textEntry">Date de fermeture :</font><webobject NAME="DtePickerNewPosFin"/></td></tr>
+						<tr><td align="left"><label><webobject name="ChkCreerFicheDePoste"/>Cr&eacute;er une fiche de poste</label></td></tr>
+						<tr><td align="left"><input type="checkbox" checked disabled/>Cr&eacute;er une fiche LOLF</td></tr>
+						<tr>
+							<td align="center">
+								<webobject name = "LnkCancelAdd"><webobject name = "ImgCancel"/></webobject>
+								<webobject name="BtnDoCreatePoste"/>
+							</td>
+						</tr>
+					</table>
+				</webobject>
+			</td>
+			</webobject>
+		</tr>
+	</table>
+</webobject>
+
+<webobject name="CondNotIsModeCreatePoste">
+	<!-- modification d'un poste existant -->
+
+	<webobject name = "TableTitleDescriptifPoste">
+		<table width="100%">
+			<tr><td align="left"><font class="textEntry">Code :</font><webobject name="TxtUpdatePosCode"/></td></tr>
+			<tr><td align="left"><font class="textEntry">Libell&eacute; :</font><webobject name="TxtUpdatePosLibelle"/></td></tr>
+			<tr><td align="left"><font class="textEntry">Date d'ouverture :</font><webobject NAME="DtePickerUpdatePosDebut"/></td></tr>
+			<tr><td align="left"><font class="textEntry">Date de fermeture :</font><webobject NAME="DtePickerUpdatePosFin"/></td></tr>
+			<tr>
+				<td align="center">
+					<webobject name = "LnkCancelUpdate"><webobject name = "ImgCancel"/></webobject>
+					<webobject name="BtnUpdatePoste"/>
+				</td>
+			</tr>
+		</table>
+	</webobject>
+	
+	<webobject name = "CondShowMsgInfoModifPoste">
+		<webobject name = "CktlNoteModifPoste">
+			<webobject name = "StrMsgInfoModifPoste"/>
+		</webobject>
+	</webobject>
+
+</webobject>

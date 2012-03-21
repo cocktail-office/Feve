@@ -1,0 +1,39 @@
+
+
+ImgAjouter: WOImage {
+	border = 0;
+	filename = "images/plus16.gif";
+	framework = "app";
+	height = 12;
+	width = 12;}
+
+ImgModifier: WOImage {
+	border = 0;
+	filename = "images/modifier16.gif";
+	framework = "app";
+	height = 12;
+	width = 12;}
+
+ImgSupprimer: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+	height = 12;
+	width = 12;
+}
+
+CondShowDroitsAnnexes: WOConditional {
+	condition = showDroitsAnnexes;
+}
+
+ImgDroitModif: WOImage {
+	border = 0;
+	filename = "images/edit.png";
+	framework = "app";
+}
+
+ImgDroitVisu: WOImage {
+	border = 0;
+	filename = "images/Visu.png";
+	framework = "app";
+}

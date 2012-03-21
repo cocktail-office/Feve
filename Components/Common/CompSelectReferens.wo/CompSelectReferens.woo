@@ -1,0 +1,221 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        referensCorpsDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = ReferensCorps; 
+                    prefetchingRelationshipKeyPaths = (); 
+                }; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = intitulcorps; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+        referensDcpDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = ReferensDcp; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp00; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp01; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp02; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp03; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp04; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp05; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp06; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp07; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp08; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp09; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = FetchReferensDcp; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {class = EOSortOrdering; key = lettrebap; selectorName = "compareAscending:"; }
+            ); 
+        }; 
+        referensEmploisDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = ReferensEmplois; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = toReferensCorps; 
+                                selectorName = isEqualTo; 
+                                value = {"_key" = myReferensCorps; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = toReferensFp; 
+                                selectorName = isEqualTo; 
+                                value = {"_key" = myReferensFp; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "toReferensFp.toReferensDcp"; 
+                                selectorName = isEqualTo; 
+                                value = {"_key" = myReferensDcp; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp00; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp01; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp02; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp03; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp04; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp05; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp06; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp07; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp08; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = numdcp; 
+                                selectorName = isNotEqualTo; 
+                                value = {"_key" = myNumdcp09; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = FetchReferensEmploi; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = intitulemploi; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+    }; 
+}

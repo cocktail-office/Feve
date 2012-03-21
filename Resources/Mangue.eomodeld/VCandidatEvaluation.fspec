@@ -1,0 +1,13 @@
+{
+    FetchSuivi = {
+        class = EOFetchSpecification; 
+        entityName = VCandidatEvaluation; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = toEvaluationPeriode; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = periode; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

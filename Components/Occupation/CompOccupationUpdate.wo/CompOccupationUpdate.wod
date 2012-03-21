@@ -1,0 +1,88 @@
+ErrorUpdate: WOConditionalErrorMessage {
+	condition = ctrl.hasError;
+	value = ctrl.errMsg;
+}
+
+
+ImgCancel: WOImage {
+	border = 0;
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = 16;
+	height = 16;
+}
+
+LnkCancel: WOHyperlink {
+	action = ctrl.caller.doCancelOccupationUpdate;
+	title = "Annuler la mise a jour de l'occupation";
+}
+
+BtnDoUpdateOccupation: WOImageButton {
+	action = ctrl.doUpdateOccupation; 
+	name = "BtnDoUpdateOccupation";
+	title = "Cliquer pour appliquer les modifications";
+	filename = "images/valider16.gif"; 
+	framework = "app"; 
+	width = "16"; 
+	height = "16"; 
+}
+
+ChkInAffectationDetailIsAdeDateSameAffectation: WOCheckBox {
+	checked = ctrl.affectationDetail.isAdeDateSameAffectation;
+	onClick = "this.form.submit();";
+}
+
+CondNotInAffectationDetailIsAdeDateSameAffectation: WOConditional {
+	condition = ctrl.affectationDetail.isAdeDateSameAffectation;
+	negate = true;
+}
+
+DtePickerInAffectationDetailAdeDDebut: CktlDatePicker {
+	dateValue = ctrl.affectationDetail.adeDDebut;
+	fieldName = "inAffectationDetailDateDebut";
+	formName = "FormFdp";
+}
+
+DtePickerInAffectationDetailAdeDFin: CktlDatePicker {
+	dateValue = ctrl.affectationDetail.adeDFin;
+	fieldName = "inAffectationDetailDateFin";
+	formName = "FormFdp";
+}
+
+StrInAffectationDetailNomPrenom: WOString {
+	value = ctrl.affectationDetail.toAffectation.toIndividu.nomPrenom;
+}
+
+StrInAffectationDetailQuotite: WOString {
+	value = ctrl.affectationDetail.toAffectation.numQuotAffectation;
+}
+
+StrInAffectationDetailService: WOString {
+	value = ctrl.affectationDetail.toAffectation.toStructure.display;
+}
+
+StrInAffectationDetailAffectationDebut: WOString {
+	value = ctrl.affectationDetail.toAffectation.dDebAffectation;
+	valueWhenEmpty = "&lt;pas de fin&gt";
+	dateformat = "%d/%m/%Y";
+}
+
+StrInAffectationDetailAffectationFin: WOString {
+	value = ctrl.affectationDetail.toAffectation.dFinAffectation;
+	valueWhenEmpty = "&lt;pas de fin&gt";
+	dateformat = "%d/%m/%Y";
+}
+
+CondHasOccupationWarning: WOConditional {
+	condition = ctrl.affectationDetail.hasWarning;
+}
+
+TipPosteOccupationItemWarn: CktlToolTip {
+	htmlText = ctrl.affectationDetail.htmlWarnMessage;
+}
+
+ImgWarning: WOImage {
+	filename = "images/important.png";
+	framework = "app";
+	border = 0;
+}

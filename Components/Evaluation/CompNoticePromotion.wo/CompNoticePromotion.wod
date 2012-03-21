@@ -1,0 +1,135 @@
+StrCorps : WOString {
+	value = inFiche.dicoAgent.corps;//VALID
+}
+
+StrGrade : WOString {
+	value = inFiche.dicoAgent.grade;//VALID
+}
+
+ContainerNoticePromotion: AjaxUpdateContainer {
+	id = "ContainerNoticePromotion";
+}
+
+StrPopulation: WOString {
+	value = inFiche.libellePopulation;
+}
+
+RepReductionEchelon: WORepetition {
+	list = reductionEchelonArray;
+	item = item;
+}
+
+RadioReductionEchelon: WORadioButton {
+	selection = eoEvaluationNoticePromotion.enpReductionEchelon;
+	name = "RadioReductionEchelon";
+	value = item;
+	disabled = inDisabled;
+}
+
+StrReductionEchelon: WOString {
+	value = libelleReductionEchelonItem;
+}
+
+ObserverReductionEchelonList: AjaxObserveField {
+	updateContainerID = "ContainerNoticePromotion";
+	fullSubmit = true;
+	action = sauvegarde;
+}
+
+CondIsReductionEchelonAMotiver: WOConditional {
+	condition = isReductionEchelonAMotiver;
+}
+
+TextReductionEchelonRefusMotif: ChampLibre {
+	value = eoEvaluationNoticePromotion.enpReductionEchelonRefusMotif;
+	disabled = inDisabled;	
+	onBeforeModif = "alert('Vous devez motiver un avis défavorable. Si vous le souhaitez, vous pouvez attribuer une majoration d\'ancienneté');";	
+}
+
+
+ObserverPromotionGradeList: AjaxObserveField {
+	updateContainerID = "ContainerNoticePromotion";
+	fullSubmit = true;
+	action = sauvegarde;
+}
+
+RepPromotionGrade: WORepetition {
+	list = promotionGradeArray;
+	item = item;
+}
+
+RadioPromotionGrade: WORadioButton {
+	selection = eoEvaluationNoticePromotion.enpPromotionGrade;
+	value = item;
+	name = "RadioPromotionGrade";
+	disabled = inDisabled;
+}
+
+StrPromotionGrade: WOString {
+	value = libellePromotionGradeItem;
+}
+
+
+CondIsPromotionGradeAMotiver: WOConditional {
+	condition = isPromotionGradeAMotiver;
+}
+
+TextPromotionGradeRefusMotif: ChampLibre {
+	value = eoEvaluationNoticePromotion.enpPromotionGradeRefusMotif;
+	disabled = inDisabled;
+	onBeforeModif = "alert('Vous devez motiver un avis défavorable.');";		
+}
+
+
+ObserverPromotionCorpsList: AjaxObserveField {
+	updateContainerID = "ContainerNoticePromotion";
+	fullSubmit = true;
+	action = sauvegarde;
+}
+
+
+RepPromotionCorps: WORepetition {
+	list = promotionCorpsArray;
+	item = item;
+}
+
+RadioPromotionCorps: WORadioButton {
+	selection = eoEvaluationNoticePromotion.enpPromotionCorps;
+	value = item;
+	name = "RadioPromotionCorps";
+	disabled = inDisabled;	
+}
+
+StrPromotionCorps: WOString {
+	value = libellePromotionCorpsItem;
+}
+
+
+CondIsPromotionCorpsAMotiver: WOConditional {
+	condition = isPromotionCorpsAMotiver;
+}
+
+TextPromotionCorpsRefusMotif: ChampLibre {
+	value = eoEvaluationNoticePromotion.enpPromotionCorpsRefusMotif;
+	disabled = inDisabled;
+	onBeforeModif = "alert('Vous devez motiver un avis défavorable.');";	
+}
+
+CondShowBtnRecopier: WOConditional {
+	condition = isTextAppreciationGeneraleEnCoursDeModif;
+}
+
+BtnRecopier: CktlAjaxSubmitButton {
+	action = doRecupererAppreciationGeneraleEntretien;
+	updateContainerID = "ContainerNoticePromotion";
+	title = "Recopier la valeur depuis l'entretien";
+	type = "update";
+}
+
+TextAppreciationGenerale : ChampLibre {
+	value = eoEvaluationNoticePromotion.enpAppreciationGenerale;
+	disabled = inDisabled;
+	isEnCoursDeModif = isTextAppreciationGeneraleEnCoursDeModif;
+	containerIdToUse = "ContainerNoticePromotion";
+	onBeforeModif = "alert('Astuce : vous pouvez recopier l\'appréciation générale déjà saisie dans\nl\'onglet Appréciation générale en cliquant sur le bouton avec la flêche bleue');";
+}

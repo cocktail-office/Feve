@@ -1,0 +1,161 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_CATEGORIE"; 
+            externalType = VARCHAR2; 
+            name = cCategorie; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "C_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "C_GRADE"; 
+            externalType = VARCHAR2; 
+            name = cGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FERMETURE"; 
+            externalType = DATE; 
+            name = dFermeture; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_OUVERTURE"; 
+            externalType = DATE; 
+            name = dOuverture; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ECHELLE; 
+            externalType = VARCHAR2; 
+            name = echelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IRM_GRADE"; 
+            externalType = NUMBER; 
+            name = irmGrade; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LC_GRADE"; 
+            externalType = VARCHAR2; 
+            name = lcGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "LL_GRADE"; 
+            externalType = VARCHAR2; 
+            name = llGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEMOIN_NOTE"; 
+            externalType = VARCHAR2; 
+            name = temoinNote; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cCategorie, 
+        cCorps, 
+        cGrade, 
+        dCreation, 
+        dFermeture, 
+        dModification, 
+        dOuverture, 
+        echelle, 
+        irmGrade, 
+        lcGrade, 
+        llGrade, 
+        temoinNote
+    ); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOGrade"; 
+    classProperties = (
+        cCategorie, 
+        dCreation, 
+        dFermeture, 
+        dModification, 
+        dOuverture, 
+        echelle, 
+        irmGrade, 
+        lcGrade, 
+        llGrade, 
+        temoinNote, 
+        toCorps
+    ); 
+    externalName = "GRHUM.GRADE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cCategorie, 
+            cCorps, 
+            cGrade, 
+            dCreation, 
+            dFermeture, 
+            dModification, 
+            dOuverture, 
+            echelle, 
+            irmGrade, 
+            lcGrade, 
+            llGrade, 
+            temoinNote, 
+            toCorps
+        ); 
+    }; 
+    name = Grade; 
+    primaryKeyAttributes = (cGrade); 
+    relationships = (
+        {
+            destination = Corps; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cCorps; sourceAttribute = cCorps; }); 
+            name = toCorps; 
+        }
+    ); 
+}

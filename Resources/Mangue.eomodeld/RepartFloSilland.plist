@@ -1,0 +1,86 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FLO_KEY"; 
+            externalType = NUMBER; 
+            name = floKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RFS_QUOTITE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "RSI_QUOTITE"; }; 
+            name = rfsQuotite; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "SIL_KEY"; 
+            externalType = NUMBER; 
+            name = silKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (floKey, silKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFloSilland"; 
+    classProperties = (
+        rfsQuotite, 
+        dCreation, 
+        dModification, 
+        toFctSilland, 
+        toFicheLolf, 
+        tosRepartFloLolfNomen
+    ); 
+    externalName = "MANGUE.REPART_FLO_SILLAND"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification); }; 
+    name = RepartFloSilland; 
+    primaryKeyAttributes = (floKey, silKey); 
+    relationships = (
+        {
+            destination = FctSilland; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = silKey; sourceAttribute = silKey; }); 
+            name = toFctSilland; 
+        }, 
+        {
+            destination = FicheLolf; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = floKey; sourceAttribute = floKey; }); 
+            name = toFicheLolf; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFloLolfNomen; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = floKey; sourceAttribute = floKey; }, 
+                {destinationAttribute = silKey; sourceAttribute = silKey; }
+            ); 
+            name = tosRepartFloLolfNomen; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

@@ -1,0 +1,103 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DNE_D_DEBUT"; 
+            externalType = DATE; 
+            name = dneDDebut; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "DNE_D_FIN"; 
+            externalType = DATE; 
+            name = dneDFin; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "DNE_KEY"; 
+            externalType = NUMBER; 
+            name = dneKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EPE_KEY"; 
+            externalType = NUMBER; 
+            name = epeKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU_ENTRANT"; 
+            externalType = NUMBER; 
+            name = noIndividuEntrant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU_RESP"; 
+            externalType = NUMBER; 
+            name = noIndividuResp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (dneKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EODroitNouvelEntrant"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        dneDDebut, 
+        dneDFin, 
+        toEvaluationPeriode, 
+        toIndividuEntrant, 
+        toIndividuResp
+    ); 
+    externalName = "FEV_DRO_NOUV_ENTRANT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dCreation, dModification); 
+        "_javaClientClassName" = DroitNouvelEntrant; 
+    }; 
+    name = DroitNouvelEntrant; 
+    primaryKeyAttributes = (dneKey); 
+    relationships = (
+        {
+            destination = EvaluationPeriode; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = epeKey; sourceAttribute = epeKey; }); 
+            name = toEvaluationPeriode; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividuEntrant; }); 
+            name = toIndividuEntrant; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividuResp; }); 
+            name = toIndividuResp; 
+        }
+    ); 
+}

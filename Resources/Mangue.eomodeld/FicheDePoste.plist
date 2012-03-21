@@ -1,0 +1,198 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETY_CODE"; 
+            externalType = VARCHAR2; 
+            name = etyCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDP_CONTEXTE_TRAVAIL"; 
+            externalType = VARCHAR2; 
+            name = fdpContexteTravail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "FDP_D_DEBUT"; 
+            externalType = DATE; 
+            name = fdpDDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDP_D_FIN"; 
+            externalType = DATE; 
+            name = fdpDFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FDP_KEY"; 
+            externalType = NUMBER; 
+            name = fdpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDP_MISSION_POSTE"; 
+            externalType = VARCHAR2; 
+            name = fdpMissionPoste; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "FDP_VISA_AGENT"; 
+            externalType = VARCHAR2; 
+            name = fdpVisaAgent; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FDP_VISA_DIREC"; 
+            externalType = VARCHAR2; 
+            name = fdpVisaDirec; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FDP_VISA_RESP"; 
+            externalType = VARCHAR2; 
+            name = fdpVisaResp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "POS_KEY"; 
+            externalType = NUMBER; 
+            name = posKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fdpKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EOFicheDePoste"; 
+    classProperties = (
+        fdpMissionPoste, 
+        etyCode, 
+        fdpVisaAgent, 
+        fdpVisaResp, 
+        fdpVisaDirec, 
+        fdpContexteTravail, 
+        dCreation, 
+        dModification, 
+        fdpDDebut, 
+        fdpDFin, 
+        toPoste, 
+        tosRepartFdpActi, 
+        tosRepartFdpAutre, 
+        tosRepartFdpComp, 
+        toEmploiType, 
+        toReferensEmplois
+    ); 
+    externalName = "MANGUE.FICHE_DE_POSTE"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fdpMissionPoste, 
+            etyCode, 
+            fdpVisaAgent, 
+            fdpVisaResp, 
+            fdpVisaDirec, 
+            fdpContexteTravail, 
+            dCreation, 
+            dModification, 
+            fdpDDebut, 
+            fdpDFin, 
+            toEmploiType
+        ); 
+    }; 
+    name = FicheDePoste; 
+    primaryKeyAttributes = (fdpKey); 
+    relationships = (
+        {
+            destination = EmploiType; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = etyCode; sourceAttribute = etyCode; }); 
+            name = toEmploiType; 
+        }, 
+        {
+            destination = Poste; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = posKey; sourceAttribute = posKey; }); 
+            name = toPoste; 
+        }, 
+        {
+            destination = ReferensEmplois; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = toReferensEmplois; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFdpActi; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = fdpKey; }); 
+            name = tosRepartFdpActi; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFdpAutre; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = fdpKey; }); 
+            name = tosRepartFdpAutre; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartFdpComp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdpKey; sourceAttribute = fdpKey; }); 
+            name = tosRepartFdpComp; 
+            ownsDestination = Y; 
+        }
+    ); 
+    restrictingQualifier = "toPoste.temValide = 'O'"; 
+    userInfo = {intermediateClass = "A_Fiche"; }; 
+}

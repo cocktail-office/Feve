@@ -1,0 +1,74 @@
+  <font class = "textEntry">Recherche&nbsp;:</font>
+  <webobject name = "BtnSearchCache"/>
+  <webobject name = "TFSearch"/>&nbsp;
+  <webobject name = "BtnSearch"/>
+  &nbsp;&nbsp;&nbsp;<font class = "textNote">La casse et les accents n'ont pas d'importance</font>
+  <br/>
+  <webobject name = "CondHasErrSizeStrSearch">
+	  <font class="textError">Vous devez saisir au moins <webobject name = "StrMinSize"/> caract&egrave;res</font>
+  </webobject>
+  <webobject name = "CondHasNoResult">
+    <table cellpadding = "5" cellspacing = "0" border = "0" width = "1%" class = "boxContents">
+      <tr>
+        <td align = "center" nowrap>
+          <font class = "textError">Aucune donn&eacute;e ne correspond aux crit&egrave;res de recherche</font>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+  <webobject name = "CondNoErrNoResults">
+  	<table cellpadding = "0" cellspacing = "0" width = "100%" border = "0">
+      <tr>
+        <td>
+          <ul>
+            <webobject name = "RepResults">
+              <li>
+              	<b><webobject name = "LnkResult"><webobject name = "StrVReferensFoundItem"/></webobject></b>
+              	<ul>
+              		<li><font class="textNote">BAP <webobject name = "StrVReferensFoundItemLettreBap"/> : <webobject name = "StrVReferensFoundItemBap"/></font></li>
+              		<li><font class="textNote">Famille : <webobject name = "StrVReferensFoundItemFamille"/></font></li>
+              		<webobject name = "CondShowStrVReferensFoundItemEmploi">
+              			<li><font class="textNote">Emploi : <webobject name = "StrVReferensFoundItemEmploi"/></font></li>
+              		</webobject>
+              	</ul>
+              </li>
+            </webobject>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+<table>
+	<tr>
+		<td colspan = "3" align="left">
+			<webobject name = "CRIHXBrowserVReferens"/>
+		</td>
+		<td rowspan = "2" valign="bottom" align="right">
+			<webobject name = "CondShowContent">
+				<webobject name = "ComponentContent1"/>
+			</webobject>
+		</td>
+	</tr>
+	<tr>
+		<th valign="top" width="1%" nowrap>S&eacute;lection actuelle : </th>
+		<td align="left">
+			<ul>
+				<webobject name = "CondShowCorps"><li><webobject name = "StrCorps"/></li></webobject>
+				<webobject name = "RepReferensNodesSelectedPath">
+				<li><webobject name = "StrReferensNodesSelectedPathItem"/></li>
+				</webobject>
+			</ul>
+		</td>
+		<webobject name = "CondShowActiviteCompetences">
+		<td align="left">
+			<ul>
+				<li><b><webobject name = "StrActivitesCount"/></b> Activit&eacute;s initiales <webobject name = "TipActivites"><webobject name = "ImgInfo"/></webobject></li>
+				<li><b><webobject name = "StrCompetencesCount"/></b> Comp&eacute;tences initiales <webobject name = "TipCompetences"><webobject name = "ImgInfo"/></webobject></li>
+			</ul>
+		</td>
+		</webobject>
+		<webobject name = "CondNotShowActiviteCompetences">
+		<td>&nbsp;</td>
+		</webobject>
+	</tr>
+</table>

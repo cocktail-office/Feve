@@ -1,0 +1,66 @@
+PageTemplate1: PageTemplate {
+}
+
+CondShowWarnMessage: WOConditional {
+	condition = showWarnMessage;
+}
+
+YPanelAvertissement1: YPanelAvertissement {
+}
+
+StrWarnMessage: WOString {
+	value = warnMessage;
+	escapeHTML = false;
+}
+
+CondShowFdp: WOConditional {
+	condition = showFdp;
+}
+
+FormFdp: WOForm {
+	multipleSubmit = true;
+	name = "FormFdp";
+}
+
+CompFicheDePosteList1: CompFicheDePosteList {
+	ctrl = compFicheDePosteListCtrl;
+}
+
+FormLolf: WOForm {
+	action = neFaitRien;
+	multipleSubmit = true;
+	name = "FormLolf";
+}
+
+CondShowFlo: WOConditional {
+	condition = showFlo;
+}
+
+PopUpPoste: WOPopUpButton {
+	list = session.individuConnecte.tosPoste;
+	item = posteItem;
+	selection = posteSelected;
+	displayString = posteItem.display;
+	onChange = "this.form.submit();";
+}
+
+CompFicheLolf1: CompFicheLolf {
+	inPoste = posteSelected;
+}
+
+CondShowEva: WOConditional {
+	condition = showEva;
+}
+
+ListeEvaluation1: ListeEvaluation {
+	inOnlyPersonnel = true;
+	selectedRecord = selectedEva;
+	ctrl = listeEvaluationCtrl;
+}
+
+CondShowLegend: WOConditional {
+	condition = showLegende;
+}
+
+CompLegendeListe1: CompLegendeListe {
+}

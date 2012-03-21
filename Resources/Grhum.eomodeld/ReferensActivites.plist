@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = CODEEMPLOI; 
+            externalType = VARCHAR2; 
+            name = codeemploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = IDTYPEGROUPEMENT; 
+            externalType = VARCHAR2; 
+            name = idtypegroupement; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = INTITULACTIVITE; 
+            externalType = VARCHAR2; 
+            name = intitulactivite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INTITULACTIVITE_CLEAN"; 
+            externalType = VARCHAR2; 
+            name = intitulactiviteClean; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = ORDRE; 
+            externalType = VARCHAR2; 
+            name = ordre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (codeemploi, idtypegroupement, intitulactivite, intitulactiviteClean, ordre); 
+    className = "org.cocktail.feve.eos.modele.grhum.EOReferensActivites"; 
+    classProperties = (idtypegroupement, intitulactivite, intitulactiviteClean, toReferensEmplois); 
+    externalName = "GRHUM.REFERENS_ACTIVITES"; 
+    fetchSpecificationDictionary = {}; 
+    name = ReferensActivites; 
+    primaryKeyAttributes = (codeemploi, ordre); 
+    relationships = (
+        {
+            destination = ReferensEmplois; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = codeemploi; sourceAttribute = codeemploi; }); 
+            name = toReferensEmplois; 
+        }
+    ); 
+}

@@ -1,0 +1,116 @@
+Repetition1: WORepetition {
+	item = unObjet;
+	list = lesObjets;
+}
+
+String1: WOString {
+	value = displayUnObjet;
+}
+
+Conditional6: WOConditional {
+	condition = modeModification;
+}
+
+SubmitButton6: WOImageButton {
+	action = removeObjet;
+	class = "bouton";
+	framework = "app";
+	filename = "images/moins16.gif";
+	title = "Oter de la liste";
+}
+
+Conditional3: WOConditional {
+	condition = limiteMaximumAtteinte;
+	negate = true;
+}
+
+Conditional8: WOConditional {
+	condition = modeModification;
+}
+
+Conditional4: WOConditional {
+	condition = rechercheActive;
+}
+
+TextField4: WOTextField {
+	value = chaineAChercher;
+	onKeyDown = "if(event.keyCode==13) this.form.btnRecherche.click();";
+}
+
+SubmitButton2: WOSubmitButton {
+	action = rechercher;
+	name = "btnRecherche";
+	style = "visibility:hidden;display:none";
+	value = "BOUTON CACHE";
+}
+
+Conditional7: WOConditional {
+	condition = lesObjetsDisponibles.count;
+}
+
+PopUpButton1: WOPopUpButton {
+	displayString = displayUnObjet;
+	item = unObjet;
+	list = lesObjetsDisponibles;
+	selection = lObjetDisponibleSelectionne;
+	escapeHTML = false;
+}
+
+Conditional5: WOConditional {
+	condition = rechercheActive;
+}
+
+Conditional2: WOConditional {
+	condition = lesObjetsDisponibles.count;
+	negate = true;
+}
+
+SubmitButton1: WOImageButton {
+	action = rechercher;
+	class = "bouton";
+	framework = "app";
+	filename = "images/jumelles.jpg";
+	title = "Lancer la recherche";
+}
+
+Conditional1: WOConditional {
+	condition = lesObjetsDisponibles.count;
+}
+
+SubmitButton5: WOImageButton {
+	action = ajouterObjet;
+	class = "bouton";
+	framework = "app";
+	filename = "images/plus16.gif";
+	title = "Ajouter ˆ la liste";
+}
+
+Conditional11: WOConditional {
+	condition = disabled;
+	negate = true;
+}
+
+Conditional9: WOConditional {
+	condition = modeModification;
+	negate = true;
+}
+
+SubmitButton3: WOImageButton {
+	action = modifier;
+	class = "bouton";
+	filename = "images/decrypted.png";
+	framework = "app";
+	title = "Modifier la liste";
+}
+
+Conditional10: WOConditional {
+	condition = modeModification;
+}
+
+SubmitButton4: WOImageButton {
+	class = "bouton";
+	action = verrouiller;
+	framework = "app";
+	filename = "images/encrypted.png";
+	title = "Verrouiller la liste";
+}

@@ -1,0 +1,226 @@
+CondHasFormation: WOConditional {
+	condition = formationList.count;
+} 
+
+CondNotHasFormation: WOConditional {
+	condition = formationList.count;
+	negate = true;
+}
+
+RepFormation: WORepetition {
+	list = formationList;
+	item = formationItem;
+}
+
+ImgNomenclature: ImgNomenclature {
+	isDansLaNomenclature = formationItem.isNomenclature;
+}
+
+CondIsGestionPeriode: WOConditional {
+	condition = isGestionPeriode;
+}
+
+CondIsGestionDuree: WOConditional {
+	condition = isGestionDuree;
+}
+
+CondIsEditingCurrentFormation: WOConditional {
+	condition = isEditingCurrentFormation;
+}
+
+CondNotIsEditingCurrentFormation: WOConditional {
+	condition = isEditingCurrentFormation;
+	negate = true;
+}
+
+
+
+StrFormationItemLibelle: WOString {
+	value = formationItem.libelle;
+}
+
+StrFormationItemDebut: WOString {
+	value = formationItem.dDebut;
+	dateformat = "%d/%m/%Y";	
+}
+
+StrFormationItemFin: WOString {
+	value = formationItem.dFin;
+	dateformat = "%d/%m/%Y";	
+}
+
+StrFormationDuree: WOString {
+	value = formationItem.duree;
+}
+
+StrFormationTypeUniteTemps: WOString {
+	value = formationItem.toTypeUniteTemps.tutLibelle;
+}
+
+CondShowLnkEditFormation: WOConditional {
+	condition = showLnkEditFormation;
+}
+
+ImgModifier: WOImage {
+	filename = "images/modifier16.gif";
+	framework = "app";
+	border = "0";
+	width = "16px";
+	height = "16px";
+}
+
+LnkEditFormation: WOHyperlink {
+	action = editFormation;
+	title = "Modifier cette entr&eacute;e";
+	escapeHTML = false;
+}
+
+CondShowLnkDeleteFormation: WOConditional {
+	condition = showLnkDeleteFormation;
+}
+
+ImgMoins: WOImage {
+	filename = "images/moins16.gif";
+	framework = "app";
+	border = "0";
+	width = "16px";
+	height = "16px";
+}
+
+LnkDeleteFormation: WOHyperlink {
+	action = doDeleteFormation;
+	title = "Supprimer cette entr&eacute;e";
+	escapeHTML = false;
+}
+
+CondShowLnkCancel: WOConditional {
+	condition = showLnkCancel;
+}
+
+ImgAnnuler: WOImage {
+	filename = "images/annuler16.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}
+
+LnkCancel: WOHyperlink {
+	action = doCancel;
+	title = "Annuler l'op&eacute;ration en cours";
+}
+
+CondShowLnkAddNewFormation: WOConditional {
+	condition = showLnkAddNewFormation;
+}
+
+ImgAddNewFormation: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+	border = "0";
+	width = "16px";
+	height = "16px";
+}
+
+LnkAddNewFormation: WOHyperlink {
+	action = addFormation;
+	title = "Saisir une nouvelle entr&eacute;e de formation";
+	escapeHTML = false;
+	fragmentIdentifier = "CompTplBlocFormation";
+}
+
+CondShowFormAddNewFormation: WOConditional {
+	condition = showFormAddNewFormation;
+}
+
+SelectFormationNewFormation: SelectFormation {
+	eoFormationPersonnel = newEoFormationPersonnel;
+	formName = "FormPageEvaluation";
+	strChampLibre = newFormationLibelle;
+	isFormationNomenclature = newFormationIsNomenclature;
+	btnAddFormationName = "BtnDoAddNewFormationCache";
+}
+
+CktlDatePickerNewFormationDebut: CktlDatePicker {
+	dateValue = newFormationDebut;
+}
+
+CktlDatePickerNewFormationFin: CktlDatePicker {
+	dateValue = newFormationFin;
+}
+
+TFNewFormationDuree: WOTextField {
+	value = newFormationDuree;
+	maxSize = "20";
+	size = "2";
+}
+
+PopUpNewFormationTypeUniteTemps: WOPopUpButton {
+	list = eoTypeUniteTempsArray;
+	item = eoTypeUniteTempsItem;
+	displayString = eoTypeUniteTempsItem.tutLibelle;
+	selection = newFormationTypeUniteTemps;
+}
+
+ImgBtnDoAddNewFormation: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = doAddNewFormation;
+	title = "Valider la saisie et enregistrer la nouvelle formation";
+	name = "BtnDoAddNewFormation";
+}
+
+BtnDoAddNewFormationCache: WOSubmitButton {
+	action = doAddNewFormation;
+	name = "BtnDoAddNewFormationCache";
+	style = "visibility:hidden;display:none";
+}
+
+ErrSaisieFormation: WOConditionalErrorMessage {
+	condition = isShowErrorMessage;
+	value = errorMessage;
+}
+
+SelectFormationExistingFormation: SelectFormation {
+	eoFormationPersonnel = existingEoFormationPersonnel;
+	formName = "FormPageEvaluation";
+	strChampLibre = existingFormationLibelle;
+	isFormationNomenclature = existingFormationIsNomenclature;
+	btnAddFormationName = "BtnDoEditFormationCache";
+}
+
+CktlDatePickerExistingFormationDebut: CktlDatePicker {
+	dateValue = existingFormationDebut;
+}
+
+CktlDatePickerExistingFormationFin: CktlDatePicker {
+	dateValue = existingFormationFin;
+}
+
+TFDuree: ERXWOTextField {
+	value = existingFormationDuree;
+	maxSize = "20";
+	size = "2";
+}
+
+PopUpTypeUniteTemps: WOPopUpButton {
+	list = eoTypeUniteTempsArray;
+	item = eoTypeUniteTempsItem;
+	displayString = eoTypeUniteTempsItem.tutLibelle;
+	selection = existingFormationTypeUniteTemps;
+	noSelectionString = "";
+}
+
+ImgBtnDoEditFormation: WOImageButton {
+	filename = "images/valider16.gif";
+	framework = "app";
+	action = doEditFormation;
+	title = "Valider la saisie et modifier la formation";
+	name = "BtnDoEditFormation";
+}
+
+BtnDoEditFormationCache: WOSubmitButton {
+	action = doEditFormation;
+	name = "BtnDoEditFormationCache";
+	style = "visibility:hidden;display:none";
+}

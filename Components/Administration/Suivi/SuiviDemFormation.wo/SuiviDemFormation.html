@@ -1,0 +1,93 @@
+<div align="center">
+<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	<tr>
+   	<td>
+     	<table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+    		<tr class = "listboxHeader">
+					<td>
+						<font class="textEntry">P&eacute;riode :</font>
+						<webobject name = "PopupPeriode"/>
+						<webobject name = "ObserverPopupPeriode"/>
+					</td>
+					<td>
+						<webobject name = "PopupService"/>
+						<webobject name = "ObserverPopupService"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</div>
+
+<webobject name = "ContainerResultats">
+
+<br/>
+<webobject name = "CondHasResult">
+	<center>
+		<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+		<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+		<font class="title">&raquo; <webobject name = "StrTotalFormation"/></font>
+	</center>
+	<br/>
+</webobject>
+
+	<table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0" width = "100%">
+	  <tr>
+	    <td>
+	      <table border = "0" cellpadding = "2" cellspacing = "1" width = "100%">
+	      	<tr class = "listboxHeader">
+	      		<th><webobject name = "LnkSortEvaluateur">&Eacute;valuateur</webobject></th>
+	      	  <th><webobject name = "LnkSortAgent">Agent</webobject></th>
+	       	 	<th><webobject name = "LnkSortFormationSouhaitee">Formation souhait&eacute;e</webobject></th>
+	       	 	<th>Mod.</th>
+	       	 	<th><webobject name = "LnkSortIsNomenclature">Ref</webobject></th>
+	       	 	<th><webobject name = "LnkSortDateEntretien">Date entretien</webobject></th>
+	       	 	<th><webobject name = "LnkSortDateVisaRh">Date visa RH</webobject></th>
+	      	</tr>
+	      	<webobject name = "RepRepartFicheItem">
+	      	<tr class = "listboxLine">
+	      		<td nowrap><webobject name = "StrRepartItemEvaluateur"/></td>
+	      	  <td nowrap><webobject name = "StrRepartItemAgent"/></td>
+	       	 	<td>
+	       	 		<webobject name = "CondNotIsEditingCurrentFormation">
+								<webobject name = "StrRepartItemFormation"/>
+							</webobject>
+	       	 		<webobject name = "CondIsEditingCurrentFormation">
+								<webobject name = "BtnDoEditFormationCache"/>
+								<webobject name = "SelectFormation"/>
+							</webobject>
+	       	 	</td>
+	       	 	
+	       	 	<td nowrap>
+
+   	 					<webobject name = "CondIsEditingCurrentFormation">
+								<webobject name = "ImgBtnDoEditFormation"/>
+							</webobject>
+
+		       	 	<webobject name = "CondShowLnkEditFormation">
+								<webobject name = "LnkEditFormation">
+									<webobject name = "ImgModifier"/>
+								</webobject>
+							</webobject>
+							
+							<webobject name = "CondShowLnkCancel">
+								<webobject name = "LnkCancel">
+									<webobject name = "ImgAnnuler"/>
+								</webobject>
+							</webobject>
+
+	       	 	</td>
+	       	 	<td>
+	       	 		<webobject name = "ImgNomenclature"/>
+	       	 	</td>
+	       	 	<td nowrap><webobject name = "StrDTenueEntretien"/></td>
+	       	 	<td nowrap><webobject name = "StrDVisaResponsableRh"/></td>
+	      	</tr>
+	     	 </webobject>
+	   		</table>
+	  	</td>
+		</tr>
+	</table>
+</webobject>
+    

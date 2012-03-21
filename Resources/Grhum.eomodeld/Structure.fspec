@@ -1,0 +1,24 @@
+{
+    FetchComposante = {
+        class = EOFetchSpecification; 
+        entityName = Structure; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isStrComposante; 
+                    selectorName = isEqualTo; 
+                    value = 1; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isStrArchive; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = isStrArchive; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

@@ -1,0 +1,38 @@
+FormAjoutDroitNouvelEntrant: WOForm {
+	name = "FormAjoutDroitNouvelEntrant";
+}
+
+FieldSearchResponsable: FieldSearchIndividu {
+	individu = ctrl.eoIndividuResp;
+}
+
+CondIsIndividuEntrantPredefini: WOConditional {
+	condition = ctrl.isIndividuEntrantPredefini;
+}
+
+CondNotIsIndividuEntrantPredefini: WOConditional {
+	condition = ctrl.isIndividuEntrantPredefini;
+	negate = true;
+}
+
+StrEntrant: WOString {
+	value = ctrl.eoIndividuEntrant.nomPrenom;
+}
+
+FieldSearchEntrant: FieldSearchIndividu {
+	individu = ctrl.eoIndividuEntrant;
+}
+
+Debut: CktlDatePicker {
+	dateValue = ctrl.dDebut;
+}
+
+Fin: CktlDatePicker {
+	dateValue = ctrl.dFin;
+}
+
+BtnDoAdd: WOSubmitButton {
+	action = ctrl.doAdd;
+	class = "bouton";
+	value = "Affectation du droit";
+}

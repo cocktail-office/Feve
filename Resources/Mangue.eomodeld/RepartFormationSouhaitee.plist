@@ -1,0 +1,80 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EVA_KEY"; 
+            externalType = NUMBER; 
+            name = evaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOR_ID"; 
+            externalType = NUMBER; 
+            name = forId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RFS_FORMATION_CHAMP_LIBRE"; 
+            externalType = VARCHAR2; 
+            name = rfsFormationChampLibre; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "RFS_KEY"; 
+            externalType = NUMBER; 
+            name = rfsKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (rfsKey); 
+    className = "org.cocktail.feve.eos.modele.mangue.EORepartFormationSouhaitee"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        rfsFormationChampLibre, 
+        toEvaluation, 
+        toFormationPersonnel
+    ); 
+    externalName = "MANGUE.REPART_FORMATION_SOUHAITEE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (dCreation, dModification); }; 
+    name = RepartFormationSouhaitee; 
+    primaryKeyAttributes = (rfsKey); 
+    relationships = (
+        {
+            destination = Evaluation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = evaKey; sourceAttribute = evaKey; }); 
+            name = toEvaluation; 
+        }, 
+        {
+            destination = FormationPersonnel; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = forId; sourceAttribute = forId; }); 
+            name = toFormationPersonnel; 
+        }
+    ); 
+    userInfo = {intermediateClass = "A_DescriptionFormation"; }; 
+}

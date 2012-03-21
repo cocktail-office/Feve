@@ -1,0 +1,172 @@
+CondHasResult: WOConditional {
+	condition = ficheLolfDg.displayedObjects.@count;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+TipCsv: CktlToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+PopUpExercice: WOPopUpButton {
+	item = exerciceItem;
+	list = exerciceList;
+	selection = exerciceSelected;
+	displayString = exerciceItem.exeExercice;
+	onChange = "BtnRefresh.click();";
+}
+
+PopupPosteType: WOPopUpButton {
+	item = posteTypeItem;
+	list = posteTypeList;
+	selection = posteTypeSelected;
+	escapeHTML = false;
+	onChange = "this.form.submit();";	
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipSupport: CktlToolTip {
+	htmlText = "Support poste : Enseignant(E) ou BIATOSS(B)";
+}
+
+PopupComposante: WOPopUpButton {
+	list = composanteDg.displayedObjects;
+	item = composanteItem;
+	selection = composanteSelected;
+	displayString = composanteItem.lcStructure;
+	noSelectionString = "-- Toutes --";
+	onChange = "BtnRefresh.click();";	
+}
+
+PopupService: WOPopUpButton {
+	list = serviceDg.displayedObjects;
+	item = serviceItem;
+	selection = serviceSelected;
+	displayString = serviceItem.toStructure.displayTresCourt;
+	noSelectionString = "-- Tous --";
+	onChange = "BtnRefresh.click();";	
+}
+
+CRINavBarFicheLolf: YCRINavigationBar {
+	displayGroup = ficheLolfDg;
+	longListLimit = 10;
+}
+
+StrFicheLolfCount: WOString {
+	value = ficheLolfDg.allObjects.count;
+}
+
+BtnRefresh: WOSubmitButton {
+	value = "Rafraichir";
+	action = doRefresh;
+	class = "bouton";
+	name = "BtnRefresh";
+	title = "Appliquer les filtres / rafraichir la liste des objets";
+}
+
+RepFicheLolf: WORepetition {
+	list = ficheLolfDg.displayedObjects;
+	item = ficheLolfItem;
+}
+
+CondIsFicheLolfItemAffichable: WOConditional {
+	condition = isFicheLolfItemAffichable;
+}
+
+TrFicheLolf: WOGenericContainer {
+	elementName = "tr";
+	class = trFicheLolfItemCssClass;
+}
+
+CondHasWarning: WOConditional {
+	condition = ficheLolfItem.hasWarning;
+}
+
+ImgWarning: WOImage {
+	filename = "images/important.png";
+	framework = "app";
+	border = 0;
+}
+
+TipWarning: CktlToolTip {
+	htmlText = ficheLolfItem.htmlWarnMessage;
+}
+
+CondIsEnseignant: WOConditional {
+	condition = ficheLolfItem.toPoste.isEnseignant;
+}
+
+CondIsNonEnseignant: WOConditional {
+	condition = ficheLolfItem.toPoste.isNonEnseignant;
+}
+
+StrFicheLolfItemComposante: WOString {
+	value = ficheLolfItem.toPoste.toStructure.toComposante.displayUltraCourt;
+}
+
+StrFicheLolfItemService: WOString {
+	value = ficheLolfItem.toPoste.toStructure.displayUltraCourt;
+}
+
+StrFicheLolfItemPosLibelle: WOString {
+	value = ficheLolfItem.toPoste.posLibelle;
+}
+
+StrFicheLolfItemPosCode: WOString {
+	value = ficheLolfItem.toPoste.posCode;
+}
+
+StrFicheLolfItemPosDDebut: WOString {
+	value = ficheLolfItem.toPoste.posDDebut;
+	dateformat = "%d/%m/%Y";
+}
+
+StrFicheLolfItemPosDFin: WOString {
+	value = ficheLolfItem.toPoste.posDFin;
+	dateformat = "%d/%m/%Y";
+}
+
+StrFicheLolfItemOccupantPoste: WOString {
+	value = ficheLolfItem.toPoste.toAffectationDetailActuelle.toAffectation.toIndividu.nomPrenom;
+}
+
+RepRepartFloSilland: WORepetition {
+	list = ficheLolfItem.tosRepartFloSilland;
+	item = repartFloSillandItem;
+}
+
+StrRepartFloSillandLibelle: WOString {
+	value = repartFloSillandItem.toFctSilland.silLibelle;
+}
+
+StrRepartFloSillandQuotite: WOString {
+	value = repartFloSillandItem.rfsQuotite;
+	numberformat = "0.00";
+}
+
+RepRepartFloLolfNomen: WORepetition {
+	list = repartFloSillandItem.tosRepartFloLolfNomen;
+	item = repartFloLolfNomenItem;
+}
+
+StrRepartFloLolfNomenLibelle: WOString {
+	value = repartFloLolfNomenItem.toLolfNomenclatureDepense.lolfLibelle;
+}
+
+StrRepartFloLolfNomenQuotite: WOString {
+	value = repartFloLolfNomenItem.rrfQuotite;
+	numberformat = "0.00";
+}
