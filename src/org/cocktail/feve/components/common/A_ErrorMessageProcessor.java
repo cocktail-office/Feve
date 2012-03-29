@@ -21,6 +21,16 @@ public abstract class A_ErrorMessageProcessor {
 	}
 	
 	/**
+	 * Indique si une erreur est survenue lors de la validation.
+	 * On verifie s'il y a quelque chose dans le msg d'erreur
+	 * <code>errMsg</code>
+	 * @return
+	 */
+	public boolean hasError() {
+		return !StringCtrl.isEmpty(errMsg);
+	}
+	
+	/**
 	 * RAZ du temoin d'erreur
 	 */
 	public final void clearError() {
@@ -42,15 +52,4 @@ public abstract class A_ErrorMessageProcessor {
 	public final void setErrMsg(String errMsg) {
 		this.errMsg = errMsg;
 	}
-
-	/**
-	 * Indique si une erreur est survenue lors de la validation.
-	 * On verifie s'il y a quelque chose dans le msg d'erreur
-	 * <code>errMsg</code>
-	 * @return
-	 */
-	public boolean hasError() {
-		return !StringCtrl.isEmpty(errMsg);
-	}
-	
 }
